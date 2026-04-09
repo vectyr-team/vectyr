@@ -12,7 +12,7 @@ const Contact = () => {
             Contact
           </span>
 
-          <h1 className="font-headline font-light text-5xl leading-[1.05] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-4xl">
+          <h1 className="font-headline font-light text-5xl leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-4xl">
             LET'S <span className="text-primary">TALK.</span>
           </h1>
 

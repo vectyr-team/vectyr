@@ -25,7 +25,7 @@ const Demo = () => {
             See It Live
           </span>
 
-          <h1 className="font-headline font-light text-5xl leading-[1.05] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-4xl">
+          <h1 className="font-headline font-light text-5xl leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-4xl">
             EXPERIENCE <span className="text-primary">BRANDOS.</span>
           </h1>
 
