@@ -157,7 +157,7 @@ const Index = () => {
               BUILT. INSTALLED. RUNNING.
             </h2>
 
-            <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
               Three products, one complete solution. Your brand doesn't sit in a folder, it lives everywhere, it runs, it never goes stale.
             </p>
           </ScrollSection>
