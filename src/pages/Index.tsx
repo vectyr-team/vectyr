@@ -210,7 +210,7 @@ const Index = () => {
           <div className="lg:sticky lg:top-24 lg:self-start">
             <div className="flex items-center gap-4 mb-10">
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-                The Position
+                OUR RANT
               </span>
               <div className="h-px w-16 bg-muted-foreground/40" />
             </div>
@@ -275,7 +275,7 @@ const Index = () => {
                 label: "Curious or Cold",
                 title: "Pick Steve's Brain",
                 link: "stevesbrain.com",
-                desc: "Free 30-minute brand diagnostic. No pitch. No agenda. Steve looks at your situation and gives an honest read. If you're not ready for Vectyr, he'll tell you that too.",
+                desc: "Free 30-minute brand diagnostic. No pitch or agenda. Steve looks at your situation and gives an honest read. If you're not ready for Vectyr, he'll tell you that too.",
               },
               {
                 dot: "bg-primary",
