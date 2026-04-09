@@ -7,7 +7,7 @@ const Index = () => {
       <Header />
 
       {/* Hero */}
-      <section className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-20 text-center overflow-hidden">
+      <section className="relative flex min-h-screen flex-col items-start justify-center px-6 sm:px-12 md:px-20 lg:px-28 pt-20 overflow-hidden">
         {/* Background video */}
         <video
           autoPlay
@@ -23,16 +23,16 @@ const Index = () => {
         <div className="absolute inset-0 bg-background/60" />
 
         {/* Content */}
-        <div className="relative z-10">
+        <div className="relative z-10 max-w-3xl">
           <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">
             Built for Humans and AI
           </span>
 
-          <h1 className="font-headline text-5xl leading-[1.05] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-5xl">
+          <h1 className="font-headline text-5xl leading-[1.05] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
             YOUR BRAND IS LIVING IN YOUR HEAD. NOWHERE ELSE.
           </h1>
 
-          <p className="mt-8 mx-auto max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
             Vectyr extracts your brand from wherever it's hiding, structures it so humans and AI can both actually use it, and installs it everywhere your team works. No more briefing vendors from memory. No more AI output that sounds like your competitor.
           </p>
 
