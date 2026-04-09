@@ -122,30 +122,30 @@ const About = () => {
                 Steve is also the creator of the Customer Perception Profile, the proprietary psychological framework at the core of the Brand Codex methodology, published in <em>Cake Jerky</em>. He is a named methodology author, not just a practitioner with an opinion. That distinction matters when you're trusting someone with the most important document your business will ever have.
               </p>
 
-              <div className="flex flex-col gap-3 mt-4">
+              <div className="flex flex-col gap-3 mt-4 border-l-4 border-primary pl-4">
                 <a
                   href="https://stevesbrain.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-body text-base font-semibold text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+                  className="font-body text-base font-semibold text-foreground hover:text-primary transition-colors"
                 >
-                  Thirty minutes with Steve. No pitch. →
+                  Thirty minutes with Steve, no pitch →
                 </a>
                 <a
                   href="https://buy.cakejerky.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-body text-base font-semibold text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+                  className="font-body text-base font-semibold text-foreground hover:text-primary transition-colors"
                 >
-                  Buy his book, Cake Jerky. →
+                  Buy his book, Cake Jerky →
                 </a>
                 <a
                   href="https://www.linkedin.com/in/stevereed"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-body text-base font-semibold text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+                  className="font-body text-base font-semibold text-foreground hover:text-primary transition-colors"
                 >
-                  Connect on LinkedIn. →
+                  Connect on LinkedIn →
                 </a>
               </div>
             </div>
