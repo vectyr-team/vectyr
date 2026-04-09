@@ -14,7 +14,7 @@ const About = () => {
             </span>
 
             <h1 className="font-headline font-light text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
-              TWENTY YEARS.{" "}
+              TWENTY YEARS.<br />
               <span className="text-primary">ONE ANSWER.</span>
             </h1>
           </div>
