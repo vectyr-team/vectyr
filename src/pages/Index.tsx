@@ -31,7 +31,7 @@ const Index = () => {
             Built for Humans and AI
           </span>
 
-          <h1 className="font-headline font-normal text-5xl leading-[1.05] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
+          <h1 className="font-headline font-light text-5xl leading-[1.05] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
             YOUR BRAND IS LIVING IN<br />YOUR HEAD. <span className="text-primary">NOWHERE ELSE.</span>
           </h1>
 
@@ -89,7 +89,7 @@ const Index = () => {
               <div className="h-px w-16 bg-muted-foreground/40" />
             </div>
 
-            <h2 className="font-headline font-normal text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
+            <h2 className="font-headline font-light text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
               MOST AGENCIES SOLVE ONE PROBLEM AND LEAVE TWO BEHIND
             </h2>
 
@@ -125,7 +125,7 @@ const Index = () => {
                   <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
                     {card.num} / Problem
                   </span>
-                  <h3 className="font-body font-medium text-2xl leading-tight text-foreground mt-4">
+                  <h3 className="font-body font-light text-2xl leading-tight text-foreground mt-4">
                     {card.title}
                   </h3>
                   <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground">
@@ -154,7 +154,7 @@ const Index = () => {
               <div className="h-px w-16 bg-muted-foreground/40" />
             </div>
 
-            <h2 className="font-headline font-normal text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
+            <h2 className="font-headline font-light text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
               BUILT. INSTALLED. RUNNING.
             </h2>
 
@@ -193,7 +193,7 @@ const Index = () => {
                   <span className={`inline-block px-3 py-1 font-mono text-xs uppercase tracking-[0.15em] rounded-sm ${card.badgeStyle}`}>
                     {card.badge}
                   </span>
-                  <h3 className="font-body font-medium text-2xl leading-tight text-foreground mt-6">
+                  <h3 className="font-body font-light text-2xl leading-tight text-foreground mt-6">
                     {card.title}
                   </h3>
                   <p className="mt-4 font-mono text-xs text-muted-foreground tracking-wide">
@@ -222,14 +222,14 @@ const Index = () => {
               <div className="h-px w-16 bg-muted-foreground/40" />
             </div>
 
-            <h2 className="font-headline font-normal text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+            <h2 className="font-headline font-light text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
               WHY THIS MATTERS MORE THAN YOU THINK
             </h2>
           </ScrollSection>
 
           {/* Right – long-form copy */}
           <ScrollSection className="font-body text-base leading-relaxed text-muted-foreground space-y-6 scroll-animate-delay-2">
-            <p className="text-lg text-foreground font-medium leading-relaxed">
+            <p className="text-lg text-foreground font-light leading-relaxed">
               The branding industry has been selling you the wrong thing in the wrong order for decades, and it has been doing so with a smile and a proposal.
             </p>
 
@@ -238,14 +238,14 @@ const Index = () => {
             </p>
 
             <p>
-              <span className="text-foreground font-medium">Brands that look like brands but cannot brief a vendor without a two-hour phone call. Cannot trust a single AI output to sound like themselves. Cannot explain to a new hire what the company actually believes.</span> The industry calls this brand. It is not brand, it's decoration with a budget attached, and the founders paying for it deserve better.
+              <span className="text-foreground font-light">Brands that look like brands but cannot brief a vendor without a two-hour phone call. Cannot trust a single AI output to sound like themselves. Cannot explain to a new hire what the company actually believes.</span> The industry calls this brand. It is not brand, it's decoration with a budget attached, and the founders paying for it deserve better.
             </p>
 
             <p>
               The clients who stay with us for five, ten, twenty years don't come back because the logo was good. They come back because something changed after the strategy work: decisions got easier, hiring got clearer, marketing stopped feeling like guesswork, and they stopped losing deals to competitors they knew they were better than.
             </p>
 
-            <p className="text-foreground font-medium">
+            <p className="text-foreground font-light">
               We knew exactly what would happen when a business finally had a system to match the quality of what it actually does. We have seen it happen more times than we can count.
             </p>
 
@@ -267,7 +267,7 @@ const Index = () => {
               </span>
             </div>
 
-            <h2 className="font-headline font-normal text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
+            <h2 className="font-headline font-light text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
               WHAT BUILDERS <span className="text-primary">SAY.</span>
             </h2>
           </ScrollSection>
@@ -320,7 +320,7 @@ const Index = () => {
               <div className="h-px w-16 bg-muted-foreground/40" />
             </div>
 
-            <h2 className="font-headline font-normal text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
+            <h2 className="font-headline font-light text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
               MEET US WHERE YOU ARE
             </h2>
 
@@ -360,7 +360,7 @@ const Index = () => {
                     {card.label}
                   </span>
                 </div>
-                <h3 className="font-body font-medium text-2xl leading-tight text-foreground">
+                <h3 className="font-body font-light text-2xl leading-tight text-foreground">
                   {card.title}
                 </h3>
                 <p className="mt-3 font-mono text-xs text-primary tracking-wide">
