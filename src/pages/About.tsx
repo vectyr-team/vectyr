@@ -235,10 +235,7 @@ const About = () => {
         <img src={ctaBg} alt="" className="absolute inset-0 z-0 w-full h-full object-cover opacity-30 pointer-events-none" />
         <div className="relative z-10 mx-auto max-w-[1600px] text-center">
           <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl mb-8">
-            YOU'VE BUILT<br />
-            SOMETHING REAL.<br />
-            YOUR BRAND SHOULD<br />
-            <span className="text-primary">SAY SO.</span>
+            YOU'VE BUILT SOMETHING REAL. YOUR BRAND SHOULD <span className="text-primary">SAY SO.</span>
           </h2>
 
           <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl mx-auto mb-12">
