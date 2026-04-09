@@ -394,7 +394,7 @@ const Index = () => {
             </h2>
 
             <p className="mt-8 max-w-xl font-body text-lg leading-relaxed" style={{ color: '#6B6B6B' }}>
-              The gap between what you've built and how the market perceives it is infrastructure. We fix infrastructure.
+              The gap between what you've built and how the market perceives it is your brand infrastructure. We build that infrastructure.
             </p>
 
             <a href="https://vectyr.com/demo" className="mt-10">
