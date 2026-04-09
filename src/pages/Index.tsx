@@ -7,7 +7,7 @@ const Index = () => {
       <Header />
 
       {/* Hero */}
-      <section className="relative flex min-h-screen flex-col items-start justify-center px-6 sm:px-12 md:px-20 lg:px-28 pt-20 overflow-hidden">
+      <section className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-20 overflow-hidden">
         {/* Background video */}
         <video
           autoPlay
@@ -23,7 +23,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-background/60" />
 
         {/* Content */}
-        <div className="relative z-10 max-w-3xl">
+        <div className="relative z-10 w-full max-w-[1300px] mx-auto">
           <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">
             Built for Humans and AI
           </span>
