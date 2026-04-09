@@ -71,7 +71,7 @@ const Index = () => {
         <div className="mx-auto grid max-w-[1300px] items-center gap-16 lg:grid-cols-2">
           {/* Left – quote */}
           <ScrollSection>
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground mb-6 block">
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50 mb-6 block">
               BRAND ENTROPY IS THE ENEMY
             </span>
             <blockquote className="font-body text-base font-light italic text-foreground md:text-2xl" style={{ lineHeight: '1.5' }}>
@@ -103,7 +103,7 @@ const Index = () => {
           <ScrollSection>
             {/* Overline with line */}
             <div className="flex items-center gap-4 mb-4 md:mb-10">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
                 The Full Lifecycle
               </span>
               <div className="h-px w-16 bg-muted-foreground/40" />
@@ -142,7 +142,7 @@ const Index = () => {
             ].map((card, i) => (
               <ScrollSection key={i} className={`relative bg-card p-8 flex flex-col justify-between min-h-[280px] border-b-2 border-b-primary border-l border-border/40 scroll-animate-delay-${i + 1}`}>
                 <div>
-                  <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+                  <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
                     {card.num} / Problem
                   </span>
                   <h3 className="font-body font-semibold text-2xl leading-tight text-foreground mt-4">
@@ -168,7 +168,7 @@ const Index = () => {
           <ScrollSection>
             {/* Overline with line */}
             <div className="flex items-center gap-4 mb-4 md:mb-10">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
                 The System
               </span>
               <div className="h-px w-16 bg-muted-foreground/40" />
@@ -242,7 +242,7 @@ const Index = () => {
           {/* Left – sticky heading */}
           <ScrollSection className="lg:sticky lg:top-24 lg:self-start">
             <div className="flex items-center gap-4 mb-4 md:mb-10">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
                 OUR RANT
               </span>
               <div className="h-px w-16 bg-muted-foreground/40" />
@@ -288,7 +288,7 @@ const Index = () => {
         <div className="relative z-10 mx-auto max-w-[1300px]">
           <ScrollSection>
             <div className="flex items-center gap-4 mb-4 md:mb-10">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
                 — Results
               </span>
             </div>
@@ -340,7 +340,7 @@ const Index = () => {
         <div className="mx-auto max-w-[1300px]">
           <ScrollSection>
             <div className="flex items-center gap-4 mb-4 md:mb-10">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
                 Entry Points
               </span>
               <div className="h-px w-16 bg-muted-foreground/40" />
@@ -385,7 +385,7 @@ const Index = () => {
               <ScrollSection key={i} className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1} border-l border-border/40`}>
                 <div className="flex items-center gap-2 mb-6">
                   <span className={`inline-block h-2 w-2 rounded-full ${card.dot}`} />
-                  <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+                  <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
                     {card.label}
                   </span>
                 </div>
