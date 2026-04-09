@@ -10,7 +10,7 @@ const About = () => {
     <div className="min-h-screen bg-[#151616]">
       <Header />
 
-      <section className="px-6 pt-28 pb-8 md:pt-52 md:pb-24">
+      <section className="px-6 pt-28 pb-8 md:pt-52 md:pb-24 min-h-[80vh] flex items-center">
         <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Left column */}
           <div>
