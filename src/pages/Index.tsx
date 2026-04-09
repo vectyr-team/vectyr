@@ -104,7 +104,7 @@ const Index = () => {
               },
               {
                 num: "02",
-                title: "Strategy That Doesn't Get Used",
+                title: "Strategy Never Used",
                 desc: "Even when a strategy exists, it lives in a folder nobody opens. Unavailable to the freelancer at 9pm. Invisible to the AI tool writing tomorrow's social post. Unknown to the new hire who started last week.",
                 solved: "BrandOS Platform",
               },
