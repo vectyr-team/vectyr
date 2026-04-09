@@ -65,7 +65,7 @@ const About = () => {
 
             {/* Pull quote */}
             <div className="border-l-4 border-primary bg-foreground/5 p-6 md:p-8">
-              <p className="font-mono text-xl md:text-2xl leading-snug text-foreground uppercase">
+              <p className="font-mono text-base md:text-lg leading-snug text-foreground">
                 Design is the output. Strategy is the engine. Every agency that skips the engine is setting their clients up to fail slower.
               </p>
             </div>
