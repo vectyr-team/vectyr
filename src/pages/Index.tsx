@@ -181,7 +181,7 @@ const Index = () => {
                 desc: "Quarterly brand review. Drift caught before it compounds. Brand Performance Indicator report after every cycle. One advisory credit per quarter for fast gut-checks between scheduled calls. The brand keeps running.",
               },
             ].map((card, i) => (
-              <div key={i} className="bg-card p-8 flex flex-col justify-between min-h-[400px]">
+              <div key={i} className="bg-card p-8 flex flex-col">
                 <div>
                   <span className={`inline-block px-3 py-1 font-mono text-xs uppercase tracking-[0.15em] rounded-sm ${card.badgeStyle}`}>
                     {card.badge}
