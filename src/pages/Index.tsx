@@ -219,9 +219,6 @@ const Index = () => {
               WHY THIS MATTERS MORE THAN YOU THINK
             </h2>
 
-            <a href="#" className="mt-8 inline-flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Ready to stop winging it <span>→</span>
-            </a>
           </div>
 
           {/* Right – long-form copy */}
