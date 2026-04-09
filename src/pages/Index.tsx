@@ -1,9 +1,31 @@
+import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import ScrollSection from "@/components/ScrollSection";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@iconify/react";
 
+const heroItems = [
+  { delay: 0.6 },  // overline
+  { delay: 0.8 },  // headline
+  { delay: 1.1 },  // paragraph
+  { delay: 1.4 },  // button
+];
+
 const Index = () => {
+  const [heroVisible, setHeroVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setHeroVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const heroStyle = (index: number): React.CSSProperties => ({
+    opacity: heroVisible ? 1 : 0,
+    transform: heroVisible ? 'translateY(0)' : 'translateY(20px)',
+    transition: 'opacity 0.7s ease-out, transform 0.7s ease-out',
+    transitionDelay: `${heroItems[index].delay}s`,
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -26,19 +48,19 @@ const Index = () => {
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-[1300px] mx-auto">
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">
+          <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block" style={heroStyle(0)}>
             Built for Humans and AI
           </span>
 
-          <h1 className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-[625px]">
+          <h1 className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-[625px]" style={heroStyle(1)}>
             YOUR BRAND IS LIVING IN YOUR HEAD. <span className="text-primary">NOWHERE ELSE.</span>
           </h1>
 
-          <p className="mt-4 md:mt-8 max-w-2xl font-body text-base md:text-lg font-light leading-relaxed text-[#adadad]">
+          <p className="mt-4 md:mt-8 max-w-2xl font-body text-base md:text-lg font-light leading-relaxed text-[#adadad]" style={heroStyle(2)}>
             Vectyr extracts your brand from wherever it's hiding, structures it so humans and AI can both actually use it, and installs it everywhere your team works. No more briefing vendors from memory. No more AI output that sounds like your competitor.
           </p>
 
-          <div className="mt-10">
+          <div className="mt-10" style={heroStyle(3)}>
             <a href="/demo"><Button size="lg">Book a Demo</Button></a>
           </div>
         </div>
