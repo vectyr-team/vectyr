@@ -91,8 +91,8 @@ const Header = () => {
           className="absolute left-1/2 -translate-x-1/2"
           style={shouldAnimate ? {
             opacity: animateIn ? 1 : 0,
-            transform: animateIn ? 'translateX(-50%) scale(1)' : 'translateX(-50%) scale(0.2)',
-            transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
+            transform: animateIn ? 'translateX(-50%) scale(1)' : 'translateX(-50%) scale(1.35)',
+            transition: 'opacity 1s ease-out, transform 1s ease-out',
             transitionDelay: '0.1s',
           } : undefined}
         >
