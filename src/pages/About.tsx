@@ -234,7 +234,7 @@ const About = () => {
       <section className="relative px-6 py-20 md:py-48 bg-black overflow-hidden">
         <img src={ctaBg} alt="" className="absolute inset-0 z-0 w-full h-full object-cover opacity-30 pointer-events-none" />
         <div className="relative z-10 mx-auto max-w-[1600px] text-center">
-          <h2 className="font-headline font-normal text-[3.5rem] leading-[0.95] tracking-normal text-foreground md:text-[5rem] md:max-w-[770px] md:mx-auto mb-8">
+          <h2 className="font-headline font-normal text-[3.5rem] leading-[0.95] tracking-normal text-foreground md:text-[5rem] max-w-none md:max-w-[770px] md:mx-auto mb-8">
             YOU'VE BUILT SOMETHING REAL. YOUR BRAND SHOULD <span className="text-primary">SAY SO.</span>
           </h2>
 
