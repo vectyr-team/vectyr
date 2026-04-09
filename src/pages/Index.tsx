@@ -34,7 +34,7 @@ const Index = () => {
             YOUR BRAND IS LIVING IN YOUR HEAD. <span className="text-primary">NOWHERE ELSE.</span>
           </h1>
 
-          <p className="mt-4 md:mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
+          <p className="mt-4 md:mt-8 max-w-2xl font-body text-sm md:text-lg font-light leading-relaxed text-muted-foreground">
             Vectyr extracts your brand from wherever it's hiding, structures it so humans and AI can both actually use it, and installs it everywhere your team works. No more briefing vendors from memory. No more AI output that sounds like your competitor.
           </p>
 
