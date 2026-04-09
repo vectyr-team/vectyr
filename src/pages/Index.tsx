@@ -120,7 +120,7 @@ const Index = () => {
                   <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
                     {card.num} / Problem
                   </span>
-                  <h3 className="font-body font-medium text-[2rem] text-foreground mt-4">
+                  <h3 className="font-body font-medium text-2xl leading-tight text-foreground mt-4">
                     {card.title}
                   </h3>
                   <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground">
