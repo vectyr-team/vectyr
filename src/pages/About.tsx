@@ -43,9 +43,12 @@ const About = () => {
         <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Left column */}
           <div>
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground mb-6 block">
-              The Indictment ————
-            </span>
+            <div className="flex items-center gap-4 mb-6">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+                The Indictment
+              </span>
+              <span className="w-12 h-px bg-muted-foreground" />
+            </div>
 
             <h2 className="font-headline font-light text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl">
               THE INDUSTRY HAS BEEN SELLING YOU THE WRONG{" "}
@@ -89,9 +92,12 @@ const About = () => {
         <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Left column */}
           <div>
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground mb-6 block">
-              The Founder ————
-            </span>
+            <div className="flex items-center gap-4 mb-6">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+                The Founder
+              </span>
+              <span className="w-12 h-px bg-muted-foreground" />
+            </div>
 
             <h2 className="font-headline font-light text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl mb-10">
               TWENTY YEARS<br />
