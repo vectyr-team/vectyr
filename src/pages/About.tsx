@@ -229,6 +229,37 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Closing CTA */}
+      <section className="px-6 py-32 md:py-48">
+        <div className="mx-auto max-w-[1300px] text-center">
+          <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-[7rem] mb-8">
+            YOU'VE BUILT<br />
+            SOMETHING REAL.<br />
+            YOUR BRAND SHOULD<br />
+            <span className="text-primary">SAY SO.</span>
+          </h2>
+
+          <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl mx-auto mb-12">
+            The gap between what you've built and what the market currently sees is infrastructure. We fix infrastructure.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Link
+              to="/contact"
+              className="inline-block bg-primary text-primary-foreground font-mono text-sm uppercase tracking-[0.15em] px-10 py-4 hover:bg-primary/90 transition-colors"
+            >
+              Start with a free diagnostic
+            </Link>
+            <Link
+              to="/demo"
+              className="font-body text-base font-semibold text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+            >
+              See BrandOS in action →
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
