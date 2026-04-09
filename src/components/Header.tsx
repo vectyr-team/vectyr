@@ -11,8 +11,8 @@ const socialLinks = [
 ];
 
 const navLinks = [
-  { to: "/about", label: "About" },
   { to: "/demo", label: "Demo" },
+  { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ];
 
