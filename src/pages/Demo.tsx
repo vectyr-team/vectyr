@@ -29,11 +29,11 @@ const Demo = () => {
             EXPERIENCE <span className="text-primary">BRANDOS.</span>
           </h1>
 
-          <p className="mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
+          <p className="mt-4 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
             Walk through the platform, see how your brand gets structured, and understand exactly what you're getting before you commit.
           </p>
 
-          <div className="mt-8 md:mt-12">
+          <div className="mt-6 md:mt-8">
             <iframe
               src="https://links.vectyr.com/widget/booking/LNPnkvxkpEcnG3noYld1"
               style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "700px" }}
