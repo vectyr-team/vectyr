@@ -2,6 +2,13 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import vectyrLogo from "@/assets/vectyr-logo.svg";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { Icon } from "@iconify/react";
+
+const socialLinks = [
+  { href: "https://www.youtube.com/@vectyrbrands", icon: "mdi:youtube", label: "YouTube" },
+  { href: "https://www.behance.net/vectyr", icon: "mdi:behance", label: "Behance" },
+  { href: "https://www.linkedin.com/company/vectyr/", icon: "mdi:linkedin", label: "LinkedIn" },
+];
 
 const navLinks = [
   { to: "/about", label: "About" },
