@@ -297,7 +297,7 @@ const Index = () => {
             ].map((card, i) => (
               <ScrollSection key={i} className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1}`}>
                 <Icon icon="tdesign:quote-filled" className="text-primary text-3xl mb-3" />
-                <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                <p className="font-body text-sm leading-relaxed text-muted-foreground flex-1">
                   {card.quote}
                 </p>
                 <div className="mt-6">
