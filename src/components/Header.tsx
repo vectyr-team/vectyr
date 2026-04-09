@@ -39,9 +39,21 @@ const Header = () => {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-background/80 backdrop-blur-md px-8 py-8">
-        {/* Left spacer */}
-        {!isMobile && <div className="w-[200px]" />}
-        {isMobile && <div className="w-8" />}
+        {/* Left: social icons */}
+        <div className="flex items-center gap-4">
+          {socialLinks.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label={s.label}
+            >
+              <Icon icon={s.icon} width={20} height={20} />
+            </a>
+          ))}
+        </div>
 
         {/* Center: logo */}
         <Link to="/" className="absolute left-1/2 -translate-x-1/2">
