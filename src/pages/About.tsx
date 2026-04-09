@@ -218,7 +218,7 @@ const About = () => {
                 <span className="font-mono text-xs text-muted-foreground mb-4 block">
                   {card.num}
                 </span>
-                <h3 className="font-headline font-normal text-xl md:text-2xl text-foreground uppercase mb-4">
+                <h3 className="font-body font-semibold text-lg md:text-xl text-foreground uppercase mb-4">
                   {card.title}
                 </h3>
                 <p className="font-body text-sm md:text-base font-light leading-relaxed text-muted-foreground">
