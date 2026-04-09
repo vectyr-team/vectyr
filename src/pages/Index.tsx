@@ -59,7 +59,7 @@ const Index = () => {
           </ScrollSection>
 
           {/* Right – stats grid */}
-          <ScrollSection className="grid grid-cols-2 gap-px bg-border scroll-animate-delay-2">
+          <ScrollSection className="grid grid-cols-2 gap-px scroll-animate-delay-2">
             {[
               { value: "$4,500", desc: "One time fee. Brand Codex built and installed. Done-for-you." },
               { value: "1–2", desc: "Sessions of your time. We do everything else and deliver it." },
@@ -97,7 +97,7 @@ const Index = () => {
           </ScrollSection>
 
           {/* Problem cards */}
-          <div className="mt-16 grid gap-px bg-border md:grid-cols-3">
+          <div className="mt-16 grid gap-px md:grid-cols-3">
             {[
               {
                 num: "01",
@@ -162,7 +162,7 @@ const Index = () => {
           </ScrollSection>
 
           {/* Product cards */}
-          <div className="mt-16 grid gap-px bg-border md:grid-cols-3">
+          <div className="mt-16 grid gap-px md:grid-cols-3">
             {[
               {
                 badge: "Start Here",
@@ -276,7 +276,7 @@ const Index = () => {
             </h2>
           </ScrollSection>
 
-          <div className="mt-16 grid gap-px bg-border md:grid-cols-3">
+          <div className="mt-16 grid gap-px md:grid-cols-3">
             {[
               {
                 quote: "Vectyr questions, assesses and validates every assumption a company builder makes about their identity and value proposition. They build brand in the confirmed context of the market, customer needs, and the offering.",
@@ -333,7 +333,7 @@ const Index = () => {
             </p>
           </ScrollSection>
 
-          <div className="mt-16 grid gap-px bg-border md:grid-cols-3">
+          <div className="mt-16 grid gap-px md:grid-cols-3">
             {[
               {
                 dot: "bg-muted-foreground",
