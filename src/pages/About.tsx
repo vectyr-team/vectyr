@@ -4,14 +4,16 @@ import ctaBg from "@/assets/cta-bg.jpg";
 import bodXWatermark from "@/assets/bodX-watermark.svg";
 import Header from "@/components/Header";
 import steveTall from "@/assets/steve-tall.jpg";
+import aboutHeroBg from "@/assets/about-hero-bg.jpg";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-[#151616]">
       <Header />
 
-      <section className="px-6 pt-28 pb-8 md:pt-52 md:pb-24 min-h-[80vh] flex items-center">
-        <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+      <section className="relative px-6 pt-28 pb-8 md:pt-52 md:pb-24 min-h-[80vh] flex items-center overflow-hidden">
+        <img src={aboutHeroBg} alt="" className="absolute inset-0 z-0 w-full h-full object-cover pointer-events-none" />
+        <div className="relative z-10 mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Left column */}
           <div>
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">
