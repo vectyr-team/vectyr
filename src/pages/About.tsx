@@ -211,7 +211,7 @@ const About = () => {
               },
             ].map((card) => (
               <div key={card.num} className="bg-background p-8 md:p-10">
-                <span className="font-mono text-sm text-foreground/40 mb-4 block">
+                <span className="font-mono text-3xl text-foreground/20 mb-4 block">
                   {card.num}
                 </span>
                 <h3 className="font-body font-semibold text-lg md:text-xl text-foreground mb-4">
