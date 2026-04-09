@@ -371,10 +371,10 @@ const Index = () => {
                 <h3 className="font-body font-medium text-2xl leading-tight text-foreground">
                   {card.title}
                 </h3>
-                <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground flex-1">
                   {card.desc}
                 </p>
-                <a href={card.url} className="mt-6">
+                <a href={card.url} className="mt-6 self-start">
                   <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                     {card.btnText}
                   </Button>
