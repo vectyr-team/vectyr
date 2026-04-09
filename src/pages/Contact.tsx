@@ -29,7 +29,7 @@ const Contact = () => {
           </h1>
 
           <p className="mt-4 max-w-2xl mx-auto font-body text-lg font-light leading-relaxed text-muted-foreground">
-            Whether you're ready to start or just have questions, we're here. If you'd rather send an email, use the form below, if you want to see a demo and talk to a human being on video chat <a href="/demo" className="text-primary underline hover:text-primary/80 transition-colors">click here</a>.
+            Whether you're ready to start or just have questions, we're here. If you'd rather send an email, use the form below, if you want to see a cool demo and talk to a real human being on video chat <a href="/demo" className="text-primary underline hover:text-primary/80 transition-colors">click here</a>.
           </p>
 
           <div className="mt-6 md:mt-8 max-w-2xl mx-auto">
