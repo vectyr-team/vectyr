@@ -167,6 +167,68 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* How We Work */}
+      <section className="px-6 py-24 md:py-32">
+        <div className="mx-auto max-w-[1300px]">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              How We Work
+            </span>
+            <span className="w-12 h-px bg-muted-foreground" />
+          </div>
+
+          <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl mb-8">
+            LINES WE DON'T CROSS<br />
+            <span className="text-primary">FOR REVENUE.</span>
+          </h2>
+
+          <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl mb-16">
+            Every agency has values. Most of them are decorative. These are the ones that have actually cost us money, and we'd do it the same way again.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-px bg-border">
+            {[
+              {
+                num: "01",
+                title: "We don't take clients we can't get behind",
+                body: "Not for cash flow. Not for a referral relationship. Not under pressure from a slow month. If we can't genuinely care about what you're building, we are not the right partner, and we'll say so directly. The wrong client relationship is worse for both sides than no relationship at all.",
+              },
+              {
+                num: "02",
+                title: "We don't sell design without strategy",
+                body: "If the positioning isn't solid, the logo doesn't get made. Clients who want to start with execution are not our clients. The order of operations is non-negotiable because it's the only order that produces work that actually holds up when the market pushes back on it.",
+              },
+              {
+                num: "03",
+                title: "We tell you what you need to hear",
+                body: (
+                  <>
+                    We tell clients what they need to hear, not what they came in wanting to hear. If their positioning is weak, we surface it. If their target customer is wrong, we say so. <span className="font-semibold text-foreground">Comfortable lies produce expensive problems. Uncomfortable truths produce results</span>, and that is the only version of this relationship worth having.
+                  </>
+                ),
+              },
+              {
+                num: "04",
+                title: "No templates. Everything built from the actual business",
+                body: "Every client's Brand Codex is extracted from the actual reality of their business: their market position, their customer psychology, their competitive landscape, their culture. Nothing is assumed. Nothing is reused. The system was built for you, which means it couldn't belong to any other company, because it came from inside yours.",
+              },
+            ].map((card) => (
+              <div key={card.num} className="bg-card p-8 md:p-10">
+                <span className="font-mono text-xs text-muted-foreground mb-4 block">
+                  {card.num}
+                </span>
+                <h3 className="font-headline font-normal text-xl md:text-2xl text-foreground uppercase mb-4">
+                  {card.title}
+                </h3>
+                <p className="font-body text-sm md:text-base font-light leading-relaxed text-muted-foreground">
+                  {card.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
