@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
+import steveTall from "@/assets/steve-tall.jpg";
 
 const About = () => {
   return (
