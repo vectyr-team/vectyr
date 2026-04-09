@@ -135,6 +135,78 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* The System */}
+      <section className="border-t border-border bg-background px-6 py-24">
+        <div className="mx-auto max-w-[1300px]">
+          {/* Overline with line */}
+          <div className="flex items-center gap-4 mb-10">
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              The System
+            </span>
+            <div className="h-px w-16 bg-muted-foreground/40" />
+          </div>
+
+          <h2 className="font-headline text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
+            BUILT. INSTALLED. RUNNING.
+          </h2>
+
+          <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
+            Three products. One complete lifecycle. Your brand doesn't sit in a folder. It runs.
+          </p>
+
+          {/* Product cards */}
+          <div className="mt-16 grid gap-px bg-border md:grid-cols-3">
+            {[
+              {
+                badge: "Start Here",
+                badgeStyle: "bg-primary text-primary-foreground",
+                title: "Brand Codex",
+                pricing: "$4,500 flat  /  includes lifetime BrandOS access",
+                desc: "Done-for-you brand strategy. Vectyr runs the extraction, synthesis, and AI installation. You bring the knowledge. We build the rest. One to two sessions of your time. Everything else is handled.",
+                link: "See how it works →",
+              },
+              {
+                badge: "Included",
+                badgeStyle: "border border-border text-muted-foreground",
+                title: "BrandOS",
+                pricing: "os.vectyr.com  /  lifetime access",
+                desc: "The platform where the Brand Codex lives, gets distributed, and gets accessed by everyone who needs it. Your team, your vendors, your AI tools. One place. One source. No more briefing from memory.",
+                link: "See the platform →",
+              },
+              {
+                badge: "Monthly",
+                badgeStyle: "border border-border text-muted-foreground",
+                title: "BrandPulse",
+                pricing: "$195 per month  /  no long contracts",
+                desc: "Quarterly brand review. Drift caught before it compounds. Brand Performance Indicator report after every cycle. One advisory credit per quarter for fast gut-checks between scheduled calls. The brand keeps running.",
+                link: "See how Pulse works →",
+              },
+            ].map((card, i) => (
+              <div key={i} className="bg-card p-8 flex flex-col justify-between min-h-[400px]">
+                <div>
+                  <span className={`inline-block px-3 py-1 font-mono text-xs uppercase tracking-[0.15em] rounded-sm ${card.badgeStyle}`}>
+                    {card.badge}
+                  </span>
+                  <h3 className="font-headline text-3xl text-foreground mt-6 md:text-4xl">
+                    {card.title}
+                  </h3>
+                  <p className="mt-4 font-mono text-xs text-muted-foreground tracking-wide">
+                    {card.pricing}
+                  </p>
+                  <div className="h-px w-full bg-border my-6" />
+                  <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                    {card.desc}
+                  </p>
+                </div>
+                <a href="#" className="mt-8 font-body text-sm font-medium text-foreground underline underline-offset-4 hover:text-primary transition-colors">
+                  {card.link}
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
