@@ -41,7 +41,7 @@ const About = () => {
         <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Left column */}
           <div>
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground mb-6 block">
               The Indictment ————
             </span>
 
