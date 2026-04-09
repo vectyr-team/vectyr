@@ -157,7 +157,7 @@ const Index = () => {
             </h2>
 
             <p className="mt-4 md:mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
-              Three products, one complete solution. Your brand doesn't sit in a folder, it lives everywhere, it runs, it never goes stale.
+              We build your brand strategy, structure it so your team and your AI tools can both actually use it, and install it everywhere it needs to run before we hand anything over. Get a brand system that runs whether you're in the room or not.
             </p>
           </ScrollSection>
 
