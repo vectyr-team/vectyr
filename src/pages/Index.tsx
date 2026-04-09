@@ -44,7 +44,7 @@ const Index = () => {
       </section>
 
       {/* Villain / Brand Entropy */}
-      <section className="border-t border-border bg-card px-6 py-24">
+      <section className="bg-card px-6 py-24">
         <div className="mx-auto grid max-w-[1300px] items-center gap-16 lg:grid-cols-2">
           {/* Left – quote */}
           <div>
@@ -75,7 +75,7 @@ const Index = () => {
       </section>
 
       {/* The Full Lifecycle */}
-      <section className="border-t border-border bg-background px-6 py-24">
+      <section className="bg-background px-6 py-24">
         <div className="mx-auto max-w-[1300px]">
           {/* Overline with line */}
           <div className="flex items-center gap-4 mb-10">
@@ -137,7 +137,7 @@ const Index = () => {
       </section>
 
       {/* The System */}
-      <section className="relative border-t border-border bg-[#000000] px-6 py-24 overflow-hidden">
+      <section className="relative bg-[#000000] px-6 py-24 overflow-hidden">
         <img src="/images/system-bg.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-[0.4] pointer-events-none" />
         <div className="relative z-10 mx-auto max-w-[1300px]">
           {/* Overline with line */}
@@ -192,7 +192,7 @@ const Index = () => {
                   <p className="mt-4 font-mono text-xs text-muted-foreground tracking-wide">
                     {card.pricing}
                   </p>
-                  <div className="h-px w-full bg-border my-6" />
+                  <div className="h-px w-full bg-border/30 my-6" />
                   <p className="font-body text-sm leading-relaxed text-muted-foreground">
                     {card.desc}
                   </p>
