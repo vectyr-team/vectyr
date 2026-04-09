@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 
 const codeLines = [
   { label: "brand.name", value: '"Vectyr"', color: "text-primary" },
-  { label: "brand.position", value: '"Brand Infrastructure"', color: "text-primary" },
+  { label: "brand.position", value: '"Built for humans and AI"', color: "text-primary" },
   { label: "voice.tone", value: '["direct", "confident", "founder-level"]', color: "text-primary" },
   { label: "voice.avoid", value: '["corporate jargon", "filler"]', color: "text-muted-foreground" },
   { label: "audience.primary", value: '"Founders who built something real"', color: "text-primary" },
   { label: "palette.accent", value: '"#FF5000"', color: "text-primary" },
   { label: "palette.bg", value: '"#090909"', color: "text-muted-foreground" },
-  { label: "messaging.tagline", value: '"Extracted. Built. Installed."', color: "text-primary" },
-  { label: "differentiator", value: '"Strategy before decoration"', color: "text-primary" },
+  { label: "messaging.tagline", value: '"Brand or Die®"', color: "text-primary" },
+  { label: "differentiator", value: '"Brand Infrastructure"', color: "text-primary" },
   { label: "codex.status", value: '"generating..."', color: "text-muted-foreground" },
 ];
 
@@ -49,7 +49,7 @@ const BrandCodexAnimation = ({ visible }: { visible: boolean }) => {
         <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
         <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
         <span className="ml-3 font-mono text-[10px] text-muted-foreground/50 uppercase tracking-wider">
-          brand-codex.json
+          BRAND-CODEX.JSON
         </span>
       </div>
 
