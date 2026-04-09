@@ -52,7 +52,7 @@ const Index = () => {
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground mb-6 block">
               THE VILLAIN / BRAND ENTROPY
             </span>
-            <blockquote className="font-body text-xl font-light italic leading-relaxed text-foreground md:text-2xl">
+            <blockquote className="font-body text-base font-light italic leading-relaxed text-foreground md:text-2xl">
               "Your brand doesn't collapse all at onece. It becomes a little less recognizable every week, a little more generic, until one day you look at what the market sees and barely{" "}
               <span className="text-primary">recognize it.</span>"
             </blockquote>
