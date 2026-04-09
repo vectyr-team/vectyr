@@ -103,7 +103,7 @@ const Index = () => {
               {
                 num: "01",
                 title: "No Strategy Exists",
-                desc: "The brand lives in the founder's head, or has already fragmented across a team with no alignment. Everyone is doing their best. Nobody is working from the same document.",
+                desc: "The brand lives in the founder's head, or has already fragmented across a team with no alignment. Everyone is doing their best. Nobody is working from the same source of deliberately articulated brand truth.",
                 solved: "Brand Codex",
               },
               {
