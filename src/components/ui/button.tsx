@@ -5,12 +5,12 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-body font-medium tracking-wide ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-body font-medium tracking-wide ring-offset-background transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 relative overflow-hidden",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        outline: "border-2 border-primary bg-transparent text-primary hover:border-foreground hover:text-foreground hover:bg-transparent",
+        default: "bg-primary text-primary-foreground hover:shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:scale-[1.03] hover:-translate-y-[1px] active:scale-[0.98]",
+        outline: "border-2 border-primary bg-transparent text-primary hover:border-foreground hover:text-foreground hover:bg-transparent hover:scale-[1.03] hover:-translate-y-[1px] active:scale-[0.98]",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
