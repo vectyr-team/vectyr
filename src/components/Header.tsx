@@ -16,15 +16,34 @@ const navLinks = [
   { to: "/contact", label: "Contact" },
 ];
 
+// Delay order: innermost (closest to logo/center) animates first
+// Social icons (left side): index 2 (LinkedIn) first, then 1, then 0
+// Nav links (right side): index 0 (Demo) first, then 1, then 2
+const socialDelayOrder = [2, 1, 0]; // reversed: innermost first
+const navDelayOrder = [0, 1, 2]; // normal: innermost first
+
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [animateIn, setAnimateIn] = useState(false);
   const isMobile = useIsMobile();
   const location = useLocation();
+  const isHome = location.pathname === "/";
 
   // Close menu on route change
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname]);
+
+  // Trigger entrance animation on home page (md+ only)
+  useEffect(() => {
+    if (isHome && !isMobile) {
+      // Small delay to ensure elements are rendered
+      const timer = setTimeout(() => setAnimateIn(true), 100);
+      return () => clearTimeout(timer);
+    } else {
+      setAnimateIn(true); // No animation on other pages, just show
+    }
+  }, [isHome, isMobile]);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -36,23 +55,34 @@ const Header = () => {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
+  const shouldAnimate = isHome && !isMobile;
+
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-background/80 backdrop-blur-md px-4 md:px-8 py-4 md:py-6">
         {/* Left: social icons */}
         <div className="flex items-center gap-2 md:gap-4">
-          {socialLinks.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label={s.label}
-            >
-              <Icon icon={s.icon} width={20} height={20} />
-            </a>
-          ))}
+          {socialLinks.map((s, i) => {
+            const delayIndex = socialDelayOrder.indexOf(i);
+            return (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label={s.label}
+                style={shouldAnimate ? {
+                  opacity: animateIn ? 1 : 0,
+                  transform: animateIn ? 'translateY(0)' : 'translateY(12px)',
+                  transition: `opacity 0.5s ease-out, transform 0.5s ease-out`,
+                  transitionDelay: `${0.5 + delayIndex * 0.1}s`,
+                } : undefined}
+              >
+                <Icon icon={s.icon} width={20} height={20} />
+              </a>
+            );
+          })}
         </div>
 
         {/* Center: logo */}
@@ -85,15 +115,24 @@ const Header = () => {
           </button>
         ) : (
           <nav className="flex items-center gap-5 md:gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link, i) => {
+              const delayIndex = navDelayOrder.indexOf(i);
+              return (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors"
+                  style={shouldAnimate ? {
+                    opacity: animateIn ? 1 : 0,
+                    transform: animateIn ? 'translateY(0)' : 'translateY(12px)',
+                    transition: `opacity 0.5s ease-out, transform 0.5s ease-out`,
+                    transitionDelay: `${0.5 + delayIndex * 0.1}s`,
+                  } : undefined}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
         )}
       </header>
