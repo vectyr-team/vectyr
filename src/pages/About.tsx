@@ -23,7 +23,7 @@ const About = () => {
 
           <div className="mt-16 grid gap-px bg-border md:grid-cols-2">
             <div className="bg-card p-8">
-              <h3 className="font-body font-medium text-2xl leading-tight text-foreground">
+              <h3 className="font-body font-semibold text-2xl leading-tight text-foreground">
                 Our Mission
               </h3>
               <p className="mt-4 font-body text-sm font-light leading-relaxed text-muted-foreground">
@@ -31,7 +31,7 @@ const About = () => {
               </p>
             </div>
             <div className="bg-card p-8">
-              <h3 className="font-body font-medium text-2xl leading-tight text-foreground">
+              <h3 className="font-body font-semibold text-2xl leading-tight text-foreground">
                 Our Approach
               </h3>
               <p className="mt-4 font-body text-sm font-light leading-relaxed text-muted-foreground">

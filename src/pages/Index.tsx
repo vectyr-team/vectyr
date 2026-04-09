@@ -123,7 +123,7 @@ const Index = () => {
                   <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
                     {card.num} / Problem
                   </span>
-                  <h3 className="font-body font-medium text-2xl leading-tight text-foreground mt-4">
+                  <h3 className="font-body font-semibold text-2xl leading-tight text-foreground mt-4">
                     {card.title}
                   </h3>
                   <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground">
@@ -191,7 +191,7 @@ const Index = () => {
                   <span className={`inline-block px-3 py-1 font-mono text-xs uppercase tracking-[0.15em] rounded-sm ${card.badgeStyle}`}>
                     {card.badge}
                   </span>
-                  <h3 className="font-body font-medium text-2xl leading-tight text-foreground mt-6">
+                  <h3 className="font-body font-semibold text-2xl leading-tight text-foreground mt-6">
                     {card.title}
                   </h3>
                   <p className="mt-4 font-mono text-xs text-muted-foreground tracking-wide">
@@ -367,7 +367,7 @@ const Index = () => {
                     {card.label}
                   </span>
                 </div>
-                <h3 className="font-body font-medium text-2xl leading-tight text-foreground">
+                <h3 className="font-body font-semibold text-2xl leading-tight text-foreground">
                   {card.title}
                 </h3>
                 <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground flex-1">

@@ -22,7 +22,7 @@ const Contact = () => {
 
           <div className="mt-16 grid gap-px bg-border md:grid-cols-3">
             <div className="bg-card p-8">
-              <h3 className="font-body font-medium text-2xl leading-tight text-foreground">
+              <h3 className="font-body font-semibold text-2xl leading-tight text-foreground">
                 Free Diagnostic
               </h3>
               <p className="mt-4 font-body text-sm font-light leading-relaxed text-muted-foreground">
@@ -35,7 +35,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="bg-card p-8">
-              <h3 className="font-body font-medium text-2xl leading-tight text-foreground">
+              <h3 className="font-body font-semibold text-2xl leading-tight text-foreground">
                 Email Us
               </h3>
               <p className="mt-4 font-body text-sm font-light leading-relaxed text-muted-foreground">
@@ -48,7 +48,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="bg-card p-8">
-              <h3 className="font-body font-medium text-2xl leading-tight text-foreground">
+              <h3 className="font-body font-semibold text-2xl leading-tight text-foreground">
                 Book Directly
               </h3>
               <p className="mt-4 font-body text-sm font-light leading-relaxed text-muted-foreground">
