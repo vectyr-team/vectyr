@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-background/80 backdrop-blur-md px-8 py-8">">
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-background/80 backdrop-blur-md px-8 py-8">
         {/* Left: nav links on desktop, hamburger on mobile */}
         {isMobile ? (
           <button
