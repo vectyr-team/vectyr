@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import ScrollSection from "@/components/ScrollSection";
+import BrandCodexAnimation from "@/components/BrandCodexAnimation";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@iconify/react";
 
@@ -47,22 +48,26 @@ const Index = () => {
         <div className="absolute inset-0 bg-background/70" />
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-[1300px] mx-auto">
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block" style={heroStyle(0)}>
-            Built for Humans and AI
-          </span>
+        <div className="relative z-10 w-full max-w-[1300px] mx-auto flex items-center justify-between gap-12">
+          <div>
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block" style={heroStyle(0)}>
+              Built for Humans and AI
+            </span>
 
-          <h1 className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-[625px]" style={heroStyle(1)}>
-            YOUR BRAND IS LIVING IN YOUR HEAD. <span className="text-primary">NOWHERE ELSE.</span>
-          </h1>
+            <h1 className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-[625px]" style={heroStyle(1)}>
+              YOUR BRAND IS LIVING IN YOUR HEAD. <span className="text-primary">NOWHERE ELSE.</span>
+            </h1>
 
-          <p className="mt-4 md:mt-8 max-w-[37rem] font-body text-base md:text-lg font-light leading-relaxed text-[#adadad]" style={heroStyle(2)}>
-            Vectyr extracts your brand from wherever it's hiding, structures it so humans and AI can both actually use it, and installs it everywhere your team works. No more briefing vendors from memory. No more AI output that sounds like your competitor.
-          </p>
+            <p className="mt-4 md:mt-8 max-w-[37rem] font-body text-base md:text-lg font-light leading-relaxed text-[#adadad]" style={heroStyle(2)}>
+              Vectyr extracts your brand from wherever it's hiding, structures it so humans and AI can both actually use it, and installs it everywhere your team works. No more briefing vendors from memory. No more AI output that sounds like your competitor.
+            </p>
 
-          <div className="mt-10" style={heroStyle(3)}>
-            <a href="/demo"><Button size="lg">Book a Demo</Button></a>
+            <div className="mt-10" style={heroStyle(3)}>
+              <a href="/demo"><Button size="lg">Book a Demo</Button></a>
+            </div>
           </div>
+
+          <BrandCodexAnimation visible={heroVisible} />
         </div>
       </section>
 
