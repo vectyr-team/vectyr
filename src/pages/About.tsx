@@ -169,7 +169,7 @@ const About = () => {
       </section>
 
       {/* How We Work */}
-      <section className="px-6 py-24 md:py-32">
+      <section className="px-6 py-24 md:py-32 bg-[#121212]">
         <div className="mx-auto max-w-[1300px]">
           <div className="flex items-center gap-4 mb-6">
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
