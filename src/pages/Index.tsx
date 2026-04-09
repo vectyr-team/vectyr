@@ -164,7 +164,6 @@ const Index = () => {
                 title: "Brand Codex",
                 pricing: "$4,500 flat  /  includes lifetime BrandOS access",
                 desc: "Done-for-you brand strategy. Vectyr runs the extraction, synthesis, and AI installation. You bring the knowledge. We build the rest. One to two sessions of your time. Everything else is handled.",
-                link: "See how it works →",
               },
               {
                 badge: "Included",
@@ -172,7 +171,6 @@ const Index = () => {
                 title: "BrandOS",
                 pricing: "os.vectyr.com  /  lifetime access",
                 desc: "The platform where the Brand Codex lives, gets distributed, and gets accessed by everyone who needs it. Your team, your vendors, your AI tools. One place. One source. No more briefing from memory.",
-                link: "See the platform →",
               },
               {
                 badge: "Monthly",
@@ -180,7 +178,6 @@ const Index = () => {
                 title: "BrandPulse",
                 pricing: "$195 per month  /  no long contracts",
                 desc: "Quarterly brand review. Drift caught before it compounds. Brand Performance Indicator report after every cycle. One advisory credit per quarter for fast gut-checks between scheduled calls. The brand keeps running.",
-                link: "See how Pulse works →",
               },
             ].map((card, i) => (
               <div key={i} className="bg-card p-8 flex flex-col justify-between min-h-[400px]">
@@ -199,9 +196,6 @@ const Index = () => {
                     {card.desc}
                   </p>
                 </div>
-                <a href="#" className="mt-8 font-body text-sm font-medium text-foreground underline underline-offset-4 hover:text-primary transition-colors">
-                  {card.link}
-                </a>
               </div>
             ))}
           </div>
