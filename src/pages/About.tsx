@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ctaBg from "@/assets/cta-bg.jpg";
+import bodXWatermark from "@/assets/bodX-watermark.svg";
 import Header from "@/components/Header";
 import steveTall from "@/assets/steve-tall.jpg";
 
@@ -41,8 +42,9 @@ const About = () => {
       </section>
 
       {/* The Indictment */}
-      <section className="px-6 py-24 md:py-32 bg-neutral-950">
-        <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+      <section className="relative px-6 py-24 md:py-32 bg-neutral-950 overflow-hidden">
+        <img src={bodXWatermark} alt="" className="absolute inset-0 z-0 w-full h-full object-contain opacity-10 pointer-events-none" />
+        <div className="relative z-10 mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Left column */}
           <div>
             <div className="flex items-center gap-4 mb-6">
