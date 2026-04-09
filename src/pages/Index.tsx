@@ -242,7 +242,7 @@ const Index = () => {
             </p>
 
             <p>
-              <span className="text-foreground font-semibold">Brands that look like brands but cannot brief a vendor without a two-hour phone call. Cannot trust a single AI output to sound like themselves. Cannot explain to a new hire what the company actually believes.</span> The industry calls this brand. It is not brand, it's decoration with a budget attached, and the founders paying for it deserve better.
+              Brands that look like brands but cannot brief a vendor without a two-hour phone call. Cannot trust a single AI output to sound like themselves. Cannot explain to a new hire what the company actually believes. The industry calls this brand. It is not brand, it's decoration with a budget attached, and the founders paying for it deserve better.
             </p>
 
             <p>
