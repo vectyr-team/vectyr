@@ -158,9 +158,12 @@ const About = () => {
               alt="Steve Reed, Founder of Vectyr"
               className="w-full max-w-md object-cover rounded"
             />
-            <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground max-w-md">
-              Steve Reed &nbsp;/&nbsp; Founder, Vectyr &nbsp;/&nbsp; Austin, Texas
-            </p>
+            <div className="max-w-md">
+              <p className="font-body text-base font-bold text-foreground">Steve Reed</p>
+              <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground mt-1">
+                Founder, Vectyr &nbsp;/&nbsp; Austin, TX
+              </p>
+            </div>
           </div>
         </div>
       </section>
