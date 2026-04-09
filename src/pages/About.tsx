@@ -50,7 +50,7 @@ const About = () => {
           {/* Left column */}
           <div>
             <div className="flex items-center gap-4 mb-6">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
                 The Indictment
               </span>
               <span className="w-12 h-px bg-muted-foreground" />
@@ -99,7 +99,7 @@ const About = () => {
           {/* Left column */}
           <div>
             <div className="flex items-center gap-4 mb-6">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
                 The Founder
               </span>
               <span className="w-12 h-px bg-muted-foreground" />
@@ -178,7 +178,7 @@ const About = () => {
       <section className="px-6 py-16 md:py-32 bg-[#121212]">
         <div className="mx-auto max-w-[1300px]">
           <div className="flex items-center gap-4 mb-6">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
               How We Work
             </span>
             <span className="w-12 h-px bg-muted-foreground" />
