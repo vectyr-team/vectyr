@@ -10,7 +10,7 @@ const About = () => {
     <div className="min-h-screen bg-[#151616]">
       <Header />
 
-      <section className="px-6 pt-40 pb-12 md:pt-52 md:pb-24">
+      <section className="px-6 pt-28 pb-8 md:pt-52 md:pb-24">
         <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Left column */}
           <div>
@@ -42,7 +42,7 @@ const About = () => {
       </section>
 
       {/* The Indictment */}
-      <section className="relative px-6 py-24 md:py-32 bg-neutral-950 overflow-hidden">
+      <section className="relative px-6 py-16 md:py-32 bg-neutral-950 overflow-hidden">
         <img src={bodXWatermark} alt="" className="absolute z-0 pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[300vw] min-h-[300vh] md:min-w-0 md:min-h-0 md:w-full md:h-full md:top-0 md:left-0 md:translate-x-0 md:translate-y-0 md:inset-0 object-contain" style={{ opacity: 0.03 }} />
         <div className="relative z-10 mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Left column */}
@@ -92,7 +92,7 @@ const About = () => {
         </div>
       </section>
       {/* The Founder */}
-      <section className="px-6 py-24 md:py-32">
+      <section className="px-6 py-16 md:py-32">
         <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Left column */}
           <div>
@@ -173,7 +173,7 @@ const About = () => {
       </section>
 
       {/* How We Work */}
-      <section className="px-6 py-24 md:py-32 bg-[#121212]">
+      <section className="px-6 py-16 md:py-32 bg-[#121212]">
         <div className="mx-auto max-w-[1300px]">
           <div className="flex items-center gap-4 mb-6">
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
@@ -231,7 +231,7 @@ const About = () => {
       </section>
 
       {/* Closing CTA */}
-      <section className="relative px-6 py-32 md:py-48 bg-black overflow-hidden">
+      <section className="relative px-6 py-20 md:py-48 bg-black overflow-hidden">
         <img src={ctaBg} alt="" className="absolute inset-0 z-0 w-full h-full object-cover opacity-30 pointer-events-none" />
         <div className="relative z-10 mx-auto max-w-[1600px] text-center">
           <h2 className="font-headline font-normal text-[3.5rem] leading-[0.95] tracking-normal text-foreground md:text-[5rem] md:max-w-[770px] md:mx-auto mb-8">
