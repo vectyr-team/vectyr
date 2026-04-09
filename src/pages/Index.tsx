@@ -207,6 +207,12 @@ const Index = () => {
               </ScrollSection>
             ))}
           </div>
+
+          <div className="mt-12 flex justify-center">
+            <a href="https://vectyr.com/demo">
+              <Button size="lg">Book a Demo</Button>
+            </a>
+          </div>
         </div>
       </section>
 
