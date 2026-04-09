@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-card">
       <Header />
 
       <section className="px-6 pt-24 pb-12 md:pt-32 md:pb-24">
