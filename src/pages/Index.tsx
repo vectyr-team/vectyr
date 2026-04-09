@@ -34,7 +34,7 @@ const Index = () => {
             YOUR BRAND IS LIVING IN YOUR HEAD. <span className="text-primary">NOWHERE ELSE.</span>
           </h1>
 
-          <p className="mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
+          <p className="mt-4 md:mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
             Vectyr extracts your brand from wherever it's hiding, structures it so humans and AI can both actually use it, and installs it everywhere your team works. No more briefing vendors from memory. No more AI output that sounds like your competitor.
           </p>
 
@@ -145,7 +145,7 @@ const Index = () => {
         <div className="relative z-10 mx-auto max-w-[1300px]">
           <ScrollSection>
             {/* Overline with line */}
-            <div className="flex items-center gap-4 mb-10">
+            <div className="flex items-center gap-4 mb-4 md:mb-10">
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
                 The System
               </span>
@@ -156,7 +156,7 @@ const Index = () => {
               BUILT. INSTALLED. RUNNING.
             </h2>
 
-            <p className="mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
+            <p className="mt-4 md:mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
               Three products, one complete solution. Your brand doesn't sit in a folder, it lives everywhere, it runs, it never goes stale.
             </p>
           </ScrollSection>
@@ -219,7 +219,7 @@ const Index = () => {
         <div className="mx-auto max-w-[1300px] grid gap-8 md:gap-16 lg:grid-cols-[1fr_1.5fr]">
           {/* Left – sticky heading */}
           <ScrollSection className="lg:sticky lg:top-24 lg:self-start">
-            <div className="flex items-center gap-4 mb-10">
+            <div className="flex items-center gap-4 mb-4 md:mb-10">
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
                 OUR RANT
               </span>
@@ -265,7 +265,7 @@ const Index = () => {
         <img src="/images/founders.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-[0.7] pointer-events-none" />
         <div className="relative z-10 mx-auto max-w-[1300px]">
           <ScrollSection>
-            <div className="flex items-center gap-4 mb-10">
+            <div className="flex items-center gap-4 mb-4 md:mb-10">
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary">
                 — Results
               </span>
@@ -317,7 +317,7 @@ const Index = () => {
       <section className="bg-background px-6 py-12 md:py-24">
         <div className="mx-auto max-w-[1300px]">
           <ScrollSection>
-            <div className="flex items-center gap-4 mb-10">
+            <div className="flex items-center gap-4 mb-4 md:mb-10">
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
                 Entry Points
               </span>
@@ -328,7 +328,7 @@ const Index = () => {
               MEET US WHERE YOU ARE
             </h2>
 
-            <p className="mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
+            <p className="mt-4 md:mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
               Vectyr has three entry points because forcing every founder through the same door loses the ones who aren't ready and slows down the ones who are.
             </p>
           </ScrollSection>
@@ -392,7 +392,7 @@ const Index = () => {
               YOUR Business IS BETTER THAN WHAT THE MARKET <span className="text-primary">CURRENTLY SEES.</span>
             </h2>
 
-            <p className="mt-8 max-w-xl font-body text-lg leading-relaxed" style={{ color: '#6B6B6B' }}>
+            <p className="mt-4 md:mt-8 max-w-xl font-body text-lg leading-relaxed" style={{ color: '#6B6B6B' }}>
               The gap between what you've built and how the market perceives it is your brand infrastructure. We build that infrastructure.
             </p>
 
