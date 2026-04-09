@@ -33,7 +33,7 @@ const Demo = () => {
             Walk through the platform, see how your brand gets structured, and understand exactly what you're getting before you commit.
           </p>
 
-          <div className="mt-16">
+          <div className="mt-8 md:mt-12">
             <iframe
               src="https://links.vectyr.com/widget/booking/LNPnkvxkpEcnG3noYld1"
               style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "700px" }}
