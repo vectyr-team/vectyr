@@ -255,6 +255,59 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Results / Testimonials */}
+      <section className="relative bg-[#000000] px-6 py-24 overflow-hidden">
+        <img src="/images/founders.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-[0.3] pointer-events-none" />
+        <div className="relative z-10 mx-auto max-w-[1300px]">
+          <ScrollSection>
+            <div className="flex items-center gap-4 mb-10">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary">
+                — Results
+              </span>
+            </div>
+
+            <h2 className="font-headline font-normal text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
+              WHAT BUILDERS <span className="text-primary">SAY.</span>
+            </h2>
+          </ScrollSection>
+
+          <div className="mt-16 grid gap-px bg-border md:grid-cols-3">
+            {[
+              {
+                quote: "Vectyr questions, assesses and validates every assumption a company builder makes about their identity and value proposition. They build brand in the confirmed context of the market, customer needs, and the offering.",
+                name: "David Clark",
+                role: "Tech Startup Founder",
+              },
+              {
+                quote: "We were struggling to define our ideal customer and create a cohesive brand identity. Vectyr's expertise was instrumental in transforming our business. We now have a clear brand identity that resonates with our ideal customer.",
+                name: "Tina Hancock",
+                role: "Fern Thatcher Co.",
+              },
+              {
+                quote: "Monday I got to use this for the first time and ended up landing a high-paying client. We all wouldn't be surviving without you and your knowledge. You are an important piece of starting a successful business.",
+                name: "Adam Layton",
+                role: "Energy Home Improvements",
+              },
+            ].map((card, i) => (
+              <ScrollSection key={i} className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1}`}>
+                <span className="font-headline text-4xl text-primary leading-none mb-6">"</span>
+                <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                  {card.quote}
+                </p>
+                <div className="mt-6">
+                  <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary">
+                    {card.name}
+                  </p>
+                  <p className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">
+                    {card.role}
+                  </p>
+                </div>
+              </ScrollSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Entry Points */}
       <section className="bg-background px-6 py-24">
         <div className="mx-auto max-w-[1300px]">
