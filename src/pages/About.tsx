@@ -1,49 +1,37 @@
 import Header from "@/components/Header";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-card">
+    <div className="min-h-screen bg-[#151616]">
       <Header />
 
-      <section className="px-6 pt-32 pb-12 md:pt-44 md:pb-24">
-        <div className="mx-auto max-w-[1300px]">
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">
-            About Vectyr
-          </span>
+      <section className="px-6 pt-40 pb-12 md:pt-52 md:pb-24">
+        <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+          {/* Left column */}
+          <div>
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">
+              About Vectyr
+            </span>
 
-          <h1 className="font-headline font-light text-5xl leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-4xl">
-            THE PEOPLE BEHIND <span className="text-primary">THE SYSTEM.</span>
-          </h1>
-
-          <p className="mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
-            Vectyr was built by brand strategists who got tired of watching great strategy die in a PDF. We decided to fix the infrastructure instead.
-          </p>
-
-          <div className="mt-16 grid gap-px bg-border md:grid-cols-2">
-            <div className="bg-card p-8">
-              <h3 className="font-body font-semibold text-2xl leading-tight text-foreground">
-                Our Mission
-              </h3>
-              <p className="mt-4 font-body text-sm font-light leading-relaxed text-muted-foreground">
-                To give every founder a brand system that actually works — one that their team can use, their AI tools can read, and their business can grow into.
-              </p>
-            </div>
-            <div className="bg-card p-8">
-              <h3 className="font-body font-semibold text-2xl leading-tight text-foreground">
-                Our Approach
-              </h3>
-              <p className="mt-4 font-body text-sm font-light leading-relaxed text-muted-foreground">
-                We extract, structure, and install. No fluff, no workshops that lead nowhere. Just a clear brand system built and running in weeks, not months.
-              </p>
-            </div>
+            <h1 className="font-headline font-light text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
+              TWENTY YEARS.{" "}
+              <span className="text-primary">ONE ANSWER.</span>
+            </h1>
           </div>
 
-          <div className="mt-12">
-            <Link to="/contact">
-              <Button size="lg">Get in Touch</Button>
-            </Link>
+          {/* Right column */}
+          <div className="space-y-8 md:pt-8">
+            <p className="font-body text-xl md:text-2xl font-semibold leading-snug text-foreground">
+              Most agencies start with the logo. We start with the operating system.
+            </p>
+
+            <p className="font-body text-base md:text-lg font-light leading-relaxed text-[#adadad]">
+              The strategy that tells your team, your vendors, and your AI tools exactly who you are, what you stand for, and how to communicate it without calling you first. We've watched good businesses lose to worse ones for two decades because the market rewards the brand that earns trust fastest, not the product that deserves it most.
+            </p>
+
+            <p className="font-body text-xl md:text-2xl font-semibold leading-snug text-foreground">
+              BrandOS exists because that is a solvable problem, and nobody else was solving it the right way.
+            </p>
           </div>
         </div>
       </section>
