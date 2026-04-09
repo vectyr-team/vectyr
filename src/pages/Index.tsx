@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import ScrollSection from "@/components/ScrollSection";
 import { Button } from "@/components/ui/button";
+import { Icon } from "@iconify/react";
 
 const Index = () => {
   return (
