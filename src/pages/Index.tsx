@@ -382,7 +382,7 @@ const Index = () => {
                 desc: "You know what you want and you're asking whether Vectyr is the right fit. Direct calendar access for serious buyers who are done doing research.",
               },
             ].map((card, i) => (
-              <ScrollSection key={i} className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1}`}>
+              <ScrollSection key={i} className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1} border-l border-border/40`}>
                 <div className="flex items-center gap-2 mb-6">
                   <span className={`inline-block h-2 w-2 rounded-full ${card.dot}`} />
                   <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
