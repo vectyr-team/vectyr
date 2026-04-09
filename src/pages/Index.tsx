@@ -67,7 +67,7 @@ const Index = () => {
               { value: "∞", desc: "Lifetime access to BrandOS. No renewal required." },
             ].map((item, i) => (
               <div key={i} className="bg-card p-6 md:p-8">
-                <p className="font-headline text-4xl text-foreground md:text-5xl">{item.value}</p>
+                <p className="font-headline text-4xl text-foreground md:text-5xl">{item.value === "∞" ? <Icon icon="mdi:infinity" className="inline text-5xl md:text-6xl" /> : item.value}</p>
                 <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
               </div>
             ))}
