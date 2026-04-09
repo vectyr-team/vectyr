@@ -249,6 +249,70 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Entry Points */}
+      <section className="bg-background px-6 py-24">
+        <div className="mx-auto max-w-[1300px]">
+          <div className="flex items-center gap-4 mb-10">
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              Entry Points
+            </span>
+            <div className="h-px w-16 bg-muted-foreground/40" />
+          </div>
+
+          <h2 className="font-headline font-normal text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
+            MEET US WHERE YOU ARE
+          </h2>
+
+          <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
+            Vectyr has three entry points because forcing every founder through the same door loses the ones who aren't ready and slows down the ones who are.
+          </p>
+
+          <div className="mt-16 grid gap-px bg-border md:grid-cols-3">
+            {[
+              {
+                dot: "bg-muted-foreground",
+                label: "Curious or Cold",
+                title: "Pick Steve's Brain",
+                link: "stevesbrain.com",
+                desc: "Free 30-minute brand diagnostic. No pitch. No agenda. Steve looks at your situation and gives an honest read. If you're not ready for Vectyr, he'll tell you that too.",
+              },
+              {
+                dot: "bg-primary",
+                label: "Research Mode",
+                title: "See BrandOS Live",
+                link: "vectyr.com/demo",
+                desc: "You already know about Vectyr and you want to see the platform before deciding. Walk through BrandOS, ask questions, and get a real look at how the system works. No pressure on what comes next.",
+              },
+              {
+                dot: "bg-primary",
+                label: "Ready to Move",
+                title: "Book Directly",
+                link: "stevescalendar.com",
+                desc: "You know what you want and you're asking whether Vectyr is the right fit. Direct calendar access for serious buyers who are done doing research.",
+              },
+            ].map((card, i) => (
+              <div key={i} className="bg-card p-8 flex flex-col">
+                <div className="flex items-center gap-2 mb-6">
+                  <span className={`inline-block h-2 w-2 rounded-full ${card.dot}`} />
+                  <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+                    {card.label}
+                  </span>
+                </div>
+                <h3 className="font-body font-medium text-2xl leading-tight text-foreground">
+                  {card.title}
+                </h3>
+                <p className="mt-3 font-mono text-xs text-primary tracking-wide">
+                  {card.link}
+                </p>
+                <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground">
+                  {card.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
