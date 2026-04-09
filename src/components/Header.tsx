@@ -38,7 +38,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-background/80 backdrop-blur-md px-4 md:px-8 py-4">
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-background/80 backdrop-blur-md px-4 md:px-8 py-4 md:py-6">
         {/* Left: social icons */}
         <div className="flex items-center gap-2 md:gap-4">
           {socialLinks.map((s) => (
@@ -57,7 +57,7 @@ const Header = () => {
 
         {/* Center: logo */}
         <Link to="/" className="absolute left-1/2 -translate-x-1/2">
-          <img src={vectyrLogo} alt="Vectyr" className="h-8" />
+          <img src={vectyrLogo} alt="Vectyr" className="h-8 md:h-10" />
         </Link>
 
         {/* Right: nav links on desktop, hamburger on mobile */}
