@@ -98,19 +98,19 @@ const Index = () => {
             {[
               {
                 num: "01",
-                title: "NO STRATEGY EXISTS",
+                title: "No Strategy Exists",
                 desc: "The brand lives in the founder's head, or has already fragmented across a team with no alignment. Everyone is doing their best. Nobody is working from the same document.",
                 solved: "Brand Codex",
               },
               {
                 num: "02",
-                title: "STRATEGY THAT DOESN'T GET USED",
+                title: "Strategy That Doesn't Get Used",
                 desc: "Even when a strategy exists, it lives in a folder nobody opens. Unavailable to the freelancer at 9pm. Invisible to the AI tool writing tomorrow's social post. Unknown to the new hire who started last week.",
                 solved: "BrandOS Platform",
               },
               {
                 num: "03",
-                title: "STRATEGY THAT GOES STALE",
+                title: "Strategy That Goes Stale",
                 desc: "The moment the business changes, the market shifts, or a new competitor arrives, the previous strategy can go obsolete. Most founders have no way to know when that's happened or what to do about it.",
                 solved: "BrandPulse",
               },
