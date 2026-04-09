@@ -220,7 +220,7 @@ const Index = () => {
           {/* Left – sticky heading */}
           <ScrollSection className="lg:sticky lg:top-24 lg:self-start">
             <div className="flex items-center gap-4 mb-4 md:mb-10">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary">
                 OUR RANT
               </span>
               <div className="h-px w-16 bg-muted-foreground/40" />
