@@ -183,7 +183,7 @@ const Index = () => {
                 badge: "Monthly",
                 badgeStyle: "border border-border text-muted-foreground",
                 title: "BrandPulse",
-                pricing: "$195 per month  /  no long contracts",
+                pricing: "$195 per month / no contracts",
                 desc: "Quarterly brand review. Drift caught before it compounds. Brand Performance Indicator report after every cycle. One advisory credit per quarter for fast gut-checks between scheduled calls. The brand keeps running.",
               },
             ].map((card, i) => (
