@@ -153,7 +153,7 @@ const Index = () => {
           </h2>
 
           <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
-            Three products. One complete lifecycle. Your brand doesn't sit in a folder. It runs.
+            Three products, one complete solution. Your brand doesn't sit in a folder, it lives everywhere, it runs, it never goes stale.
           </p>
 
           {/* Product cards */}
