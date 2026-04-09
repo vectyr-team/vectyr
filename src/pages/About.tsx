@@ -159,8 +159,8 @@ const About = () => {
               className="w-full max-w-md object-cover rounded"
             />
             <div className="max-w-md">
-              <p className="font-body text-base font-bold text-foreground">Steve Reed</p>
-              <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground mt-1">
+              <p className="font-body text-lg font-bold text-foreground">Steve Reed</p>
+              <p className="font-mono text-xs uppercase tracking-[0.25em] leading-relaxed text-muted-foreground mt-1">
                 FOUNDER, VECTYR<br />AUSTIN, TX
               </p>
             </div>
