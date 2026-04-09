@@ -139,7 +139,7 @@ const Index = () => {
       {/* The System */}
       <section className="relative border-t border-border bg-background px-6 py-24 overflow-hidden">
         <img src="/images/system-bg.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-40 pointer-events-none" />
-        <div className="mx-auto max-w-[1300px]">
+        <div className="relative z-10 mx-auto max-w-[1300px]">
           {/* Overline with line */}
           <div className="flex items-center gap-4 mb-10">
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
