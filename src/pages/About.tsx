@@ -242,11 +242,8 @@ const About = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link
-              to="/demo"
-              className="inline-block bg-primary text-primary-foreground font-mono text-sm uppercase tracking-[0.15em] px-10 py-4 hover:bg-primary/90 transition-colors"
-            >
-              Book Demo
+            <Link to="/demo">
+              <Button size="lg">Book Demo</Button>
             </Link>
           </div>
         </div>
