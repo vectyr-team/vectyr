@@ -410,7 +410,7 @@ const Index = () => {
       <section className="px-6 py-16 md:py-40" style={{ backgroundColor: '#F5F5F5' }}>
         <div className="mx-auto max-w-[1300px] flex flex-col items-center text-center">
           <ScrollSection className="flex flex-col items-center">
-            <h2 className="font-headline font-light text-[2.8rem] leading-[0.95] tracking-normal sm:text-6xl md:text-6xl lg:text-7xl max-w-[1100px]" style={{ color: '#090909' }}>
+            <h2 className="font-headline font-light leading-[0.95] tracking-normal sm:text-6xl md:text-6xl lg:text-7xl max-w-[1100px]" style={{ color: '#090909' }}>
               YOUR Business IS BETTER THAN WHAT THE MARKET <span className="text-primary">CURRENTLY SEES.</span>
             </h2>
 
