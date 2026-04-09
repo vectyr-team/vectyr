@@ -113,7 +113,7 @@ const Header = () => {
                 key={link.to}
                 to={link.to}
                 onClick={() => setMenuOpen(false)}
-                className={`font-headline text-5xl uppercase tracking-[0.15em] text-foreground hover:text-accent transition-all duration-500 py-4 ${
+                className={`font-headline text-5xl uppercase tracking-normal text-foreground hover:text-accent transition-all duration-500 py-4 ${
                   menuOpen
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"
