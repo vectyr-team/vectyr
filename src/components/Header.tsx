@@ -57,7 +57,7 @@ const Header = () => {
 
         {/* Center: logo */}
         <Link to="/" className="absolute left-1/2 -translate-x-1/2">
-          <img src={vectyrLogo} alt="Vectyr" className="h-12" />
+          <img src={vectyrLogo} alt="Vectyr" className="h-8" />
         </Link>
 
         {/* Right: nav links on desktop, hamburger on mobile */}
