@@ -316,7 +316,7 @@ const Index = () => {
                 role: "Energy Home Improvements",
               },
             ].map((card, i) => (
-              <ScrollSection key={i} className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1}`}>
+              <ScrollSection key={i} className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1} border-l border-border/40`}>
                 <Icon icon="tdesign:quote-filled" className="text-primary text-3xl mb-3" />
                 <p className="font-body text-sm leading-relaxed text-muted-foreground flex-1">
                   {card.quote}
