@@ -205,7 +205,7 @@ const Index = () => {
                 badgeStyle: "border border-border text-muted-foreground",
                 title: "BrandPulse",
                 pricing: "$195 per month / no contracts",
-                desc: "Quarterly brand review. Drift caught before it compounds. Brand Performance Indicator report after every cycle. One advisory credit per quarter for fast gut-checks between scheduled calls. The brand keeps running.",
+                desc: "We implement quarterly brand check-ins to examine the performance of the brand. You can submit new info at any time so we can update the Brand Codex and avoid brand entropy and drift.",
               },
             ].map((card, i) => (
               <ScrollSection key={i} className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1}`}>
