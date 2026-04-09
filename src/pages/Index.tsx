@@ -16,8 +16,8 @@ const Index = () => {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full object-cover scale-110"
-          style={{ height: '120%', top: '-10%' }}
+          className="absolute inset-0 w-full object-cover scale-105"
+          style={{ height: '110%', top: '-5%' }}
         >
           <source src="/videos/vectyr-hero-bg.mp4" type="video/mp4" />
         </video>
