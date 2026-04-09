@@ -86,7 +86,16 @@ const Header = () => {
         </div>
 
         {/* Center: logo */}
-        <Link to="/" className="absolute left-1/2 -translate-x-1/2">
+        <Link
+          to="/"
+          className="absolute left-1/2 -translate-x-1/2"
+          style={shouldAnimate ? {
+            opacity: animateIn ? 1 : 0,
+            transform: animateIn ? 'translateX(-50%) scale(1)' : 'translateX(-50%) scale(0.2)',
+            transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
+            transitionDelay: '0.1s',
+          } : undefined}
+        >
           <img src={vectyrLogo} alt="Vectyr" className="h-8 md:h-10" />
         </Link>
 
