@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import ScrollSection from "@/components/ScrollSection";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
@@ -47,7 +48,7 @@ const Index = () => {
       <section className="bg-card px-6 py-24">
         <div className="mx-auto grid max-w-[1300px] items-center gap-16 lg:grid-cols-2">
           {/* Left – quote */}
-          <div>
+          <ScrollSection>
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground mb-6 block">
               THE VILLAIN / BRAND ENTROPY
             </span>
@@ -55,10 +56,10 @@ const Index = () => {
               "Your brand doesn't collapse all at onece. It becomes a little less recognizable every week, a little more generic, until one day you look at what the market sees and barely{" "}
               <span className="text-primary">recognize it.</span>"
             </blockquote>
-          </div>
+          </ScrollSection>
 
           {/* Right – stats grid */}
-          <div className="grid grid-cols-2 gap-px bg-border">
+          <ScrollSection className="grid grid-cols-2 gap-px bg-border scroll-animate-delay-2">
             {[
               { value: "$4,500", desc: "Flat fee. Brand Codex built and installed." },
               { value: "1–2", desc: "Sessions of your time. Everything else is ours." },
@@ -70,28 +71,30 @@ const Index = () => {
                 <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
               </div>
             ))}
-          </div>
+          </ScrollSection>
         </div>
       </section>
 
       {/* The Full Lifecycle */}
       <section className="bg-background px-6 py-24">
         <div className="mx-auto max-w-[1300px]">
-          {/* Overline with line */}
-          <div className="flex items-center gap-4 mb-10">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-              The Full Lifecycle
-            </span>
-            <div className="h-px w-16 bg-muted-foreground/40" />
-          </div>
+          <ScrollSection>
+            {/* Overline with line */}
+            <div className="flex items-center gap-4 mb-10">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+                The Full Lifecycle
+              </span>
+              <div className="h-px w-16 bg-muted-foreground/40" />
+            </div>
 
-          <h2 className="font-headline font-normal text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
-            MOST AGENCIES SOLVE ONE PROBLEM AND LEAVE TWO BEHIND
-          </h2>
+            <h2 className="font-headline font-normal text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
+              MOST AGENCIES SOLVE ONE PROBLEM AND LEAVE TWO BEHIND
+            </h2>
 
-          <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
-            Having a strategy is step one. Getting your team to use it is step two. Keeping it current is step three. Vectyr solves all three.
-          </p>
+            <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
+              Having a strategy is step one. Getting your team to use it is step two. Keeping it current is step three. Vectyr solves all three.
+            </p>
+          </ScrollSection>
 
           {/* Problem cards */}
           <div className="mt-16 grid gap-px bg-border md:grid-cols-3">
@@ -115,7 +118,7 @@ const Index = () => {
                 solved: "BrandPulse",
               },
             ].map((card, i) => (
-              <div key={i} className="relative bg-card p-8 flex flex-col justify-between min-h-[320px] border-b-2 border-primary">
+              <ScrollSection key={i} className={`relative bg-card p-8 flex flex-col justify-between min-h-[320px] border-b-2 border-primary scroll-animate-delay-${i + 1}`}>
                 <div>
                   <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
                     {card.num} / Problem
@@ -130,7 +133,7 @@ const Index = () => {
                 <p className="mt-4 font-mono text-xs uppercase tracking-[0.25em] text-primary">
                   Solved by: {card.solved}
                 </p>
-              </div>
+              </ScrollSection>
             ))}
           </div>
         </div>
@@ -140,21 +143,23 @@ const Index = () => {
       <section className="relative bg-[#000000] px-6 py-24 overflow-hidden">
         <img src="/images/system-bg.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-[0.2] pointer-events-none" />
         <div className="relative z-10 mx-auto max-w-[1300px]">
-          {/* Overline with line */}
-          <div className="flex items-center gap-4 mb-10">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-              The System
-            </span>
-            <div className="h-px w-16 bg-muted-foreground/40" />
-          </div>
+          <ScrollSection>
+            {/* Overline with line */}
+            <div className="flex items-center gap-4 mb-10">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+                The System
+              </span>
+              <div className="h-px w-16 bg-muted-foreground/40" />
+            </div>
 
-          <h2 className="font-headline font-normal text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
-            BUILT. INSTALLED. RUNNING.
-          </h2>
+            <h2 className="font-headline font-normal text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
+              BUILT. INSTALLED. RUNNING.
+            </h2>
 
-          <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
-            Three products, one complete solution. Your brand doesn't sit in a folder, it lives everywhere, it runs, it never goes stale.
-          </p>
+            <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
+              Three products, one complete solution. Your brand doesn't sit in a folder, it lives everywhere, it runs, it never goes stale.
+            </p>
+          </ScrollSection>
 
           {/* Product cards */}
           <div className="mt-16 grid gap-px bg-border md:grid-cols-3">
@@ -181,7 +186,7 @@ const Index = () => {
                 desc: "Quarterly brand review. Drift caught before it compounds. Brand Performance Indicator report after every cycle. One advisory credit per quarter for fast gut-checks between scheduled calls. The brand keeps running.",
               },
             ].map((card, i) => (
-              <div key={i} className="bg-card p-8 flex flex-col">
+              <ScrollSection key={i} className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1}`}>
                 <div>
                   <span className={`inline-block px-3 py-1 font-mono text-xs uppercase tracking-[0.15em] rounded-sm ${card.badgeStyle}`}>
                     {card.badge}
@@ -197,17 +202,17 @@ const Index = () => {
                     {card.desc}
                   </p>
                 </div>
-              </div>
+              </ScrollSection>
             ))}
           </div>
         </div>
       </section>
 
       {/* The Position */}
-      <section className="bg-background px-6 py-24">
+      <section className="bg-card px-6 py-24">
         <div className="mx-auto max-w-[1300px] grid gap-16 lg:grid-cols-[1fr_1.5fr]">
           {/* Left – sticky heading */}
-          <div className="lg:sticky lg:top-24 lg:self-start">
+          <ScrollSection className="lg:sticky lg:top-24 lg:self-start">
             <div className="flex items-center gap-4 mb-10">
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
                 OUR RANT
@@ -218,11 +223,10 @@ const Index = () => {
             <h2 className="font-headline font-normal text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
               WHY THIS MATTERS MORE THAN YOU THINK
             </h2>
-
-          </div>
+          </ScrollSection>
 
           {/* Right – long-form copy */}
-          <div className="font-body text-base leading-relaxed text-muted-foreground space-y-6">
+          <ScrollSection className="font-body text-base leading-relaxed text-muted-foreground space-y-6 scroll-animate-delay-2">
             <p className="text-lg text-foreground font-medium leading-relaxed">
               The branding industry has been selling you the wrong thing in the wrong order for decades, and it has been doing so with a smile and a proposal.
             </p>
@@ -246,27 +250,29 @@ const Index = () => {
             <p>
               Vectyr is not for everyone. It is not for founders who feel fine winging it and prefer to copy those around them instead of leading. It is not for founders who want a logo and are willing to call that a brand. It is for the founder who has already built something real, who knows the brand is the next constraint on growth, and who is done waiting for the right person to show up.
             </p>
-          </div>
+          </ScrollSection>
         </div>
       </section>
 
       {/* Entry Points */}
       <section className="bg-background px-6 py-24">
         <div className="mx-auto max-w-[1300px]">
-          <div className="flex items-center gap-4 mb-10">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-              Entry Points
-            </span>
-            <div className="h-px w-16 bg-muted-foreground/40" />
-          </div>
+          <ScrollSection>
+            <div className="flex items-center gap-4 mb-10">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+                Entry Points
+              </span>
+              <div className="h-px w-16 bg-muted-foreground/40" />
+            </div>
 
-          <h2 className="font-headline font-normal text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
-            MEET US WHERE YOU ARE
-          </h2>
+            <h2 className="font-headline font-normal text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
+              MEET US WHERE YOU ARE
+            </h2>
 
-          <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
-            Vectyr has three entry points because forcing every founder through the same door loses the ones who aren't ready and slows down the ones who are.
-          </p>
+            <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
+              Vectyr has three entry points because forcing every founder through the same door loses the ones who aren't ready and slows down the ones who are.
+            </p>
+          </ScrollSection>
 
           <div className="mt-16 grid gap-px bg-border md:grid-cols-3">
             {[
@@ -292,7 +298,7 @@ const Index = () => {
                 desc: "You know what you want and you're asking whether Vectyr is the right fit. Direct calendar access for serious buyers who are done doing research.",
               },
             ].map((card, i) => (
-              <div key={i} className="bg-card p-8 flex flex-col">
+              <ScrollSection key={i} className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1}`}>
                 <div className="flex items-center gap-2 mb-6">
                   <span className={`inline-block h-2 w-2 rounded-full ${card.dot}`} />
                   <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
@@ -308,7 +314,7 @@ const Index = () => {
                 <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground">
                   {card.desc}
                 </p>
-              </div>
+              </ScrollSection>
             ))}
           </div>
         </div>
