@@ -197,7 +197,7 @@ const Index = () => {
                   <p className="mt-4 font-mono text-xs text-muted-foreground tracking-wide">
                     {card.pricing}
                   </p>
-                  <div className="h-px w-full bg-border/30 my-6" />
+                  <div className="h-px w-full my-4" style={{ backgroundColor: '#252525' }} />
                   <p className="font-body text-sm leading-relaxed text-muted-foreground">
                     {card.desc}
                   </p>
