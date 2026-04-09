@@ -325,7 +325,7 @@ const Index = () => {
                   <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary">
                     {card.name}
                   </p>
-                  <p className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">
+                  <p className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground opacity-50 mt-[9px]">
                     {card.role}
                   </p>
                 </div>
