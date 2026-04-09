@@ -16,11 +16,10 @@ const Index = () => {
           loop
           muted
           playsInline
+          src="/videos/vectyr-hero-bg.mp4"
           className="absolute inset-0 w-full object-cover scale-105"
           style={{ height: '110%', top: '-5%' }}
-        >
-          <source src="/videos/vectyr-hero-bg.mp4" type="video/mp4" />
-        </video>
+        />
 
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-background/70" />
