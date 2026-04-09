@@ -39,7 +39,7 @@ const About = () => {
       </section>
 
       {/* The Indictment */}
-      <section className="px-6 py-24 md:py-32">
+      <section className="px-6 py-24 md:py-32 bg-neutral-950">
         <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Left column */}
           <div>
