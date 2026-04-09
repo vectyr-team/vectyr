@@ -39,7 +39,7 @@ const Index = () => {
           </p>
 
           <div className="mt-10">
-            <Button size="lg">Book a Demo</Button>
+            <a href="/demo"><Button size="lg">Book a Demo</Button></a>
           </div>
         </div>
       </section>
