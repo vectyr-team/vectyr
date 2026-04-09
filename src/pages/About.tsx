@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
+import steveTall from "@/assets/steve-tall.jpg";
 
 const About = () => {
   return (
@@ -78,6 +80,60 @@ const About = () => {
 
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-[#adadad]">
               Built through extraction, not assumption. Delivered as infrastructure, not a document. Maintained so it doesn't decay. That is the standard we built this around, and it is the thing this industry has been unwilling to provide because the old model is more profitable.
+            </p>
+          </div>
+        </div>
+      </section>
+      {/* The Founder */}
+      <section className="px-6 py-24 md:py-32">
+        <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+          {/* Left column */}
+          <div>
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground mb-6 block">
+              The Founder ————
+            </span>
+
+            <h2 className="font-headline font-light text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl mb-10">
+              TWENTY YEARS<br />
+              BUILDING BRANDS.<br />
+              <span className="text-primary">ONE CONVICTION.</span>
+            </h2>
+
+            <div className="space-y-6">
+              <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+                Steve Reed has spent over two decades working with growth-stage businesses, specialty trades, professional firms, product companies, and service businesses, watching the same problem repeat itself. Great companies losing to worse ones because their brand didn't reflect what they'd actually built.
+              </p>
+
+              <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+                He started Vectyr to solve that problem at the root, not the surface. Not logos. Not campaigns. Not redesigns that produce prettier versions of the same misalignment. <span className="font-semibold text-foreground">Complete brand operating systems, built from the actual reality of the business, delivered as infrastructure, maintained so they don't drift.</span>
+              </p>
+
+              <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+                The BrandOS methodology is the result of twenty years of pattern recognition across hundreds of brands: what works, what doesn't, and what every business needs in place before anything else can perform. It is not a framework borrowed from a book. It is the thing Steve wished every client had before he started working with them.
+              </p>
+
+              <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+                Steve is also the creator of the Customer Perception Profile, the proprietary psychological framework at the core of the Brand Codex methodology, published in <em>Cake Jerky</em>. He is a named methodology author, not just a practitioner with an opinion. That distinction matters when you're trusting someone with the most important document your business will ever have.
+              </p>
+
+              <Link
+                to="/demo"
+                className="inline-flex items-center gap-2 font-body text-base font-semibold text-foreground underline underline-offset-4 hover:text-primary transition-colors mt-4"
+              >
+                Thirty minutes with Steve. No pitch. →
+              </Link>
+            </div>
+          </div>
+
+          {/* Right column — photo */}
+          <div className="flex flex-col items-center gap-4 md:pt-8">
+            <img
+              src={steveTall}
+              alt="Steve Reed, Founder of Vectyr"
+              className="w-full max-w-md object-cover rounded"
+            />
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground text-center">
+              Steve Reed &nbsp;/&nbsp; Founder, Vectyr &nbsp;/&nbsp; Austin, Texas
             </p>
           </div>
         </div>
