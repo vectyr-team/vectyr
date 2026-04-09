@@ -359,7 +359,7 @@ const Index = () => {
             {[
               {
                 dot: "bg-muted-foreground",
-                label: "Curious or Cold",
+                label: "Sorta Curious",
                 title: "Pick Steve's Brain",
                 url: "https://stevesbrain.com",
                 btnText: "Book a Free Call",
