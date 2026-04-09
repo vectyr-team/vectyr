@@ -178,7 +178,7 @@ const About = () => {
             <span className="w-12 h-px bg-muted-foreground" />
           </div>
 
-          <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl mb-8">
+          <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl mb-8">
             LINES WE DON'T CROSS<br />
             <span className="text-primary">FOR REVENUE.</span>
           </h2>
