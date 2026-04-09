@@ -232,7 +232,7 @@ const Index = () => {
             </p>
 
             <p>
-              <span className="text-foreground font-medium">Brands that look like brands but cannot brief a vendor without a two-hour phone call. Cannot trust a single AI output to sound like themselves. Cannot explain to a new hire what the company actually believes.</span> The industry calls this brand. It is not brand. It is decoration with a budget attached, and the founders paying for it deserve better.
+              <span className="text-foreground font-medium">Brands that look like brands but cannot brief a vendor without a two-hour phone call. Cannot trust a single AI output to sound like themselves. Cannot explain to a new hire what the company actually believes.</span> The industry calls this brand. It is not brand, it's decoration with a budget attached, and the founders paying for it deserve better.
             </p>
 
             <p>
@@ -244,7 +244,7 @@ const Index = () => {
             </p>
 
             <p>
-              Vectyr is not for everyone. It is not for businesses without a budget for brand strategy who don't understand why they should have one. It is not for founders who want a logo and are willing to call that a brand. It is for the founder who has already built something real, who knows the brand is the next constraint on growth, and who is done waiting for the right person to show up.
+              Vectyr is not for everyone. It is not for founders who feel fine winging it and prefer to copy those around them instead of leading. It is not for founders who want a logo and are willing to call that a brand. It is for the founder who has already built something real, who knows the brand is the next constraint on growth, and who is done waiting for the right person to show up.
             </p>
           </div>
         </div>
