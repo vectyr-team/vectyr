@@ -128,6 +128,22 @@ const About = () => {
               >
                 Thirty minutes with Steve. No pitch. →
               </Link>
+              <a
+                href="https://buy.cakejerky.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-body text-base font-semibold text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+              >
+                Buy his book, Cake Jerky. →
+              </a>
+              <a
+                href="https://www.linkedin.com/in/stevereed"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-body text-base font-semibold text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+              >
+                Connect on LinkedIn. →
+              </a>
             </div>
           </div>
 
