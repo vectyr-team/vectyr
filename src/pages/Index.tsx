@@ -61,7 +61,7 @@ const Index = () => {
           {/* Right – stats grid */}
           <ScrollSection className="grid grid-cols-2 gap-px bg-border scroll-animate-delay-2">
             {[
-              { value: "$4,500", desc: "Flat fee. Brand Codex built and installed." },
+              { value: "$4,500", desc: "One time fee. Brand Codex built and installed. Done-for-you." },
               { value: "1–2", desc: "Sessions of your time. Everything else is ours." },
               { value: "$195", desc: "Per month. BrandPulse keeps it current." },
               { value: "∞", desc: "Lifetime access to BrandOS. No renewal required." },
