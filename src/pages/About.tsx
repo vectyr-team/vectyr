@@ -242,10 +242,10 @@ const About = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link
-              to="/contact"
+              to="/demo"
               className="inline-block bg-primary text-primary-foreground font-mono text-sm uppercase tracking-[0.15em] px-10 py-4 hover:bg-primary/90 transition-colors"
             >
-              Start with a free diagnostic
+              Book Demo
             </Link>
             <Link
               to="/demo"
