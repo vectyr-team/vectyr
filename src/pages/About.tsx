@@ -214,7 +214,7 @@ const About = () => {
                 body: "Every client's Brand Codex is extracted from the actual reality of their business: their market position, their customer psychology, their competitive landscape, their culture. Nothing is assumed. Nothing is reused. The system was built for you, which means it couldn't belong to any other company, because it came from inside yours.",
               },
             ].map((card) => (
-              <div key={card.num} className="bg-card p-8 md:p-10">
+              <div key={card.num} className="bg-background p-8 md:p-10">
                 <span className="font-mono text-xs text-muted-foreground mb-4 block">
                   {card.num}
                 </span>
