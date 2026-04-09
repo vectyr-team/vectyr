@@ -30,7 +30,7 @@ const Index = () => {
             Built for Humans and AI
           </span>
 
-          <h1 className="font-headline font-light text-[3.6rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-[580px]">
+          <h1 className="font-headline font-light text-[3.4rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-[580px]">
             YOUR BRAND IS LIVING IN YOUR HEAD. <span className="text-primary">NOWHERE ELSE.</span>
           </h1>
 
