@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import ctaBg from "@/assets/cta-bg.jpg";
 import Header from "@/components/Header";
 import steveTall from "@/assets/steve-tall.jpg";
 
@@ -228,8 +229,9 @@ const About = () => {
       </section>
 
       {/* Closing CTA */}
-      <section className="px-6 py-32 md:py-48">
-        <div className="mx-auto max-w-[1300px] text-center">
+      <section className="relative px-6 py-32 md:py-48 bg-black overflow-hidden">
+        <img src={ctaBg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none" />
+        <div className="relative z-10 mx-auto max-w-[1300px] text-center">
           <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-[7rem] mb-8">
             YOU'VE BUILT<br />
             SOMETHING REAL.<br />
