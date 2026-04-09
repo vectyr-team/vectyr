@@ -42,6 +42,37 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Villain / Brand Entropy */}
+      <section className="border-t border-border bg-card px-6 py-24">
+        <div className="mx-auto grid max-w-[1300px] gap-16 lg:grid-cols-2">
+          {/* Left – quote */}
+          <div>
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground mb-6 block">
+              The Villain &nbsp;/&nbsp; Brand Entropy
+            </span>
+            <blockquote className="font-body text-2xl italic leading-relaxed text-foreground md:text-3xl">
+              "Your brand doesn't collapse. It becomes a little less recognizable every week, a little more generic, until one day you look at what the market sees and barely{" "}
+              <span className="text-primary">recognize it.</span>"
+            </blockquote>
+          </div>
+
+          {/* Right – stats grid */}
+          <div className="grid grid-cols-2 gap-px bg-border">
+            {[
+              { value: "$4,500", desc: "Flat fee. Brand Codex built and installed." },
+              { value: "1–2", desc: "Sessions of your time. Everything else is ours." },
+              { value: "$195", desc: "Per month. BrandPulse keeps it current." },
+              { value: "∞", desc: "Lifetime access to BrandOS. No renewal required." },
+            ].map((item, i) => (
+              <div key={i} className="bg-card p-8">
+                <p className="font-headline text-4xl text-foreground md:text-5xl">{item.value}</p>
+                <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
