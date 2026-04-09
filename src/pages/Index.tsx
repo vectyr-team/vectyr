@@ -340,21 +340,24 @@ const Index = () => {
                 dot: "bg-muted-foreground",
                 label: "Curious or Cold",
                 title: "Pick Steve's Brain",
-                link: "stevesbrain.com",
+                url: "https://stevesbrain.com",
+                btnText: "Book a Free Call",
                 desc: "Free 30-minute brand diagnostic. No pitch or agenda. Steve looks at your situation and gives an honest read. If you're not ready for Vectyr, he'll tell you that too.",
               },
               {
                 dot: "bg-primary",
                 label: "Research Mode",
                 title: "See BrandOS Live",
-                link: "vectyr.com/demo",
+                url: "https://vectyr.com/demo",
+                btnText: "See the Demo",
                 desc: "You already know about Vectyr and you want to see the platform before deciding. Walk through BrandOS, ask questions, and get a real look at how the system works. No pressure on what comes next.",
               },
               {
                 dot: "bg-primary",
                 label: "Ready to Move",
                 title: "Book Directly",
-                link: "stevescalendar.com",
+                url: "https://stevescalendar.com",
+                btnText: "Book Now",
                 desc: "You know what you want and you're asking whether Vectyr is the right fit. Direct calendar access for serious buyers who are done doing research.",
               },
             ].map((card, i) => (
@@ -368,12 +371,14 @@ const Index = () => {
                 <h3 className="font-body font-medium text-2xl leading-tight text-foreground">
                   {card.title}
                 </h3>
-                <p className="mt-3 font-mono text-xs text-primary tracking-wide">
-                  {card.link}
-                </p>
                 <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground">
                   {card.desc}
                 </p>
+                <a href={card.url} className="mt-6">
+                  <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                    {card.btnText}
+                  </Button>
+                </a>
               </ScrollSection>
             ))}
           </div>
