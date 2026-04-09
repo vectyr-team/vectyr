@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import ScrollSection from "@/components/ScrollSection";
 import { Button } from "@/components/ui/button";
+import { Icon } from "@iconify/react";
 
 const Index = () => {
   return (
@@ -290,7 +291,7 @@ const Index = () => {
               },
             ].map((card, i) => (
               <ScrollSection key={i} className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1}`}>
-                <span className="font-headline text-4xl text-primary leading-none mb-6">"</span>
+                <Icon icon="tdesign:quote-filled" className="text-primary text-3xl mb-3" />
                 <p className="font-body text-sm leading-relaxed text-muted-foreground">
                   {card.quote}
                 </p>
