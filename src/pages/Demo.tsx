@@ -30,7 +30,7 @@ const Demo = () => {
           </h1>
 
           <p className="mt-4 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
-            Walk through the platform, see how your brand gets structured, and understand exactly what you're getting before you commit.
+            Walk through the platform, see how your brand gets built, how it integrates with all the AI tools you and your team use, and see if it's a good fit.
           </p>
 
           <div className="mt-6 md:mt-8">
