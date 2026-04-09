@@ -1,7 +1,20 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
-import { Button } from "@/components/ui/button";
 
 const Demo = () => {
+  useEffect(() => {
+    // Load the external embed script
+    const script = document.createElement("script");
+    script.src = "https://links.vectyr.com/js/form_embed.js";
+    script.type = "text/javascript";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -20,18 +33,13 @@ const Demo = () => {
             Walk through the platform, see how your brand gets structured, and understand exactly what you're getting before you commit.
           </p>
 
-          <div className="mt-16 bg-card p-12">
-            <h3 className="font-body font-medium text-2xl leading-tight text-foreground">
-              Book Your Demo
-            </h3>
-            <p className="mt-4 max-w-xl font-body text-sm font-light leading-relaxed text-muted-foreground">
-              A 30-minute walkthrough of BrandOS tailored to your business. No pitch deck, no pressure. Just a real look at the system and how it applies to you.
-            </p>
-            <div className="mt-8">
-              <a href="https://vectyr.com/demo">
-                <Button size="lg">Schedule a Demo</Button>
-              </a>
-            </div>
+          <div className="mt-16">
+            <iframe
+              src="https://links.vectyr.com/widget/booking/LNPnkvxkpEcnG3noYld1"
+              style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "700px" }}
+              scrolling="no"
+              id="LNPnkvxkpEcnG3noYld1_1775760467597"
+            />
           </div>
         </div>
       </section>
