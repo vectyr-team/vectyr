@@ -207,7 +207,7 @@ const Index = () => {
           </div>
 
           <div className="mt-12 flex justify-center">
-            <a href="https://vectyr.com/demo">
+            <a href="/demo">
               <Button size="lg">Book a Demo</Button>
             </a>
           </div>
@@ -396,7 +396,7 @@ const Index = () => {
               The gap between what you've built and how the market perceives it is your brand infrastructure. We build that infrastructure.
             </p>
 
-            <a href="https://vectyr.com/demo" className="mt-10">
+            <a href="/demo" className="mt-10">
               <Button size="lg">Experience the Demo</Button>
             </a>
           </ScrollSection>
