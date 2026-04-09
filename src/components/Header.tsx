@@ -84,12 +84,12 @@ const Header = () => {
             />
           </button>
         ) : (
-          <nav className="flex items-center gap-8">
+          <nav className="flex items-center gap-5 md:gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors"
+                className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
               </Link>
