@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ctaBg from "@/assets/cta-bg.jpg";
+import bodXWatermark from "@/assets/bodX-watermark.svg";
 import Header from "@/components/Header";
 import steveTall from "@/assets/steve-tall.jpg";
 
