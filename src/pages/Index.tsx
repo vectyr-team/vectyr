@@ -67,7 +67,7 @@ const Index = () => {
       </section>
 
       {/* Villain / Brand Entropy */}
-      <section className="bg-card px-6 py-12 md:py-[70px]">
+      <section className="bg-card px-6 py-12 md:py-[40px]">
         <div className="mx-auto grid max-w-[1300px] items-center gap-16 lg:grid-cols-2">
           {/* Left – quote */}
           <ScrollSection>
