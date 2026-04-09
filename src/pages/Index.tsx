@@ -188,7 +188,7 @@ const Index = () => {
                   <span className={`inline-block px-3 py-1 font-mono text-xs uppercase tracking-[0.15em] rounded-sm ${card.badgeStyle}`}>
                     {card.badge}
                   </span>
-                  <h3 className="font-headline font-normal text-3xl text-foreground mt-6 md:text-4xl">
+                  <h3 className="font-body font-bold text-3xl text-foreground mt-6 md:text-4xl uppercase">
                     {card.title}
                   </h3>
                   <p className="mt-4 font-mono text-xs text-muted-foreground tracking-wide">
