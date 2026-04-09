@@ -398,7 +398,7 @@ const Index = () => {
             </p>
 
             <a href="https://vectyr.com/demo" className="mt-10">
-              <Button size="lg">Start with a Free Diagnostic</Button>
+              <Button size="lg">Experience the Demo</Button>
             </a>
           </ScrollSection>
         </div>
