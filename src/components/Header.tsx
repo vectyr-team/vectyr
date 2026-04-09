@@ -32,7 +32,16 @@ const Header = () => {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-background/80 backdrop-blur-md px-8 py-8">
-        {/* Left: nav links on desktop, hamburger on mobile */}
+        {/* Left spacer */}
+        {!isMobile && <div className="w-[200px]" />}
+        {isMobile && <div className="w-8" />}
+
+        {/* Center: logo */}
+        <Link to="/" className="absolute left-1/2 -translate-x-1/2">
+          <img src={vectyrLogo} alt="Vectyr" className="h-12" />
+        </Link>
+
+        {/* Right: nav links on desktop, hamburger on mobile */}
         {isMobile ? (
           <button
             onClick={() => setMenuOpen((v) => !v)}
@@ -68,15 +77,6 @@ const Header = () => {
             ))}
           </nav>
         )}
-
-        {/* Center: logo */}
-        <Link to="/" className="absolute left-1/2 -translate-x-1/2">
-          <img src={vectyrLogo} alt="Vectyr" className="h-12" />
-        </Link>
-
-        {/* Right: nav links on desktop, empty on mobile */}
-        {!isMobile && <div className="w-[200px]" />}
-        {isMobile && <div className="w-8" />}
       </header>
 
       {/* Mobile fullscreen menu */}
