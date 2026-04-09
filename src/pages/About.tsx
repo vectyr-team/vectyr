@@ -242,7 +242,7 @@ const About = () => {
           </h2>
 
           <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl mx-auto mb-12">
-            The gap between what you've built and what the market currently sees is infrastructure. We fix infrastructure.
+            Let's close that gap for you, we do it every day. The best way to start is to let us show you what we do and how it can change the game for you.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
