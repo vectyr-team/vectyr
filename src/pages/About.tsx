@@ -7,7 +7,7 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="px-6 pt-32 pb-24">
+      <section className="px-6 pt-24 pb-12 md:pt-32 md:pb-24">
         <div className="mx-auto max-w-[1300px]">
           <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">
             About Vectyr

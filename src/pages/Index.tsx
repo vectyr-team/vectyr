@@ -45,7 +45,7 @@ const Index = () => {
       </section>
 
       {/* Villain / Brand Entropy */}
-      <section className="bg-card px-6 py-24">
+      <section className="bg-card px-6 py-12 md:py-24">
         <div className="mx-auto grid max-w-[1300px] items-center gap-16 lg:grid-cols-2">
           {/* Left – quote */}
           <ScrollSection>
@@ -76,7 +76,7 @@ const Index = () => {
       </section>
 
       {/* The Full Lifecycle */}
-      <section className="bg-background px-6 py-24">
+      <section className="bg-background px-6 py-12 md:py-24">
         <div className="mx-auto max-w-[1300px]">
           <ScrollSection>
             {/* Overline with line */}
@@ -140,7 +140,7 @@ const Index = () => {
       </section>
 
       {/* The System */}
-      <section className="relative bg-[#000000] px-6 py-24 overflow-hidden">
+      <section className="relative bg-[#000000] px-6 py-12 md:py-24 overflow-hidden">
         <img src="/images/system-bg.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-[0.2] pointer-events-none" />
         <div className="relative z-10 mx-auto max-w-[1300px]">
           <ScrollSection>
@@ -215,7 +215,7 @@ const Index = () => {
       </section>
 
       {/* The Position */}
-      <section className="bg-card px-6 py-24">
+      <section className="bg-card px-6 py-12 md:py-24">
         <div className="mx-auto max-w-[1300px] grid gap-16 lg:grid-cols-[1fr_1.5fr]">
           {/* Left – sticky heading */}
           <ScrollSection className="lg:sticky lg:top-24 lg:self-start">
@@ -261,7 +261,7 @@ const Index = () => {
       </section>
 
       {/* Results / Testimonials */}
-      <section className="relative bg-[#000000] px-6 py-24 overflow-hidden">
+      <section className="relative bg-[#000000] px-6 py-12 md:py-24 overflow-hidden">
         <img src="/images/founders.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-[0.7] pointer-events-none" />
         <div className="relative z-10 mx-auto max-w-[1300px]">
           <ScrollSection>
@@ -314,7 +314,7 @@ const Index = () => {
       </section>
 
       {/* Entry Points */}
-      <section className="bg-background px-6 py-24">
+      <section className="bg-background px-6 py-12 md:py-24">
         <div className="mx-auto max-w-[1300px]">
           <ScrollSection>
             <div className="flex items-center gap-4 mb-10">
@@ -385,7 +385,7 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section className="px-6 py-32" style={{ backgroundColor: '#F5F5F5' }}>
+      <section className="px-6 py-16 md:py-32" style={{ backgroundColor: '#F5F5F5' }}>
         <div className="mx-auto max-w-[1300px] flex flex-col items-center text-center">
           <ScrollSection className="flex flex-col items-center">
             <h2 className="font-headline font-light text-[2.8rem] leading-[0.95] tracking-normal sm:text-6xl md:text-7xl lg:text-8xl max-w-[1100px]" style={{ color: '#090909' }}>
