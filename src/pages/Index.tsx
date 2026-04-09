@@ -229,7 +229,7 @@ const Index = () => {
 
           {/* Right – long-form copy */}
           <ScrollSection className="font-body text-base leading-relaxed text-muted-foreground space-y-6 scroll-animate-delay-2">
-            <p className="text-lg text-foreground font-light leading-relaxed">
+            <p className="text-lg text-foreground font-semibold leading-relaxed">
               The branding industry has been selling you the wrong thing in the wrong order for decades, and it has been doing so with a smile and a proposal.
             </p>
 
@@ -238,14 +238,14 @@ const Index = () => {
             </p>
 
             <p>
-              <span className="text-foreground font-light">Brands that look like brands but cannot brief a vendor without a two-hour phone call. Cannot trust a single AI output to sound like themselves. Cannot explain to a new hire what the company actually believes.</span> The industry calls this brand. It is not brand, it's decoration with a budget attached, and the founders paying for it deserve better.
+              <span className="text-foreground font-semibold">Brands that look like brands but cannot brief a vendor without a two-hour phone call. Cannot trust a single AI output to sound like themselves. Cannot explain to a new hire what the company actually believes.</span> The industry calls this brand. It is not brand, it's decoration with a budget attached, and the founders paying for it deserve better.
             </p>
 
             <p>
               The clients who stay with us for five, ten, twenty years don't come back because the logo was good. They come back because something changed after the strategy work: decisions got easier, hiring got clearer, marketing stopped feeling like guesswork, and they stopped losing deals to competitors they knew they were better than.
             </p>
 
-            <p className="text-foreground font-light">
+            <p className="text-foreground font-semibold">
               We knew exactly what would happen when a business finally had a system to match the quality of what it actually does. We have seen it happen more times than we can count.
             </p>
 
