@@ -45,13 +45,13 @@ const Index = () => {
 
       {/* Villain / Brand Entropy */}
       <section className="border-t border-border bg-card px-6 py-24">
-        <div className="mx-auto grid max-w-[1300px] gap-16 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-[1300px] items-center gap-16 lg:grid-cols-2">
           {/* Left – quote */}
           <div>
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground mb-6 block">
               The Villain &nbsp;/&nbsp; Brand Entropy
             </span>
-            <blockquote className="font-body text-2xl italic leading-relaxed text-foreground md:text-3xl">
+            <blockquote className="font-body text-xl font-light italic leading-relaxed text-foreground md:text-2xl">
               "Your brand doesn't collapse. It becomes a little less recognizable every week, a little more generic, until one day you look at what the market sees and barely{" "}
               <span className="text-primary">recognize it.</span>"
             </blockquote>
