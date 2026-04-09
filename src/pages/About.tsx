@@ -148,13 +148,13 @@ const About = () => {
           </div>
 
           {/* Right column — photo */}
-          <div className="flex flex-col items-center gap-4 md:pt-8">
+          <div className="flex flex-col items-start gap-4 md:pt-8">
             <img
               src={steveTall}
               alt="Steve Reed, Founder of Vectyr"
               className="w-full max-w-md object-cover rounded"
             />
-            <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground text-center">
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground max-w-md">
               Steve Reed &nbsp;/&nbsp; Founder, Vectyr &nbsp;/&nbsp; Austin, Texas
             </p>
           </div>
