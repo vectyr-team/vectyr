@@ -34,7 +34,7 @@ const Index = () => {
             YOUR BRAND IS LIVING IN<br />YOUR HEAD. <span className="text-primary">NOWHERE ELSE.</span>
           </h1>
 
-          <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
             Vectyr extracts your brand from wherever it's hiding, structures it so humans and AI can both actually use it, and installs it everywhere your team works. No more briefing vendors from memory. No more AI output that sounds like your competitor.
           </p>
 
@@ -92,7 +92,7 @@ const Index = () => {
               MOST AGENCIES SOLVE ONE PROBLEM AND LEAVE TWO BEHIND
             </h2>
 
-            <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
               Having a strategy is step one. Getting your team to use it is step two. Keeping it current is step three. Vectyr solves all three.
             </p>
           </ScrollSection>
@@ -157,7 +157,7 @@ const Index = () => {
               BUILT. INSTALLED. RUNNING.
             </h2>
 
-            <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
               Three products, one complete solution. Your brand doesn't sit in a folder, it lives everywhere, it runs, it never goes stale.
             </p>
           </ScrollSection>
@@ -329,7 +329,7 @@ const Index = () => {
               MEET US WHERE YOU ARE
             </h2>
 
-            <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
               Vectyr has three entry points because forcing every founder through the same door loses the ones who aren't ready and slows down the ones who are.
             </p>
           </ScrollSection>
