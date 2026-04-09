@@ -80,7 +80,7 @@ const Index = () => {
         <div className="mx-auto max-w-[1300px]">
           <ScrollSection>
             {/* Overline with line */}
-            <div className="flex items-center gap-4 mb-10">
+            <div className="flex items-center gap-4 mb-4 md:mb-10">
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
                 The Full Lifecycle
               </span>
@@ -91,7 +91,7 @@ const Index = () => {
               MOST AGENCIES SOLVE ONE PROBLEM AND LEAVE TWO BEHIND
             </h2>
 
-            <p className="mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
+            <p className="mt-4 md:mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
               Having a strategy is step one. Getting your team to use it is step two. Keeping it current is step three. Vectyr solves all three.
             </p>
           </ScrollSection>
