@@ -202,6 +202,56 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* The Position */}
+      <section className="bg-background px-6 py-24">
+        <div className="mx-auto max-w-[1300px] grid gap-16 lg:grid-cols-[1fr_1.5fr]">
+          {/* Left – sticky heading */}
+          <div className="lg:sticky lg:top-24 lg:self-start">
+            <div className="flex items-center gap-4 mb-10">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+                The Position
+              </span>
+              <div className="h-px w-16 bg-muted-foreground/40" />
+            </div>
+
+            <h2 className="font-headline font-normal text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+              WHY THIS MATTERS MORE THAN YOU THINK
+            </h2>
+
+            <a href="#" className="mt-8 inline-flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Ready to stop winging it <span>→</span>
+            </a>
+          </div>
+
+          {/* Right – long-form copy */}
+          <div className="font-body text-base leading-relaxed text-muted-foreground space-y-6">
+            <p className="text-lg text-foreground font-medium leading-relaxed">
+              The branding industry has been selling you the wrong thing in the wrong order for decades, and it has been doing so with a smile and a proposal.
+            </p>
+
+            <p>
+              Agencies lead with logos. Platforms lead with templates. AI tools lead with speed. Everyone is selling the output before anyone has earned the right to produce it. The result is an entire market of businesses with expensive visual identities and no idea what they actually stand for.
+            </p>
+
+            <p>
+              <span className="text-foreground font-medium">Brands that look like brands but cannot brief a vendor without a two-hour phone call. Cannot trust a single AI output to sound like themselves. Cannot explain to a new hire what the company actually believes.</span> The industry calls this brand. It is not brand. It is decoration with a budget attached, and the founders paying for it deserve better.
+            </p>
+
+            <p>
+              The clients who stay with us for five, ten, twenty years don't come back because the logo was good. They come back because something changed after the strategy work: decisions got easier, hiring got clearer, marketing stopped feeling like guesswork, and they stopped losing deals to competitors they knew they were better than.
+            </p>
+
+            <p className="text-foreground font-medium">
+              We knew exactly what would happen when a business finally had a system to match the quality of what it actually does. We have seen it happen more times than we can count.
+            </p>
+
+            <p>
+              Vectyr is not for everyone. It is not for businesses without a budget for brand strategy who don't understand why they should have one. It is not for founders who want a logo and are willing to call that a brand. It is for the founder who has already built something real, who knows the brand is the next constraint on growth, and who is done waiting for the right person to show up.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
