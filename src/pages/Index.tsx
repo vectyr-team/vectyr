@@ -23,7 +23,7 @@ const Index = () => {
         </video>
 
         {/* Overlay for text readability */}
-        <div className="absolute inset-0 bg-background/60" />
+        <div className="absolute inset-0 bg-background/70" />
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-[1300px] mx-auto">
