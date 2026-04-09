@@ -382,14 +382,14 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section className="bg-background px-6 py-32">
+      <section className="px-6 py-32" style={{ backgroundColor: '#F5F5F5' }}>
         <div className="mx-auto max-w-[1300px] flex flex-col items-center text-center">
           <ScrollSection className="flex flex-col items-center">
-            <h2 className="font-headline font-light text-5xl leading-[0.95] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
+            <h2 className="font-headline font-light text-5xl leading-[0.95] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl" style={{ color: '#090909' }}>
               YOUR Business IS BETTER THAN WHAT<br />THE MARKET <span className="text-primary">CURRENTLY SEES.</span>
             </h2>
 
-            <p className="mt-8 max-w-xl font-body text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-8 max-w-xl font-body text-lg leading-relaxed" style={{ color: '#6B6B6B' }}>
               The gap between what you've built and how the market perceives it is infrastructure. We fix infrastructure.
             </p>
 
