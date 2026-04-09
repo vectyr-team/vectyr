@@ -119,7 +119,7 @@ const Index = () => {
                 solved: "BrandPulse",
               },
             ].map((card, i) => (
-              <ScrollSection key={i} className={`relative bg-card p-8 flex flex-col justify-between min-h-[320px] border-b-2 border-primary scroll-animate-delay-${i + 1}`}>
+              <ScrollSection key={i} className={`relative bg-card p-8 flex flex-col justify-between min-h-[280px] border-b-2 border-primary scroll-animate-delay-${i + 1}`}>
                 <div>
                   <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
                     {card.num} / Problem
