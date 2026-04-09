@@ -199,9 +199,6 @@ const Index = () => {
                     {card.desc}
                   </p>
                 </div>
-                <a href="#" className="mt-8 font-body text-sm font-medium text-foreground underline underline-offset-4 hover:text-primary transition-colors">
-                  {card.link}
-                </a>
               </div>
             ))}
           </div>
