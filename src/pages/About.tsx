@@ -43,7 +43,7 @@ const About = () => {
 
       {/* The Indictment */}
       <section className="relative px-6 py-24 md:py-32 bg-neutral-950 overflow-hidden">
-        <img src={bodXWatermark} alt="" className="absolute inset-0 z-0 w-full h-full object-contain pointer-events-none" style={{ opacity: 0.03 }} />
+        <img src={bodXWatermark} alt="" className="absolute inset-0 z-0 w-[500%] h-[500%] md:w-full md:h-full object-contain pointer-events-none -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:translate-x-0 md:translate-y-0 md:top-0 md:left-0" style={{ opacity: 0.03 }} />
         <div className="relative z-10 mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Left column */}
           <div>
