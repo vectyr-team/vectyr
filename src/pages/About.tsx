@@ -247,12 +247,6 @@ const About = () => {
             >
               Book Demo
             </Link>
-            <Link
-              to="/demo"
-              className="font-body text-base font-semibold text-foreground underline underline-offset-4 hover:text-primary transition-colors"
-            >
-              See BrandOS in action →
-            </Link>
           </div>
         </div>
       </section>
