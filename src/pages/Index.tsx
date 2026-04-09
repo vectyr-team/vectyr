@@ -216,7 +216,7 @@ const Index = () => {
 
       {/* The Position */}
       <section className="bg-card px-6 py-12 md:py-24">
-        <div className="mx-auto max-w-[1300px] grid gap-16 lg:grid-cols-[1fr_1.5fr]">
+        <div className="mx-auto max-w-[1300px] grid gap-8 md:gap-16 lg:grid-cols-[1fr_1.5fr]">
           {/* Left – sticky heading */}
           <ScrollSection className="lg:sticky lg:top-24 lg:self-start">
             <div className="flex items-center gap-4 mb-10">
