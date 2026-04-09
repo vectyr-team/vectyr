@@ -229,7 +229,8 @@ const About = () => {
       </section>
 
       {/* Closing CTA */}
-      <section className="px-6 py-32 md:py-48">
+      <section className="relative px-6 py-32 md:py-48 bg-black overflow-hidden">
+        <img src={ctaBg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none" />
         <div className="mx-auto max-w-[1300px] text-center">
           <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-[7rem] mb-8">
             YOU'VE BUILT<br />
