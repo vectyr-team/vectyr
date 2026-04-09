@@ -63,7 +63,7 @@ const Index = () => {
             {[
               { value: "$4,500", desc: "One time fee. Brand Codex built and installed. Done-for-you." },
               { value: "1–2", desc: "Sessions of your time. Everything else is ours." },
-              { value: "$195", desc: "Per month. BrandPulse keeps it current." },
+              { value: "$195", desc: "Per month. BrandPulse keeps it current with quarterly check-ins." },
               { value: "∞", desc: "Lifetime access to BrandOS. No renewal required." },
             ].map((item, i) => (
               <div key={i} className="bg-card p-6 md:p-8">
