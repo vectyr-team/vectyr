@@ -1,16 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from "@/components/Header";
+import { Button } from "@/components/ui/button";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background">
+      <Header />
+
+      {/* Hero */}
+      <section className="flex min-h-screen flex-col items-center justify-center px-6 pt-20 text-center">
+        <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6">
+          Built for Humans and AI
+        </span>
+
+        <h1 className="font-headline text-5xl leading-[1.05] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-5xl">
+          YOUR BRAND IS LIVING IN YOUR HEAD. NOWHERE ELSE.
+        </h1>
+
+        <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
+          Vectyr extracts your brand from wherever it's hiding, structures it so humans and AI can both actually use it, and installs it everywhere your team works. No more briefing vendors from memory. No more AI output that sounds like your competitor.
+        </p>
+
+        <Button size="lg" className="mt-10 rounded-full px-8 text-base font-semibold">
+          Book a Demo
+        </Button>
+      </section>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
