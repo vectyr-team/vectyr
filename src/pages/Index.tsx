@@ -386,7 +386,7 @@ const Index = () => {
         <div className="mx-auto max-w-[1300px] flex flex-col items-center text-center">
           <ScrollSection className="flex flex-col items-center">
             <h2 className="font-headline font-light text-5xl leading-[0.95] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl" style={{ color: '#090909' }}>
-              YOUR Business IS BETTER THAN WHAT<br />THE MARKET <span className="text-primary">CURRENTLY SEES.</span>
+              YOUR Business IS BETTER THAN WHAT <br />THE MARKET <span className="text-primary">CURRENTLY SEES.</span>
             </h2>
 
             <p className="mt-8 max-w-xl font-body text-lg leading-relaxed" style={{ color: '#6B6B6B' }}>
