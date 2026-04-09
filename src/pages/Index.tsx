@@ -29,7 +29,7 @@ const Index = () => {
           </span>
 
           <h1 className="font-headline text-5xl leading-[1.05] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
-            YOUR BRAND IS LIVING IN YOUR HEAD. NOWHERE ELSE.
+            YOUR BRAND IS LIVING IN<br />YOUR HEAD. NOWHERE ELSE.
           </h1>
 
           <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-muted-foreground">
