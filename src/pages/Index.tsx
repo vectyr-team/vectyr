@@ -32,7 +32,7 @@ const Index = () => {
       <Header />
 
       {/* Hero */}
-      <section className="relative flex min-h-[90dvh] flex-col items-center justify-center px-6 pt-20 overflow-hidden">
+      <section className="relative flex md:min-h-[90dvh] flex-col items-center justify-center px-6 py-36 md:pt-20 md:py-0 overflow-hidden">
         {/* Background video */}
         <video
           autoPlay
