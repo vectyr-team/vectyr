@@ -146,7 +146,7 @@ const About = () => {
                   Buy his book, Cake Jerky →
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/stevereed"
+                  href="https://www.linkedin.com/in/stevereedbrands/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="border-l-4 border-primary pl-4 font-body text-base font-semibold text-foreground hover:text-primary transition-colors"
