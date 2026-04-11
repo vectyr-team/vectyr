@@ -7,7 +7,7 @@ import { Icon } from "@iconify/react";
 const socialLinks = [
   { href: "https://www.youtube.com/@vectyrbrands", icon: "mdi:youtube", label: "YouTube" },
   { href: "https://www.behance.net/vectyr", icon: "mdi:behance", label: "Behance" },
-  { href: "https://www.linkedin.com/company/vectyr/", icon: "mdi:linkedin", label: "LinkedIn" },
+  { href: "https://www.linkedin.com/in/stevereedbrands", icon: "mdi:linkedin", label: "LinkedIn" },
 ];
 
 const navLinks = [
