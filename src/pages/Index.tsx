@@ -80,7 +80,6 @@ const Index = () => {
                 <p className="font-mono text-[10px] md:text-sm uppercase tracking-[0.2em] text-muted-foreground text-center">
                   <span className="md:hidden">{words[0]}<br />{words[1]}</span>
                   <span className="hidden md:inline">{words[0]} {words[1]}</span>
-                  <span className="text-primary ml-3">|</span>
                 </p>
               </div>
             ))}
