@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, ReactNode } from "react";
 import Header from "@/components/Header";
 import { supabase } from "@/integrations/supabase/client";
 import {
@@ -14,6 +14,24 @@ interface FAQ {
   answer: string;
   sort_order: number;
 }
+
+const linkifyText = (text: string): ReactNode[] => {
+  const urlRegex = /(https?:\/\/[^\s,)]+|(?:os\.vectyr\.com))/g;
+  const parts = text.split(urlRegex);
+  return parts.map((part, i) => {
+    if (urlRegex.test(part)) {
+      const href = part.startsWith("http") ? part : `https://${part}`;
+      return (
+        <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80 transition-colors">
+          {part}
+        </a>
+      );
+    }
+    // Reset regex lastIndex
+    urlRegex.lastIndex = 0;
+    return part;
+  });
+};
 
 const FAQs = () => {
   const [faqs, setFaqs] = useState<FAQ[]>([]);
