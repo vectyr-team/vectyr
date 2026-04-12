@@ -1,5 +1,6 @@
 import { useEffect, useState, ReactNode } from "react";
 import Header from "@/components/Header";
+import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import {
   Accordion,
@@ -77,6 +78,20 @@ const FAQs = () => {
           </Accordion>
         )}
       </main>
+
+      <section className="px-6 py-24 md:py-32">
+        <div className="mx-auto max-w-3xl flex flex-col items-center text-center">
+          <h2 className="font-headline text-3xl md:text-5xl font-normal text-foreground">
+            Still Have Questions?
+          </h2>
+          <p className="mt-4 max-w-xl font-body text-base text-muted-foreground leading-relaxed">
+            Book a free 30-minute call and get an honest read on your brand situation — no pitch, no agenda.
+          </p>
+          <a href="/demo" className="mt-8">
+            <Button size="lg">Book a Demo</Button>
+          </a>
+        </div>
+      </section>
     </div>
   );
 };
