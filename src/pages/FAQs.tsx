@@ -2,12 +2,7 @@ import { useEffect, useState, ReactNode } from "react";
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 interface FAQ {
   id: string;
@@ -23,7 +18,13 @@ const linkifyText = (text: string): ReactNode[] => {
     if (urlRegex.test(part)) {
       const href = part.startsWith("http") ? part : `https://${part}`;
       return (
-        <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80 transition-colors">
+        <a
+          key={i}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary underline hover:text-primary/80 transition-colors"
+        >
           {part}
         </a>
       );
@@ -40,10 +41,7 @@ const FAQs = () => {
 
   useEffect(() => {
     const fetchFaqs = async () => {
-      const { data } = await supabase
-        .from("faqs")
-        .select("*")
-        .order("sort_order", { ascending: true });
+      const { data } = await supabase.from("faqs").select("*").order("sort_order", { ascending: true });
       if (data) setFaqs(data);
       setLoading(false);
     };
@@ -79,13 +77,12 @@ const FAQs = () => {
         )}
       </main>
 
-      <section className="px-6 py-24 md:py-32 pt-0">
+      <section className="bg-card px-6 py-24 md:py-32 pt-0">
         <div className="mx-auto max-w-3xl flex flex-col items-center text-center">
-          <h2 className="font-headline text-3xl md:text-5xl font-normal text-foreground">
-            Still Have Questions?
-          </h2>
+          <h2 className="font-headline text-3xl md:text-5xl font-normal text-foreground">Still Have Questions?</h2>
           <p className="mt-4 max-w-xl font-body text-base text-muted-foreground leading-relaxed">
-            Book a free demo of Vectyr BrandOS and get an honest read on your brand situation to get total clarity on whether it's a fit or not.
+            Book a free demo of Vectyr BrandOS and get an honest read on your brand situation to get total clarity on
+            whether it's a fit or not.
           </p>
           <a href="/demo" className="mt-8">
             <Button size="lg">Book a Demo</Button>
