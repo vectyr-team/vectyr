@@ -80,7 +80,7 @@ const Index = () => {
               BRAND ENTROPY IS THE ENEMY
             </span>
             <blockquote className="font-body text-base font-light italic text-foreground md:text-2xl" style={{ lineHeight: '1.5' }}>
-              "Your brand doesn't collapse "Your brand doesn't collapse all at once. It becomes a little less recognizable every week, a little more generic, until one day you look at what the market sees and barely{" "} It becomes a little less recognizable every week, a little more generic, until one day you look at what the market sees and barely{" "}
+              "Your brand doesn't collapse all at once. It becomes a little less recognizable every week, a little more generic, a little more diluted, until one day you look at what the market sees and you barely{" "}
               <span className="text-primary">recognize it.</span>"
             </blockquote>
           </ScrollSection>
