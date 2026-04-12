@@ -254,11 +254,11 @@ const Index = () => {
             </p>
 
             <p>
-              Everyone is selling the output before anyone has earned the right to produce it. The result is an entire market of businesses with expensive visual identities and no idea what they actually stand for.
+              The result is an entire market of businesses with expensive visual identities and no idea what they actually stand for.
             </p>
 
             <p>
-              Brands that look like brands but cannot brief a vendor without a two-hour phone call. Cannot trust a single AI output to sound like themselves. Cannot explain to a new hire what the company actually believes.
+              Brands that look like brands but can't brief a vendor without a two-hour phone call. They can't trust a single AI output to sound like themselves, and they can't explain to a new hire what the company actually believes.
             </p>
 
             <p>
@@ -274,11 +274,11 @@ const Index = () => {
             </p>
 
             <p>
-              Vectyr is not for everyone. It is not for founders who feel fine winging it and prefer to copy those around them instead of leading.
+              Vectyr is not for everyone. It is not for founders who want a logo and are willing to call that a brand. It is not for businesses that don't have a budget for brand strategy and don't understand why they should. It is not for solopreneurs still deciding whether the business is real.
             </p>
 
             <p>
-              It is not for founders who want a logo and are willing to call that a brand. It is for the founder who has already built something real, who knows the brand is the next constraint on growth, and who is done waiting for the right person to show up.
+              Vectyr for the founder who has already built something real, who knows the brand is the next thing standing between them and the growth they can see, and who is done making excuses for why the outside doesn't match the inside.
             </p>
           </ScrollSection>
         </div>
@@ -373,7 +373,7 @@ const Index = () => {
                 title: "See BrandOS Live",
                 url: "https://vectyr.com/demo",
                 btnText: "See the Demo",
-                desc: "You already know about Vectyr and you want to see the platform before deciding. Walk through BrandOS, ask questions, and get a real look at how the system works. No pressure on what comes next.",
+                desc: "You like the concept, but you want to see it in action before deciding. Walk through BrandOS, ask questions, and get a real look at how the everything works. No pressure.",
               },
               {
                 dot: "bg-primary",
@@ -381,7 +381,7 @@ const Index = () => {
                 title: "Book Directly",
                 url: "https://stevescalendar.com",
                 btnText: "Book Now",
-                desc: "You know what you want and you're asking whether Vectyr is the right fit. Direct calendar access for serious buyers who are done doing research.",
+                desc: "You know what you want and you're asking whether Vectyr is the right fit. This is direct calendar access for serious buyers who are done doing research.",
               },
             ].map((card, i) => (
               <ScrollSection key={i} className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1} border-l border-border/40`}>
