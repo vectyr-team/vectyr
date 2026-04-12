@@ -74,7 +74,7 @@ const Index = () => {
       {/* Benefits Strip */}
       <section className="bg-card py-12 md:py-[20px] px-[20px]">
         <div className="mx-auto max-w-[1300px]">
-          <ScrollSection className="grid md:grid-cols-3">
+          <ScrollSection className="grid grid-cols-3">
             {["Brand Extracted", "Team Aligned", "Drift Stopped"].map((item, i) => (
               <div key={i} className="p-8 px-0 py-0">
                 <p className="font-mono text-sm uppercase tracking-[0.2em] text-muted-foreground text-center">{item}</p>
