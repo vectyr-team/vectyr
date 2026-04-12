@@ -36,7 +36,7 @@ const About = () => {
               The strategy that tells your team, your vendors, and your AI tools exactly who you are, what you stand for, and how to communicate it without calling you first. We've watched good businesses lose to worse ones for two decades because the market rewards the brand that earns trust fastest, not the product that deserves it most.
             </p>
 
-            <p className="font-mono text-base md:text-lg font-light leading-relaxed text-[#adadad]">
+            <p className="font-body italic text-base md:text-lg font-light leading-relaxed text-[#adadad]">
               BrandOS exists because that is a solvable problem, and nobody else was solving it the right way.
             </p>
           </div>
