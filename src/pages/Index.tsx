@@ -126,7 +126,7 @@ const Index = () => {
               {
                 num: "03",
                 title: "Strategy That Goes Stale",
-                desc: "The moment the business changes, the market shifts, or a new competitor arrives, the previous strategy can go obsolete. Most founders have no way to know when that's happened or what to do about it.",
+                desc: "Most brand strategies were built for the moment they were created and never touched again. The business evolves, the market shifts, but the strategy doesn't. Without a system to keep it current, you're back to winging it again.",
                 solved: "BrandPulse",
               },
             ].map((card, i) => (
