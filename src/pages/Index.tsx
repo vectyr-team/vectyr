@@ -200,17 +200,17 @@ const Index = () => {
             ].map((card, i) => (
               <ScrollSection key={i} className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1} border-l border-border/40`}>
                 <div>
-                  <span className={`inline-block px-3 py-1 font-mono text-xs uppercase tracking-[0.15em] rounded-sm ${card.badgeStyle}`}>
+                  <span className={`inline-block px-3 py-1 font-mono text-sm md:text-xs uppercase tracking-[0.15em] rounded-sm ${card.badgeStyle}`}>
                     {card.badge}
                   </span>
-                  <h3 className="font-body font-semibold text-2xl leading-tight text-foreground mt-6">
+                  <h3 className="font-body font-semibold text-3xl md:text-2xl leading-tight text-foreground mt-6">
                     {card.title}
                   </h3>
-                  <p className="mt-4 font-mono text-xs text-muted-foreground tracking-wide">
+                  <p className="mt-4 font-mono text-sm md:text-xs text-muted-foreground tracking-wide">
                     {card.pricing}
                   </p>
                   <div className="h-px w-full my-4" style={{ backgroundColor: '#252525' }} />
-                  <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                  <p className="font-body text-base md:text-sm leading-relaxed text-muted-foreground">
                     {card.desc}
                   </p>
                 </div>
@@ -308,14 +308,14 @@ const Index = () => {
             ].map((card, i) => (
               <ScrollSection key={i} className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1} border-l border-border/40`}>
                 <Icon icon="tdesign:quote-filled" className="text-primary text-3xl mb-3" />
-                <p className="font-body text-sm leading-relaxed text-muted-foreground flex-1">
+                <p className="font-body text-base md:text-sm leading-relaxed text-muted-foreground flex-1">
                   {card.quote}
                 </p>
                 <div className="mt-6">
-                  <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary">
+                  <p className="font-mono text-sm md:text-xs uppercase tracking-[0.25em] text-primary">
                     {card.name}
                   </p>
-                  <p className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground opacity-50 mt-[9px]">
+                  <p className="font-mono text-sm md:text-xs uppercase tracking-[0.15em] text-muted-foreground opacity-50 mt-[9px]">
                     {card.role}
                   </p>
                 </div>
@@ -375,14 +375,14 @@ const Index = () => {
               <ScrollSection key={i} className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1} border-l border-border/40`}>
                 <div className="flex items-center gap-2 mb-6">
                   <span className={`inline-block h-2 w-2 rounded-full ${card.dot}`} />
-                  <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
+                  <span className="font-mono text-sm md:text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
                     {card.label}
                   </span>
                 </div>
-                <h3 className="font-body font-semibold text-2xl leading-tight text-foreground">
+                <h3 className="font-body font-semibold text-3xl md:text-2xl leading-tight text-foreground">
                   {card.title}
                 </h3>
-                <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground flex-1">
+                <p className="mt-4 font-body text-base md:text-sm leading-relaxed text-muted-foreground flex-1">
                   {card.desc}
                 </p>
                 <a href={card.url} className="mt-6 self-start">
