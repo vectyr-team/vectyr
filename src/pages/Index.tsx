@@ -250,11 +250,19 @@ const Index = () => {
             </p>
 
             <p>
-              Agencies lead with logos. Platforms lead with templates. AI tools lead with speed. Everyone is selling the output before anyone has earned the right to produce it. The result is an entire market of businesses with expensive visual identities and no idea what they actually stand for.
+              Agencies lead with logos. Platforms lead with templates. AI tools lead with speed.
             </p>
 
             <p>
-              Brands that look like brands but cannot brief a vendor without a two-hour phone call. Cannot trust a single AI output to sound like themselves. Cannot explain to a new hire what the company actually believes. The industry calls this brand. It is not brand, it's decoration with a budget attached, and the founders paying for it deserve better.
+              Everyone is selling the output before anyone has earned the right to produce it. The result is an entire market of businesses with expensive visual identities and no idea what they actually stand for.
+            </p>
+
+            <p>
+              Brands that look like brands but cannot brief a vendor without a two-hour phone call. Cannot trust a single AI output to sound like themselves. Cannot explain to a new hire what the company actually believes.
+            </p>
+
+            <p>
+              The industry calls this brand. It is not brand, it's decoration with a budget attached, and the founders paying for it deserve better.
             </p>
 
             <p>
@@ -266,7 +274,11 @@ const Index = () => {
             </p>
 
             <p>
-              Vectyr is not for everyone. It is not for founders who feel fine winging it and prefer to copy those around them instead of leading. It is not for founders who want a logo and are willing to call that a brand. It is for the founder who has already built something real, who knows the brand is the next constraint on growth, and who is done waiting for the right person to show up.
+              Vectyr is not for everyone. It is not for founders who feel fine winging it and prefer to copy those around them instead of leading.
+            </p>
+
+            <p>
+              It is not for founders who want a logo and are willing to call that a brand. It is for the founder who has already built something real, who knows the brand is the next constraint on growth, and who is done waiting for the right person to show up.
             </p>
           </ScrollSection>
         </div>
