@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
 
 interface Page {
   slug: string;
@@ -23,6 +24,14 @@ const BackendSidebar = ({ pages, selectedPage, onSelectPage, onLogout }: Backend
       </div>
 
       <nav className="flex-1 px-3">
+        <Link
+          to="/"
+          className="w-full text-left px-3 py-2 rounded text-sm font-body text-muted-foreground hover:text-foreground hover:bg-card transition-colors mb-4 flex items-center gap-2"
+        >
+          <Icon icon="lucide:external-link" className="w-4 h-4" />
+          View Site
+        </Link>
+
         <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground px-3 mb-2 block">
           Pages
         </span>
