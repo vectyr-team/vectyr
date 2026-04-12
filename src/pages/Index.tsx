@@ -85,19 +85,32 @@ const Index = () => {
             </blockquote>
           </ScrollSection>
 
-          {/* Right – stats grid */}
-          <ScrollSection className="grid grid-cols-2 gap-px bg-border scroll-animate-delay-2">
+          {/* Right – stats */}
+          <ScrollSection className="space-y-8 scroll-animate-delay-2">
             {[
-              { value: "$4,500", desc: "One time fee. Brand Codex built and installed. Done-for-you." },
-              { value: "1–2", desc: "Sessions of your time. We do everything else and deliver it." },
-              { value: "$195", desc: "Per month. BrandPulse keeps it current with quarterly check-ins." },
-              { value: "∞", desc: "Lifetime access to to the BrandOS online platform." },
+              { value: "87%", desc: "of consumers develop strong trust only after consistent multi-channel exposure.¹" },
+              { value: "81%", desc: "of consumers will pay more for products from a brand name they trust.¹" },
+              { value: "23%", desc: "average revenue increase reported by businesses with consistent brand presentation.²" },
+              { value: "<10%", desc: "of businesses maintain consistent branding across all channels.³" },
             ].map((item, i) => (
-              <div key={i} className="bg-card p-6 md:p-8">
-                <p className="font-headline text-4xl text-foreground md:text-5xl">{item.value === "∞" ? <Icon icon="mdi:infinity" className="inline text-4xl md:text-5xl" /> : item.value}</p>
-                <p className="mt-3 font-body text-sm leading-relaxed text-[#6e6e6e]">{item.desc}</p>
+              <div key={i} className="flex items-start gap-5">
+                <p className="font-headline text-4xl md:text-5xl text-primary shrink-0 w-[120px]">{item.value}</p>
+                <div className="border-l border-muted-foreground/30 pl-5">
+                  <p className="font-body text-sm md:text-base leading-relaxed text-muted-foreground">{item.desc}</p>
+                </div>
               </div>
             ))}
+            <div className="pt-4 space-y-1">
+              <p className="font-mono text-[10px] text-muted-foreground/40">
+                ¹ <a href="https://capitaloneshopping.com/research/branding-statistics" target="_blank" rel="noopener noreferrer" className="underline hover:text-muted-foreground/60">capitaloneshopping.com/research/branding-statistics</a>
+              </p>
+              <p className="font-mono text-[10px] text-muted-foreground/40">
+                ² <a href="https://d2slcw3kip6qmk.cloudfront.net/marketing/press/webinar/The-Impact-of-Brand-Consistency-Report-New_Cover.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:text-muted-foreground/60">The Impact of Brand Consistency Report — Lucidpress</a>
+              </p>
+              <p className="font-mono text-[10px] text-muted-foreground/40">
+                ³ <a href="https://www.renderforest.com/blog/brand-statistics" target="_blank" rel="noopener noreferrer" className="underline hover:text-muted-foreground/60">renderforest.com/blog/brand-statistics</a>
+              </p>
+            </div>
           </ScrollSection>
         </div>
       </section>
