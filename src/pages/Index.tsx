@@ -72,18 +72,12 @@ const Index = () => {
       </section>
 
       {/* Benefits Strip */}
-      <section className="relative bg-[#000000] px-6 py-12 md:py-20 overflow-hidden">
-        <img src="/images/system-bg.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-[0.2] pointer-events-none" />
-        <div className="relative z-10 mx-auto max-w-[1300px]">
-          <ScrollSection className="grid md:grid-cols-3 gap-px">
-            {[
-              { title: "Brand Extracted", desc: "Your strategy pulled from your head and built into a structured system." },
-              { title: "Team Aligned", desc: "Everyone works from the same source of truth, not memory." },
-              { title: "Drift Stopped", desc: "Quarterly check-ins keep the brand current as the business evolves." },
-            ].map((item, i) => (
-              <div key={i} className="bg-card p-8 border-l border-border/40">
-                <h3 className="font-body font-semibold text-xl text-foreground">{item.title}</h3>
-                <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+      <section className="bg-card px-6 py-12 md:py-20">
+        <div className="mx-auto max-w-[1300px]">
+          <ScrollSection className="grid md:grid-cols-3">
+            {["Brand Extracted", "Team Aligned", "Drift Stopped"].map((item, i) => (
+              <div key={i} className="p-8">
+                <p className="font-mono text-sm uppercase tracking-[0.2em] text-muted-foreground">{item}</p>
               </div>
             ))}
           </ScrollSection>
