@@ -72,12 +72,12 @@ const Index = () => {
       </section>
 
       {/* Benefits Strip */}
-      <section className="bg-card px-6 py-12 md:py-20">
+      <section className="bg-card py-12 px-[18px] md:py-[29px]">
         <div className="mx-auto max-w-[1300px]">
           <ScrollSection className="grid md:grid-cols-3">
             {["Brand Extracted", "Team Aligned", "Drift Stopped"].map((item, i) => (
-              <div key={i} className="p-8">
-                <p className="font-mono text-sm uppercase tracking-[0.2em] text-muted-foreground">{item}</p>
+              <div key={i} className="p-8 px-0 py-0">
+                <p className="font-mono text-sm uppercase tracking-[0.2em] text-muted-foreground text-center">{item}</p>
               </div>
             ))}
           </ScrollSection>
