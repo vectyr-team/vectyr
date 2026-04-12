@@ -62,8 +62,9 @@ const Index = () => {
               Vectyr extracts your brand from wherever it's hiding, structures it so humans and AI can both actually use it, and installs it everywhere your team works. No more briefing vendors from memory. No more generic AI output that sounds like everybody else.
             </p>
 
-            <div className="mt-10" style={heroStyle(3)}>
+            <div className="mt-10 flex gap-4" style={heroStyle(3)}>
               <a href="/demo"><Button size="lg">Book a Demo</Button></a>
+              <a href="/faqs"><Button size="lg" variant="outline">Learn More</Button></a>
             </div>
           </div>
 
