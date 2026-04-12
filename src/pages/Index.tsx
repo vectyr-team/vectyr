@@ -132,17 +132,17 @@ const Index = () => {
             ].map((card, i) => (
               <ScrollSection key={i} className={`relative bg-card p-8 flex flex-col justify-between min-h-[280px] border-b-2 border-b-primary border-l border-border/40 scroll-animate-delay-${i + 1}`}>
                 <div>
-                  <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#424242]">
+                  <span className="font-mono text-sm md:text-xs uppercase tracking-[0.25em] text-[#424242]">
                     {card.num} / Problem
                   </span>
-                  <h3 className="font-body font-semibold text-2xl leading-tight text-foreground mt-4">
+                  <h3 className="font-body font-semibold text-3xl md:text-2xl leading-tight text-foreground mt-4">
                     {card.title}
                   </h3>
-                  <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-4 font-body text-base md:text-sm leading-relaxed text-muted-foreground">
                     {card.desc}
                   </p>
                 </div>
-                <p className="mt-4 font-mono text-xs uppercase tracking-[0.25em] text-primary">
+                <p className="mt-4 font-mono text-sm md:text-xs uppercase tracking-[0.25em] text-primary">
                   Solved by: {card.solved}
                 </p>
               </ScrollSection>
