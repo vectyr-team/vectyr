@@ -239,7 +239,7 @@ const Index = () => {
             </div>
 
             <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-              WHY THIS MATTERS MORE THAN YOU THINK
+              "Design first, strategy never" must die
             </h2>
           </ScrollSection>
 
