@@ -54,6 +54,8 @@ const BackendSidebar = ({ pages, selectedPage, onSelectPage, onLogout }: Backend
                   ? "lucide:info"
                   : page.slug === "demo"
                   ? "lucide:play"
+                  : page.slug === "faqs"
+                  ? "lucide:help-circle"
                   : "lucide:mail"
               }
               className="w-4 h-4"

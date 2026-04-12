@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import BackendSidebar from "@/components/backend/BackendSidebar";
 import PageSettingsEditor from "@/components/backend/PageSettingsEditor";
+import FAQsEditor from "@/components/backend/FAQsEditor";
 
 interface PageSetting {
   id: string;
@@ -17,6 +18,7 @@ const ALL_PAGES = [
   { slug: "about", name: "About" },
   { slug: "demo", name: "Demo" },
   { slug: "contact", name: "Contact" },
+  { slug: "faqs", name: "FAQs" },
 ];
 
 const Backend = () => {
@@ -77,6 +79,7 @@ const Backend = () => {
   const currentSettings = pageSettings.find((p) => p.page_slug === selectedPage);
   const currentPage = ALL_PAGES.find((p) => p.slug === selectedPage);
   const hasFormSettings = selectedPage === "demo" || selectedPage === "contact";
+  const isFaqsPage = selectedPage === "faqs";
 
   return (
     <div className="min-h-screen bg-background flex">
@@ -96,7 +99,9 @@ const Backend = () => {
             /{selectedPage === "index" ? "" : selectedPage}
           </p>
 
-          {hasFormSettings ? (
+          {isFaqsPage ? (
+            <FAQsEditor />
+          ) : hasFormSettings ? (
             <PageSettingsEditor
               pageSlug={selectedPage}
               settings={currentSettings || null}
