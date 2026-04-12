@@ -283,8 +283,9 @@ const Index = () => {
           <ScrollSection>
             <div className="flex items-center gap-4 mb-4 md:mb-10">
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
-                — Results
+                Results
               </span>
+              <div className="h-px w-16 bg-muted-foreground/40" />
             </div>
 
             <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
