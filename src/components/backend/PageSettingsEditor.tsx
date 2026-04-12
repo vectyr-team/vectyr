@@ -17,13 +17,11 @@ interface PageSettingsEditorProps {
 
 const PageSettingsEditor = ({ pageSlug, settings, onSaved }: PageSettingsEditorProps) => {
   const [embedCode, setEmbedCode] = useState(settings?.form_embed_code || "");
-  const [scriptUrl, setScriptUrl] = useState(settings?.form_script_url || "");
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
 
   useEffect(() => {
     setEmbedCode(settings?.form_embed_code || "");
-    setScriptUrl(settings?.form_script_url || "");
     setSaved(false);
   }, [settings, pageSlug]);
 
@@ -34,7 +32,7 @@ const PageSettingsEditor = ({ pageSlug, settings, onSaved }: PageSettingsEditorP
     if (settings) {
       await supabase
         .from("page_settings")
-        .update({ form_embed_code: embedCode, form_script_url: scriptUrl })
+        .update({ form_embed_code: embedCode })
         .eq("id", settings.id);
     } else {
       await supabase
@@ -43,7 +41,6 @@ const PageSettingsEditor = ({ pageSlug, settings, onSaved }: PageSettingsEditorP
           page_slug: pageSlug,
           page_name: pageSlug.charAt(0).toUpperCase() + pageSlug.slice(1),
           form_embed_code: embedCode,
-          form_script_url: scriptUrl,
         });
     }
 
@@ -56,32 +53,19 @@ const PageSettingsEditor = ({ pageSlug, settings, onSaved }: PageSettingsEditorP
   return (
     <div className="space-y-6">
       <h2 className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-        Form Embed Settings
+        Form Embed Code
       </h2>
 
       <div>
         <label className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-1 block">
-          Embed URL / Code
+          Embed Code
         </label>
         <textarea
           value={embedCode}
           onChange={(e) => setEmbedCode(e.target.value)}
-          rows={3}
+          rows={6}
           className="w-full bg-background border border-border rounded px-3 py-2 text-foreground font-mono text-xs focus:outline-none focus:border-primary resize-y"
-          placeholder="https://links.vectyr.com/widget/..."
-        />
-      </div>
-
-      <div>
-        <label className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-1 block">
-          Script URL
-        </label>
-        <input
-          type="text"
-          value={scriptUrl}
-          onChange={(e) => setScriptUrl(e.target.value)}
-          className="w-full bg-background border border-border rounded px-3 py-2 text-foreground font-mono text-xs focus:outline-none focus:border-primary"
-          placeholder="https://links.vectyr.com/js/form_embed.js"
+          placeholder='<iframe src="https://links.vectyr.com/widget/..." ...></iframe><script src="..."></script>'
         />
       </div>
 
