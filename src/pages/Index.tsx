@@ -120,7 +120,7 @@ const Index = () => {
               {
                 num: "02",
                 title: "Strategy Never Used",
-                desc: "Even when a strategy exists, it lives in a folder nobody opens. Unavailable to the freelancer at 9pm. Invisible to the AI tool writing tomorrow's social post. Unknown to the new hire who started last week.",
+                desc: "Even when a strategy exists, it just sits on a drive as a PDF or a doc waiting for someone to open it, read it, interpret it, and somehow turn it into action. That's not infrastructure, that's homework, and needless friction.",
                 solved: "BrandOS Platform",
               },
               {
