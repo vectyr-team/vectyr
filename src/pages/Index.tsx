@@ -268,6 +268,10 @@ const Index = () => {
             <p>
               The clients who stay with us for five, ten, twenty years don't come back because the logo was good. They come back because decisions got easier, hiring got clearer, and they stopped losing deals to competitors they knew they were better than.
             </p>
+
+            <p className="text-foreground font-semibold">
+              Vectyr is not for everyone. It's not for founders who want a logo and are willing to call that a brand. It's for the founder who has already built something real and is done making excuses for why the outside doesn't match the inside.
+            </p>
           </ScrollSection>
         </div>
       </section>
