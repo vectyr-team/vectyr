@@ -51,7 +51,7 @@ const Index = () => {
         <div className="relative z-10 w-full max-w-[1300px] mx-auto flex items-center justify-between gap-12">
           <div>
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block" style={heroStyle(0)}>
-              Built for Humans and AI
+              BRANDING FOR THE AGE OF AI
             </span>
 
             <h1 className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-[625px]" style={heroStyle(1)}>
