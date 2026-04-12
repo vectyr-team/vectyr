@@ -142,7 +142,7 @@ const Index = () => {
                     {card.desc}
                   </p>
                 </div>
-                <p className="mt-4 font-mono text-sm uppercase tracking-[0.25em] text-primary">
+                <p className="mt-4 font-mono uppercase tracking-[0.25em] text-primary text-xs">
                   Solved by: {card.solved}
                 </p>
               </ScrollSection>
