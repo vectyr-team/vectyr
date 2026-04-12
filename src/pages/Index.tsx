@@ -181,21 +181,21 @@ const Index = () => {
                 badgeStyle: "bg-primary text-primary-foreground",
                 title: "Brand Codex",
                 pricing: "$4,500  /  lifetime BrandOS access",
-                desc: "Done-for-you brand strategy. Vectyr runs the extraction, synthesis, and AI installation. You bring the knowledge. We build the rest. One to two sessions of your time. Everything else is handled.",
+                desc: "Done-for-you brand strategy. Vectyr runs the extraction, synthesis, and AI installation. You bring the knowledge. We build the rest. One to two sessions of your time. ",
               },
               {
                 badge: "Included",
                 badgeStyle: "border border-border text-muted-foreground",
                 title: "BrandOS",
                 pricing: "os.vectyr.com  /  lifetime access",
-                desc: "The platform where the Brand Codex lives, gets distributed, and gets accessed by everyone who needs it. Your team, your vendors, your AI tools. One place. One source. No more briefing from memory.",
+                desc: "The platform where the Brand Codex lives, gets distributed, and gets accessed by everyone who needs it. Your team, your vendors, your AI tools. No more briefing from memory.",
               },
               {
                 badge: "Monthly",
                 badgeStyle: "border border-border text-muted-foreground",
                 title: "BrandPulse",
                 pricing: "$195 per month / no contracts",
-                desc: "We implement quarterly brand check-ins to examine the performance of the brand. You can submit new info at any time so we can update the Brand Codex and avoid brand entropy and drift.",
+                desc: "90-day brand check-ins to examine the performance of the brand. You can submit new info at any time so we can update the Brand Codex and avoid brand entropy and drift.",
               },
             ].map((card, i) => (
               <ScrollSection key={i} className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1} border-l border-border/40`}>
