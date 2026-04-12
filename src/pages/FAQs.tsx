@@ -48,10 +48,10 @@ const FAQs = () => {
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq) => (
               <AccordionItem key={faq.id} value={faq.id} className="border-border">
-                <AccordionTrigger className="font-body text-left text-base text-foreground hover:no-underline py-6">
+                <AccordionTrigger className="font-body text-left text-foreground hover:no-underline py-6 text-lg">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="font-body text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
+                <AccordionContent className="font-body text-muted-foreground leading-relaxed whitespace-pre-line text-base">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
