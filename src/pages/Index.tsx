@@ -250,35 +250,27 @@ const Index = () => {
             </p>
 
             <p>
-              Agencies lead with logos. Platforms lead with templates. AI tools lead with speed.
+              Agencies lead with logos. Platforms lead with templates. AI tools lead with speed. Everyone is selling the output before anyone has earned the right to produce it. What you end up with is an expensive visual identity and no idea what you actually stand for.
             </p>
 
             <p>
-              The result is an entire market of businesses with expensive visual identities and no idea what they actually stand for.
+              You've been winging it. Honestly? Hell of a run.&nbsp;But winging it doesn't scale, and somewhere in the back of your head you already know that.
             </p>
 
             <p>
-              Brands that look like brands but can't brief a vendor without a two-hour phone call. They can't trust a single AI output to sound like themselves, and they can't explain to a new hire what the company actually believes.
+              The brand that lives in your head isn't making it to your team, your vendors, or your AI tools. Every dollar you spend on marketing is like driving with the parking brake on.
             </p>
 
             <p>
-              The industry calls this brand. It is not brand, it's decoration with a budget attached, and the founders paying for it deserve better.
+              That's not a people problem, that's an infrastructure problem.
             </p>
 
             <p>
-              The clients who stay with us for five, ten, twenty years don't come back because the logo was good. They come back because something changed after the strategy work: decisions got easier, hiring got clearer, marketing stopped feeling like guesswork, and they stopped losing deals to competitors they knew they were better than.
+              The clients who stay with us for five, ten, twenty years don't come back because the logo was good. They come back because decisions got easier, hiring got clearer, and they stopped losing deals to competitors they knew they were better than.
             </p>
 
             <p className="text-foreground font-semibold">
-              We knew exactly what would happen when a business finally had a system to match the quality of what it actually does. We have seen it happen more times than we can count.
-            </p>
-
-            <p>
-              Vectyr is not for everyone. It is not for founders who want a logo and are willing to call that a brand. It is not for businesses that don't have a budget for brand strategy and don't understand why they should. It is not for solopreneurs still deciding whether the business is real.
-            </p>
-
-            <p>
-              Vectyr for the founder who has already built something real, who knows the brand is the next thing standing between them and the growth they can see, and who is done making excuses for why the outside doesn't match the inside.
+              Vectyr is not for everyone. It's not for founders who want a logo and are willing to call that a brand. It's for the founder who has already built something real and is done making excuses for why the outside doesn't match the inside.
             </p>
           </ScrollSection>
         </div>
