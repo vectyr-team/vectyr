@@ -71,47 +71,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Villain / Brand Entropy */}
-      <section className="bg-card px-6 py-12 md:py-[30px]">
-        <div className="mx-auto grid max-w-[1300px] items-center gap-16 lg:grid-cols-2">
-          {/* Left – quote */}
-          <ScrollSection>
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50 mb-6 block">
-              BRAND ENTROPY IS THE ENEMY
-            </span>
-            <blockquote className="font-body text-base font-light italic text-foreground md:text-2xl" style={{ lineHeight: '1.5' }}>
-              "Your brand doesn't collapse all at once. It becomes a little less recognizable every week, a little more generic, a little more diluted, until one day you look at what the market sees and you barely{" "}
-              <span className="text-primary">recognize it.</span>"
-            </blockquote>
-          </ScrollSection>
-
-          {/* Right – stats grid */}
-          <ScrollSection className="grid grid-cols-2 gap-px bg-border scroll-animate-delay-2">
-            {[
-              { value: "87%", desc: "of consumers develop strong trust only after consistent multi-channel exposure.¹" },
-              { value: "81%", desc: "of consumers will pay more for products from a brand name they trust.¹" },
-              { value: "23%", desc: "average revenue increase reported by businesses with consistent brand presentation.²" },
-              { value: "<10%", desc: "of businesses maintain consistent branding across all channels.³" },
-            ].map((item, i) => (
-              <div key={i} className="bg-card p-6 md:p-8">
-                <p className="font-headline text-4xl text-primary md:text-5xl">{item.value}</p>
-                <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground/50">{item.desc}</p>
-              </div>
-            ))}
-          </ScrollSection>
-          <div className="col-span-2 mt-4 space-y-1">
-            <p className="font-mono text-[10px] text-muted-foreground/30">
-              ¹ <a href="https://capitaloneshopping.com/research/branding-statistics" target="_blank" rel="noopener noreferrer" className="underline hover:text-muted-foreground/50">capitaloneshopping.com/research/branding-statistics</a>
-            </p>
-            <p className="font-mono text-[10px] text-muted-foreground/30">
-              ² <a href="https://d2slcw3kip6qmk.cloudfront.net/marketing/press/webinar/The-Impact-of-Brand-Consistency-Report-New_Cover.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:text-muted-foreground/50">The Impact of Brand Consistency Report — Lucidpress</a>
-            </p>
-            <p className="font-mono text-[10px] text-muted-foreground/30">
-              ³ <a href="https://www.renderforest.com/blog/brand-statistics" target="_blank" rel="noopener noreferrer" className="underline hover:text-muted-foreground/50">renderforest.com/blog/brand-statistics</a>
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* The Full Lifecycle */}
       <section className="bg-background px-6 py-12 md:py-32">
