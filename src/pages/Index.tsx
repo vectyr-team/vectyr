@@ -180,7 +180,7 @@ const Index = () => {
                 badge: "Start Here",
                 badgeStyle: "bg-primary text-primary-foreground",
                 title: "Brand Codex",
-                pricing: "$4,500 flat  /  includes lifetime BrandOS access",
+                pricing: "$4,500  /  lifetime BrandOS access",
                 desc: "Done-for-you brand strategy. Vectyr runs the extraction, synthesis, and AI installation. You bring the knowledge. We build the rest. One to two sessions of your time. Everything else is handled.",
               },
               {
