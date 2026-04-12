@@ -70,7 +70,7 @@ const FAQs = () => {
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="font-body text-muted-foreground leading-relaxed whitespace-pre-line text-base">
-                  {faq.answer}
+                  {linkifyText(faq.answer)}
                 </AccordionContent>
               </AccordionItem>
             ))}
