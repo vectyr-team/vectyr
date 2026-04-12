@@ -104,7 +104,7 @@ const Index = () => {
             </h2>
 
             <p className="mt-4 md:mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
-              Having a strategy is step one. Getting your team to use it is step two. Keeping it current is step three. Vectyr solves all three.
+              Having a strategy is step one. Getting your team to use it is step two. Keeping it current is step three. Vectyr uniquely solves all three.
             </p>
           </ScrollSection>
 
