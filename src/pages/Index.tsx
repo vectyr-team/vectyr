@@ -75,9 +75,12 @@ const Index = () => {
       <section className="bg-card py-6 md:py-[20px] px-[20px]">
         <div className="mx-auto max-w-[1300px]">
           <ScrollSection className="grid grid-cols-3">
-            {["Brand Extracted", "Team Aligned", "Drift Stopped"].map((item, i) => (
+            {[["Brand", "Extracted"], ["Team", "Aligned"], ["Drift", "Stopped"]].map((words, i) => (
               <div key={i} className="p-8 px-0 py-0">
-                <p className="font-mono text-[10px] md:text-sm uppercase tracking-[0.2em] text-muted-foreground text-center">{item}</p>
+                <p className="font-mono text-[10px] md:text-sm uppercase tracking-[0.2em] text-muted-foreground text-center">
+                  <span className="md:hidden">{words[0]}<br />{words[1]}</span>
+                  <span className="hidden md:inline">{words[0]} {words[1]}</span>
+                </p>
               </div>
             ))}
           </ScrollSection>
