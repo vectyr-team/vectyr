@@ -72,7 +72,7 @@ const Index = () => {
       </section>
 
       {/* Benefits Strip */}
-      <section className="bg-card py-6 md:py-[20px] px-[20px]">
+      <section className="bg-card py-6 md:py-8 px-[20px]">
         <div className="mx-auto max-w-[1300px]">
           <ScrollSection className="grid grid-cols-3">
             {[["Brand", "Extracted"], ["Team", "Aligned"], ["Drift", "Stopped"]].map((words, i) => (
