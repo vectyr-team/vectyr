@@ -86,31 +86,24 @@ const Footer = () => {
           {/* Connect */}
           <div className="flex flex-col gap-3 items-center md:items-start">
             <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">Connect</span>
-            {[
-              { label: "Pick Steve's Brain", href: "https://stevesbrain.com" },
-              { label: "See the Demo", href: "/demo", internal: true },
-              { label: "Book Directly", href: "https://stevescalendar.com" },
-            ].map((item) =>
-              item.internal ? (
-                <Link
-                  key={item.label}
-                  to={item.href}
-                  className="font-body text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit"
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-body text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit"
-                >
-                  {item.label}
-                </a>
-              ),
-            )}
+            <Link
+              to="/demo"
+              className="font-body text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit"
+            >
+              See the Demo
+            </Link>
+            <Link
+              to="/contact"
+              className="font-body text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit"
+            >
+              Contact
+            </Link>
+            <a
+              href="tel:+15128791233"
+              className="font-body text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit"
+            >
+              (512) 879-1233
+            </a>
           </div>
         </div>
 
