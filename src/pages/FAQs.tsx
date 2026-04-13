@@ -77,7 +77,7 @@ const FAQs = () => {
         )}
       </main>
 
-      <section className="bg-card px-6 py-24 md:py-32 pt-0">
+      <section className="bg-card px-6 py-24 md:py-32">
         <div className="mx-auto max-w-3xl flex flex-col items-center text-center">
           <h2 className="font-headline text-3xl md:text-5xl font-normal text-foreground">Still Have Questions?</h2>
           <p className="mt-4 max-w-xl font-body text-base text-muted-foreground leading-relaxed">
