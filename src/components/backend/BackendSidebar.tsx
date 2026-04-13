@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+import vectyrLogo from "@/assets/vectyr-logo.svg";
 
 interface Page {
   slug: string;
@@ -35,7 +36,7 @@ const BackendSidebar = ({ pages, selectedPage, onSelectPage, onLogout }: Backend
   return (
     <aside className="w-56 min-h-screen bg-card border-r border-border flex flex-col">
       <div className="p-6">
-        <span className="font-headline text-xl text-foreground">VECTYR</span>
+        <img src={vectyrLogo} alt="Vectyr" className="h-5" />
         <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground ml-2">
           Admin
         </span>
