@@ -1,6 +1,6 @@
 ---
 name: Vectyr brand palette and typography
-description: Full color palette, font stack, and typography rules
+description: Full color palette, font stack, typography rules, and named color aliases
 type: design
 ---
 
@@ -11,6 +11,16 @@ type: design
 - Muted text: #9F9F9F → --muted-foreground
 - Foreground: #F5F5F5 → --foreground
 - Accent/Primary: #FF5000 → --primary
+
+## Named Color Aliases (Tailwind)
+- `orange` → #FF5000
+- `black01` → #090909
+- `black02` → #151616
+- `black03` → #2E2E2E
+- `gray` → #9F9F9F
+- `lightgray` → #F5F5F5
+
+Usage: `bg-orange`, `text-lightgray`, `border-black03`, etc.
 
 ## Fonts
 - Headlines: Bebas Neue (`font-headline`)
