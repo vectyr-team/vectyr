@@ -51,7 +51,8 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+    font-weight: 400;
   }
 }
 
