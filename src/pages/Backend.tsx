@@ -136,7 +136,7 @@ const Backend = () => {
         onLogout={handleLogout}
       />
 
-      <main className="flex-1 pt-16 px-6 pb-8 md:pt-12 md:px-12 md:pb-12 overflow-y-auto">
+      <main className="flex-1 px-6 pb-8 md:pt-12 md:px-12 md:pb-12 overflow-y-auto pt-[72px]">
         <div className="max-w-2xl">
           <h1 className="font-headline text-foreground mb-1 text-5xl">
             {isSeoSection ? seoSection?.title : currentPage?.name || selectedPage}
