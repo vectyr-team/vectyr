@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const Demo = () => {
   useEffect(() => {
@@ -44,6 +45,7 @@ const Demo = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
