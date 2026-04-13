@@ -36,7 +36,7 @@ const BackendSidebar = ({ pages, selectedPage, onSelectPage, onLogout }: Backend
   return (
     <aside className="w-56 min-h-screen bg-card border-r border-border flex flex-col">
       <div className="p-6">
-        <img src={vectyrLogo} alt="Vectyr" className="h-5" />
+        <img src={vectyrLogo} alt="Vectyr" className="h-10" />
       </div>
 
       <nav className="flex-1 px-3 space-y-1">
