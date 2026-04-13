@@ -97,7 +97,7 @@ const BusinessInfoEditor = () => {
   return (
     <div className="space-y-6">
       <div className="space-y-4">
-        <h2 className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">General</h2>
+        <h2 className="font-mono uppercase tracking-[0.25em] text-muted-foreground text-lg">General</h2>
         <Field label="Business Name" field="name" />
         <Field label="Legal Name" field="legal_name" />
         <div>
