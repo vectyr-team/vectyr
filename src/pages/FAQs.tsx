@@ -50,9 +50,10 @@ const FAQs = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-card text-foreground">
+    <div className="flex flex-col min-h-screen bg-card text-foreground">
       <Header />
-      <main className="max-w-3xl mx-auto px-6 pt-32 pb-24">
+      <main className="flex-1">
+      <div className="max-w-3xl mx-auto px-6 pt-32 pb-24">
         <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-4 block">
           Frequently Asked Questions
         </span>
@@ -76,7 +77,7 @@ const FAQs = () => {
             ))}
           </Accordion>
         )}
-      </main>
+      </div>
 
       <section className="relative bg-[#000000] px-6 py-24 md:py-24 overflow-hidden">
         <img
@@ -95,6 +96,7 @@ const FAQs = () => {
           </a>
         </div>
       </section>
+      </main>
       <Footer />
     </div>
   );

@@ -29,8 +29,9 @@ const Index = () => {
   });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="flex flex-col min-h-screen bg-background">
       <Header />
+      <main className="flex-1">
 
       {/* Hero */}
       <section className="relative flex md:min-h-[90dvh] flex-col items-center justify-center px-6 pt-36 pb-20 md:pt-20 md:py-0 overflow-hidden">
@@ -476,6 +477,7 @@ const Index = () => {
           </ScrollSection>
         </div>
       </section>
+      </main>
       <Footer />
     </div>
   );
