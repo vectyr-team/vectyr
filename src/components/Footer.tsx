@@ -22,7 +22,8 @@ const Footer = () => {
               className="h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
             />
             <p className="font-body text-sm leading-relaxed text-muted-foreground/60 max-w-[260px]">
-              Brand infrastructure for founders who are done winging it. We extract, structure, and install your brand so it runs without you in the room.
+              Brand infrastructure for founders who are done winging it. We extract, structure, and install your brand
+              so it runs without you in the room.
             </p>
             {/* Social icons */}
             <div className="flex items-center justify-center md:justify-start gap-3 mt-1">
@@ -46,9 +47,7 @@ const Footer = () => {
 
           {/* Navigate */}
           <nav className="flex flex-col gap-3 items-center md:items-start">
-            <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">
-              Navigate
-            </span>
+            <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">Navigate</span>
             {[
               { label: "Home", to: "/" },
               { label: "About", to: "/about" },
@@ -68,18 +67,9 @@ const Footer = () => {
 
           {/* Services */}
           <div className="flex flex-col gap-3 items-center md:items-start">
-            <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">
-              Services
-            </span>
-            {[
-              "Brand Codex",
-              "BrandOS Platform",
-              "BrandPulse",
-            ].map((item) => (
-              <span
-                key={item}
-                className="font-body text-sm text-muted-foreground/70"
-              >
+            <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">Services</span>
+            {["Brand Codex", "BrandOS Platform", "BrandPulse"].map((item) => (
+              <span key={item} className="font-body text-sm text-muted-foreground/70">
                 {item}
               </span>
             ))}
@@ -87,9 +77,7 @@ const Footer = () => {
 
           {/* Connect */}
           <div className="flex flex-col gap-3 items-center md:items-start">
-            <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">
-              Connect
-            </span>
+            <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">Connect</span>
             {[
               { label: "Pick Steve's Brain", href: "https://stevesbrain.com" },
               { label: "See the Demo", href: "/demo", internal: true },
@@ -113,7 +101,7 @@ const Footer = () => {
                 >
                   {item.label}
                 </a>
-              )
+              ),
             )}
           </div>
         </div>
@@ -124,20 +112,14 @@ const Footer = () => {
             &copy; {year} Vectyr, Ltd. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary/40">
-              #BRANDORDIE
-            </span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary/40">#BRANDORDIE</span>
           </div>
         </div>
       </div>
 
       {/* Background watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none">
-        <img
-          src={bodXIcon}
-          alt=""
-          className="w-[600px] md:w-[900px] lg:w-[1100px] max-w-none"
-        />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.02] pointer-events-none select-none">
+        <img src={bodXIcon} alt="" className="w-[600px] md:w-[900px] lg:w-[1100px] max-w-none" />
       </div>
     </footer>
   );
