@@ -7,7 +7,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-card overflow-hidden">
+    <footer className="relative overflow-hidden bg-black01">
       {/* Accent line */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
 
