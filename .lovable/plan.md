@@ -1,5 +1,3 @@
-
-
 ## Plan: Add Named Brand Color Aliases
 
 Add six named color tokens to `tailwind.config.ts` so you can use classes like `bg-orange`, `text-black01`, `border-gray`, etc.
@@ -13,6 +11,7 @@ orange: "#FF5000",
 black01: "#090909",
 black02: "#151616",
 black03: "#2E2E2E",
+black04: "#777777",
 gray: "#9F9F9F",
 lightgray: "#F5F5F5",
 ```
@@ -27,4 +26,3 @@ These are direct hex values (not HSL vars) since they're static brand tokens. Th
 - `text-lightgray` → `#F5F5F5`
 - `border-black03` → `#2E2E2E`
 - `bg-black01` → `#090909`
-
