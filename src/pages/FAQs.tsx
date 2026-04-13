@@ -49,7 +49,7 @@ const FAQs = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-card text-foreground">
       <Header />
       <main className="max-w-3xl mx-auto px-6 pt-32 pb-24">
         <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-4 block">
@@ -77,7 +77,7 @@ const FAQs = () => {
         )}
       </main>
 
-      <section className="bg-card px-6 py-24 md:py-24">
+      <section className="bg-background px-6 py-24 md:py-24">
         <div className="mx-auto max-w-3xl flex flex-col items-center text-center">
           <h2 className="font-headline text-3xl md:text-5xl font-normal text-foreground">Still Have Questions?</h2>
           <p className="mt-4 max-w-xl font-body text-base text-muted-foreground leading-relaxed">
