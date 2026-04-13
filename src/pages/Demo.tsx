@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
+import { PAGE_META } from "@/config/seo";
 
 const Demo = () => {
   useEffect(() => {
@@ -21,6 +23,7 @@ const Demo = () => {
     <div className="flex flex-col min-h-screen bg-card">
       <Header />
       <main className="flex-1">
+      <SEOHead {...PAGE_META.demo} />
 
       <section className="px-6 pt-32 pb-12 md:pt-44 md:pb-24">
         <div className="mx-auto max-w-[1300px]">
@@ -42,6 +45,7 @@ const Demo = () => {
               style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "700px" }}
               scrolling="no"
               id="LNPnkvxkpEcnG3noYld1_1775760467597"
+              title="Book a BrandOS Demo"
             />
           </div>
         </div>
