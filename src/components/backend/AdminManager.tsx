@@ -107,7 +107,7 @@ const AdminManager = () => {
     <div className="space-y-8">
       {/* Current admins */}
       <div className="space-y-3">
-        <h2 className="font-headline text-xl text-foreground">Current Admins</h2>
+        <h2 className="font-body text-lg text-foreground uppercase">Current Admins</h2>
         {admins.map((admin) => (
           <div
             key={admin.id}
@@ -132,7 +132,7 @@ const AdminManager = () => {
 
       {/* Invite form */}
       <div className="space-y-3">
-        <h2 className="font-headline text-xl text-foreground">Invite New Admin</h2>
+        <h2 className="font-body text-lg text-foreground uppercase">Invite New Admin</h2>
         <form onSubmit={handleInvite} className="space-y-3">
           <div>
             <label className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-1 block">
