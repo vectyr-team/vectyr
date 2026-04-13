@@ -19,6 +19,10 @@ const seoSections = [
   { slug: "seo-schema", name: "Schema Preview", icon: "lucide:code-2" },
 ];
 
+const settingsSections = [
+  { slug: "admin-users", name: "Admin Users", icon: "lucide:shield" },
+];
+
 const pageIcons: Record<string, string> = {
   index: "lucide:home",
   about: "lucide:info",
@@ -70,6 +74,25 @@ const BackendSidebar = ({ pages, selectedPage, onSelectPage, onLogout }: Backend
         </span>
 
         {seoSections.map((section) => (
+          <button
+            key={section.slug}
+            onClick={() => onSelectPage(section.slug)}
+            className={`w-full text-left px-3 py-2 rounded text-sm font-body transition-colors mb-0.5 flex items-center gap-2 ${
+              selectedPage === section.slug
+                ? "bg-primary/10 text-primary"
+                : "text-muted-foreground hover:text-foreground hover:bg-card"
+            }`}
+          >
+            <Icon icon={section.icon} className="w-4 h-4" />
+            {section.name}
+          </button>
+        ))}
+
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground px-3 mt-6 mb-2 block pt-4">
+          Settings
+        </span>
+
+        {settingsSections.map((section) => (
           <button
             key={section.slug}
             onClick={() => onSelectPage(section.slug)}
