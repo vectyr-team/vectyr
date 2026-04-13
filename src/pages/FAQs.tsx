@@ -77,7 +77,7 @@ const FAQs = () => {
             ))}
           </Accordion>
         )}
-      </main>
+      </div>
 
       <section className="relative bg-[#000000] px-6 py-24 md:py-24 overflow-hidden">
         <img
