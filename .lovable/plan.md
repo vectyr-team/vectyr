@@ -1,12 +1,30 @@
 
 
-## Fix: Mobile viewport height discrepancy in hero
+## Plan: Add Named Brand Color Aliases
 
-**Problem**
-Brave on mobile (Chromium-based) has the same dynamic toolbar behavior as Safari — `vh` units include the area behind the collapsible address bar, making `min-h-[90vh]` taller than expected on real devices vs. simulators.
+Add six named color tokens to `tailwind.config.ts` so you can use classes like `bg-orange`, `text-black01`, `border-gray`, etc.
 
-**Solution**
-Replace `min-h-[90vh]` with `min-h-[90dvh]` on the hero section in `src/pages/Index.tsx`. The `dvh` unit accounts for the actual visible viewport. Brave supports `dvh` fully.
+### Changes
 
-**File:** `src/pages/Index.tsx` — 1 class change on the hero `<section>`.
+**`tailwind.config.ts`** — Add these entries inside `extend.colors`:
+
+```ts
+orange: "#FF5000",
+black01: "#090909",
+black02: "#151616",
+black03: "#2E2E2E",
+gray: "#9F9F9F",
+lightgray: "#F5F5F5",
+```
+
+These are direct hex values (not HSL vars) since they're static brand tokens. The existing semantic tokens (`primary`, `background`, `card`, etc.) stay untouched — these are just convenient aliases.
+
+**`mem://design/brand`** — Update memory to document the named color aliases.
+
+### Usage examples after the change
+
+- `bg-orange` → `#FF5000`
+- `text-lightgray` → `#F5F5F5`
+- `border-black03` → `#2E2E2E`
+- `bg-black01` → `#090909`
 
