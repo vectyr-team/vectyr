@@ -19,6 +19,12 @@ export default {
         mono: ['"JetBrains Mono"', "monospace"],
       },
       colors: {
+        orange: "#FF5000",
+        black01: "#090909",
+        black02: "#151616",
+        black03: "#2E2E2E",
+        gray: "#9F9F9F",
+        lightgray: "#F5F5F5",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
