@@ -68,7 +68,7 @@ const Footer = () => {
           {/* Services */}
           <div className="flex flex-col gap-3 items-center md:items-start">
             <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">Services</span>
-            {["Brand Codex", "BrandOS Platform", "BrandPulse"].map((item) => (
+            {["Vectyr BrandOS", "BrandOS Platform", "BrandPulse"].map((item) => (
               <span key={item} className="font-body text-sm text-muted-foreground/70">
                 {item}
               </span>
