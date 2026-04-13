@@ -23,7 +23,7 @@ export default {
         black01: "#090909",
         black02: "#151616",
         black03: "#2E2E2E",
-        black04: "#777777",
+        black04: "#707070",
         gray: "#9F9F9F",
         lightgray: "#F5F5F5",
         border: "hsl(var(--border))",
