@@ -12,8 +12,8 @@ const socialLinks = [
 
 const navLinks = [
   { to: "/demo", label: "Demo" },
-  { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
+  { to: "https://os.vectyr.com", label: "Login" },
 ];
 
 // Delay order: innermost (closest to logo/center) animates first
@@ -52,7 +52,9 @@ const Header = () => {
     } else {
       document.body.style.overflow = "";
     }
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [menuOpen]);
 
   const shouldAnimate = isHome && !isMobile;
@@ -72,12 +74,16 @@ const Header = () => {
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 aria-label={s.label}
-                style={shouldAnimate ? {
-                  opacity: animateIn ? 1 : 0,
-                  transform: animateIn ? 'translateY(0)' : 'translateY(12px)',
-                  transition: `opacity 0.5s ease-out, transform 0.5s ease-out`,
-                  transitionDelay: `${0.5 + delayIndex * 0.1}s`,
-                } : undefined}
+                style={
+                  shouldAnimate
+                    ? {
+                        opacity: animateIn ? 1 : 0,
+                        transform: animateIn ? "translateY(0)" : "translateY(12px)",
+                        transition: `opacity 0.5s ease-out, transform 0.5s ease-out`,
+                        transitionDelay: `${0.5 + delayIndex * 0.1}s`,
+                      }
+                    : undefined
+                }
               >
                 <Icon icon={s.icon} width={20} height={20} />
               </a>
@@ -89,12 +95,16 @@ const Header = () => {
         <Link
           to="/"
           className="absolute left-1/2 -translate-x-1/2"
-          style={shouldAnimate ? {
-            opacity: animateIn ? 1 : 0,
-            transform: animateIn ? 'translateX(-50%) scale(1)' : 'translateX(-50%) scale(0.85)',
-            transition: 'opacity 1s ease-out, transform 1s ease-out',
-            transitionDelay: '0.1s',
-          } : undefined}
+          style={
+            shouldAnimate
+              ? {
+                  opacity: animateIn ? 1 : 0,
+                  transform: animateIn ? "translateX(-50%) scale(1)" : "translateX(-50%) scale(0.85)",
+                  transition: "opacity 1s ease-out, transform 1s ease-out",
+                  transitionDelay: "0.1s",
+                }
+              : undefined
+          }
         >
           <img src={vectyrLogo} alt="Vectyr" className="h-8 md:h-10" />
         </Link>
@@ -131,12 +141,16 @@ const Header = () => {
                   key={link.to}
                   to={link.to}
                   className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors"
-                  style={shouldAnimate ? {
-                    opacity: animateIn ? 1 : 0,
-                    transform: animateIn ? 'translateY(0)' : 'translateY(12px)',
-                    transition: `opacity 0.5s ease-out, transform 0.5s ease-out`,
-                    transitionDelay: `${0.5 + delayIndex * 0.1}s`,
-                  } : undefined}
+                  style={
+                    shouldAnimate
+                      ? {
+                          opacity: animateIn ? 1 : 0,
+                          transform: animateIn ? "translateY(0)" : "translateY(12px)",
+                          transition: `opacity 0.5s ease-out, transform 0.5s ease-out`,
+                          transitionDelay: `${0.5 + delayIndex * 0.1}s`,
+                        }
+                      : undefined
+                  }
                 >
                   {link.label}
                 </Link>
@@ -150,9 +164,7 @@ const Header = () => {
       {isMobile && (
         <div
           className={`fixed inset-0 z-40 bg-background flex flex-col items-center justify-center transition-all duration-500 ${
-            menuOpen
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
+            menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
         >
           <nav className="flex flex-col items-center gap-0">
@@ -162,9 +174,7 @@ const Header = () => {
                 to={link.to}
                 onClick={() => setMenuOpen(false)}
                 className={`font-headline text-5xl uppercase tracking-normal text-foreground hover:text-accent transition-all duration-500 py-4 ${
-                  menuOpen
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-8"
+                  menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{
                   transitionDelay: menuOpen ? `${150 + i * 100}ms` : "0ms",
