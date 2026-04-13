@@ -1,52 +1,76 @@
-import { BUSINESS, SITE_URL } from "@/config/seo";
+import { SITE_URL } from "@/config/seo";
 
-/** Renders LocalBusiness JSON-LD schema. Place once (e.g. on homepage). */
-export const LocalBusinessJsonLd = () => {
+interface BusinessData {
+  name: string;
+  legalName: string;
+  description: string;
+  url: string;
+  telephone: string;
+  email: string;
+  address: {
+    streetAddress: string;
+    addressLocality: string;
+    addressRegion: string;
+    postalCode: string;
+    addressCountry: string;
+  };
+  geo: { latitude: number; longitude: number };
+  serviceArea: string[];
+  servicesOffered: string[];
+  openingHours: string;
+  foundingDate: string;
+  founder: { name: string; url: string; linkedin: string };
+  aggregateRating: { ratingValue: number; reviewCount: number; bestRating: number };
+  sameAs: string[];
+}
+
+/** Renders LocalBusiness JSON-LD schema from provided data. */
+export const LocalBusinessJsonLd = ({ business }: { business: BusinessData }) => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: BUSINESS.name,
-    legalName: BUSINESS.legalName,
-    description: BUSINESS.description,
-    url: BUSINESS.url,
-    telephone: BUSINESS.telephone,
-    email: BUSINESS.email,
-    foundingDate: BUSINESS.foundingDate,
+    name: business.name,
+    legalName: business.legalName,
+    description: business.description,
+    url: SITE_URL,
+    telephone: business.telephone,
+    email: business.email,
+    foundingDate: business.foundingDate,
     address: {
       "@type": "PostalAddress",
-      ...BUSINESS.address,
+      ...business.address,
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: BUSINESS.geo.latitude,
-      longitude: BUSINESS.geo.longitude,
+      latitude: business.geo.latitude,
+      longitude: business.geo.longitude,
     },
-    areaServed: BUSINESS.serviceArea.map((area) => ({
+    areaServed: business.serviceArea.map((area) => ({
       "@type": "Place",
       name: area,
     })),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Vectyr Services",
-      itemListElement: BUSINESS.servicesOffered.map((service) => ({
+      name: `${business.name} Services`,
+      itemListElement: business.servicesOffered.map((service) => ({
         "@type": "Offer",
         itemOffered: { "@type": "Service", name: service },
       })),
     },
-    openingHours: BUSINESS.openingHours,
+    openingHours: business.openingHours,
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: BUSINESS.aggregateRating.ratingValue,
-      reviewCount: BUSINESS.aggregateRating.reviewCount,
-      bestRating: BUSINESS.aggregateRating.bestRating,
+      ratingValue: business.aggregateRating.ratingValue,
+      reviewCount: business.aggregateRating.reviewCount,
+      bestRating: business.aggregateRating.bestRating,
     },
     founder: {
       "@type": "Person",
-      name: BUSINESS.founder.name,
-      url: BUSINESS.founder.url,
-      sameAs: BUSINESS.founder.linkedin,
+      name: business.founder.name,
+      url: business.founder.url,
+      sameAs: business.founder.linkedin,
     },
-    sameAs: BUSINESS.sameAs,
+    sameAs: business.sameAs,
   };
 
   return (
