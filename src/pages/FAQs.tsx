@@ -6,7 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import SEOHead from "@/components/SEOHead";
 import { FAQPageJsonLd } from "@/components/JsonLd";
-import { PAGE_META } from "@/config/seo";
+import { usePageMeta } from "@/hooks/use-seo-data";
 
 interface FAQ {
   id: string;
@@ -42,6 +42,7 @@ const linkifyText = (text: string): ReactNode[] => {
 const FAQs = () => {
   const [faqs, setFaqs] = useState<FAQ[]>([]);
   const [loading, setLoading] = useState(true);
+  const pageMeta = usePageMeta("faqs");
 
   useEffect(() => {
     const fetchFaqs = async () => {
@@ -56,7 +57,7 @@ const FAQs = () => {
     <div className="flex flex-col min-h-screen bg-card text-foreground">
       <Header />
       <main className="flex-1">
-      <SEOHead {...PAGE_META.faqs} />
+      <SEOHead {...pageMeta} />
       <FAQPageJsonLd faqs={faqs} />
       <div className="max-w-3xl mx-auto px-6 pt-32 pb-24">
         <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-4 block">

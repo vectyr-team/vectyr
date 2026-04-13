@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { LocalBusinessJsonLd } from "@/components/JsonLd";
 import { PAGE_META } from "@/config/seo";
+import { useBusinessInfo, usePageMeta } from "@/hooks/use-seo-data";
 
 const heroItems = [
   { delay: 0.6 }, // overline
@@ -18,6 +19,8 @@ const heroItems = [
 
 const Index = () => {
   const [heroVisible, setHeroVisible] = useState(false);
+  const { data: businessInfo } = useBusinessInfo();
+  const pageMeta = usePageMeta("home");
 
   useEffect(() => {
     const timer = setTimeout(() => setHeroVisible(true), 100);
@@ -35,8 +38,8 @@ const Index = () => {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-1">
-      <SEOHead {...PAGE_META.home} />
-      <LocalBusinessJsonLd />
+      <SEOHead {...pageMeta} />
+      <LocalBusinessJsonLd business={businessInfo} />
 
       {/* Hero */}
       <section className="relative flex md:min-h-[90dvh] flex-col items-center justify-center px-6 pt-36 pb-20 md:pt-20 md:py-0 overflow-hidden">

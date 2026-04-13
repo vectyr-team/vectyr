@@ -4,6 +4,9 @@ import { supabase } from "@/integrations/supabase/client";
 import BackendSidebar from "@/components/backend/BackendSidebar";
 import PageSettingsEditor from "@/components/backend/PageSettingsEditor";
 import FAQsEditor from "@/components/backend/FAQsEditor";
+import BusinessInfoEditor from "@/components/backend/BusinessInfoEditor";
+import MetaTagsEditor from "@/components/backend/MetaTagsEditor";
+import SchemaPreview from "@/components/backend/SchemaPreview";
 
 interface PageSetting {
   id: string;
@@ -20,6 +23,12 @@ const ALL_PAGES = [
   { slug: "contact", name: "Contact" },
   { slug: "faqs", name: "FAQs" },
 ];
+
+const SEO_SECTIONS: Record<string, { title: string; subtitle: string }> = {
+  "seo-business": { title: "Business Info", subtitle: "JSON-LD Schema Data" },
+  "seo-meta": { title: "Meta Tags", subtitle: "Per-Page SEO" },
+  "seo-schema": { title: "Schema Preview", subtitle: "JSON-LD Validation" },
+};
 
 const Backend = () => {
   const [session, setSession] = useState<any>(null);
@@ -55,9 +64,7 @@ const Backend = () => {
   }, [session]);
 
   const fetchPageSettings = async () => {
-    const { data } = await supabase
-      .from("page_settings")
-      .select("*");
+    const { data } = await supabase.from("page_settings").select("*");
     if (data) setPageSettings(data);
   };
 
@@ -76,10 +83,45 @@ const Backend = () => {
 
   if (!session) return null;
 
+  const isSeoSection = selectedPage.startsWith("seo-");
+  const seoSection = SEO_SECTIONS[selectedPage];
   const currentSettings = pageSettings.find((p) => p.page_slug === selectedPage);
   const currentPage = ALL_PAGES.find((p) => p.slug === selectedPage);
   const hasFormSettings = selectedPage === "demo" || selectedPage === "contact";
   const isFaqsPage = selectedPage === "faqs";
+
+  const renderContent = () => {
+    if (isSeoSection) {
+      switch (selectedPage) {
+        case "seo-business":
+          return <BusinessInfoEditor />;
+        case "seo-meta":
+          return <MetaTagsEditor />;
+        case "seo-schema":
+          return <SchemaPreview />;
+        default:
+          return null;
+      }
+    }
+
+    if (isFaqsPage) return <FAQsEditor />;
+
+    if (hasFormSettings) {
+      return (
+        <PageSettingsEditor
+          pageSlug={selectedPage}
+          settings={currentSettings || null}
+          onSaved={fetchPageSettings}
+        />
+      );
+    }
+
+    return (
+      <p className="text-muted-foreground font-body text-sm">
+        No configurable settings for this page yet.
+      </p>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-background flex">
@@ -90,28 +132,16 @@ const Backend = () => {
         onLogout={handleLogout}
       />
 
-      <main className="flex-1 p-8 md:p-12">
+      <main className="flex-1 p-8 md:p-12 overflow-y-auto">
         <div className="max-w-2xl">
           <h1 className="font-headline text-3xl text-foreground mb-1">
-            {currentPage?.name || selectedPage}
+            {isSeoSection ? seoSection?.title : currentPage?.name || selectedPage}
           </h1>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-8">
-            /{selectedPage === "index" ? "" : selectedPage}
+            {isSeoSection ? seoSection?.subtitle : `/${selectedPage === "index" ? "" : selectedPage}`}
           </p>
 
-          {isFaqsPage ? (
-            <FAQsEditor />
-          ) : hasFormSettings ? (
-            <PageSettingsEditor
-              pageSlug={selectedPage}
-              settings={currentSettings || null}
-              onSaved={fetchPageSettings}
-            />
-          ) : (
-            <p className="text-muted-foreground font-body text-sm">
-              No configurable settings for this page yet.
-            </p>
-          )}
+          {renderContent()}
         </div>
       </main>
     </div>

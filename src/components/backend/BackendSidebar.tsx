@@ -13,6 +13,20 @@ interface BackendSidebarProps {
   onLogout: () => void;
 }
 
+const seoSections = [
+  { slug: "seo-business", name: "Business Info", icon: "lucide:building-2" },
+  { slug: "seo-meta", name: "Meta Tags", icon: "lucide:tag" },
+  { slug: "seo-schema", name: "Schema Preview", icon: "lucide:code-2" },
+];
+
+const pageIcons: Record<string, string> = {
+  index: "lucide:home",
+  about: "lucide:info",
+  demo: "lucide:play",
+  faqs: "lucide:help-circle",
+  contact: "lucide:mail",
+};
+
 const BackendSidebar = ({ pages, selectedPage, onSelectPage, onLogout }: BackendSidebarProps) => {
   return (
     <aside className="w-56 min-h-screen bg-card border-r border-border flex flex-col">
@@ -23,7 +37,7 @@ const BackendSidebar = ({ pages, selectedPage, onSelectPage, onLogout }: Backend
         </span>
       </div>
 
-      <nav className="flex-1 px-3">
+      <nav className="flex-1 px-3 space-y-1">
         <Link
           to="/"
           className="w-full text-left px-3 py-2 rounded text-sm font-body text-muted-foreground hover:text-foreground hover:bg-card transition-colors mb-4 flex items-center gap-2"
@@ -46,21 +60,27 @@ const BackendSidebar = ({ pages, selectedPage, onSelectPage, onLogout }: Backend
                 : "text-muted-foreground hover:text-foreground hover:bg-card"
             }`}
           >
-            <Icon
-              icon={
-                page.slug === "index"
-                  ? "lucide:home"
-                  : page.slug === "about"
-                  ? "lucide:info"
-                  : page.slug === "demo"
-                  ? "lucide:play"
-                  : page.slug === "faqs"
-                  ? "lucide:help-circle"
-                  : "lucide:mail"
-              }
-              className="w-4 h-4"
-            />
+            <Icon icon={pageIcons[page.slug] || "lucide:file"} className="w-4 h-4" />
             {page.name}
+          </button>
+        ))}
+
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground px-3 mt-6 mb-2 block pt-4">
+          SEO & AEO
+        </span>
+
+        {seoSections.map((section) => (
+          <button
+            key={section.slug}
+            onClick={() => onSelectPage(section.slug)}
+            className={`w-full text-left px-3 py-2 rounded text-sm font-body transition-colors mb-0.5 flex items-center gap-2 ${
+              selectedPage === section.slug
+                ? "bg-primary/10 text-primary"
+                : "text-muted-foreground hover:text-foreground hover:bg-card"
+            }`}
+          >
+            <Icon icon={section.icon} className="w-4 h-4" />
+            {section.name}
           </button>
         ))}
       </nav>
