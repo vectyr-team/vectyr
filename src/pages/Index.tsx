@@ -4,6 +4,7 @@ import ScrollSection from "@/components/ScrollSection";
 import BrandCodexAnimation from "@/components/BrandCodexAnimation";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@iconify/react";
+import Footer from "@/components/Footer";
 
 const heroItems = [
   { delay: 0.6 }, // overline
@@ -475,6 +476,7 @@ const Index = () => {
           </ScrollSection>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
