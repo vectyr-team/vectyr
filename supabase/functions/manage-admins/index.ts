@@ -6,6 +6,12 @@ Deno.serve(async (req) => {
     return new Response("ok", { headers: corsHeaders });
   }
 
+  const json = (body: unknown, status = 200) =>
+    new Response(JSON.stringify(body), {
+      status,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+
   try {
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
     const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
@@ -13,24 +19,14 @@ Deno.serve(async (req) => {
 
     // Verify caller is authenticated
     const authHeader = req.headers.get("Authorization");
-    if (!authHeader) {
-      return new Response(JSON.stringify({ error: "Unauthorized" }), {
-        status: 401,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
+    if (!authHeader) return json({ error: "Unauthorized" }, 401);
 
     const anonKey = Deno.env.get("SUPABASE_PUBLISHABLE_KEY")!;
     const userClient = createClient(supabaseUrl, anonKey, {
       global: { headers: { Authorization: authHeader } },
     });
     const { data: { user: caller } } = await userClient.auth.getUser();
-    if (!caller) {
-      return new Response(JSON.stringify({ error: "Unauthorized" }), {
-        status: 401,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
+    if (!caller) return json({ error: "Unauthorized" }, 401);
 
     // Check if any admins exist (bootstrap check)
     const { count } = await adminClient
@@ -49,119 +45,126 @@ Deno.serve(async (req) => {
         .eq("role", "admin")
         .maybeSingle();
 
-      if (!callerRole) {
-        return new Response(JSON.stringify({ error: "Forbidden: admin role required" }), {
-          status: 403,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        });
-      }
+      if (!callerRole) return json({ error: "Forbidden: admin role required" }, 403);
     }
 
     const { action, ...payload } = await req.json();
 
-    // Bootstrap: make current user admin
+    // ── Bootstrap ──
     if (action === "bootstrap") {
-      if (!isBootstrap) {
-        return new Response(JSON.stringify({ error: "Admins already exist" }), {
-          status: 400,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        });
-      }
+      if (!isBootstrap) return json({ error: "Admins already exist" }, 400);
       await adminClient.from("user_roles").insert({ user_id: caller.id, role: "admin" });
-      return new Response(JSON.stringify({ success: true }), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      return json({ success: true });
     }
 
-    // List admins
+    // ── List all users ──
     if (action === "list") {
+      const { data: { users }, error } = await adminClient.auth.admin.listUsers({ perPage: 500 });
+      if (error) return json({ error: error.message }, 500);
+
+      // Get all admin role user_ids
       const { data: roles } = await adminClient
         .from("user_roles")
-        .select("id, user_id, role, created_at")
+        .select("user_id")
         .eq("role", "admin");
+      const adminIds = new Set((roles || []).map((r: any) => r.user_id));
 
-      // Get user emails
-      const userIds = (roles || []).map((r: any) => r.user_id);
-      const admins = [];
-      for (const uid of userIds) {
-        const { data: { user } } = await adminClient.auth.admin.getUserById(uid);
-        admins.push({
-          id: roles!.find((r: any) => r.user_id === uid)!.id,
-          user_id: uid,
-          email: user?.email || "unknown",
-          created_at: roles!.find((r: any) => r.user_id === uid)!.created_at,
-        });
-      }
+      const mapped = (users || []).map((u: any) => ({
+        id: u.id,
+        email: u.email || "",
+        display_name: u.user_metadata?.display_name || "",
+        phone: u.phone || "",
+        is_admin: adminIds.has(u.id),
+        is_suspended: !!u.banned_until && new Date(u.banned_until) > new Date(),
+        created_at: u.created_at,
+      }));
 
-      return new Response(JSON.stringify({ admins }), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      return json({ users: mapped });
     }
 
-    // Invite admin
+    // ── Invite user ──
     if (action === "invite") {
-      const { email, password } = payload;
-      if (!email || !password) {
-        return new Response(JSON.stringify({ error: "Email and password required" }), {
-          status: 400,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        });
-      }
+      const { email, password, display_name, make_admin } = payload;
+      if (!email || !password) return json({ error: "Email and password required" }, 400);
 
-      // Create user via admin API
       const { data: newUser, error: createErr } = await adminClient.auth.admin.createUser({
         email,
         password,
         email_confirm: true,
+        user_metadata: { display_name: display_name || "" },
       });
+      if (createErr) return json({ error: createErr.message }, 400);
 
-      if (createErr) {
-        return new Response(JSON.stringify({ error: createErr.message }), {
-          status: 400,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        });
+      if (make_admin) {
+        await adminClient.from("user_roles").insert({ user_id: newUser.user.id, role: "admin" });
       }
 
-      // Assign admin role
-      await adminClient.from("user_roles").insert({
-        user_id: newUser.user.id,
-        role: "admin",
-      });
-
-      return new Response(JSON.stringify({ success: true, email }), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      return json({ success: true, email });
     }
 
-    // Remove admin
-    if (action === "remove") {
+    // ── Update user ──
+    if (action === "update") {
+      const { user_id, email, display_name, phone } = payload;
+      if (!user_id) return json({ error: "user_id required" }, 400);
+
+      const updateData: any = {};
+      if (email !== undefined) updateData.email = email;
+      if (phone !== undefined) updateData.phone = phone;
+      if (display_name !== undefined) {
+        updateData.user_metadata = { display_name };
+      }
+
+      const { error: updateErr } = await adminClient.auth.admin.updateUserById(user_id, updateData);
+      if (updateErr) return json({ error: updateErr.message }, 400);
+
+      return json({ success: true });
+    }
+
+    // ── Toggle admin role ──
+    if (action === "toggle_admin") {
+      const { user_id, is_admin } = payload;
+      if (!user_id) return json({ error: "user_id required" }, 400);
+      if (user_id === caller.id) return json({ error: "Cannot change your own admin status" }, 400);
+
+      if (is_admin) {
+        await adminClient.from("user_roles").insert({ user_id, role: "admin" });
+      } else {
+        await adminClient.from("user_roles").delete().eq("user_id", user_id).eq("role", "admin");
+      }
+      return json({ success: true });
+    }
+
+    // ── Suspend / unsuspend user ──
+    if (action === "suspend") {
+      const { user_id, suspended } = payload;
+      if (!user_id) return json({ error: "user_id required" }, 400);
+      if (user_id === caller.id) return json({ error: "Cannot suspend yourself" }, 400);
+
+      const banData = suspended
+        ? { ban_duration: "876000h" } // ~100 years
+        : { ban_duration: "none" };
+
+      const { error: banErr } = await adminClient.auth.admin.updateUserById(user_id, banData);
+      if (banErr) return json({ error: banErr.message }, 400);
+
+      return json({ success: true });
+    }
+
+    // ── Delete user ──
+    if (action === "delete") {
       const { user_id } = payload;
-      if (!user_id) {
-        return new Response(JSON.stringify({ error: "user_id required" }), {
-          status: 400,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        });
-      }
+      if (!user_id) return json({ error: "user_id required" }, 400);
+      if (user_id === caller.id) return json({ error: "Cannot delete yourself" }, 400);
 
-      // Prevent removing yourself
-      if (user_id === caller.id) {
-        return new Response(JSON.stringify({ error: "Cannot remove yourself" }), {
-          status: 400,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        });
-      }
+      // Remove roles first
+      await adminClient.from("user_roles").delete().eq("user_id", user_id);
+      const { error: delErr } = await adminClient.auth.admin.deleteUser(user_id);
+      if (delErr) return json({ error: delErr.message }, 400);
 
-      await adminClient.from("user_roles").delete().eq("user_id", user_id).eq("role", "admin");
-
-      return new Response(JSON.stringify({ success: true }), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      return json({ success: true });
     }
 
-    return new Response(JSON.stringify({ error: "Unknown action" }), {
-      status: 400,
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
-    });
+    return json({ error: "Unknown action" }, 400);
   } catch (err) {
     return new Response(JSON.stringify({ error: err.message }), {
       status: 500,
