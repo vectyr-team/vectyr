@@ -135,10 +135,12 @@ const Footer = () => {
       </div>
 
       {/* Background watermark */}
-      <div className="absolute bottom-0 right-0 translate-x-[10%] translate-y-[25%] opacity-[0.015] pointer-events-none select-none">
-        <span className="font-headline text-[22rem] md:text-[30rem] leading-none text-foreground">
-          V
-        </span>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none">
+        <img
+          src={bodXIcon}
+          alt=""
+          className="w-[600px] md:w-[900px] lg:w-[1100px] max-w-none"
+        />
       </div>
     </footer>
   );
