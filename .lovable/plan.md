@@ -1,28 +1,23 @@
-## Plan: Add Named Brand Color Aliases
 
-Add six named color tokens to `tailwind.config.ts` so you can use classes like `bg-orange`, `text-black01`, `border-gray`, etc.
+
+## Footer always at bottom
+
+The standard approach is to make the page layout use `min-h-screen` with a flex column, so the main content grows to fill available space and the footer is pushed to the bottom.
 
 ### Changes
 
-**`tailwind.config.ts`** — Add these entries inside `extend.colors`:
+**src/App.tsx** — Wrap the route layout in a flex column with `min-h-screen`, and make the main content area use `flex-1` (or `flex-grow`) so it expands to fill remaining space, pushing the Footer down.
 
-```ts
-orange: "#FF5000",
-black01: "#090909",
-black02: "#151616",
-black03: "#2E2E2E",
-black04: "#707070",
-gray: "#9F9F9F",
-lightgray: "#F5F5F5",
+This is a CSS-only fix using:
+```
+<div className="flex flex-col min-h-screen">
+  <Header />
+  <main className="flex-1">
+    {/* page routes */}
+  </main>
+  <Footer />
+</div>
 ```
 
-These are direct hex values (not HSL vars) since they're static brand tokens. The existing semantic tokens (`primary`, `background`, `card`, etc.) stay untouched — these are just convenient aliases.
+No other files need changes.
 
-**`mem://design/brand`** — Update memory to document the named color aliases.
-
-### Usage examples after the change
-
-- `bg-orange` → `#FF5000`
-- `text-lightgray` → `#F5F5F5`
-- `border-black03` → `#2E2E2E`
-- `bg-black01` → `#090909`
