@@ -124,12 +124,8 @@ const Footer = () => {
             &copy; {year} Vectyr, Ltd. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/30">
-              Built with conviction
-            </span>
-            <span className="h-1 w-1 rounded-full bg-primary/40" />
             <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary/40">
-              vectyr.com
+              #BRANDORDIE
             </span>
           </div>
         </div>
