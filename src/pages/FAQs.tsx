@@ -55,7 +55,7 @@ const FAQs = () => {
         <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-4 block">
           Frequently Asked Questions
         </span>
-        <h1 className="font-headline text-4xl md:text-5xl font-normal text-foreground mb-12">
+        <h1 className="font-headline text-5xl md:text-7xl font-normal text-foreground mb-12">
           Everything You Need to Know
         </h1>
 
