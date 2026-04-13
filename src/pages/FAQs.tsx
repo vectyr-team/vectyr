@@ -77,7 +77,7 @@ const FAQs = () => {
         )}
       </main>
 
-      <section className="bg-background px-6 py-24 md:py-24">
+      <section className="relative bg-[#000000] px-6 py-24 md:py-24 overflow-hidden">
         <img
           src="/images/system-bg.jpg"
           alt=""
