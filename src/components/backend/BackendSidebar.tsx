@@ -106,6 +106,7 @@ const BackendSidebar = ({ pages, selectedPage, onSelectPage, onLogout }: Backend
             {section.name}
           </button>
         ))}
+      </nav>
 
       <div className="p-3 border-t border-border">
         <button
