@@ -66,14 +66,22 @@ const Footer = () => {
           </nav>
 
           {/* Services */}
-          <div className="flex flex-col gap-3 items-center md:items-start">
-            <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">Services</span>
-            {["Vectyr BrandOS", "BrandOS Platform", "BrandPulse"].map((item) => (
-              <span key={item} className="font-body text-sm text-muted-foreground/70">
-                {item}
-              </span>
+          <nav className="flex flex-col gap-3 items-center md:items-start">
+            <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">Navigate</span>
+            {[
+              { label: "BrandOS", to: "https://vectyr.com/os" },
+              { label: "BrandPulse", to: "https://vectyr.com/pulse" },
+              { label: "BrandOS Login", to: "https://os.vectyr.com" },
+            ].map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="font-body text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit"
+              >
+                {link.label}
+              </Link>
             ))}
-          </div>
+          </nav>
 
           {/* Connect */}
           <div className="flex flex-col gap-3 items-center md:items-start">
