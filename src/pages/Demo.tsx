@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 
 const Demo = () => {
   useEffect(() => {
-    // Load the external embed script
     const script = document.createElement("script");
     script.src = "https://links.vectyr.com/js/form_embed.js";
     script.type = "text/javascript";
@@ -11,7 +10,9 @@ const Demo = () => {
     document.body.appendChild(script);
 
     return () => {
-      document.body.removeChild(script);
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
     };
   }, []);
 
