@@ -37,9 +37,6 @@ const BackendSidebar = ({ pages, selectedPage, onSelectPage, onLogout }: Backend
     <aside className="w-56 min-h-screen bg-card border-r border-border flex flex-col">
       <div className="p-6">
         <img src={vectyrLogo} alt="Vectyr" className="h-5" />
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground ml-2">
-          Admin
-        </span>
       </div>
 
       <nav className="flex-1 px-3 space-y-1">
