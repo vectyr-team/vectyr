@@ -249,9 +249,12 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="mt-12 flex justify-center">
+          <div className="mt-12 flex justify-center gap-4">
             <a href="/demo">
               <Button size="lg">Book a Demo</Button>
+            </a>
+            <a href="/faqs">
+              <Button size="lg" variant="outline">Learn More</Button>
             </a>
           </div>
         </div>
