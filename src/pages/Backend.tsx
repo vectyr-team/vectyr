@@ -138,7 +138,7 @@ const Backend = () => {
 
       <main className="flex-1 p-8 md:p-12 overflow-y-auto">
         <div className="max-w-2xl">
-          <h1 className="font-headline text-3xl text-foreground mb-1">
+          <h1 className="font-headline text-foreground mb-1 text-5xl">
             {isSeoSection ? seoSection?.title : currentPage?.name || selectedPage}
           </h1>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-8">
