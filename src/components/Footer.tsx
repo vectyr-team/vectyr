@@ -13,7 +13,7 @@ const Footer = () => {
 
       <div className="mx-auto max-w-[1300px] px-6 pt-16 pb-10 md:pt-24 md:pb-12">
         {/* Main grid */}
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-16 text-center md:text-left">
+        <div className="grid gap-12 md:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-16 text-center md:text-left">
           {/* Brand column */}
           <div className="flex flex-col gap-6 items-center md:items-start">
             <img
