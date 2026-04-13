@@ -7,6 +7,7 @@ import FAQsEditor from "@/components/backend/FAQsEditor";
 import BusinessInfoEditor from "@/components/backend/BusinessInfoEditor";
 import MetaTagsEditor from "@/components/backend/MetaTagsEditor";
 import SchemaPreview from "@/components/backend/SchemaPreview";
+import AdminManager from "@/components/backend/AdminManager";
 
 interface PageSetting {
   id: string;
@@ -28,6 +29,7 @@ const SEO_SECTIONS: Record<string, { title: string; subtitle: string }> = {
   "seo-business": { title: "Business Info", subtitle: "JSON-LD Schema Data" },
   "seo-meta": { title: "Meta Tags", subtitle: "Per-Page SEO" },
   "seo-schema": { title: "Schema Preview", subtitle: "JSON-LD Validation" },
+  "admin-users": { title: "Admin Users", subtitle: "Manage Access" },
 };
 
 const Backend = () => {
@@ -83,7 +85,7 @@ const Backend = () => {
 
   if (!session) return null;
 
-  const isSeoSection = selectedPage.startsWith("seo-");
+  const isSeoSection = selectedPage.startsWith("seo-") || selectedPage.startsWith("admin-");
   const seoSection = SEO_SECTIONS[selectedPage];
   const currentSettings = pageSettings.find((p) => p.page_slug === selectedPage);
   const currentPage = ALL_PAGES.find((p) => p.slug === selectedPage);
@@ -99,6 +101,8 @@ const Backend = () => {
           return <MetaTagsEditor />;
         case "seo-schema":
           return <SchemaPreview />;
+        case "admin-users":
+          return <AdminManager />;
         default:
           return null;
       }
