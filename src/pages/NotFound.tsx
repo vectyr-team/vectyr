@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import bodXWhite from "@/assets/bodX-white.svg";
 
 const NotFound = () => {
   const location = useLocation();
@@ -11,7 +12,8 @@ const NotFound = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-black01">
       <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">This Page Doesn't Exist</h1>
+        <img src={bodXWhite} alt="Skull and crossbones" className="mx-auto mb-6 h-20 w-20" />
+        <h1 className="mb-4 text-5xl font-normal font-headline uppercase">This Page Doesn't Exist</h1>
         <p className="mb-4 text-xl text-muted-foreground">Kind of like a brand strategy that lives in your head and nowhere else.</p>
         <a href="/" className="text-primary underline hover:text-primary/90">
           Return to Home
