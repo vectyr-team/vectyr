@@ -5,6 +5,7 @@ import SEOHead from "@/components/SEOHead";
 import { usePageMeta } from "@/hooks/use-seo-data";
 
 const Demo = () => {
+  const pageMeta = usePageMeta("demo");
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://links.vectyr.com/js/form_embed.js";
@@ -23,7 +24,7 @@ const Demo = () => {
     <div className="flex flex-col min-h-screen bg-card">
       <Header />
       <main className="flex-1">
-      <SEOHead {...PAGE_META.demo} />
+      <SEOHead {...pageMeta} />
 
       <section className="px-6 pt-32 pb-12 md:pt-44 md:pb-24">
         <div className="mx-auto max-w-[1300px]">
