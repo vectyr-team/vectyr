@@ -460,9 +460,14 @@ const Index = () => {
               that infrastructure.
             </p>
 
-            <a href="/demo" className="mt-10">
-              <Button size="lg">Experience the Demo</Button>
-            </a>
+            <div className="mt-10 flex gap-4">
+              <a href="/demo">
+                <Button size="lg">Experience the Demo</Button>
+              </a>
+              <a href="/faqs">
+                <Button size="lg" variant="outline">Learn More</Button>
+              </a>
+            </div>
           </ScrollSection>
         </div>
       </section>
