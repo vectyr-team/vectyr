@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
-import { PAGE_META } from "@/config/seo";
+import { usePageMeta } from "@/hooks/use-seo-data";
 
 const Contact = () => {
   useEffect(() => {

@@ -7,14 +7,15 @@ import Header from "@/components/Header";
 import steveTall from "@/assets/steve-tall.jpg";
 import aboutHeroBg from "@/assets/about-hero-bg.jpg";
 import SEOHead from "@/components/SEOHead";
-import { PAGE_META } from "@/config/seo";
+import { usePageMeta } from "@/hooks/use-seo-data";
 
 const About = () => {
+  const pageMeta = usePageMeta("about");
   return (
     <div className="flex flex-col min-h-screen bg-[#151616]">
       <Header />
       <main className="flex-1">
-      <SEOHead {...PAGE_META.about} />
+      <SEOHead {...pageMeta} />
 
       <section className="relative px-6 pt-28 pb-8 md:pt-52 md:pb-24 min-h-[80vh] flex items-center overflow-hidden">
         <img src={aboutHeroBg} alt="" className="absolute inset-0 z-0 w-full h-full object-cover pointer-events-none" />

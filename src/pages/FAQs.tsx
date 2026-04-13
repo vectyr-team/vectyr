@@ -6,7 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import SEOHead from "@/components/SEOHead";
 import { FAQPageJsonLd } from "@/components/JsonLd";
-import { PAGE_META } from "@/config/seo";
+import { usePageMeta } from "@/hooks/use-seo-data";
 
 interface FAQ {
   id: string;
