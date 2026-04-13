@@ -14,6 +14,90 @@ export type Database = {
   }
   public: {
     Tables: {
+      business_info: {
+        Row: {
+          address_country: string
+          address_locality: string
+          address_region: string
+          created_at: string
+          description: string
+          email: string
+          founder_linkedin: string
+          founder_name: string
+          founder_url: string
+          founding_date: string
+          geo_latitude: number
+          geo_longitude: number
+          id: string
+          legal_name: string
+          name: string
+          opening_hours: string
+          postal_code: string
+          rating_value: number
+          review_count: number
+          service_areas: string[]
+          services: string[]
+          social_links: string[]
+          street_address: string
+          telephone: string
+          updated_at: string
+        }
+        Insert: {
+          address_country?: string
+          address_locality?: string
+          address_region?: string
+          created_at?: string
+          description?: string
+          email?: string
+          founder_linkedin?: string
+          founder_name?: string
+          founder_url?: string
+          founding_date?: string
+          geo_latitude?: number
+          geo_longitude?: number
+          id?: string
+          legal_name?: string
+          name?: string
+          opening_hours?: string
+          postal_code?: string
+          rating_value?: number
+          review_count?: number
+          service_areas?: string[]
+          services?: string[]
+          social_links?: string[]
+          street_address?: string
+          telephone?: string
+          updated_at?: string
+        }
+        Update: {
+          address_country?: string
+          address_locality?: string
+          address_region?: string
+          created_at?: string
+          description?: string
+          email?: string
+          founder_linkedin?: string
+          founder_name?: string
+          founder_url?: string
+          founding_date?: string
+          geo_latitude?: number
+          geo_longitude?: number
+          id?: string
+          legal_name?: string
+          name?: string
+          opening_hours?: string
+          postal_code?: string
+          rating_value?: number
+          review_count?: number
+          service_areas?: string[]
+          services?: string[]
+          social_links?: string[]
+          street_address?: string
+          telephone?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       faqs: {
         Row: {
           answer: string
@@ -37,6 +121,33 @@ export type Database = {
           id?: string
           question?: string
           sort_order?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      page_meta: {
+        Row: {
+          created_at: string
+          description: string
+          id: string
+          page_slug: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string
+          id?: string
+          page_slug: string
+          title?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          id?: string
+          page_slug?: string
+          title?: string
           updated_at?: string
         }
         Relationships: []
