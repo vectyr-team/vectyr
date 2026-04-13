@@ -43,7 +43,7 @@ const About = () => {
             </p>
 
             <p className="font-body italic text-base md:text-lg font-light leading-relaxed text-[#adadad]">
-              BrandOS exists because that is a solvable problem, and nobody else was solving it the right way.
+              Vectyr BrandOS exists because that is a solvable problem, and nobody else was solving it the right way.
             </p>
           </div>
         </div>
