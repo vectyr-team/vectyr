@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+import vectyrLogo from "@/assets/vectyr-logo.svg";
 
 interface Page {
   slug: string;
