@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import logoStacked from "@/assets/bodR-stacked-centered-white.svg";
+import bodXIcon from "@/assets/bodX-white.svg";
 
 const Footer = () => {
   const year = new Date().getFullYear();
