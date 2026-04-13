@@ -27,9 +27,9 @@ const Footer = () => {
             {/* Social icons */}
             <div className="flex items-center justify-center md:justify-start gap-3 mt-1">
               {[
-                { icon: "mdi:linkedin", href: "#" },
-                { icon: "mdi:instagram", href: "#" },
-                { icon: "ri:twitter-x-fill", href: "#" },
+                { icon: "mdi:youtube", href: "https://www.youtube.com/@vectyrbrands" },
+                { icon: "mdi:behance", href: "https://www.behance.net/vectyr" },
+                { icon: "mdi:linkedin", href: "https://www.linkedin.com/in/stevereedbrands" },
               ].map((s, i) => (
                 <a
                   key={i}
