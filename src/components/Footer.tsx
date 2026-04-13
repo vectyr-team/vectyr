@@ -46,7 +46,7 @@ const Footer = () => {
           </div>
 
           {/* Navigate */}
-          <nav className="flex flex-col gap-3 items-center md:items-start">
+          <nav className="flex flex-col gap-3 items-center md:items-start" aria-label="Site navigation">
             <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">EXPLORE</span>
             {[
               { label: "Home", to: "/" },
@@ -64,7 +64,7 @@ const Footer = () => {
           </nav>
 
           {/* Services */}
-          <nav className="flex flex-col gap-3 items-center md:items-start">
+          <nav className="flex flex-col gap-3 items-center md:items-start" aria-label="Services">
             <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">THE WORK</span>
             {[
               { label: "BrandOS", to: "https://vectyr.com/os" },

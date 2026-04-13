@@ -46,6 +46,7 @@ const Index = () => {
           loop
           muted
           playsInline
+          aria-hidden="true"
           src="/videos/vectyr-hero-bg.mp4"
           className="absolute inset-0 w-full object-cover scale-105"
           style={{ height: "110%", top: "-5%" }}
