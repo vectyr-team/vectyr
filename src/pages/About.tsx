@@ -9,8 +9,9 @@ import aboutHeroBg from "@/assets/about-hero-bg.jpg";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-[#151616]">
+    <div className="flex flex-col min-h-screen bg-[#151616]">
       <Header />
+      <main className="flex-1">
 
       <section className="relative px-6 pt-28 pb-8 md:pt-52 md:pb-24 min-h-[80vh] flex items-center overflow-hidden">
         <img src={aboutHeroBg} alt="" className="absolute inset-0 z-0 w-full h-full object-cover pointer-events-none" />
@@ -252,6 +253,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      </main>
       <Footer />
     </div>
   );

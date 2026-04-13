@@ -18,8 +18,9 @@ const Demo = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-card">
+    <div className="flex flex-col min-h-screen bg-card">
       <Header />
+      <main className="flex-1">
 
       <section className="px-6 pt-32 pb-12 md:pt-44 md:pb-24">
         <div className="mx-auto max-w-[1300px]">
@@ -45,6 +46,7 @@ const Demo = () => {
           </div>
         </div>
       </section>
+      </main>
       <Footer />
     </div>
   );

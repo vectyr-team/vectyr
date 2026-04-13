@@ -50,8 +50,9 @@ const FAQs = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-card text-foreground">
+    <div className="flex flex-col min-h-screen bg-card text-foreground">
       <Header />
+      <main className="flex-1">
       <main className="max-w-3xl mx-auto px-6 pt-32 pb-24">
         <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-4 block">
           Frequently Asked Questions
@@ -95,6 +96,7 @@ const FAQs = () => {
           </a>
         </div>
       </section>
+      </main>
       <Footer />
     </div>
   );
