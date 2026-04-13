@@ -12,7 +12,7 @@ const NotFound = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-black01">
       <div className="text-center px-[40px]">
-        <img src={bodXWhite} alt="Skull and crossbones" className="mx-auto mb-6 h-20 w-20" />
+        <img src={bodXWhite} alt="Skull and crossbones" className="mx-auto mb-6 h-40 w-40" />
         <h1 className="mb-4 font-normal font-headline uppercase text-4xl">This Page Doesn't Exist</h1>
         <p className="mb-4 text-muted-foreground text-base">Kind of like a brand strategy that lives in your head and nowhere else.</p>
         <a href="/" className="text-primary underline hover:text-primary/90">
