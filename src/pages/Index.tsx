@@ -54,14 +54,14 @@ const Index = () => {
               className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block"
               style={heroStyle(0)}
             >
-              BRANDING FOR THE AGE OF AI
+              Branding for the Age of AI
             </span>
 
             <h1
               className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-[625px]"
               style={heroStyle(1)}
             >
-              YOUR BRAND IS LIVING IN YOUR HEAD. <span className="text-primary">NOWHERE ELSE.</span>
+              Your Brand is Living in Your Head. <span className="text-primary">Nowhere Else.</span>
             </h1>
 
             <p
@@ -128,7 +128,7 @@ const Index = () => {
             </div>
 
             <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
-              MOST AGENCIES SOLVE ONE PROBLEM AND LEAVE <span className="text-primary">TWO BEHIND</span>
+              Most Agencies Solve One Problem and Leave <span className="text-primary">Two Behind</span>
             </h2>
 
             <p className="mt-4 md:mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
@@ -195,7 +195,7 @@ const Index = () => {
             </div>
 
             <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
-              Extracted. BUILT. INSTALLED.
+              Extracted. Built. Installed.
             </h2>
 
             <p className="mt-4 md:mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
@@ -254,7 +254,9 @@ const Index = () => {
               <Button size="lg">Book a Demo</Button>
             </a>
             <a href="/faqs">
-              <Button size="lg" variant="outline">Learn More</Button>
+              <Button size="lg" variant="outline">
+                Learn More
+              </Button>
             </a>
           </div>
         </div>
@@ -330,7 +332,7 @@ const Index = () => {
             </div>
 
             <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
-              WHAT BUILDERS <span className="text-primary">SAY.</span>
+              What Founders <span className="text-primary">Say.</span>
             </h2>
           </ScrollSection>
 
@@ -385,7 +387,7 @@ const Index = () => {
             </div>
 
             <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
-              MEET US WHERE <span className="text-primary">YOU ARE</span>
+              Meet Us Where <span className="text-primary">You Are</span>
             </h2>
 
             <p className="mt-4 md:mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
@@ -452,7 +454,7 @@ const Index = () => {
               className="font-headline font-light leading-[0.95] tracking-normal text-5xl md:text-6xl lg:text-7xl max-w-[830px]"
               style={{ color: "#090909" }}
             >
-              YOUR Business IS BETTER THAN WHAT THE MARKET <span className="text-primary">CURRENTLY SEES.</span>
+              Your Business Is Better Than What The Market <span className="text-primary">Currently Sees.</span>
             </h2>
 
             <p className="mt-4 md:mt-8 max-w-xl font-body text-lg leading-relaxed" style={{ color: "#6B6B6B" }}>
@@ -465,7 +467,9 @@ const Index = () => {
                 <Button size="lg">Experience the Demo</Button>
               </a>
               <a href="/faqs">
-                <Button size="lg" variant="outline">Learn More</Button>
+                <Button size="lg" variant="outline">
+                  Learn More
+                </Button>
               </a>
             </div>
           </ScrollSection>
