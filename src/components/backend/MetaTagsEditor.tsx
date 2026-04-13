@@ -81,7 +81,7 @@ const MetaTagsEditor = () => {
       {ALL_PAGES.map((page) => {
         const meta = getMetaForSlug(page.slug);
         return (
-          <div key={page.slug} className="border border-border rounded-lg p-4 space-y-3">
+          <div key={page.slug} className="border border-border rounded-lg p-4 space-y-3 bg-black02">
             <h2 className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
               {page.label} — /{page.slug === "home" ? "" : page.slug}
             </h2>
