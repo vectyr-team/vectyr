@@ -299,20 +299,31 @@ const AdminManager = () => {
                         />
                       </div>
                     </div>
-                    <div className="flex gap-2">
-                      <button
-                        onClick={() => handleSave(user.id)}
-                        disabled={saving}
-                        className="bg-primary text-primary-foreground font-mono text-[10px] uppercase tracking-[0.2em] px-4 py-2 rounded hover:bg-primary/90 transition-colors disabled:opacity-50"
-                      >
-                        {saving ? "Saving..." : "Save"}
-                      </button>
-                      <button
-                        onClick={cancelEditing}
-                        className="border border-border text-muted-foreground font-mono text-[10px] uppercase tracking-[0.2em] px-4 py-2 rounded hover:text-foreground transition-colors"
-                      >
-                        Cancel
-                      </button>
+                    <div className="flex items-center justify-between">
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <Switch
+                          checked={user.is_suspended}
+                          onCheckedChange={() => handleSuspendToggle(user)}
+                        />
+                        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                          {user.is_suspended ? "Suspended" : "Suspend User"}
+                        </span>
+                      </label>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => handleSave(user.id)}
+                          disabled={saving}
+                          className="bg-primary text-primary-foreground font-mono text-[10px] uppercase tracking-[0.2em] px-4 py-2 rounded hover:bg-primary/90 transition-colors disabled:opacity-50"
+                        >
+                          {saving ? "Saving..." : "Save"}
+                        </button>
+                        <button
+                          onClick={cancelEditing}
+                          className="border border-border text-muted-foreground font-mono text-[10px] uppercase tracking-[0.2em] px-4 py-2 rounded hover:text-foreground transition-colors"
+                        >
+                          Cancel
+                        </button>
+                      </div>
                     </div>
                   </div>
                 ) : (
@@ -340,16 +351,6 @@ const AdminManager = () => {
                       </p>
                     </div>
                     <div className="flex items-center gap-3 shrink-0">
-                      {/* Suspend toggle */}
-                      <label className="flex items-center gap-1.5 cursor-pointer" title={user.is_suspended ? "Unsuspend" : "Suspend"}>
-                        <Switch
-                          checked={!user.is_suspended}
-                          onCheckedChange={() => handleSuspendToggle(user)}
-                        />
-                        <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground w-8">
-                          {user.is_suspended ? "Off" : "On"}
-                        </span>
-                      </label>
                       {/* Admin toggle */}
                       <button
                         onClick={() => handleToggleAdmin(user)}
