@@ -73,7 +73,7 @@ const Index = () => {
               output that sounds like everybody else.
             </p>
 
-            <div className="mt-10 flex gap-4" style={heroStyle(3)}>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4" style={heroStyle(3)}>
               <a href="/demo">
                 <Button size="lg">Book a Demo</Button>
               </a>
@@ -460,7 +460,7 @@ const Index = () => {
               that infrastructure.
             </p>
 
-            <div className="mt-10 flex gap-4">
+            <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <a href="/demo">
                 <Button size="lg">Experience the Demo</Button>
               </a>
