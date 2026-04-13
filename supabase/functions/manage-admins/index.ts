@@ -19,14 +19,14 @@ Deno.serve(async (req) => {
 
     // Verify caller is authenticated
     const authHeader = req.headers.get("Authorization");
-    if (!authHeader) return json({ error: "Unauthorized" }, 401);
+    if (!authHeader?.startsWith("Bearer ")) return json({ error: "Unauthorized" }, 401);
 
-    const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
-    const userClient = createClient(supabaseUrl, anonKey, {
-      global: { headers: { Authorization: authHeader } },
-    });
-    const { data: { user: caller } } = await userClient.auth.getUser();
-    if (!caller) return json({ error: "Unauthorized" }, 401);
+    const token = authHeader.replace("Bearer ", "");
+    const {
+      data: { user: caller },
+      error: authError,
+    } = await adminClient.auth.getUser(token);
+    if (authError || !caller) return json({ error: "Unauthorized" }, 401);
 
     // Check if any admins exist (bootstrap check)
     const { count } = await adminClient
