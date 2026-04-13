@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { LocalBusinessJsonLd } from "@/components/JsonLd";
 import { PAGE_META } from "@/config/seo";
+import { useBusinessInfo, usePageMeta } from "@/hooks/use-seo-data";
 
 const heroItems = [
   { delay: 0.6 }, // overline
