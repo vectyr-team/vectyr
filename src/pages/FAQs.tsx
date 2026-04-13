@@ -78,6 +78,11 @@ const FAQs = () => {
       </main>
 
       <section className="bg-background px-6 py-24 md:py-24">
+        <img
+          src="/images/system-bg.jpg"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover opacity-[0.2] pointer-events-none"
+        />
         <div className="mx-auto max-w-3xl flex flex-col items-center text-center">
           <h2 className="font-headline text-3xl md:text-5xl font-normal text-foreground">Still Have Questions?</h2>
           <p className="mt-4 max-w-xl font-body text-base text-muted-foreground leading-relaxed">
