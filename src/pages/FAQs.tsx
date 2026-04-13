@@ -41,6 +41,7 @@ const linkifyText = (text: string): ReactNode[] => {
 
 const FAQs = () => {
   const [faqs, setFaqs] = useState<FAQ[]>([]);
+  const [loading, setLoading] = useState(true);
   const pageMeta = usePageMeta("faqs");
 
   useEffect(() => {
