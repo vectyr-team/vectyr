@@ -13,19 +13,19 @@ const Footer = () => {
 
       <div className="mx-auto max-w-[1300px] px-6 pt-16 pb-10 md:pt-24 md:pb-12">
         {/* Main grid */}
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-16">
+        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-16 text-center md:text-left">
           {/* Brand column */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 items-center md:items-start">
             <img
               src={logoStacked}
               alt="Brand Orchestra — a Vectyr company"
-              className="h-20 w-auto self-start opacity-70 hover:opacity-100 transition-opacity duration-300"
+              className="h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
             />
             <p className="font-body text-sm leading-relaxed text-muted-foreground/60 max-w-[260px]">
               Brand infrastructure for founders who are done winging it. We extract, structure, and install your brand so it runs without you in the room.
             </p>
             {/* Social icons */}
-            <div className="flex items-center gap-3 mt-1">
+            <div className="flex items-center justify-center md:justify-start gap-3 mt-1">
               {[
                 { icon: "mdi:linkedin", href: "#" },
                 { icon: "mdi:instagram", href: "#" },
@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
 
           {/* Navigate */}
-          <nav className="flex flex-col gap-3">
+          <nav className="flex flex-col gap-3 items-center md:items-start">
             <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">
               Navigate
             </span>
@@ -67,7 +67,7 @@ const Footer = () => {
           </nav>
 
           {/* Services */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 items-center md:items-start">
             <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">
               Services
             </span>
@@ -86,7 +86,7 @@ const Footer = () => {
           </div>
 
           {/* Connect */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 items-center md:items-start">
             <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">
               Connect
             </span>
