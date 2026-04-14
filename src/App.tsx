@@ -13,6 +13,7 @@ import FAQs from "./pages/FAQs.tsx";
 import Team from "./pages/Team.tsx";
 import TeamMember from "./pages/TeamMember.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import ScrollToTop from "./components/ScrollToTop.tsx";
 
 const queryClient = new QueryClient();
 
