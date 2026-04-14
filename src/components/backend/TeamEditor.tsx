@@ -352,7 +352,9 @@ const TeamEditor = () => {
   const updateGrid = async (field: string, value: number) => {
     if (!gridSettings) return;
     const val = Math.max(1, Math.min(6, value));
-    await supabase.from("team_grid_settings").update({ [field]: val }).eq("id", gridSettings.id);
+    const updateData: Record<string, number> = {};
+    updateData[field] = val;
+    await supabase.from("team_grid_settings").update(updateData as any).eq("id", gridSettings.id);
     setGridSettings({ ...gridSettings, [field]: val });
   };
 

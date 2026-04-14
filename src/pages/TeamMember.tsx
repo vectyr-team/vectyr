@@ -57,7 +57,7 @@ const TeamMember = () => {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
-      <SEOHead title={`${member.name} — Vectyr`} description={member.title} />
+      <SEOHead title={`${member.name} — Vectyr`} description={member.title} path={`/team/${member.slug}`} />
 
       <main className="flex-1 px-6 pt-28 pb-16 md:pt-44 md:pb-24">
         <div className="mx-auto max-w-[1300px]">
