@@ -87,7 +87,7 @@ const Team = () => {
           </AspectRatio>
           <div className="mt-3">
             <p className="font-body font-semibold text-foreground text-sm md:text-base">{member.name}</p>
-            <p className="font-mono text-xs text-muted-foreground mt-0.5">{member.title}</p>
+            <p className="font-mono text-xs text-muted-foreground mt-0.5 uppercase">{member.title}</p>
           </div>
         </Link>
       ))}
