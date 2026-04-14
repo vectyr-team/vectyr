@@ -29,8 +29,8 @@ const navDelayOrder = [0, 1, 2];
 
 // All mobile links flattened
 const mobileLinks = [
-  ...companyLinks,
   { to: "/demo", label: "Demo" },
+  ...companyLinks,
   { to: "https://os.vectyr.com", label: "Login" },
 ];
 
