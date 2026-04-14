@@ -36,7 +36,7 @@ const Demo = () => {
             EXPERIENCE <span className="text-primary">BRANDOS.</span>
           </h1>
 
-          <p className="mt-4 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
+          <p className="mt-4 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground mb-[20px]">
             Walk through the platform, see how your brand gets built, how it integrates with all the AI tools you and your team use, and see if it's a good fit.
           </p>
 
