@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import vectyrLogo from "@/assets/vectyr-logo.svg";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -10,54 +10,84 @@ const socialLinks = [
   { href: "https://www.linkedin.com/in/stevereedbrands", icon: "mdi:linkedin", label: "LinkedIn" },
 ];
 
+const companyLinks = [
+  { to: "/about", label: "About" },
+  { to: "/team", label: "Team" },
+  { to: "/faqs", label: "FAQs" },
+  { to: "/contact", label: "Contact" },
+];
+
 const navLinks = [
   { to: "/demo", label: "Demo" },
-  { to: "/contact", label: "Contact" },
   { to: "https://os.vectyr.com", label: "Login" },
 ];
 
 // Delay order: innermost (closest to logo/center) animates first
-// Social icons (left side): index 2 (LinkedIn) first, then 1, then 0
-// Nav links (right side): index 0 (Demo) first, then 1, then 2
-const socialDelayOrder = [2, 1, 0]; // reversed: innermost first
-const navDelayOrder = [0, 1, 2]; // normal: innermost first
+const socialDelayOrder = [2, 1, 0];
+// Company (0) first, then Demo (1), then Login (2)
+const navDelayOrder = [0, 1, 2];
+
+// All mobile links flattened
+const mobileLinks = [
+  ...companyLinks,
+  { to: "/demo", label: "Demo" },
+  { to: "https://os.vectyr.com", label: "Login" },
+];
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [companyOpen, setCompanyOpen] = useState(false);
   const [animateIn, setAnimateIn] = useState(false);
   const isMobile = useIsMobile();
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const companyRef = useRef<HTMLDivElement>(null);
 
-  // Close menu on route change
+  // Close menus on route change
   useEffect(() => {
     setMenuOpen(false);
+    setCompanyOpen(false);
   }, [location.pathname]);
 
   // Trigger entrance animation on home page (md+ only)
   useEffect(() => {
     if (isHome && !isMobile) {
-      // Small delay to ensure elements are rendered
       const timer = setTimeout(() => setAnimateIn(true), 100);
       return () => clearTimeout(timer);
     } else {
-      setAnimateIn(true); // No animation on other pages, just show
+      setAnimateIn(true);
     }
   }, [isHome, isMobile]);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
+  // Click outside to close company dropdown
+  useEffect(() => {
+    if (!companyOpen) return;
+    const handler = (e: MouseEvent) => {
+      if (companyRef.current && !companyRef.current.contains(e.target as Node)) {
+        setCompanyOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [companyOpen]);
+
   const shouldAnimate = isHome && !isMobile;
+
+  const getAnimStyle = (delayIndex: number) =>
+    shouldAnimate
+      ? {
+          opacity: animateIn ? 1 : 0,
+          transform: animateIn ? "translateY(0)" : "translateY(12px)",
+          transition: "opacity 0.5s ease-out, transform 0.5s ease-out",
+          transitionDelay: `${0.5 + delayIndex * 0.1}s`,
+        }
+      : undefined;
 
   return (
     <>
@@ -74,16 +104,7 @@ const Header = () => {
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 aria-label={s.label}
-                style={
-                  shouldAnimate
-                    ? {
-                        opacity: animateIn ? 1 : 0,
-                        transform: animateIn ? "translateY(0)" : "translateY(12px)",
-                        transition: `opacity 0.5s ease-out, transform 0.5s ease-out`,
-                        transitionDelay: `${0.5 + delayIndex * 0.1}s`,
-                      }
-                    : undefined
-                }
+                style={getAnimStyle(delayIndex)}
               >
                 <Icon icon={s.icon} width={20} height={20} />
               </a>
@@ -116,46 +137,54 @@ const Header = () => {
             className="relative z-[60] w-8 h-8 flex flex-col items-center justify-center gap-[5px] focus:outline-none"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
-            <span
-              className={`block h-[2px] w-6 bg-foreground rounded transition-all duration-300 origin-center ${
-                menuOpen ? "rotate-45 translate-y-[7px]" : ""
-              }`}
-            />
-            <span
-              className={`block h-[2px] w-6 bg-foreground rounded transition-all duration-300 ${
-                menuOpen ? "opacity-0 scale-x-0" : "opacity-100"
-              }`}
-            />
-            <span
-              className={`block h-[2px] w-6 bg-foreground rounded transition-all duration-300 origin-center ${
-                menuOpen ? "-rotate-45 -translate-y-[7px]" : ""
-              }`}
-            />
+            <span className={`block h-[2px] w-6 bg-foreground rounded transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
+            <span className={`block h-[2px] w-6 bg-foreground rounded transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : "opacity-100"}`} />
+            <span className={`block h-[2px] w-6 bg-foreground rounded transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
           </button>
         ) : (
           <nav className="flex items-center gap-5 md:gap-6">
-            {navLinks.map((link, i) => {
-              const delayIndex = navDelayOrder.indexOf(i);
-              return (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors"
-                  style={
-                    shouldAnimate
-                      ? {
-                          opacity: animateIn ? 1 : 0,
-                          transform: animateIn ? "translateY(0)" : "translateY(12px)",
-                          transition: `opacity 0.5s ease-out, transform 0.5s ease-out`,
-                          transitionDelay: `${0.5 + delayIndex * 0.1}s`,
-                        }
-                      : undefined
-                  }
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
+            {/* Company dropdown */}
+            <div ref={companyRef} className="relative" style={getAnimStyle(navDelayOrder[0])}>
+              <button
+                onClick={() => setCompanyOpen((v) => !v)}
+                className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+              >
+                Company
+                <Icon
+                  icon="mdi:chevron-down"
+                  width={14}
+                  height={14}
+                  className={`transition-transform duration-200 ${companyOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+
+              {companyOpen && (
+                <div className="absolute top-full right-0 mt-3 min-w-[160px] rounded-md border border-border bg-background/95 backdrop-blur-md py-2 shadow-lg">
+                  {companyLinks.map((link) => (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      onClick={() => setCompanyOpen(false)}
+                      className="block px-4 py-2 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground hover:bg-card transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Demo & Login */}
+            {navLinks.map((link, i) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors"
+                style={getAnimStyle(navDelayOrder[i + 1])}
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
         )}
       </header>
@@ -168,7 +197,7 @@ const Header = () => {
           }`}
         >
           <nav className="flex flex-col items-center gap-0">
-            {navLinks.map((link, i) => (
+            {mobileLinks.map((link, i) => (
               <Link
                 key={link.to}
                 to={link.to}
@@ -176,16 +205,13 @@ const Header = () => {
                 className={`font-headline text-5xl uppercase tracking-normal text-foreground hover:text-accent transition-all duration-500 py-4 ${
                   menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
-                style={{
-                  transitionDelay: menuOpen ? `${150 + i * 100}ms` : "0ms",
-                }}
+                style={{ transitionDelay: menuOpen ? `${150 + i * 100}ms` : "0ms" }}
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          {/* Decorative accent line */}
           <div
             className={`mt-12 h-[2px] bg-accent transition-all duration-700 ${
               menuOpen ? "w-24 opacity-100" : "w-0 opacity-0"
