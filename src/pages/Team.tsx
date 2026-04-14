@@ -102,7 +102,7 @@ const Team = () => {
       <SEOHead {...pageMeta} />
       <style>{responsiveGridCSS}</style>
 
-      <main className="flex-1 px-6 pt-28 pb-16 md:pt-44 md:pb-24">
+      <main className="flex-1 px-6 pt-28 pb-16 md:pt-44 md:pb-24 bg-black02">
         <div className="mx-auto max-w-[1300px]">
           <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">
             Our Team
