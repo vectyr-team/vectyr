@@ -21,6 +21,7 @@ interface PageSetting {
 const ALL_PAGES = [
   { slug: "index", name: "Home" },
   { slug: "about", name: "About" },
+  { slug: "team", name: "Team" },
   { slug: "demo", name: "Demo" },
   { slug: "contact", name: "Contact" },
   { slug: "faqs", name: "FAQs" },
