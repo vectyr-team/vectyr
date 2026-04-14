@@ -98,6 +98,30 @@ export type Database = {
         }
         Relationships: []
       }
+      departments: {
+        Row: {
+          created_at: string
+          id: string
+          name: string
+          sort_order: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          name: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          name?: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       faqs: {
         Row: {
           answer: string
@@ -181,6 +205,80 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
+      }
+      team_grid_settings: {
+        Row: {
+          created_at: string
+          desktop_columns: number
+          id: string
+          mobile_columns: number
+          tablet_columns: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          desktop_columns?: number
+          id?: string
+          mobile_columns?: number
+          tablet_columns?: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          desktop_columns?: number
+          id?: string
+          mobile_columns?: number
+          tablet_columns?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      team_members: {
+        Row: {
+          bio: string
+          created_at: string
+          department_id: string | null
+          id: string
+          name: string
+          photo_url: string | null
+          slug: string
+          sort_order: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          bio?: string
+          created_at?: string
+          department_id?: string | null
+          id?: string
+          name: string
+          photo_url?: string | null
+          slug: string
+          sort_order?: number
+          title?: string
+          updated_at?: string
+        }
+        Update: {
+          bio?: string
+          created_at?: string
+          department_id?: string | null
+          id?: string
+          name?: string
+          photo_url?: string | null
+          slug?: string
+          sort_order?: number
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "team_members_department_id_fkey"
+            columns: ["department_id"]
+            isOneToOne: false
+            referencedRelation: "departments"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       user_roles: {
         Row: {
