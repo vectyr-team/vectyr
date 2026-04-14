@@ -8,7 +8,6 @@ interface UserRecord {
   id: string;
   email: string;
   display_name: string;
-  phone: string;
   is_admin: boolean;
   is_suspended: boolean;
   created_at: string;
@@ -17,7 +16,6 @@ interface UserRecord {
 interface EditState {
   email: string;
   display_name: string;
-  phone: string;
 }
 
 const AdminManager = () => {
@@ -25,7 +23,7 @@ const AdminManager = () => {
   const [loading, setLoading] = useState(true);
   const [needsBootstrap, setNeedsBootstrap] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
-  const [editState, setEditState] = useState<EditState>({ email: "", display_name: "", phone: "" });
+  const [editState, setEditState] = useState<EditState>({ email: "", display_name: "" });
   const [saving, setSaving] = useState(false);
 
   // Invite form
@@ -99,7 +97,7 @@ const AdminManager = () => {
 
   const startEditing = (user: UserRecord) => {
     setEditingId(user.id);
-    setEditState({ email: user.email, display_name: user.display_name, phone: user.phone });
+    setEditState({ email: user.email, display_name: user.display_name });
   };
 
   const cancelEditing = () => {
@@ -114,7 +112,6 @@ const AdminManager = () => {
         user_id: userId,
         email: editState.email,
         display_name: editState.display_name,
-        phone: editState.phone,
       });
       toast({ title: "User updated" });
       setEditingId(null);
@@ -264,7 +261,7 @@ const AdminManager = () => {
                 {isEditing ? (
                   /* ── Edit Mode ── */
                   <div className="space-y-3">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       <div>
                         <label className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1 block">
                           Email
@@ -284,17 +281,6 @@ const AdminManager = () => {
                           type="text"
                           value={editState.display_name}
                           onChange={(e) => setEditState((s) => ({ ...s, display_name: e.target.value }))}
-                          className="w-full bg-card border border-border rounded px-3 py-2 text-foreground font-body text-sm focus:outline-none focus:border-primary"
-                        />
-                      </div>
-                      <div>
-                        <label className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1 block">
-                          Phone
-                        </label>
-                        <input
-                          type="tel"
-                          value={editState.phone}
-                          onChange={(e) => setEditState((s) => ({ ...s, phone: e.target.value }))}
                           className="w-full bg-card border border-border rounded px-3 py-2 text-foreground font-body text-sm focus:outline-none focus:border-primary"
                         />
                       </div>
