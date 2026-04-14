@@ -8,6 +8,7 @@ import BusinessInfoEditor from "@/components/backend/BusinessInfoEditor";
 import MetaTagsEditor from "@/components/backend/MetaTagsEditor";
 import SchemaPreview from "@/components/backend/SchemaPreview";
 import AdminManager from "@/components/backend/AdminManager";
+import TeamEditor from "@/components/backend/TeamEditor";
 
 interface PageSetting {
   id: string;
@@ -86,6 +87,7 @@ const Backend = () => {
   if (!session) return null;
 
   const isSeoSection = selectedPage.startsWith("seo-") || selectedPage.startsWith("admin-");
+  const isTeamSection = selectedPage === "team";
   const seoSection = SEO_SECTIONS[selectedPage];
   const currentSettings = pageSettings.find((p) => p.page_slug === selectedPage);
   const currentPage = ALL_PAGES.find((p) => p.slug === selectedPage);
@@ -107,6 +109,8 @@ const Backend = () => {
           return null;
       }
     }
+
+    if (isTeamSection) return <TeamEditor />;
 
     if (isFaqsPage) return <FAQsEditor />;
 
@@ -139,10 +143,10 @@ const Backend = () => {
       <main className="flex-1 px-6 pb-8 md:pt-12 md:px-12 md:pb-12 overflow-y-auto pt-[72px]">
         <div className="max-w-2xl">
           <h1 className="font-headline text-foreground mb-1 text-5xl">
-            {isSeoSection ? seoSection?.title : currentPage?.name || selectedPage}
+            {isSeoSection ? seoSection?.title : isTeamSection ? "Team" : currentPage?.name || selectedPage}
           </h1>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-8">
-            {isSeoSection ? seoSection?.subtitle : `/${selectedPage === "index" ? "" : selectedPage}`}
+            {isSeoSection ? seoSection?.subtitle : isTeamSection ? "Manage Team Members" : `/${selectedPage === "index" ? "" : selectedPage}`}
           </p>
 
           {renderContent()}
