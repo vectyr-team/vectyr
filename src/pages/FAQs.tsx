@@ -85,15 +85,10 @@ const FAQs = () => {
         )}
       </div>
 
-      <section className="relative bg-[#000000] px-6 py-24 md:py-24 overflow-hidden">
-        <img
-          src="/images/system-bg.jpg"
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover opacity-[0.2] pointer-events-none"
-        />
+      <section className="px-6 py-16 md:py-40" style={{ backgroundColor: "#F5F5F5" }}>
         <div className="mx-auto max-w-3xl flex flex-col items-center text-center">
-          <h2 className="font-headline text-3xl md:text-5xl font-normal text-foreground">Still Have Questions?</h2>
-          <p className="mt-4 max-w-xl font-body text-base text-muted-foreground leading-relaxed">
+          <h2 className="font-headline text-3xl md:text-5xl font-normal" style={{ color: "#090909" }}>Still Have Questions?</h2>
+          <p className="mt-4 max-w-xl font-body text-base leading-relaxed" style={{ color: "#6B6B6B" }}>
             Book a free demo of Vectyr BrandOS and get an honest read on your brand situation to get total clarity on
             whether it's a fit or not.
           </p>
