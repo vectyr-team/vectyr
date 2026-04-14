@@ -85,7 +85,7 @@ const FAQs = () => {
         )}
       </div>
 
-      <section className="px-6 py-16 md:py-40" style={{ backgroundColor: "#F5F5F5" }}>
+      <section className="px-6 py-16 md:py-[80px]" style={{ backgroundColor: "#F5F5F5" }}>
         <div className="mx-auto max-w-3xl flex flex-col items-center text-center">
           <h2 className="font-headline text-3xl md:text-5xl font-normal" style={{ color: "#090909" }}>Still Have Questions?</h2>
           <p className="mt-4 max-w-xl font-body text-base leading-relaxed" style={{ color: "#6B6B6B" }}>
