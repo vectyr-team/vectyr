@@ -362,10 +362,15 @@ const TeamEditor = () => {
   const addDepartment = async () => {
     if (!newDeptName.trim()) return;
     const maxOrder = departments.length > 0 ? Math.max(...departments.map((d) => d.sort_order)) : -1;
-    await supabase.from("departments").insert({ name: newDeptName.trim(), sort_order: maxOrder + 1 });
+    const { error } = await supabase.from("departments").insert({ name: newDeptName.trim(), sort_order: maxOrder + 1 });
+    if (error) {
+      toast({ title: "Error adding department", description: error.message, variant: "destructive" });
+      return;
+    }
     setNewDeptName("");
     setShowNewDept(false);
     fetchAll();
+    toast({ title: "Department added" });
   };
 
   const renameDepartment = async () => {
