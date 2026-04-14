@@ -143,8 +143,17 @@ const Header = () => {
           </button>
         ) : (
           <nav className="flex items-center gap-5 md:gap-6">
+            {/* Demo */}
+            <Link
+              to="/demo"
+              className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors"
+              style={getAnimStyle(navDelayOrder[0])}
+            >
+              Demo
+            </Link>
+
             {/* Company dropdown */}
-            <div ref={companyRef} className="relative" style={getAnimStyle(navDelayOrder[0])}>
+            <div ref={companyRef} className="relative" style={getAnimStyle(navDelayOrder[1])}>
               <button
                 onClick={() => setCompanyOpen((v) => !v)}
                 className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
@@ -174,17 +183,14 @@ const Header = () => {
               )}
             </div>
 
-            {/* Demo & Login */}
-            {navLinks.map((link, i) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors"
-                style={getAnimStyle(navDelayOrder[i + 1])}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {/* Login */}
+            <Link
+              to="https://os.vectyr.com"
+              className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors"
+              style={getAnimStyle(navDelayOrder[2])}
+            >
+              Login
+            </Link>
           </nav>
         )}
       </header>
