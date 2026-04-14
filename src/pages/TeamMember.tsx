@@ -59,7 +59,7 @@ const TeamMember = () => {
       <Header />
       <SEOHead title={`${member.name} — Vectyr`} description={member.title} path={`/team/${member.slug}`} />
 
-      <main className="flex-1 px-6 pt-28 pb-16 md:pt-44 md:pb-24">
+      <main className="flex-1 px-6 pt-28 pb-16 md:pt-44 md:pb-24 bg-black02">
         <div className="mx-auto max-w-[1300px]">
           {/* Back link */}
           <Link
