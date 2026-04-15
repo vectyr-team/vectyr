@@ -72,9 +72,7 @@ const SiteOps = () => {
               </div>
 
               <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl">
-                YOUR SITE IS THE
-                <br />
-                <span className="text-primary">WEAK LINK.</span>
+                Nobody Thinks of the Website <span className="text-primary">Until it's on fire.</span>
               </h2>
             </div>
 
@@ -91,27 +89,6 @@ const SiteOps = () => {
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
                 SiteOps exists because your website should not require your attention to stay healthy. It should require
                 a team, and that team should not be you.
-              </p>
-
-              <div className="space-y-4">
-                {problems.map((p, i) => (
-                  <p
-                    key={i}
-                    className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground"
-                  >
-                    {p}
-                  </p>
-                ))}
-              </div>
-
-              <div className="border-l-4 border-primary bg-foreground/5 p-6 md:p-8">
-                <p className="font-mono text-base md:text-lg leading-snug text-foreground">
-                  The site becomes the weak link in your installed brand.
-                </p>
-              </div>
-
-              <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                SiteOps removes that liability so the infrastructure stays intact where your customers actually see it.
               </p>
             </div>
           </div>
