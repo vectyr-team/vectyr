@@ -55,12 +55,6 @@ const BrandOS = () => {
               Brand<span className="text-primary">OS</span>
             </h1>
 
-            <p className="font-body text-xl md:text-2xl font-semibold leading-snug text-foreground max-w-2xl mb-6">
-              Your Brand Codex is the strategy.
-              <br />
-              BrandOS is the system that makes it run.
-            </p>
-
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl">
               BrandOS puts your brand where it actually matters: inside the tools your team uses every day, inside the
               AI prompts that generate your next piece of content, and inside the briefings your vendors read before
@@ -70,6 +64,11 @@ const BrandOS = () => {
             <p className="font-body text-base md:text-lg font-semibold text-foreground mt-6 max-w-2xl">
               That is what installed looks like.
             </p>
+            <div className="flex flex-col sm:flex-row gap-6 mt-12">
+              <Link to="/demo">
+                <Button size="lg">See BrandOS in Action</Button>
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -252,11 +251,6 @@ const BrandOS = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12">
               <Link to="/demo">
                 <Button size="lg">See BrandOS in Action</Button>
-              </Link>
-              <Link to="/contact">
-                <Button size="lg" variant="outline">
-                  Book a Discovery Call
-                </Button>
               </Link>
             </div>
           </div>
