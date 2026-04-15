@@ -26,7 +26,7 @@ const howSteps = [
   "You invite team members, vendors, and contractors by role with access scoped to exactly what they need.",
   "Brand assets, guidelines, templates, and AI installation files are centralized and one click away.",
   "Version control tracks every published update with labels and check-in status. Notifications keep the team aligned the moment anything changes.",
-  "Anyone can pull the exact brand context needed for their AI tool directly from the platform—no separate briefing required.",
+  "Anyone can pull the exact brand context needed for their AI tool directly from the platform with no separate briefing required.",
 ];
 
 const BrandOS = () => {
