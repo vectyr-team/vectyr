@@ -112,7 +112,7 @@ const SiteOps = () => {
 
             <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-16">
               DONE FOR YOU. 
-              <br>
+              <br />
               <span className="text-primary">DONE RIGHT.</span>
             </h2>
 
