@@ -14,6 +14,7 @@ import Team from "./pages/Team.tsx";
 import TeamMember from "./pages/TeamMember.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import BrandOS from "./pages/BrandOS.tsx";
+import SiteOps from "./pages/SiteOps.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/team" element={<Team />} />
           <Route path="/team/:slug" element={<TeamMember />} />
           <Route path="/vectyr-brand-os" element={<BrandOS />} />
+          <Route path="/site-ops" element={<SiteOps />} />
           <Route path="/backend" element={<Backend />} />
           <Route path="/backend/login" element={<BackendLogin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
