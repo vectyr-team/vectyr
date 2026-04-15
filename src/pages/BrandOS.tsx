@@ -132,9 +132,7 @@ const BrandOS = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
               {howSteps.map((step, i) => (
                 <div key={i} className="space-y-3">
-                  <span className="font-mono text-2xl text-foreground/20 block">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+                  <span className="font-mono text-2xl text-foreground/20 block">{String(i + 1).padStart(2, "0")}</span>
                   <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
                     {step}
                   </p>
@@ -248,7 +246,7 @@ const BrandOS = () => {
               Stop Being the Only Person Who Knows. <span className="text-primary">Install It.</span>
             </h2>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8">
               <Link to="/demo">
                 <Button size="lg">See BrandOS in Action</Button>
               </Link>
