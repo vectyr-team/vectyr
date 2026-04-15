@@ -45,7 +45,7 @@ const SiteOps = () => {
           />
           <div className="relative z-10 mx-auto max-w-[1300px]">
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">
-              WordPress Operations
+              Website Management
             </span>
 
             <h1 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-4xl mb-8">
