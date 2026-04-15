@@ -58,7 +58,7 @@ const SiteOps = () => {
               replaces that cycle with a team that actually manages the thing.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8">
+            <div className="flex flex-col sm:flex-row gap-6 mt-8">
               <Link to="/siteops">
                 <Button size="lg">Get SiteOps for Your Site</Button>
               </Link>
