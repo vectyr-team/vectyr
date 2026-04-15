@@ -168,19 +168,19 @@ const SiteOps = () => {
         </section>
 
         {/* Price */}
-        <section className="px-6 py-16 md:py-32 bg-background">
-          <div className="mx-auto max-w-[1300px] text-center">
+        <section className="px-6 py-16 md:py-40" style={{ backgroundColor: "#F5F5F5" }}>
+          <div className="mx-auto max-w-[1300px] flex flex-col items-center text-center">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">Pricing</span>
-              <span className="w-12 h-px bg-muted-foreground" />
+              <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: "#6B6B6B" }}>Pricing</span>
+              <span className="w-12 h-px" style={{ backgroundColor: "#6B6B6B" }} />
             </div>
 
-            <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl mb-8">
+            <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal sm:text-6xl md:text-7xl mb-8" style={{ color: "#090909" }}>
               <span className="text-primary">$495</span> / MONTH
             </h2>
 
             <div className="space-y-2 max-w-md mx-auto">
-              <p className="font-body text-base md:text-lg font-light text-muted-foreground">
+              <p className="font-body text-base md:text-lg font-light" style={{ color: "#6B6B6B" }}>
                 Your site should run without you having to watch it. Billed monthly. No long-term contracts. Cancel anytime.
               </p>
             </div>
