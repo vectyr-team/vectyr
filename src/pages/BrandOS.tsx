@@ -84,7 +84,7 @@ const BrandOS = () => {
                 <span className="w-12 h-px bg-muted-foreground" />
               </div>
 
-              <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl">
+              <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl">
                 YOUR BRAND STRATEGY EXISTS.
                 <br />
                 <span className="text-primary">IT DOESN'T GET USED.</span>
@@ -126,7 +126,7 @@ const BrandOS = () => {
               <span className="w-12 h-px bg-muted-foreground" />
             </div>
 
-            <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl mb-16">
+            <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-16">
               FROM CODEX TO <span className="text-primary">INFRASTRUCTURE.</span>
             </h2>
 
@@ -163,7 +163,7 @@ const BrandOS = () => {
                 <span className="w-12 h-px bg-muted-foreground" />
               </div>
 
-              <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl">
+              <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl">
                 NOT A FILING CABINET.
                 <br />
                 <span className="text-primary">AN INFRASTRUCTURE LAYER.</span>
@@ -198,7 +198,7 @@ const BrandOS = () => {
               <span className="w-12 h-px bg-muted-foreground" />
             </div>
 
-            <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl mb-8">
+            <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-8">
               BUILT FOR <span className="text-primary">TEAMS.</span>
             </h2>
 
@@ -222,7 +222,7 @@ const BrandOS = () => {
               <span className="w-12 h-px bg-muted-foreground" />
             </div>
 
-            <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl mb-12">
+            <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-12">
               EVERYTHING <span className="text-primary">INCLUDED.</span>
             </h2>
 
@@ -246,7 +246,7 @@ const BrandOS = () => {
               Your brand should run without you having to check it.
             </p>
 
-            <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl mb-4">
+            <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-4">
               STOP BEING THE ONLY PERSON WHO KNOWS.
               <br />
               <span className="text-primary">INSTALL IT.</span>

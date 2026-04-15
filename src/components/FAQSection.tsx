@@ -34,7 +34,7 @@ const FAQSection = ({
     <section className={`px-6 py-16 md:py-24 ${className}`} aria-label="Frequently Asked Questions">
       <FAQPageJsonLd faqs={faqs} />
       <div className="mx-auto max-w-3xl">
-        <h2 className="font-headline text-3xl md:text-5xl font-normal text-foreground mb-4">
+        <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-4">
           {heading}
         </h2>
         {subheading && (
