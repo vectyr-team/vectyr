@@ -168,7 +168,7 @@ const SiteOps = () => {
         </section>
 
         {/* Price */}
-        <section className="px-6 py-16 md:py-[100px]" style={{ backgroundColor: "#F5F5F5" }}>
+        <section className="px-6 py-16 bg-white md:py-[120px]">
           <div className="mx-auto max-w-[1300px] flex flex-col items-center text-center">
             <div className="flex items-center justify-center gap-4 mb-6">
               <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: "#6B6B6B" }}>Pricing</span>
