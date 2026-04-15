@@ -62,7 +62,6 @@ const BrandOS = () => {
             </p>
 
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl">
-              A strategy that lives in a folder is not a strategy. It is a document no one opens before a deadline.
               BrandOS puts your brand where it actually matters: inside the tools your team uses every day, inside the
               AI prompts that generate your next piece of content, and inside the briefings your vendors read before
               they start work.
