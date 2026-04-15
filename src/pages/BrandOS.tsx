@@ -236,15 +236,27 @@ const BrandOS = () => {
         </section>
 
         {/* CTA */}
-        <section className="px-6 py-20 md:py-32 bg-card">
-          <div className="mx-auto max-w-[800px] text-center" style={{ maxWidth: 710 }}>
-            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl mx-auto mb-4">
-              Your brand should run without you having to check it.
-            </p>
+        <section className="px-6 py-16 bg-white md:py-[100px]">
+          <div className="mx-auto max-w-[1300px] flex flex-col items-center text-center">
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: "#6B6B6B" }}>
+                Get Started
+              </span>
+              <span className="w-12 h-px" style={{ backgroundColor: "#6B6B6B" }} />
+            </div>
 
-            <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-4">
+            <h2
+              className="font-headline font-normal text-4xl leading-[0.95] tracking-normal sm:text-5xl md:text-7xl mb-4"
+              style={{ color: "#090909" }}
+            >
               Stop Being the Only Person Who Knows. <span className="text-primary">Install It.</span>
             </h2>
+
+            <div className="space-y-2 max-w-lg mx-auto">
+              <p className="font-body text-base md:text-lg font-light" style={{ color: "#6B6B6B" }}>
+                Your brand should run without you having to check it.
+              </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8">
               <Link to="/demo">
