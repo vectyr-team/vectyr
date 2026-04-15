@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import bodXWatermark from "@/assets/bodX-watermark.svg";
+import wpAdminBg from "@/assets/wordpress-admin.jpg";
 
 const problems = [
   "Plugins go unpatched.",
