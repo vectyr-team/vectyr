@@ -13,7 +13,7 @@ const problems = [
 ];
 
 const howSteps = [
-  "Shared Notion task board where you post requests, track progress, and see exactly where every job stands.",
+  "Shared task board where you post requests, track progress, and see exactly where every job stands.",
   "Daily backups so your site can be restored quickly if anything goes wrong.",
   "24/7/365 vulnerability monitoring and firewall protection through Patchstack. Threats are identified and blocked before they reach your site.",
   "Priority access to the Vectyr team when you need something handled.",
