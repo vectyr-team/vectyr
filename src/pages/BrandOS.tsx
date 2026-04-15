@@ -22,10 +22,10 @@ const problems = [
 ];
 
 const howSteps = [
-  "Your completed Brand Codex is published as the single source of truth inside the platform.",
+  "Your completed Brand Codex is published as the single source of truth, a complete knowledgebase, inside BrandOS.",
   "You invite team members, vendors, and contractors by role with access scoped to exactly what they need.",
-  "Brand assets, guidelines, templates, and AI installation files are centralized and one click away.",
-  "Version control tracks every published update with labels and check-in status. Notifications keep the team aligned the moment anything changes.",
+  "Brand assets, guidelines, templates, and AI installation files are centralized and one click away for everybody on the team.",
+  "Version control tracks every published update with labels and check-in status. Notifications keep the team aligned when things change.",
   "Anyone can pull the exact brand context needed for their AI tool directly from the platform with no separate briefing required.",
 ];
 
