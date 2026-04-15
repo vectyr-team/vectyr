@@ -237,7 +237,7 @@ const BrandOS = () => {
 
         {/* CTA */}
         <section className="px-6 py-20 md:py-32 bg-card">
-          <div className="mx-auto max-w-[1300px] text-center">
+          <div className="mx-auto max-w-[800px] text-center" style={{ maxWidth: 710 }}>
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl mx-auto mb-4">
               Your brand should run without you having to check it.
             </p>
