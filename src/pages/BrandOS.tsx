@@ -237,7 +237,7 @@ const BrandOS = () => {
 
         {/* CTA */}
         <section className="px-6 py-16 bg-white md:py-[100px]">
-          <div className="mx-auto max-w-[1300px] flex flex-col items-center text-center">
+          <div className="mx-auto flex flex-col items-center text-center" style={{ maxWidth: 710 }}>
             <div className="flex items-center justify-center gap-4 mb-6">
               <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: "#6B6B6B" }}>
                 Get Started
