@@ -34,7 +34,7 @@ const App = () => (
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/team" element={<Team />} />
           <Route path="/team/:slug" element={<TeamMember />} />
-          <Route path="/vectyr-brand-os" element={<BrandOS />} />
+          <Route path="/brand-os" element={<BrandOS />} />
           <Route path="/site-ops" element={<SiteOps />} />
           <Route path="/backend" element={<Backend />} />
           <Route path="/backend/login" element={<BackendLogin />} />
