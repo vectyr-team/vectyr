@@ -80,8 +80,17 @@ const SiteOps = () => {
 
             <div className="space-y-6 md:pt-8">
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                Your site is the final delivery point for everything else you build. The Brand Codex gives you strategy.
-                BrandOS installs it. But none of that matters if the actual website quietly degrades in the background.
+                The plugin update you skipped three months ago just introduced a vulnerability. The backup system you
+                assumed was running hasn't actually completed a backup since February. The site is loading two seconds
+                slower than it was last quarter and nobody noticed because nobody is watching.
+              </p>
+              <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+                Most businesses treat their website the way most people treat their oil change. They know it matters.
+                They know it's overdue. They'll get to it eventually. And then the engine seizes.
+              </p>
+              <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+                SiteOps exists because your website should not require your attention to stay healthy. It should require
+                a team, and that team should not be you.
               </p>
 
               <div className="space-y-4">
