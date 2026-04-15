@@ -111,7 +111,9 @@ const SiteOps = () => {
             </div>
 
             <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-16">
-              DONE FOR YOU. <span className="text-primary">DONE RIGHT.</span>
+              DONE FOR YOU. 
+              <br>
+              <span className="text-primary">DONE RIGHT.</span>
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
