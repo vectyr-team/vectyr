@@ -126,31 +126,6 @@ const SiteOps = () => {
           </div>
         </section>
 
-        {/* Who It's For */}
-        <section className="px-6 py-16 md:py-32 bg-background">
-          <div className="mx-auto max-w-[1300px] max-w-3xl">
-            <div className="flex items-center gap-4 mb-6">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
-                Who It's For
-              </span>
-              <span className="w-12 h-px bg-muted-foreground" />
-            </div>
-
-            <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl mb-8">
-              ANY SITE THAT <span className="text-primary">MATTERS.</span>
-            </h2>
-
-            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground mb-6">
-              Any business running a live WordPress site that matters to their revenue. You do not need a Brand Codex or
-              BrandPulse subscription to buy it.
-            </p>
-
-            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-              If your site is important and you do not want to manage the operational side yourself, SiteOps is built
-              for you.
-            </p>
-          </div>
-        </section>
 
         {/* What Makes SiteOps Different */}
         <section className="relative px-6 py-16 md:py-32 bg-card overflow-hidden">
