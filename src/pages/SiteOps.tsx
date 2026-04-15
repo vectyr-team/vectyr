@@ -38,10 +38,10 @@ const SiteOps = () => {
         {/* Hero */}
         <section className="relative px-6 pt-32 pb-16 md:pt-52 md:pb-28 overflow-hidden">
           <img
-            src={bodXWatermark}
+            src={wpAdminBg}
             alt=""
-            className="absolute z-0 pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[300vw] min-h-[300vh] md:min-w-0 md:min-h-0 md:w-full md:h-full md:top-0 md:left-0 md:translate-x-0 md:translate-y-0 md:inset-0 object-contain"
-            style={{ opacity: 0.03 }}
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
+            style={{ opacity: 0.2 }}
           />
           <div className="relative z-10 mx-auto max-w-[1300px]">
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">
