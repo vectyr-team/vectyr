@@ -64,7 +64,7 @@ const BrandOS = () => {
             <p className="font-body text-base md:text-lg font-semibold text-foreground mt-6 max-w-2xl">
               That is what installed looks like.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 mt-12">
+            <div className="flex flex-col sm:flex-row gap-6 mt-8">
               <Link to="/demo">
                 <Button size="lg">See BrandOS in Action</Button>
               </Link>
