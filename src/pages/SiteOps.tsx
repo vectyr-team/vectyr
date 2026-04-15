@@ -84,7 +84,7 @@ const SiteOps = () => {
               </p>
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
                 Most businesses treat their website the way most people treat their oil change. They know it matters.
-                They know it's overdue. They'll get to it eventually. And then the engine seizes.
+                They know it's overdue. They'll get to it eventually. <strong>And then the engine seizes.</strong>
               </p>
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
                 SiteOps exists because your website should not require your attention to stay healthy. You've got more
