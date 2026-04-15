@@ -37,7 +37,7 @@ const BrandOS = () => {
         <SEOHead
           title="BrandOS — Your Brand, Installed | Vectyr"
           description="BrandOS is the operating environment that turns your Brand Codex into infrastructure your team and AI tools can actually use."
-          path="/vectyr-brand-os"
+          path="/brand-os"
         />
 
         {/* Hero */}

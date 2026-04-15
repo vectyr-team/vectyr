@@ -87,11 +87,11 @@ export const PAGE_META: Record<
       "Get answers to common questions about the Brand Codex, BrandOS platform, pricing, and how Vectyr works.",
     path: "/faqs",
   },
-  "vectyr-brand-os": {
+  "brand-os": {
     title: "BrandOS — Your Brand, Installed | Vectyr",
     description:
       "BrandOS is the operating environment that turns your Brand Codex into infrastructure your team and AI tools can actually use.",
-    path: "/vectyr-brand-os",
+    path: "/brand-os",
   },
   "site-ops": {
     title: "SiteOps — WordPress Maintenance, Handled | Vectyr",
