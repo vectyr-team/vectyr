@@ -37,24 +37,44 @@ const SEO_SECTIONS: Record<string, { title: string; subtitle: string }> = {
 const Backend = () => {
   const [session, setSession] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [selectedPage, setSelectedPage] = useState<string>("demo");
   const [pageSettings, setPageSettings] = useState<PageSetting[]>([]);
   const navigate = useNavigate();
 
+  const checkAdminRole = async (userId: string) => {
+    const { data } = await supabase.rpc("has_role", {
+      _user_id: userId,
+      _role: "admin",
+    });
+    if (!data) {
+      navigate("/backend/login");
+      return false;
+    }
+    setIsAdmin(true);
+    return true;
+  };
+
   useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
       setSession(session);
       if (!session) {
         navigate("/backend/login");
+        setLoading(false);
+        return;
       }
+      await checkAdminRole(session.user.id);
       setLoading(false);
     });
 
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabase.auth.getSession().then(async ({ data: { session } }) => {
       setSession(session);
       if (!session) {
         navigate("/backend/login");
+        setLoading(false);
+        return;
       }
+      await checkAdminRole(session.user.id);
       setLoading(false);
     });
 
@@ -85,7 +105,7 @@ const Backend = () => {
     );
   }
 
-  if (!session) return null;
+  if (!session || !isAdmin) return null;
 
   const isSeoSection = selectedPage.startsWith("seo-") || selectedPage.startsWith("admin-");
   const isTeamSection = selectedPage === "team";
