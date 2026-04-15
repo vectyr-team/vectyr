@@ -93,4 +93,10 @@ export const PAGE_META: Record<
       "BrandOS is the operating environment that turns your Brand Codex into infrastructure your team and AI tools can actually use.",
     path: "/vectyr-brand-os",
   },
+  "site-ops": {
+    title: "SiteOps — WordPress Maintenance, Handled | Vectyr",
+    description:
+      "SiteOps is the done-for-you operational layer that keeps your WordPress site secure, updated, and running without you managing it.",
+    path: "/site-ops",
+  },
 };
