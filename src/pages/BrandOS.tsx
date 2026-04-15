@@ -1,0 +1,273 @@
+import { Link } from "react-router-dom";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
+import { Button } from "@/components/ui/button";
+import bodXWatermark from "@/assets/bodX-watermark.svg";
+
+const features = [
+  "Lifetime access included with every Brand Codex build (no extra cost)",
+  "Full platform access continues for BrandPulse subscribers as part of the ongoing operating layer",
+  "Role-based access control",
+  "Centralized brand assets and AI installation files",
+  "Version control and team notifications",
+  "Built-in distribution for humans and AI tools",
+];
+
+const problems = [
+  "The freelancer logs in at 9 p.m. with no reference.",
+  "The new hire starts Monday and guesses.",
+  "The AI tool generates output from a blank context window.",
+  "Everyone is doing their best. No one is working from the same source.",
+];
+
+const howSteps = [
+  "Your completed Brand Codex is published as the single source of truth inside the platform.",
+  "You invite team members, vendors, and contractors by role—superadmin, admin, or guest—with access scoped to exactly what they need.",
+  "Brand assets, guidelines, templates, and AI installation files are centralized and one click away.",
+  "Version control tracks every published update with labels and check-in status. Notifications keep the team aligned the moment anything changes.",
+  "Anyone can pull the exact brand context needed for their AI tool directly from the platform—no separate briefing required.",
+];
+
+const BrandOS = () => {
+  return (
+    <div className="flex flex-col min-h-screen bg-card">
+      <Header />
+      <main className="flex-1">
+        <SEOHead
+          title="BrandOS — Your Brand, Installed | Vectyr"
+          description="BrandOS is the operating environment that turns your Brand Codex into infrastructure your team and AI tools can actually use."
+          path="/vectyr-brand-os"
+        />
+
+        {/* Hero */}
+        <section className="relative px-6 pt-32 pb-16 md:pt-52 md:pb-28 overflow-hidden">
+          <img
+            src={bodXWatermark}
+            alt=""
+            className="absolute z-0 pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[300vw] min-h-[300vh] md:min-w-0 md:min-h-0 md:w-full md:h-full md:top-0 md:left-0 md:translate-x-0 md:translate-y-0 md:inset-0 object-contain"
+            style={{ opacity: 0.03 }}
+          />
+          <div className="relative z-10 mx-auto max-w-[1300px]">
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">
+              The Platform
+            </span>
+
+            <h1 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-4xl mb-8">
+              BRAND<span className="text-primary">OS</span>
+            </h1>
+
+            <p className="font-body text-xl md:text-2xl font-semibold leading-snug text-foreground max-w-2xl mb-6">
+              Your Brand Codex is the strategy.
+              <br />
+              BrandOS is the system that makes it run.
+            </p>
+
+            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl">
+              A strategy that lives in a folder is not a strategy. It is a document no one opens before a deadline. BrandOS puts your brand where it actually matters: inside the tools your team uses every day, inside the AI prompts that generate your next piece of content, and inside the briefings your vendors read before they start work.
+            </p>
+
+            <p className="font-body text-base md:text-lg font-semibold text-foreground mt-6 max-w-2xl">
+              That is what installed looks like.
+            </p>
+          </div>
+        </section>
+
+        {/* The Problem */}
+        <section className="relative px-6 py-16 md:py-32 bg-background overflow-hidden">
+          <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
+                  The Problem
+                </span>
+                <span className="w-12 h-px bg-muted-foreground" />
+              </div>
+
+              <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl">
+                YOUR BRAND STRATEGY EXISTS.
+                <br />
+                <span className="text-primary">IT DOESN'T GET USED.</span>
+              </h2>
+            </div>
+
+            <div className="space-y-6 md:pt-8">
+              <div className="space-y-4">
+                {problems.map((p, i) => (
+                  <p
+                    key={i}
+                    className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground"
+                  >
+                    {p}
+                  </p>
+                ))}
+              </div>
+
+              <div className="border-l-4 border-primary bg-foreground/5 p-6 md:p-8">
+                <p className="font-mono text-base md:text-lg leading-snug text-foreground">
+                  Brand entropy wins by default.
+                </p>
+              </div>
+
+              <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+                BrandOS ends that. It is the operating environment built specifically around your Brand Codex. It turns a single authoritative document into something every human and every AI tool can access and use correctly—without you having to explain it again.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* How BrandOS Works */}
+        <section className="px-6 py-16 md:py-32 bg-card">
+          <div className="mx-auto max-w-[1300px]">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
+                How It Works
+              </span>
+              <span className="w-12 h-px bg-muted-foreground" />
+            </div>
+
+            <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl mb-16">
+              FROM CODEX TO <span className="text-primary">INFRASTRUCTURE.</span>
+            </h2>
+
+            <div className="space-y-0">
+              {howSteps.map((step, i) => (
+                <div
+                  key={i}
+                  className="flex gap-6 py-6 border-b border-border/40 last:border-b-0"
+                >
+                  <span className="font-mono text-2xl text-foreground/20 shrink-0 w-10">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+                    {step}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <p className="font-body text-base md:text-lg font-semibold text-foreground mt-10 max-w-2xl">
+              The result: consistency stops being something you police and starts being something that simply happens.
+            </p>
+          </div>
+        </section>
+
+        {/* What Makes BrandOS Different */}
+        <section className="relative px-6 py-16 md:py-32 bg-background overflow-hidden">
+          <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
+                  The Difference
+                </span>
+                <span className="w-12 h-px bg-muted-foreground" />
+              </div>
+
+              <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl">
+                NOT A FILING CABINET.
+                <br />
+                <span className="text-primary">AN INFRASTRUCTURE LAYER.</span>
+              </h2>
+            </div>
+
+            <div className="space-y-6 md:pt-8">
+              <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+                Most platforms store assets and call it brand management. BrandOS distributes a living strategy.
+              </p>
+
+              <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+                It was built from the ground up around the Brand Codex structure. Other tools assume you already have a documented brand and just need a nicer folder. BrandOS assumes the real work is making that strategy accessible to the people and tools that actually produce your brand every day.
+              </p>
+
+              <div className="border-l-4 border-primary bg-foreground/5 p-6 md:p-8">
+                <p className="font-mono text-base md:text-lg leading-snug text-foreground">
+                  It is not a digital filing cabinet. It is the infrastructure layer between your strategy and the work.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Who It's For */}
+        <section className="px-6 py-16 md:py-32 bg-card">
+          <div className="mx-auto max-w-[1300px] max-w-3xl">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
+                Who It's For
+              </span>
+              <span className="w-12 h-px bg-muted-foreground" />
+            </div>
+
+            <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl mb-8">
+              BUILT FOR <span className="text-primary">TEAMS.</span>
+            </h2>
+
+            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground mb-6">
+              Any organization that has completed a Brand Codex build and needs the brand to scale with the team, the vendors, and the AI tools.
+            </p>
+
+            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+              If more than one person touches your brand—employees, freelancers, contractors, or AI—BrandOS is the operating system that keeps them all working from the same source instead of their own memory.
+            </p>
+          </div>
+        </section>
+
+        {/* What You Get */}
+        <section className="px-6 py-16 md:py-32 bg-background">
+          <div className="mx-auto max-w-[1300px]">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
+                What You Get
+              </span>
+              <span className="w-12 h-px bg-muted-foreground" />
+            </div>
+
+            <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl mb-12">
+              EVERYTHING <span className="text-primary">INCLUDED.</span>
+            </h2>
+
+            <div className="grid sm:grid-cols-2 gap-px bg-border/30">
+              {features.map((feat, i) => (
+                <div key={i} className="bg-card p-6 md:p-8 flex items-start gap-4">
+                  <span className="text-primary mt-1 shrink-0">✓</span>
+                  <p className="font-body text-base font-light leading-relaxed text-muted-foreground">
+                    {feat}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="px-6 py-20 md:py-32 bg-card">
+          <div className="mx-auto max-w-[1300px] text-center">
+            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl mx-auto mb-4">
+              Your brand should run without you having to check it.
+            </p>
+
+            <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl mb-4">
+              STOP BEING THE ONLY PERSON WHO KNOWS.
+              <br />
+              <span className="text-primary">INSTALL IT.</span>
+            </h2>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12">
+              <Link to="/demo">
+                <Button size="lg">See BrandOS in Action</Button>
+              </Link>
+              <Link to="/contact">
+                <Button size="lg" variant="outline">
+                  Book a Discovery Call
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default BrandOS;
