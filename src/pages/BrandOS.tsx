@@ -86,9 +86,7 @@ const BrandOS = () => {
               </div>
 
               <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl">
-                Your Brand Strategy Exists.
-                <br />
-                <span className="text-primary">It Doesn't Get Used.</span>
+                Your Brand Strategy Exists. <span className="text-primary">It Doesn't Get Used.</span>
               </h2>
             </div>
 
