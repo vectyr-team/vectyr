@@ -192,22 +192,6 @@ const SiteOps = () => {
             </div>
           </div>
         </section>
-
-        {/* CTA */}
-        <section className="px-6 py-20 md:py-32 bg-card">
-          <div className="mx-auto max-w-[1300px] text-center">
-            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl mx-auto mb-4">
-              Your site should run without you having to watch it.
-            </p>
-
-            <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl mb-4">
-              STOP TREATING MAINTENANCE AS A BACKGROUND TASK.
-              <br />
-              <span className="text-primary">INSTALL THE LAYER.</span>
-            </h2>
-
-          </div>
-        </section>
       </main>
       <Footer />
     </div>
