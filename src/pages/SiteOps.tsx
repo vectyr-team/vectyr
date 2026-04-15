@@ -189,11 +189,6 @@ const SiteOps = () => {
               <Link to="/demo">
                 <Button size="lg">Get SiteOps for Your Site</Button>
               </Link>
-              <Link to="/contact">
-                <Button size="lg" variant="outline">
-                  Book a 15-Minute Setup Call
-                </Button>
-              </Link>
             </div>
           </div>
         </section>
