@@ -188,7 +188,7 @@ const SiteOps = () => {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10">
               <Link to="/demo">
                 <Button size="lg">Get SiteOps for Your Site</Button>
               </Link>
