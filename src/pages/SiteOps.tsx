@@ -14,14 +14,14 @@ const problems = [
 ];
 
 const howSteps = [
-  "Daily backups are set up so your site can be restored quickly if anything goes wrong or if there's a big mistake.",
-  "24/7/365 vulnerability monitoring and firewall protection. Threats are blocked before they reach your site.",
-  "Priority access to the Vectyr team when you need something handled. We take care of anything you need ASAP.",
-  "All plugin subscriptions covered, including Advanced Custom Fields PRO, RankMath SEO, and Gravity Forms.",
-  "Major updates tested on a staging version of your site first. Nothing goes live until we confirm it works.",
-  "Full site management and monitoring by the Vectyr team, keeping your site secure, backed up, and running.",
-  "Regular reporting on site health and status delivered to your inbox, weekly, monthly, or quarterly cadence.",
-  "You get 2 hours worth of team access for website content and theme updates per month.",
+  "<strong>Daily backups</strong> are set up so your site can be restored quickly if anything goes wrong or if there's a big mistake.",
+  "<strong>24/7/365 vulnerability monitoring</strong> and firewall protection. Threats are blocked before they reach your site.",
+  "<strong>Priority access</strong> to the Vectyr team when you need something handled. We take care of anything you need ASAP.",
+  "<strong>Key plugin subscriptions covered</strong>, including Advanced Custom Fields PRO, RankMath SEO, and Gravity Forms.",
+  "<strong>Major updates tested</strong> on a staging version of your site first. Nothing goes live until we confirm it works.",
+  "<strong>Full site management</strong> and monitoring by the Vectyr team, keeping your site secure, backed up, and running.",
+  "<strong>Regular reporting</strong> on site health and status delivered to your inbox, weekly, monthly, or quarterly cadence.",
+  "<strong>You get 2 hours worth</strong> of team access for website content and theme updates per month.",
 ];
 
 const SiteOps = () => {
@@ -112,7 +112,7 @@ const SiteOps = () => {
 
             <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-16">
               DONE FOR YOU. 
-              <br />
+              <br>
               <span className="text-primary">DONE RIGHT.</span>
             </h2>
 
