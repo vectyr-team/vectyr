@@ -120,9 +120,10 @@ const SiteOps = () => {
               {howSteps.map((step, i) => (
                 <div key={i} className="space-y-3">
                   <span className="font-mono text-2xl text-foreground/20 block">{String(i + 1).padStart(2, "0")}</span>
-                  <p className="font-body text-sm md:text-base font-light leading-relaxed text-muted-foreground">
-                    {step}
-                  </p>
+                  <p
+                    className="font-body text-sm md:text-base font-light leading-relaxed text-muted-foreground [&_strong]:font-semibold [&_strong]:text-foreground"
+                    dangerouslySetInnerHTML={{ __html: step }}
+                  />
                 </div>
               ))}
             </div>
