@@ -181,7 +181,7 @@ const SiteOps = () => {
 
             <div className="space-y-2 max-w-md mx-auto">
               <p className="font-body text-base md:text-lg font-light text-muted-foreground">
-                Billed monthly. No long-term contracts. Cancel anytime.
+                Your site should run without you having to watch it. Billed monthly. No long-term contracts. Cancel anytime.
               </p>
             </div>
 
