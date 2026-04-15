@@ -175,7 +175,7 @@ const SiteOps = () => {
             </div>
 
             <h2
-              className="font-headline font-normal text-5xl leading-[0.95] tracking-normal sm:text-6xl md:text-7xl mb-8"
+              className="font-headline font-normal text-5xl leading-[0.95] tracking-normal sm:text-6xl md:text-7xl mb-4"
               style={{ color: "#090909" }}
             >
               <span className="text-primary">$495</span> / MONTH
