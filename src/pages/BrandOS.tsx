@@ -49,12 +49,10 @@ const BrandOS = () => {
             style={{ opacity: 0.03 }}
           />
           <div className="relative z-10 mx-auto max-w-[1300px]">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">
-              The Platform
-            </span>
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">The Platform</span>
 
             <h1 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-4xl mb-8">
-              BRAND<span className="text-primary">OS</span>
+              Brand<span className="text-primary">OS</span>
             </h1>
 
             <p className="font-body text-xl md:text-2xl font-semibold leading-snug text-foreground max-w-2xl mb-6">
@@ -64,7 +62,10 @@ const BrandOS = () => {
             </p>
 
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl">
-              A strategy that lives in a folder is not a strategy. It is a document no one opens before a deadline. BrandOS puts your brand where it actually matters: inside the tools your team uses every day, inside the AI prompts that generate your next piece of content, and inside the briefings your vendors read before they start work.
+              A strategy that lives in a folder is not a strategy. It is a document no one opens before a deadline.
+              BrandOS puts your brand where it actually matters: inside the tools your team uses every day, inside the
+              AI prompts that generate your next piece of content, and inside the briefings your vendors read before
+              they start work.
             </p>
 
             <p className="font-body text-base md:text-lg font-semibold text-foreground mt-6 max-w-2xl">
@@ -85,9 +86,9 @@ const BrandOS = () => {
               </div>
 
               <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl">
-                YOUR BRAND STRATEGY EXISTS.
+                Your Brand Strategy Exists.
                 <br />
-                <span className="text-primary">IT DOESN'T GET USED.</span>
+                <span className="text-primary">It Doesn't Get Used.</span>
               </h2>
             </div>
 
@@ -110,7 +111,9 @@ const BrandOS = () => {
               </div>
 
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                BrandOS ends that. It is the operating environment built specifically around your Brand Codex. It turns a single authoritative document into something every human and every AI tool can access and use correctly without you having to explain it again.
+                BrandOS ends that. It is the operating environment built specifically around your Brand Codex. It turns
+                a single authoritative document into something every human and every AI tool can access and use
+                correctly without you having to explain it again.
               </p>
             </div>
           </div>
@@ -127,15 +130,12 @@ const BrandOS = () => {
             </div>
 
             <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-16">
-              FROM CODEX TO <span className="text-primary">INFRASTRUCTURE.</span>
+              From Codex To <span className="text-primary">Infrastructure.</span>
             </h2>
 
             <div className="space-y-0">
               {howSteps.map((step, i) => (
-                <div
-                  key={i}
-                  className="flex gap-6 py-6 border-b border-border/40 last:border-b-0"
-                >
+                <div key={i} className="flex gap-6 py-6 border-b border-border/40 last:border-b-0">
                   <span className="font-mono text-2xl text-foreground/20 shrink-0 w-10">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -164,9 +164,9 @@ const BrandOS = () => {
               </div>
 
               <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl">
-                NOT A FILING CABINET.
+                Not a Filing Cabinet.
                 <br />
-                <span className="text-primary">AN INFRASTRUCTURE LAYER.</span>
+                <span className="text-primary">An Infrastructure Layer.</span>
               </h2>
             </div>
 
@@ -176,7 +176,9 @@ const BrandOS = () => {
               </p>
 
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                It was built from the ground up around the Brand Codex structure. Other tools assume you already have a documented brand and just need a nicer folder. BrandOS assumes the real work is making that strategy accessible to the people and tools that actually produce your brand every day.
+                It was built from the ground up around the Brand Codex structure. Other tools assume you already have a
+                documented brand and just need a nicer folder. BrandOS assumes the real work is making that strategy
+                accessible to the people and tools that actually produce your brand every day.
               </p>
 
               <div className="border-l-4 border-primary bg-foreground/5 p-6 md:p-8">
@@ -203,11 +205,13 @@ const BrandOS = () => {
             </h2>
 
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground mb-6">
-              Any organization that has completed a Brand Codex build and needs the brand to scale with the team, the vendors, and the AI tools.
+              Any organization that has completed a Brand Codex build and needs the brand to scale with the team, the
+              vendors, and the AI tools.
             </p>
 
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-              If more than one person touches your brand, employees, freelancers, contractors, or AI, BrandOS is the operating system that keeps them all working from the same source instead of their own memory.
+              If more than one person touches your brand, employees, freelancers, contractors, or AI, BrandOS is the
+              operating system that keeps them all working from the same source instead of their own memory.
             </p>
           </div>
         </section>
@@ -223,16 +227,14 @@ const BrandOS = () => {
             </div>
 
             <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-12">
-              EVERYTHING <span className="text-primary">INCLUDED.</span>
+              Everything <span className="text-primary">Included.</span>
             </h2>
 
             <div className="grid sm:grid-cols-2 gap-px bg-border/30">
               {features.map((feat, i) => (
                 <div key={i} className="bg-card p-6 md:p-8 flex items-start gap-4">
                   <span className="text-primary mt-1 shrink-0">✓</span>
-                  <p className="font-body text-base font-light leading-relaxed text-muted-foreground">
-                    {feat}
-                  </p>
+                  <p className="font-body text-base font-light leading-relaxed text-muted-foreground">{feat}</p>
                 </div>
               ))}
             </div>
@@ -247,9 +249,7 @@ const BrandOS = () => {
             </p>
 
             <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-4">
-              STOP BEING THE ONLY PERSON WHO KNOWS.
-              <br />
-              <span className="text-primary">INSTALL IT.</span>
+              Stop Being the Only Person Who Knows. <span className="text-primary">Install It.</span>
             </h2>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12">
