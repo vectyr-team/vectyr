@@ -64,9 +64,6 @@ const SiteOps = () => {
               Your site is either managed or it's a liability. WordPress sites degrade quietly. Plugins go stale, vulnerabilities surface, backups lapse, and performance erodes until something visible breaks. SiteOps replaces that cycle with a team that actually manages the thing.
             </p>
 
-            <p className="font-body text-base md:text-lg font-semibold text-foreground mt-6 max-w-2xl">
-              SiteOps ends that cycle. It is the done-for-you operational layer that protects the website you actually depend on.
-            </p>
           </div>
         </section>
 
