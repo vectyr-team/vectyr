@@ -105,7 +105,7 @@ const Backend = () => {
     );
   }
 
-  if (!session) return null;
+  if (!session || !isAdmin) return null;
 
   const isSeoSection = selectedPage.startsWith("seo-") || selectedPage.startsWith("admin-");
   const isTeamSection = selectedPage === "team";
