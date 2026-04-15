@@ -13,15 +13,14 @@ const problems = [
 ];
 
 const howSteps = [
-  
-  "Daily backups so your site can be restored quickly if anything goes wrong.",
-  "24/7/365 vulnerability monitoring and firewall protection through Patchstack. Threats are identified and blocked before they reach your site.",
-  "Priority access to the Vectyr team when you need something handled.",
+  "Daily backups are set up so your site can be restored quickly if anything goes wrong or if there's a big mistake.",
+  "24/7/365 vulnerability monitoring and firewall protection. Threats are blocked before they reach your site.",
+  "Priority access to the Vectyr team when you need something handled. We take care of anything you need ASAP.",
   "All plugin subscriptions covered, including Advanced Custom Fields PRO, RankMath SEO, and Gravity Forms.",
   "Major updates tested on a staging version of your site first. Nothing goes live until we confirm it works.",
-  "Full site management and monitoring by the Vectyr team, keeping your site secure, backed up, and running the way it should.",
-  "Regular reporting on site health and status delivered to your inbox, weekly, monthly, or quarterly cadence you choose.",
-  "Content updates like adding or modifying team members, changes to any site copy, and similar tasks handled directly through the task board.",
+  "Full site management and monitoring by the Vectyr team, keeping your site secure, backed up, and running.",
+  "Regular reporting on site health and status delivered to your inbox, weekly, monthly, or quarterly cadence.",
+  "You get 2 hours worth of team access for website content and theme updates per month.",
 ];
 
 const SiteOps = () => {
@@ -122,7 +121,7 @@ const SiteOps = () => {
             </div>
 
             <p className="font-body text-base md:text-lg font-semibold text-foreground mt-10 max-w-2xl">
-              You don't have time to monitor all this, let's us do it for you.
+              Put your website in expert hands.
             </p>
           </div>
         </section>
