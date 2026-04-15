@@ -108,13 +108,13 @@ const SiteOps = () => {
               DONE FOR YOU. <span className="text-primary">DONE RIGHT.</span>
             </h2>
 
-            <div className="space-y-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {howSteps.map((step, i) => (
-                <div key={i} className="flex gap-6 py-6 border-b border-border/40 last:border-b-0">
-                  <span className="font-mono text-2xl text-foreground/20 shrink-0 w-10">
+                <div key={i} className="space-y-3">
+                  <span className="font-mono text-2xl text-foreground/20 block">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+                  <p className="font-body text-sm md:text-base font-light leading-relaxed text-muted-foreground">
                     {step}
                   </p>
                 </div>
