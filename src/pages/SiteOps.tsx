@@ -110,9 +110,7 @@ const SiteOps = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {howSteps.map((step, i) => (
                 <div key={i} className="space-y-3">
-                  <span className="font-mono text-2xl text-foreground/20 block">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+                  <span className="font-mono text-2xl text-foreground/20 block">{String(i + 1).padStart(2, "0")}</span>
                   <p className="font-body text-sm md:text-base font-light leading-relaxed text-muted-foreground">
                     {step}
                   </p>
@@ -125,7 +123,6 @@ const SiteOps = () => {
             </p>
           </div>
         </section>
-
 
         {/* What Makes SiteOps Different */}
         <section className="relative px-6 py-16 md:py-32 overflow-hidden bg-black01">
@@ -171,17 +168,23 @@ const SiteOps = () => {
         <section className="px-6 py-16 bg-white md:py-[100px]">
           <div className="mx-auto max-w-[1300px] flex flex-col items-center text-center">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: "#6B6B6B" }}>Pricing</span>
+              <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: "#6B6B6B" }}>
+                Pricing
+              </span>
               <span className="w-12 h-px" style={{ backgroundColor: "#6B6B6B" }} />
             </div>
 
-            <h2 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal sm:text-6xl md:text-7xl mb-8" style={{ color: "#090909" }}>
+            <h2
+              className="font-headline font-normal text-5xl leading-[0.95] tracking-normal sm:text-6xl md:text-7xl mb-8"
+              style={{ color: "#090909" }}
+            >
               <span className="text-primary">$495</span> / MONTH
             </h2>
 
-            <div className="space-y-2 max-w-md mx-auto">
+            <div className="space-y-2 max-w-lg mx-auto">
               <p className="font-body text-base md:text-lg font-light" style={{ color: "#6B6B6B" }}>
-                Your site should run without you having to watch it. Billed monthly. No long-term contracts. Cancel anytime.
+                Your site should run without you having to watch it. Billed monthly. No long-term contracts. Cancel
+                anytime.
               </p>
             </div>
 
