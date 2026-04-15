@@ -128,7 +128,7 @@ const SiteOps = () => {
 
 
         {/* What Makes SiteOps Different */}
-        <section className="relative px-6 py-16 md:py-32 bg-card overflow-hidden">
+        <section className="relative px-6 py-16 md:py-32 overflow-hidden bg-black01">
           <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
             <div>
               <div className="flex items-center gap-4 mb-6">
