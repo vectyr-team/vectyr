@@ -57,6 +57,12 @@ const SiteOps = () => {
               vulnerabilities surface, backups lapse, and performance erodes until something visible breaks. SiteOps
               replaces that cycle with a team that actually manages the thing.
             </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8">
+              <Link to="/siteops">
+                <Button size="lg">Get SiteOps for Your Site</Button>
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -190,7 +196,7 @@ const SiteOps = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8">
-              <Link to="/demo">
+              <Link to="/siteops">
                 <Button size="lg">Get SiteOps for Your Site</Button>
               </Link>
             </div>
