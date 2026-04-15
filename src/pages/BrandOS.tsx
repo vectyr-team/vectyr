@@ -129,10 +129,10 @@ const BrandOS = () => {
               From Codex To <span className="text-primary">Infrastructure.</span>
             </h2>
 
-            <div className="space-y-0">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
               {howSteps.map((step, i) => (
-                <div key={i} className="flex gap-6 py-6 border-b border-border/40 last:border-b-0">
-                  <span className="font-mono text-2xl text-foreground/20 shrink-0 w-10">
+                <div key={i} className="space-y-3">
+                  <span className="font-mono text-2xl text-foreground/20 block">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
