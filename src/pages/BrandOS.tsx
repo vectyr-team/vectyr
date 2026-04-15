@@ -110,7 +110,7 @@ const BrandOS = () => {
               </div>
 
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                BrandOS ends that. It is the operating environment built specifically around your Brand Codex. It turns a single authoritative document into something every human and every AI tool can access and use correctly—without you having to explain it again.
+                BrandOS ends that. It is the operating environment built specifically around your Brand Codex. It turns a single authoritative document into something every human and every AI tool can access and use correctly without you having to explain it again.
               </p>
             </div>
           </div>
