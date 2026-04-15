@@ -122,7 +122,7 @@ const SiteOps = () => {
             </div>
 
             <p className="font-body text-base md:text-lg font-semibold text-foreground mt-10 max-w-2xl">
-              You stop babysitting the site. You start using it.
+              You don't have time to monitor all this, let's us do it for you.
             </p>
           </div>
         </section>
