@@ -7,7 +7,7 @@ import bodXWatermark from "@/assets/bodX-watermark.svg";
 
 const features = [
   "Lifetime access included with every Brand Codex build (no extra cost)",
-  "Full platform access continues for BrandPulse subscribers as part of the ongoing operating layer",
+  "Full platform access continues for BrandPulse subscribers",
   "Role-based access control",
   "Centralized brand assets and AI installation files",
   "Version control and team notifications",
@@ -23,7 +23,7 @@ const problems = [
 
 const howSteps = [
   "Your completed Brand Codex is published as the single source of truth inside the platform.",
-  "You invite team members, vendors, and contractors by role—superadmin, admin, or guest—with access scoped to exactly what they need.",
+  "You invite team members, vendors, and contractors by role with access scoped to exactly what they need.",
   "Brand assets, guidelines, templates, and AI installation files are centralized and one click away.",
   "Version control tracks every published update with labels and check-in status. Notifications keep the team aligned the moment anything changes.",
   "Anyone can pull the exact brand context needed for their AI tool directly from the platform—no separate briefing required.",
