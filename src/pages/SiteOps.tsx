@@ -112,7 +112,7 @@ const SiteOps = () => {
 
             <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-16">
               DONE FOR YOU. 
-              <br>
+              <br />
               <span className="text-primary">DONE RIGHT.</span>
             </h2>
 
@@ -120,9 +120,10 @@ const SiteOps = () => {
               {howSteps.map((step, i) => (
                 <div key={i} className="space-y-3">
                   <span className="font-mono text-2xl text-foreground/20 block">{String(i + 1).padStart(2, "0")}</span>
-                  <p className="font-body text-sm md:text-base font-light leading-relaxed text-muted-foreground">
-                    {step}
-                  </p>
+                  <p
+                    className="font-body text-sm md:text-base font-light leading-relaxed text-muted-foreground [&_strong]:font-semibold [&_strong]:text-foreground"
+                    dangerouslySetInnerHTML={{ __html: step }}
+                  />
                 </div>
               ))}
             </div>
