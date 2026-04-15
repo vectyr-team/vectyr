@@ -207,7 +207,7 @@ const BrandOS = () => {
             </p>
 
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-              If more than one person touches your brand—employees, freelancers, contractors, or AI—BrandOS is the operating system that keeps them all working from the same source instead of their own memory.
+              If more than one person touches your brand, employees, freelancers, contractors, or AI, BrandOS is the operating system that keeps them all working from the same source instead of their own memory.
             </p>
           </div>
         </section>
