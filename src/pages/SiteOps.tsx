@@ -87,8 +87,8 @@ const SiteOps = () => {
                 They know it's overdue. They'll get to it eventually. And then the engine seizes.
               </p>
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                SiteOps exists because your website should not require your attention to stay healthy. It should require
-                a team, and that team should not be you.
+                SiteOps exists because your website should not require your attention to stay healthy. You've got more
+                important things to do.
               </p>
             </div>
           </div>
