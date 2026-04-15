@@ -41,7 +41,7 @@ const SiteOps = () => {
             src={wpAdminBg}
             alt=""
             className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
-            style={{ opacity: 0.2 }}
+            style={{ opacity: 0.05 }}
           />
           <div className="relative z-10 mx-auto max-w-[1300px]">
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">
