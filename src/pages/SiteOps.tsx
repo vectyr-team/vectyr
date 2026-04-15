@@ -61,7 +61,7 @@ const SiteOps = () => {
             </p>
 
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl">
-              Most founders treat site maintenance as a chore they hope never bites them. Until the day a plugin breaks, a vulnerability slips through, or an update wipes something important. Then it becomes the highest-priority fire in the business.
+              Your site is either managed or it's a liability. WordPress sites degrade quietly. Plugins go stale, vulnerabilities surface, backups lapse, and performance erodes until something visible breaks. SiteOps replaces that cycle with a team that actually manages the thing.
             </p>
 
             <p className="font-body text-base md:text-lg font-semibold text-foreground mt-6 max-w-2xl">
