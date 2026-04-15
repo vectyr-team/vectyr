@@ -52,18 +52,11 @@ const SiteOps = () => {
               SITE<span className="text-primary">OPS</span>
             </h1>
 
-            <p className="font-body text-xl md:text-2xl font-semibold leading-snug text-foreground max-w-2xl mb-6">
-              Your WordPress site is live.
-              <br />
-              It carries your brand, your offers, and your revenue.
-              <br />
-              SiteOps keeps it secure, updated, and running without you managing it.
-            </p>
-
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl">
-              Your site is either managed or it's a liability. WordPress sites degrade quietly. Plugins go stale, vulnerabilities surface, backups lapse, and performance erodes until something visible breaks. SiteOps replaces that cycle with a team that actually manages the thing.
+              Your site is either managed or it's a liability. WordPress sites degrade quietly. Plugins go stale,
+              vulnerabilities surface, backups lapse, and performance erodes until something visible breaks. SiteOps
+              replaces that cycle with a team that actually manages the thing.
             </p>
-
           </div>
         </section>
 
@@ -87,7 +80,8 @@ const SiteOps = () => {
 
             <div className="space-y-6 md:pt-8">
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                Your site is the final delivery point for everything else you build. The Brand Codex gives you strategy. BrandOS installs it. But none of that matters if the actual website quietly degrades in the background.
+                Your site is the final delivery point for everything else you build. The Brand Codex gives you strategy.
+                BrandOS installs it. But none of that matters if the actual website quietly degrades in the background.
               </p>
 
               <div className="space-y-4">
@@ -130,10 +124,7 @@ const SiteOps = () => {
 
             <div className="space-y-0">
               {howSteps.map((step, i) => (
-                <div
-                  key={i}
-                  className="flex gap-6 py-6 border-b border-border/40 last:border-b-0"
-                >
+                <div key={i} className="flex gap-6 py-6 border-b border-border/40 last:border-b-0">
                   <span className="font-mono text-2xl text-foreground/20 shrink-0 w-10">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -165,11 +156,13 @@ const SiteOps = () => {
             </h2>
 
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground mb-6">
-              Any business running a live WordPress site that matters to their revenue. You do not need a Brand Codex or BrandPulse subscription to buy it.
+              Any business running a live WordPress site that matters to their revenue. You do not need a Brand Codex or
+              BrandPulse subscription to buy it.
             </p>
 
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-              If your site is important and you do not want to manage the operational side yourself, SiteOps is built for you.
+              If your site is important and you do not want to manage the operational side yourself, SiteOps is built
+              for you.
             </p>
           </div>
         </section>
@@ -194,16 +187,20 @@ const SiteOps = () => {
 
             <div className="space-y-6 md:pt-8">
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                Most maintenance plans are generic hosting add-ons that treat your site like a commodity. They run a few scripts, send a generic report, and call it managed.
+                Most maintenance plans are generic hosting add-ons that treat your site like a commodity. They run a few
+                scripts, send a generic report, and call it managed.
               </p>
 
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                SiteOps is run by the same team that installs brand operating systems for a living. We bring the same standard of care to your website that we bring to strategy. Staging-tested updates, covered premium plugins, real priority access, and a shared task board that actually keeps everyone aligned.
+                SiteOps is run by the same team that installs brand operating systems for a living. We bring the same
+                standard of care to your website that we bring to strategy. Staging-tested updates, covered premium
+                plugins, real priority access, and a shared task board that actually keeps everyone aligned.
               </p>
 
               <div className="border-l-4 border-primary bg-foreground/5 p-6 md:p-8">
                 <p className="font-mono text-base md:text-lg leading-snug text-foreground">
-                  It is not an afterthought. It is operational infrastructure that matches the quality of the brand it carries.
+                  It is not an afterthought. It is operational infrastructure that matches the quality of the brand it
+                  carries.
                 </p>
               </div>
             </div>
@@ -214,9 +211,7 @@ const SiteOps = () => {
         <section className="px-6 py-16 md:py-32 bg-background">
           <div className="mx-auto max-w-[1300px] text-center">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
-                Pricing
-              </span>
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">Pricing</span>
               <span className="w-12 h-px bg-muted-foreground" />
             </div>
 
