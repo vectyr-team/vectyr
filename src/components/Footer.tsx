@@ -68,9 +68,9 @@ const Footer = () => {
           <nav className="flex flex-col gap-3 items-center md:items-start" aria-label="Services">
             <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">THE WORK</span>
             {[
-              { label: "BrandOS", to: "https://vectyr.com/os" },
+              { label: "BrandOS", to: "https://vectyr.com/brand-os" },
               { label: "BrandPulse", to: "https://vectyr.com/pulse" },
-              { label: "BrandOS Login", to: "https://os.vectyr.com" },
+              { label: "SiteOps", to: "https://vectyr.com/site-ops" },
             ].map((link) => (
               <Link
                 key={link.to}
