@@ -5,6 +5,7 @@ import BrandCodexAnimation from "@/components/BrandCodexAnimation";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@iconify/react";
 import Footer from "@/components/Footer";
+import PageMetaInlineEditor from "@/components/PageMetaInlineEditor";
 import SEOHead from "@/components/SEOHead";
 import { LocalBusinessJsonLd } from "@/components/JsonLd";
 import { PAGE_META } from "@/config/seo";

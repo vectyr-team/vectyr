@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
+import PageMetaInlineEditor from "@/components/PageMetaInlineEditor";
 import { Button } from "@/components/ui/button";
 import ctaBg from "@/assets/cta-bg.jpg";
 import bodXWatermark from "@/assets/bodX-watermark.svg";
