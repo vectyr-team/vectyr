@@ -31,18 +31,29 @@ interface BusinessInfo {
   social_links: string[];
 }
 
-const BusinessInfoEditor = () => {
+interface BusinessInfoEditorProps {
+  onSaved?: () => void;
+}
+
+const BusinessInfoEditor = ({ onSaved }: BusinessInfoEditorProps) => {
   const [info, setInfo] = useState<BusinessInfo | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
 
+  const fetchBusinessInfo = async () => {
+    const { data } = await supabase
+      .from("business_info")
+      .select("*")
+      .order("updated_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+
+    setInfo((data as BusinessInfo | null) ?? null);
+    setLoading(false);
+  };
+
   useEffect(() => {
-    const fetch = async () => {
-      const { data } = await supabase.from("business_info").select("*").limit(1).single();
-      if (data) setInfo(data as unknown as BusinessInfo);
-      setLoading(false);
-    };
-    fetch();
+    fetchBusinessInfo();
   }, []);
 
   const update = (field: keyof BusinessInfo, value: any) => {
@@ -59,11 +70,16 @@ const BusinessInfoEditor = () => {
     setSaving(true);
     const { id, ...rest } = info;
     const { error } = await supabase.from("business_info").update(rest as any).eq("id", id);
+
     if (error) {
       toast.error("Failed to save");
-    } else {
-      toast.success("Business info saved");
+      setSaving(false);
+      return;
     }
+
+    await fetchBusinessInfo();
+    onSaved?.();
+    toast.success("Business info saved");
     setSaving(false);
   };
 

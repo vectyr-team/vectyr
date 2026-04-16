@@ -12,8 +12,9 @@ export const useBusinessInfo = () => {
       const { data: row } = await supabase
         .from("business_info")
         .select("*")
+        .order("updated_at", { ascending: false })
         .limit(1)
-        .single();
+        .maybeSingle();
 
       if (row) {
         setData({

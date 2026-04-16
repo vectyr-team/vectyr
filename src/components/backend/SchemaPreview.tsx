@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { SITE_URL } from "@/config/seo";
 
-const SchemaPreview = () => {
+interface SchemaPreviewProps {
+  refreshToken?: number;
+}
+
+const SchemaPreview = ({ refreshToken = 0 }: SchemaPreviewProps) => {
   const [businessInfo, setBusinessInfo] = useState<any>(null);
   const [faqs, setFaqs] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -10,16 +14,24 @@ const SchemaPreview = () => {
 
   useEffect(() => {
     const fetchAll = async () => {
+      setLoading(true);
       const [bizRes, faqRes] = await Promise.all([
-        supabase.from("business_info").select("*").limit(1).single(),
+        supabase
+          .from("business_info")
+          .select("*")
+          .order("updated_at", { ascending: false })
+          .limit(1)
+          .maybeSingle(),
         supabase.from("faqs").select("*").order("sort_order", { ascending: true }),
       ]);
-      if (bizRes.data) setBusinessInfo(bizRes.data);
-      if (faqRes.data) setFaqs(faqRes.data);
+
+      setBusinessInfo(bizRes.data ?? null);
+      setFaqs(faqRes.data ?? []);
       setLoading(false);
     };
+
     fetchAll();
-  }, []);
+  }, [refreshToken]);
 
   if (loading) return <p className="text-muted-foreground text-sm">Loading...</p>;
 

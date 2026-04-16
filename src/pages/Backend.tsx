@@ -40,6 +40,7 @@ const Backend = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [selectedPage, setSelectedPage] = useState<string>("demo");
   const [pageSettings, setPageSettings] = useState<PageSetting[]>([]);
+  const [schemaPreviewVersion, setSchemaPreviewVersion] = useState(0);
   const navigate = useNavigate();
 
   const checkAdminRole = async (userId: string) => {
@@ -92,6 +93,10 @@ const Backend = () => {
     if (data) setPageSettings(data);
   };
 
+  const handleSchemaPreviewRefresh = () => {
+    setSchemaPreviewVersion((current) => current + 1);
+  };
+
   const handleLogout = async () => {
     await supabase.auth.signOut();
     navigate("/backend/login");
@@ -119,11 +124,11 @@ const Backend = () => {
     if (isSeoSection) {
       switch (selectedPage) {
         case "seo-business":
-          return <BusinessInfoEditor />;
+          return <BusinessInfoEditor onSaved={handleSchemaPreviewRefresh} />;
         case "seo-meta":
           return <MetaTagsEditor />;
         case "seo-schema":
-          return <SchemaPreview />;
+          return <SchemaPreview refreshToken={schemaPreviewVersion} />;
         case "admin-users":
           return <AdminManager />;
         default:
