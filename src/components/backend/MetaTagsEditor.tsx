@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { OG_IMAGE } from "@/config/seo";
 import { toast } from "sonner";
+import { Upload } from "lucide-react";
 
 interface PageMeta {
   id: string;
@@ -29,6 +30,35 @@ const MetaTagsEditor = () => {
   const [metas, setMetas] = useState<PageMeta[]>([]);
   const [loading, setLoading] = useState(true);
   const [savingSlug, setSavingSlug] = useState<string | null>(null);
+  const [uploadingSlug, setUploadingSlug] = useState<string | null>(null);
+  const fileInputs = useRef<Record<string, HTMLInputElement | null>>({});
+
+  const handleUpload = async (slug: string, file: File) => {
+    if (!file.type.startsWith("image/")) {
+      toast.error("Please upload an image file");
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      toast.error("Image must be under 5MB");
+      return;
+    }
+    setUploadingSlug(slug);
+    const ext = file.name.split(".").pop() || "png";
+    const path = `${slug}-${Date.now()}.${ext}`;
+    const { error: uploadError } = await supabase.storage
+      .from("og-images")
+      .upload(path, file, { cacheControl: "3600", upsert: true });
+
+    if (uploadError) {
+      toast.error("Upload failed: " + uploadError.message);
+      setUploadingSlug(null);
+      return;
+    }
+    const { data: { publicUrl } } = supabase.storage.from("og-images").getPublicUrl(path);
+    updateField(slug, "og_image", publicUrl);
+    toast.success("Image uploaded — click Save to apply");
+    setUploadingSlug(null);
+  };
 
   const fetchMetas = async () => {
     const { data } = await supabase.from("page_meta").select("*");
@@ -133,12 +163,35 @@ const MetaTagsEditor = () => {
               <label className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1 block">
                 OG Image URL <span className="text-muted-foreground/50">(optional — falls back to default)</span>
               </label>
-              <Input
-                value={meta?.og_image || ""}
-                onChange={(e) => updateField(page.slug, "og_image", e.target.value)}
-                className="font-body text-sm"
-                placeholder="https://... (1200x630 recommended)"
-              />
+              <div className="flex gap-2">
+                <Input
+                  value={meta?.og_image || ""}
+                  onChange={(e) => updateField(page.slug, "og_image", e.target.value)}
+                  className="font-body text-sm flex-1"
+                  placeholder="https://... or upload below (1200x630 recommended)"
+                />
+                <input
+                  ref={(el) => (fileInputs.current[page.slug] = el)}
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) handleUpload(page.slug, file);
+                    e.target.value = "";
+                  }}
+                />
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => fileInputs.current[page.slug]?.click()}
+                  disabled={uploadingSlug === page.slug}
+                >
+                  <Upload className="h-3.5 w-3.5 mr-1" />
+                  {uploadingSlug === page.slug ? "Uploading..." : "Upload"}
+                </Button>
+              </div>
             </div>
 
             {/* Search preview */}
