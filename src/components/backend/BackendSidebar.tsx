@@ -18,7 +18,6 @@ interface BackendSidebarProps {
 
 const seoSections = [
   { slug: "seo-business", name: "Business Info", icon: "lucide:building-2" },
-  { slug: "seo-meta", name: "Meta Tags", icon: "lucide:tag" },
   { slug: "seo-schema", name: "Schema Preview", icon: "lucide:code-2" },
 ];
 

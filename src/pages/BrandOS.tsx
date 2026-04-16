@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageMetaInlineEditor from "@/components/PageMetaInlineEditor";
 import SEOHead from "@/components/SEOHead";
 import { usePageMeta } from "@/hooks/use-seo-data";
 import { Button } from "@/components/ui/button";
@@ -264,6 +265,7 @@ const BrandOS = () => {
           </div>
         </section>
       </main>
+      <PageMetaInlineEditor pageSlug="brand-os" pageLabel="BrandOS" pagePath="/brand-os" />
       <Footer />
     </div>
   );

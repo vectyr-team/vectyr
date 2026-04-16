@@ -5,7 +5,7 @@ import BackendSidebar from "@/components/backend/BackendSidebar";
 import PageSettingsEditor from "@/components/backend/PageSettingsEditor";
 import FAQsEditor from "@/components/backend/FAQsEditor";
 import BusinessInfoEditor from "@/components/backend/BusinessInfoEditor";
-import MetaTagsEditor from "@/components/backend/MetaTagsEditor";
+
 import SchemaPreview from "@/components/backend/SchemaPreview";
 import AdminManager from "@/components/backend/AdminManager";
 import TeamEditor from "@/components/backend/TeamEditor";
@@ -29,7 +29,6 @@ const ALL_PAGES = [
 
 const SEO_SECTIONS: Record<string, { title: string; subtitle: string }> = {
   "seo-business": { title: "Business Info", subtitle: "JSON-LD Schema Data" },
-  "seo-meta": { title: "Meta Tags", subtitle: "Per-Page SEO" },
   "seo-schema": { title: "Schema Preview", subtitle: "JSON-LD Validation" },
   "admin-users": { title: "Admin Users", subtitle: "Manage Access" },
 };
@@ -183,8 +182,6 @@ const Backend = () => {
       switch (selectedPage) {
         case "seo-business":
           return <BusinessInfoEditor onSaved={handleSchemaPreviewRefresh} />;
-        case "seo-meta":
-          return <MetaTagsEditor />;
         case "seo-schema":
           return <SchemaPreview refreshToken={schemaPreviewVersion} />;
         case "admin-users":

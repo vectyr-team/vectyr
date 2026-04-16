@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageMetaInlineEditor from "@/components/PageMetaInlineEditor";
 import SEOHead from "@/components/SEOHead";
 import { usePageMeta } from "@/hooks/use-seo-data";
 import { useTeamData, getOrderedMembers } from "@/hooks/use-team-data";
@@ -157,6 +158,7 @@ const Team = () => {
         </div>
       </main>
 
+      <PageMetaInlineEditor pageSlug="team" pageLabel="Team" pagePath="/team" />
       <Footer />
     </div>
   );

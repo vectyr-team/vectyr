@@ -1,6 +1,7 @@
 import { useEffect, useState, ReactNode } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageMetaInlineEditor from "@/components/PageMetaInlineEditor";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -98,6 +99,7 @@ const FAQs = () => {
         </div>
       </section>
       </main>
+      <PageMetaInlineEditor pageSlug="faqs" pageLabel="FAQs" pagePath="/faqs" />
       <Footer />
     </div>
   );

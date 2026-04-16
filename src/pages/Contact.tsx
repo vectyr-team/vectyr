@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageMetaInlineEditor from "@/components/PageMetaInlineEditor";
 import SEOHead from "@/components/SEOHead";
 import { usePageMeta } from "@/hooks/use-seo-data";
 
@@ -62,6 +63,7 @@ const Contact = () => {
         </div>
       </section>
       </main>
+      <PageMetaInlineEditor pageSlug="contact" pageLabel="Contact" pagePath="/contact" />
       <Footer />
     </div>
   );
