@@ -234,6 +234,14 @@ const Backend = () => {
           </p>
 
           {renderContent()}
+
+          {!isSeoSection && currentPage && (
+            <PageMetaSection
+              pageSlug={currentPage.metaSlug}
+              pageLabel={currentPage.name}
+              pagePath={currentPage.path}
+            />
+          )}
         </div>
       </main>
     </div>
