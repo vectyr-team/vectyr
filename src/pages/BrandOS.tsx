@@ -58,13 +58,13 @@ const BrandOS = () => {
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">The Platform</span>
 
             <h1 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-4xl mb-8">
-              Brand<span className="text-primary">OS</span>
+              Vectyr Brand<span className="text-primary">OS</span>
             </h1>
 
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl">
-              BrandOS puts your brand where it actually matters: inside the tools your team uses every day, inside the
-              AI prompts that generate your next piece of content, and inside the briefings your vendors read before
-              they start work.
+              Vectyr BrandOS puts your brand where it actually matters: inside the tools your team uses every day,
+              inside the AI prompts that generate your next piece of content, and inside the briefings your vendors read
+              before they start work.
             </p>
 
             <p className="font-body text-base md:text-lg font-semibold text-foreground mt-6 max-w-2xl">
@@ -113,8 +113,8 @@ const BrandOS = () => {
               </div>
 
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                BrandOS ends that. It is the operating environment built specifically around your Brand Codex. It turns
-                a single authoritative document into something every human and every AI tool can access and use
+                Vectyr BrandOS ends that. It is the operating environment built specifically around your Brand Codex. It
+                turns a single authoritative document into something every human and every AI tool can access and use
                 correctly without you having to explain it again.
               </p>
             </div>
@@ -207,11 +207,11 @@ const BrandOS = () => {
             <div className="space-y-6 max-w-[700px]">
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
                 Every AI tool you're using right now is producing output from a blank context window. It doesn't know
-                what your brand sounds like, what it stands for, or who it's for, so it has to guess and then tries to
-                convince you that the guess is right.
+                what your brand sounds like, what it stands for, or who it's for, so it guesses.
               </p>
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                BrandOS gives every tool and every person who touches your brand the same source of truth to work from.
+                Vectyr BrandOS gives every tool and every person who touches your brand the same source of truth to work
+                from.
               </p>
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
                 That matters if it's just you. It matters <em>more</em> the second anyone else is involved, because
