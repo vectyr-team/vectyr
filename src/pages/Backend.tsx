@@ -104,11 +104,24 @@ const Backend = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-4">
-        <div className="relative h-12 w-12">
-          <div className="absolute inset-0 rounded-full border-2 border-border" />
-          <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-primary animate-spin" />
-          <div className="absolute inset-2 rounded-full border-2 border-transparent border-b-primary/60 animate-spin [animation-direction:reverse] [animation-duration:1.2s]" />
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-6">
+        <div className="relative h-16 w-16 animate-spin [animation-duration:2s]">
+          <svg viewBox="0 0 100 100" className="h-full w-full">
+            <polygon
+              points="50,5 91,27.5 91,72.5 50,95 9,72.5 9,27.5"
+              fill="none"
+              stroke="hsl(var(--border))"
+              strokeWidth="4"
+            />
+            <polygon
+              points="50,5 91,27.5 91,72.5 50,95 9,72.5 9,27.5"
+              fill="none"
+              stroke="hsl(var(--primary))"
+              strokeWidth="4"
+              strokeDasharray="80 300"
+              strokeLinecap="round"
+            />
+          </svg>
         </div>
         <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
           Loading
