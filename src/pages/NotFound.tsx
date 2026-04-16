@@ -15,11 +15,13 @@ const NotFound = () => {
   return (
     <div className="flex flex-col min-h-screen bg-black01">
       <Header />
-      <div
-        className="flex flex-1 items-center justify-center bg-black01 bg-no-repeat bg-cover bg-center md:min-h-[90vh]"
-        style={{ backgroundImage: `url(${errorBg})` }}
-      >
-        <div className="text-center px-[40px] py-[100px] pb-[140px] pt-[180px] bg-transparent">
+      <div className="relative flex flex-1 items-center justify-center bg-black01 md:min-h-[90vh]">
+        <div
+          className="absolute inset-0 bg-no-repeat bg-cover bg-center opacity-80"
+          style={{ backgroundImage: `url(${errorBg})` }}
+          aria-hidden="true"
+        />
+        <div className="relative text-center px-[40px] py-[100px] pb-[140px] pt-[180px] bg-transparent">
           <img src={bodXWhite} alt="Skull and crossbones" className="mx-auto mb-6 h-40 w-40" />
           <h1 className="mb-4 font-normal font-headline uppercase text-4xl">This Page Doesn't Exist</h1>
           <p className="mb-4 text-muted-foreground text-base">Kind of like a brand strategy that lives in your head and nowhere else.</p>
