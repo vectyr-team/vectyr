@@ -104,8 +104,15 @@ const Backend = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <span className="text-muted-foreground font-mono text-sm">Loading...</span>
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-4">
+        <div className="relative h-12 w-12">
+          <div className="absolute inset-0 rounded-full border-2 border-border" />
+          <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-primary animate-spin" />
+          <div className="absolute inset-2 rounded-full border-2 border-transparent border-b-primary/60 animate-spin [animation-direction:reverse] [animation-duration:1.2s]" />
+        </div>
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+          Loading
+        </span>
       </div>
     );
   }
