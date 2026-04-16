@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { OG_IMAGE } from "@/config/seo";
 import { toast } from "sonner";
+import { Upload } from "lucide-react";
 
 interface PageMeta {
   id: string;
