@@ -204,6 +204,7 @@ const SiteOps = () => {
           </div>
         </section>
       </main>
+      <PageMetaInlineEditor pageSlug="site-ops" pageLabel="SiteOps" pagePath="/site-ops" />
       <Footer />
     </div>
   );

@@ -487,6 +487,7 @@ const Index = () => {
         </div>
       </section>
       </main>
+      <PageMetaInlineEditor pageSlug="home" pageLabel="Home" pagePath="/" />
       <Footer />
     </div>
   );

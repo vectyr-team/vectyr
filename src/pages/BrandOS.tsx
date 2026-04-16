@@ -264,6 +264,7 @@ const BrandOS = () => {
           </div>
         </section>
       </main>
+      <PageMetaInlineEditor pageSlug="brand-os" pageLabel="BrandOS" pagePath="/brand-os" />
       <Footer />
     </div>
   );

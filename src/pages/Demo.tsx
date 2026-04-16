@@ -52,6 +52,7 @@ const Demo = () => {
         </div>
       </section>
       </main>
+      <PageMetaInlineEditor pageSlug="demo" pageLabel="Demo" pagePath="/demo" />
       <Footer />
     </div>
   );

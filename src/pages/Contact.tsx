@@ -62,6 +62,7 @@ const Contact = () => {
         </div>
       </section>
       </main>
+      <PageMetaInlineEditor pageSlug="contact" pageLabel="Contact" pagePath="/contact" />
       <Footer />
     </div>
   );
