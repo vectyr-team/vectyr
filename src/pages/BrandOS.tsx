@@ -201,17 +201,14 @@ const BrandOS = () => {
             </div>
 
             <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-8">
-              BUILT FOR <span className="text-primary">TEAMS.</span>
+              Built for Every <span className="text-primary">Brand.</span>
             </h2>
 
-            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground mb-6">
-              Any organization that has completed a Brand Codex build and needs the brand to scale with the team, the
-              vendors, and the AI tools.
-            </p>
-
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-              If more than one person touches your brand, employees, freelancers, contractors, or AI, BrandOS is the
-              operating system that keeps them all working from the same source instead of their own memory.
+              If your company is just you, then you need BrandOS; otherwise, you're using your AI tools at a massive
+              disadvantage. If more than one person is involved with your brand the problem gets worse. Whether they are
+              employees, freelancers, contractors, or AI, BrandOS is the operating system that keeps them all working
+              from the same source of truth instead of relying on you or just winging it.
             </p>
           </div>
         </section>
