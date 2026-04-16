@@ -204,7 +204,7 @@ const BrandOS = () => {
               Built for Every <span className="text-primary">Brand.</span>
             </h2>
 
-            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground mb-10">
               Every AI tool you're using right now is producing output from a blank context window. It doesn't know what
               your brand sounds like, what it stands for, or who it's for, so it guesses. BrandOS gives every tool and
               every person who touches your brand the same source of truth to work from.
