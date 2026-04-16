@@ -1,0 +1,38 @@
+# Vectyr
+
+> Vectyr is a brand infrastructure company that extracts, structures, and installs brand strategy for founders — making it usable by humans and AI tools alike.
+
+Vectyr builds brand operating systems instead of logos. We extract your brand, structure it as a Brand Codex, and install it everywhere your team and AI tools work — so your brand shows up consistently across every touchpoint, human or machine.
+
+## Core Pages
+
+- [Home](https://vectyr.com/): Overview of Vectyr — brand infrastructure for humans and AI.
+- [About](https://vectyr.com/about): Founder story, methodology, and why Vectyr builds brand operating systems.
+- [Team](https://vectyr.com/team): The strategists, designers, and engineers behind Vectyr.
+- [Book a Demo](https://vectyr.com/demo): Walk through the BrandOS platform live.
+- [Contact](https://vectyr.com/contact): Get in touch about brand strategy.
+- [FAQs](https://vectyr.com/faqs): Answers about the Brand Codex, BrandOS, pricing, and process.
+
+## Products
+
+- [BrandOS](https://vectyr.com/brand-os): The operating environment that turns your Brand Codex into infrastructure your team and AI tools can use.
+- [SiteOps](https://vectyr.com/site-ops): Done-for-you WordPress maintenance — secure, updated, and running without you managing it.
+
+## Services
+
+- Brand Strategy
+- Brand Codex Development
+- BrandOS Platform
+- BrandPulse Maintenance
+- Brand Infrastructure for AI
+
+## Contact
+
+- Email: hello@vectyr.com
+- Phone: +1 (512) 879-1233
+- Location: Austin, TX
+- Founder: Steve Reed (https://stevesbrain.com)
+
+## Resources
+
+- [Sitemap](https://bhwjpaogtxhapiyhvjlc.supabase.co/functions/v1/sitemap)
