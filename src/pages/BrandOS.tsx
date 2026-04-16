@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { usePageMeta } from "@/hooks/use-seo-data";
 import { Button } from "@/components/ui/button";
 import bodXWatermark from "@/assets/bodX-watermark.svg";
 
@@ -30,15 +31,12 @@ const howSteps = [
 ];
 
 const BrandOS = () => {
+  const pageMeta = usePageMeta("brand-os");
   return (
     <div className="flex flex-col min-h-screen bg-card">
       <Header />
       <main className="flex-1">
-        <SEOHead
-          title="BrandOS — Your Brand, Installed | Vectyr"
-          description="BrandOS is the operating environment that turns your Brand Codex into infrastructure your team and AI tools can actually use."
-          path="/brand-os"
-        />
+        <SEOHead {...pageMeta} />
 
         {/* Hero */}
         <section className="relative px-6 pt-32 pb-16 md:pt-52 md:pb-28 overflow-hidden">
