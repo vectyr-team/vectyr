@@ -81,6 +81,137 @@ export const LocalBusinessJsonLd = ({ business }: { business: BusinessData }) =>
   );
 };
 
+/** Renders Organization JSON-LD sitewide from business_info. */
+export const OrganizationJsonLd = ({ business }: { business: BusinessData }) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+    name: business.name,
+    legalName: business.legalName,
+    url: SITE_URL,
+    logo: `${SITE_URL}/favicon.ico`,
+    description: business.description,
+    foundingDate: business.foundingDate,
+    sameAs: business.sameAs,
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: business.telephone,
+      email: business.email,
+      contactType: "customer service",
+    },
+    address: {
+      "@type": "PostalAddress",
+      ...business.address,
+    },
+    founder: {
+      "@type": "Person",
+      name: business.founder.name,
+      url: business.founder.url,
+      sameAs: business.founder.linkedin,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+};
+
+/** Renders Person JSON-LD for a team member. */
+export const PersonJsonLd = ({
+  person,
+  organizationName,
+}: {
+  person: { name: string; title: string; bio?: string; photo_url?: string | null; slug: string };
+  organizationName: string;
+}) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: person.name,
+    jobTitle: person.title,
+    description: person.bio || undefined,
+    image: person.photo_url || undefined,
+    url: `${SITE_URL}/team/${person.slug}`,
+    worksFor: {
+      "@type": "Organization",
+      name: organizationName,
+      "@id": `${SITE_URL}/#organization`,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+};
+
+/** Renders Service JSON-LD with provider sourced from business_info. */
+export const ServiceJsonLd = ({
+  name,
+  description,
+  serviceType,
+  path,
+  providerName,
+}: {
+  name: string;
+  description: string;
+  serviceType: string;
+  path: string;
+  providerName: string;
+}) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    serviceType,
+    url: `${SITE_URL}${path}`,
+    provider: {
+      "@type": "Organization",
+      name: providerName,
+      "@id": `${SITE_URL}/#organization`,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+};
+
+/** Renders BreadcrumbList JSON-LD from an ordered list of crumbs. */
+export const BreadcrumbListJsonLd = ({
+  items,
+}: {
+  items: { name: string; path: string }[];
+}) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: `${SITE_URL}${item.path}`,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+};
+
 /** Renders FAQPage JSON-LD from an array of Q&A pairs. */
 export const FAQPageJsonLd = ({
   faqs,
