@@ -32,6 +32,8 @@ const pageIcons: Record<string, string> = {
   faqs: "lucide:help-circle",
   contact: "lucide:mail",
   team: "lucide:users",
+  "brand-os": "lucide:layers",
+  "site-ops": "lucide:settings",
 };
 
 const SidebarContent = ({
