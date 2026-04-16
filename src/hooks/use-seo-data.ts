@@ -63,7 +63,12 @@ export const useBusinessInfo = () => {
 /** Fetches page_meta for a specific page slug, falls back to config defaults. */
 export const usePageMeta = (pageKey: string) => {
   const fallback = PAGE_META[pageKey] || { title: "Vectyr", description: "", path: "/" };
-  const [meta, setMeta] = useState(fallback);
+  const [meta, setMeta] = useState<{
+    title: string;
+    description: string;
+    path: string;
+    ogImage?: string;
+  }>(fallback);
 
   useEffect(() => {
     const fetch = async () => {
@@ -73,13 +78,15 @@ export const usePageMeta = (pageKey: string) => {
         .select("*")
         .eq("page_slug", slug)
         .limit(1)
-        .single();
+        .maybeSingle();
 
-      if (data && data.title) {
+      if (data) {
+        const og = (data as any).og_image as string | null | undefined;
         setMeta({
-          title: data.title,
-          description: data.description,
+          title: data.title || fallback.title,
+          description: data.description || fallback.description,
           path: fallback.path,
+          ogImage: og?.trim() ? og.trim() : undefined,
         });
       }
     };

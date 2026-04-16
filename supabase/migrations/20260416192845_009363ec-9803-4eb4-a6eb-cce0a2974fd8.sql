@@ -1,0 +1,1 @@
+ALTER TABLE public.page_meta ADD COLUMN IF NOT EXISTS og_image TEXT;

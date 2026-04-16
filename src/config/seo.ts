@@ -69,6 +69,12 @@ export const PAGE_META: Record<
       "Meet the founder, understand the methodology, and learn why Vectyr builds brand operating systems instead of logos.",
     path: "/about",
   },
+  team: {
+    title: "Team — The People Behind Vectyr",
+    description:
+      "Meet the team building brand infrastructure for founders — strategists, designers, and engineers behind Vectyr.",
+    path: "/team",
+  },
   demo: {
     title: "Book a Demo — Experience BrandOS Live",
     description:
