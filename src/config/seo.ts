@@ -3,7 +3,7 @@
  * Update values here — they propagate to JSON-LD, meta tags, sitemap, etc.
  */
 
-export const SITE_URL = "https://vectyr.lovable.app";
+export const SITE_URL = "https://vectyr.com";
 export const OG_IMAGE = "https://storage.googleapis.com/gpt-engineer-file-uploads/xwpFU83enpbKbPCWohWsPpqAxoq2/social-images/social-1775767168219-og-image-vectyr.webp";
 
 export const BUSINESS = {
