@@ -101,6 +101,12 @@ const Team = () => {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <SEOHead {...pageMeta} />
+      <BreadcrumbListJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Team", path: "/team" },
+        ]}
+      />
       <style>{responsiveGridCSS}</style>
 
       <main className="flex-1 px-6 pt-28 pb-16 md:pt-44 md:pb-24 bg-black02">

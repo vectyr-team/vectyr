@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
-import { usePageMeta } from "@/hooks/use-seo-data";
+import { usePageMeta, useBusinessInfo } from "@/hooks/use-seo-data";
+import { ServiceJsonLd, BreadcrumbListJsonLd } from "@/components/JsonLd";
 import { Button } from "@/components/ui/button";
 import bodXWatermark from "@/assets/bodX-watermark.svg";
 import wpAdminBg from "@/assets/wordpress-admin.jpg";
@@ -27,11 +28,25 @@ const howSteps = [
 
 const SiteOps = () => {
   const pageMeta = usePageMeta("site-ops");
+  const { data: business } = useBusinessInfo();
   return (
     <div className="flex flex-col min-h-screen bg-card">
       <Header />
       <main className="flex-1">
         <SEOHead {...pageMeta} />
+        <ServiceJsonLd
+          name={pageMeta.title}
+          description={pageMeta.description}
+          serviceType="WordPress Management"
+          path="/site-ops"
+          providerName={business.name}
+        />
+        <BreadcrumbListJsonLd
+          items={[
+            { name: "Home", path: "/" },
+            { name: "SiteOps", path: "/site-ops" },
+          ]}
+        />
 
         {/* Hero */}
         <section className="relative px-6 pt-32 pb-16 md:pt-52 md:pb-28 overflow-hidden">
