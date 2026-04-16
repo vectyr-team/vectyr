@@ -5,6 +5,7 @@ import SEOHead from "@/components/SEOHead";
 import { usePageMeta } from "@/hooks/use-seo-data";
 import { useTeamData, getOrderedMembers } from "@/hooks/use-team-data";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { BreadcrumbListJsonLd } from "@/components/JsonLd";
 
 const Team = () => {
   const pageMeta = usePageMeta("team");
