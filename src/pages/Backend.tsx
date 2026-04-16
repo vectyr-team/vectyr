@@ -57,26 +57,27 @@ const Backend = () => {
   };
 
   useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       if (!session) {
         navigate("/backend/login");
         setLoading(false);
         return;
       }
-      await checkAdminRole(session.user.id);
-      setLoading(false);
+      // Defer Supabase calls to avoid deadlock inside the auth callback
+      setTimeout(() => {
+        checkAdminRole(session.user.id).finally(() => setLoading(false));
+      }, 0);
     });
 
-    supabase.auth.getSession().then(async ({ data: { session } }) => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       if (!session) {
         navigate("/backend/login");
         setLoading(false);
         return;
       }
-      await checkAdminRole(session.user.id);
-      setLoading(false);
+      checkAdminRole(session.user.id).finally(() => setLoading(false));
     });
 
     return () => subscription.unsubscribe();
