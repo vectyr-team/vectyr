@@ -105,22 +105,59 @@ const Backend = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-6">
-        <div className="relative h-16 w-16 animate-spin [animation-duration:2s]">
+        <div className="relative h-20 w-20">
           <svg viewBox="0 0 100 100" className="h-full w-full">
+            <defs>
+              <clipPath id="hex-clip">
+                <polygon points="50,5 91,27.5 91,72.5 50,95 9,72.5 9,27.5" />
+              </clipPath>
+            </defs>
+
+            {/* Static hex outline */}
             <polygon
               points="50,5 91,27.5 91,72.5 50,95 9,72.5 9,27.5"
               fill="none"
               stroke="hsl(var(--border))"
-              strokeWidth="4"
+              strokeWidth="3"
             />
-            <polygon
-              points="50,5 91,27.5 91,72.5 50,95 9,72.5 9,27.5"
-              fill="none"
-              stroke="hsl(var(--primary))"
-              strokeWidth="4"
-              strokeDasharray="80 300"
-              strokeLinecap="round"
-            />
+
+            {/* Animated scan bar inside */}
+            <g clipPath="url(#hex-clip)">
+              <rect x="0" y="0" width="100" height="3" fill="hsl(var(--primary))">
+                <animate
+                  attributeName="y"
+                  values="5;92;5"
+                  dur="2s"
+                  repeatCount="indefinite"
+                  keyTimes="0;0.5;1"
+                  calcMode="spline"
+                  keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                />
+                <animate
+                  attributeName="opacity"
+                  values="0;1;1;1;0"
+                  dur="2s"
+                  repeatCount="indefinite"
+                  keyTimes="0;0.1;0.5;0.9;1"
+                />
+              </rect>
+
+              {/* Pulsing core dot */}
+              <circle cx="50" cy="50" r="3" fill="hsl(var(--primary))">
+                <animate
+                  attributeName="r"
+                  values="2;5;2"
+                  dur="1.5s"
+                  repeatCount="indefinite"
+                />
+                <animate
+                  attributeName="opacity"
+                  values="0.4;1;0.4"
+                  dur="1.5s"
+                  repeatCount="indefinite"
+                />
+              </circle>
+            </g>
           </svg>
         </div>
         <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
