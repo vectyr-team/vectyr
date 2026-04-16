@@ -40,6 +40,21 @@ const BrandOS = () => {
 
         {/* Hero */}
         <section className="relative px-6 pt-32 pb-16 md:pt-52 md:pb-28 overflow-hidden">
+          {/* Background video */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-hidden="true"
+            src="/videos/vectyr-hero-bg.mp4"
+            className="absolute inset-0 w-full object-cover scale-105"
+            style={{ height: "110%", top: "-5%" }}
+          />
+
+          {/* Overlay for text readability */}
+          <div className="absolute inset-0 bg-background/70" />
+
           <img
             src={bodXWatermark}
             alt=""
