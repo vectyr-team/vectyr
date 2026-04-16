@@ -3,6 +3,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { useTeamMemberBySlug, useTeamData, getOrderedMembers } from "@/hooks/use-team-data";
+import { useBusinessInfo } from "@/hooks/use-seo-data";
+import { PersonJsonLd, BreadcrumbListJsonLd } from "@/components/JsonLd";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Icon } from "@iconify/react";
 
@@ -10,6 +12,7 @@ const TeamMember = () => {
   const { slug } = useParams<{ slug: string }>();
   const { data: member, isLoading: memberLoading } = useTeamMemberBySlug(slug || "");
   const { departments, members } = useTeamData();
+  const { data: business } = useBusinessInfo();
 
   const allOrdered = departments.data && members.data
     ? getOrderedMembers(departments.data, members.data)
@@ -58,6 +61,14 @@ const TeamMember = () => {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <SEOHead title={`${member.name} — Vectyr`} description={member.title} path={`/team/${member.slug}`} />
+      <PersonJsonLd person={member} organizationName={business.name} />
+      <BreadcrumbListJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Team", path: "/team" },
+          { name: member.name, path: `/team/${member.slug}` },
+        ]}
+      />
 
       <main className="flex-1 px-6 pt-28 pb-16 md:pt-44 md:pb-24 bg-black02">
         <div className="mx-auto max-w-[1300px]">

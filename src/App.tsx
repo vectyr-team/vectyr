@@ -16,8 +16,15 @@ import NotFound from "./pages/NotFound.tsx";
 import BrandOS from "./pages/BrandOS.tsx";
 import SiteOps from "./pages/SiteOps.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
+import { OrganizationJsonLd } from "./components/JsonLd.tsx";
+import { useBusinessInfo } from "./hooks/use-seo-data.ts";
 
 const queryClient = new QueryClient();
+
+const SitewideSchema = () => {
+  const { data } = useBusinessInfo();
+  return <OrganizationJsonLd business={data} />;
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -26,6 +33,7 @@ const App = () => (
       <Sonner />
         <BrowserRouter>
         <ScrollToTop />
+        <SitewideSchema />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
