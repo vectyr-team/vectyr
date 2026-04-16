@@ -205,10 +205,14 @@ const BrandOS = () => {
             </h2>
 
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-              If your company is just you, then you need BrandOS; otherwise, you're using your AI tools at a massive
-              disadvantage. If more than one person is involved with your brand the problem gets worse. Whether they are
-              employees, freelancers, contractors, or AI, BrandOS is the operating system that keeps them all working
-              from the same source of truth instead of relying on you or just winging it.
+              Every AI tool you're using right now is producing output from a blank context window. It doesn't know what
+              your brand sounds like, what it stands for, or who it's for, so it guesses. BrandOS gives every tool and
+              every person who touches your brand the same source of truth to work from.
+            </p>
+            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+              That matters if it's just you. It matters more the second anyone else is involved, because without it,
+              your employees, freelancers, contractors, and AI tools are each building a slightly different version of
+              your brand in real time.
             </p>
           </div>
         </section>
