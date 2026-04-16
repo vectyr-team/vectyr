@@ -16,10 +16,10 @@ const features = [
 ];
 
 const problems = [
-  "The freelancer logs in at 9 p.m. with no reference.",
-  "The new hire starts Monday and guesses.",
+  "The freelancer can't remember everything you told them.",
+  "The content creator is going rogue.",
   "The AI tool generates output from a blank context window.",
-  "Everyone is doing their best. No one is working from the same source.",
+  "Everyone is doing their best, but no one is working from the same instantly accessible source of truth.",
 ];
 
 const howSteps = [
@@ -272,7 +272,7 @@ const BrandOS = () => {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );
