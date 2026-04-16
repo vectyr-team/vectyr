@@ -5,6 +5,7 @@ import BackendSidebar from "@/components/backend/BackendSidebar";
 import PageSettingsEditor from "@/components/backend/PageSettingsEditor";
 import FAQsEditor from "@/components/backend/FAQsEditor";
 import BusinessInfoEditor from "@/components/backend/BusinessInfoEditor";
+import PageMetaSection from "@/components/backend/PageMetaSection";
 
 import SchemaPreview from "@/components/backend/SchemaPreview";
 import AdminManager from "@/components/backend/AdminManager";
@@ -18,13 +19,15 @@ interface PageSetting {
   form_script_url: string | null;
 }
 
-const ALL_PAGES = [
-  { slug: "index", name: "Home" },
-  { slug: "about", name: "About" },
-  { slug: "team", name: "Team" },
-  { slug: "demo", name: "Demo" },
-  { slug: "contact", name: "Contact" },
-  { slug: "faqs", name: "FAQs" },
+const ALL_PAGES: { slug: string; name: string; metaSlug: string; path: string }[] = [
+  { slug: "index", name: "Home", metaSlug: "home", path: "/" },
+  { slug: "about", name: "About", metaSlug: "about", path: "/about" },
+  { slug: "team", name: "Team", metaSlug: "team", path: "/team" },
+  { slug: "demo", name: "Demo", metaSlug: "demo", path: "/demo" },
+  { slug: "contact", name: "Contact", metaSlug: "contact", path: "/contact" },
+  { slug: "faqs", name: "FAQs", metaSlug: "faqs", path: "/faqs" },
+  { slug: "brand-os", name: "BrandOS", metaSlug: "brand-os", path: "/brand-os" },
+  { slug: "site-ops", name: "SiteOps", metaSlug: "site-ops", path: "/site-ops" },
 ];
 
 const SEO_SECTIONS: Record<string, { title: string; subtitle: string }> = {
@@ -205,11 +208,7 @@ const Backend = () => {
       );
     }
 
-    return (
-      <p className="text-muted-foreground font-body text-sm">
-        No configurable settings for this page yet.
-      </p>
-    );
+    return null;
   };
 
   return (
@@ -231,6 +230,14 @@ const Backend = () => {
           </p>
 
           {renderContent()}
+
+          {!isSeoSection && currentPage && (
+            <PageMetaSection
+              pageSlug={currentPage.metaSlug}
+              pageLabel={currentPage.name}
+              pagePath={currentPage.path}
+            />
+          )}
         </div>
       </main>
     </div>
