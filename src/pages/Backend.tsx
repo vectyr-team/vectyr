@@ -208,11 +208,7 @@ const Backend = () => {
       );
     }
 
-    return (
-      <p className="text-muted-foreground font-body text-sm">
-        No configurable settings for this page yet.
-      </p>
-    );
+    return null;
   };
 
   return (
