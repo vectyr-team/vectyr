@@ -11,7 +11,7 @@ const features = [
   "Role-based access control so everyone sees only what they should",
   "Centralized brand assets and AI installation files everyone can use",
   "Version control and team notifications so everybody stays up to date",
-  "Built-in distribution for humans and AI tools that is effortless",
+  "Built-in effortless distribution for humans eyes and AI tools alike",
   "BrandPulse subscribers keep their brand strategy sharp and current",
 ];
 
