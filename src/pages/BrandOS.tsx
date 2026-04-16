@@ -8,11 +8,11 @@ import bodXWatermark from "@/assets/bodX-watermark.svg";
 
 const features = [
   "Lifetime access included with every Brand Codex build (no extra cost)",
-  "Full platform access continues for BrandPulse subscribers",
-  "Role-based access control",
-  "Centralized brand assets and AI installation files",
-  "Version control and team notifications",
-  "Built-in distribution for humans and AI tools",
+  "Role-based access control so everyone sees only what they should",
+  "Centralized brand assets and AI installation files everyone can use",
+  "Version control and team notifications so everybody stays up to date",
+  "Built-in distribution for humans and AI tools that is effortless",
+  "BrandPulse subscribers keep their brand strategy sharp and current",
 ];
 
 const problems = [
