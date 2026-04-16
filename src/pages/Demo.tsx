@@ -31,7 +31,7 @@ const Demo = () => {
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">BrandOS Demo</span>
 
             <h1 className="font-headline font-light text-5xl leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-4xl">
-              EXPERIENCE <span className="text-primary">BRANDOS.</span>
+              Experience <span className="text-primary">BrandOS.</span>
             </h1>
 
             <p className="mt-4 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground mb-[20px]">
