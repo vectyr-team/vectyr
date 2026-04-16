@@ -230,7 +230,7 @@ const BrandOS = () => {
               Everything <span className="text-primary">Included.</span>
             </h2>
 
-            <div className="grid sm:grid-cols-2 gap-px bg-border/30">
+            <div className="grid sm:grid-cols-3 gap-px bg-border/0">
               {features.map((feat, i) => (
                 <div key={i} className="bg-card p-6 md:p-8 flex items-start gap-4">
                   <span className="text-primary mt-1 shrink-0">✓</span>
