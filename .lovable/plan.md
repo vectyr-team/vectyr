@@ -1,30 +1,40 @@
 
 
-## Plan: Add "Company" Dropdown to Header Navigation
+## Plan: Admin-driven JSON-LD across the site
 
-### What changes
-Replace the standalone "Contact" nav link with a "Company" dropdown containing About, Team, FAQs, and Contact. The nav order becomes: **Company** (dropdown) → **Demo** → **Login**.
+### Components to add (in `src/components/JsonLd.tsx`)
 
-### Desktop
-- "Company" label styled identically to other nav links (mono, uppercase, xs)
-- On click, a minimal dropdown appears below with the four links, styled to match the dark brand (bg `#090909`, border `#2E2E2E`, text in muted/foreground)
-- Clicking outside or navigating closes it
-- Entrance animation uses the same staggered fade-up as other nav items
+1. **`OrganizationJsonLd`** — sitewide. Reads `business_info` (name, url, logo, `sameAs`, contactPoint email/phone, address). Sourced via `useBusinessInfo()`.
+2. **`PersonJsonLd`** — TeamMember pages. Reads `team_members` (name, title, photo_url, bio) + `business_info.name` for `worksFor`.
+3. **`ServiceJsonLd`** — BrandOS + SiteOps. Reads `page_meta.title` / `page_meta.description` for `name` / `description`. Accepts a `serviceType` prop (hardcoded per page: `"Brand Strategy"` for BrandOS, `"WordPress Management"` for SiteOps). Provider pulled from `business_info`.
+4. **`BreadcrumbListJsonLd`** — code-derived from route + page name. Used on Team, TeamMember, BrandOS, SiteOps.
 
-### Mobile
-- In the fullscreen menu, replace "Contact" with the four Company sub-links (About, Team, FAQs, Contact) shown inline — no nested dropdown needed on mobile
-- Remove "Company" as a heading; just list the pages directly in the menu
+### Files touched
 
-### Technical approach
+- `src/components/JsonLd.tsx` — add the four new components.
+- `src/App.tsx` — mount `<OrganizationJsonLd />` once inside `BrowserRouter` (uses `useBusinessInfo`).
+- `src/pages/TeamMember.tsx` — `PersonJsonLd` + `BreadcrumbListJsonLd`.
+- `src/pages/Team.tsx` — `BreadcrumbListJsonLd`.
+- `src/pages/BrandOS.tsx` — `ServiceJsonLd serviceType="Brand Strategy"` + `BreadcrumbListJsonLd`.
+- `src/pages/SiteOps.tsx` — `ServiceJsonLd serviceType="WordPress Management"` + `BreadcrumbListJsonLd`.
 
-**File: `src/components/Header.tsx`**
+### Notes addressed
 
-1. Update `navLinks` array — remove Contact, reorder to: `Company` (marker), `Demo`, `Login`
-2. Add state `companyOpen` for the dropdown toggle
-3. Desktop nav: render "Company" as a `<button>` that toggles the dropdown. Render a positioned `<div>` below it with four `<Link>` items (About `/about`, Team `/team`, FAQs `/faqs`, Contact `/contact`). Close on click-outside via a `useEffect` listener, and on route change.
-4. Mobile menu: replace the current `navLinks.map` with a flat list: About, Team, FAQs, Contact, Demo, Login — all as full-screen staggered links
-5. Dropdown styling: `absolute top-full right-0`, dark bg matching brand, subtle border, each item with hover highlight. Uses CSS transform for the same entrance animation pattern.
-6. Update `navDelayOrder` and `socialDelayOrder` arrays to match the new item count
+- **`sameAs`**: already populated in `business_info.social_links` (YouTube, Behance, LinkedIn). `OrganizationJsonLd` will pass it through. No data change needed unless you want to add more profiles via Business Info admin.
+- **`serviceType`**: hardcoded per page as a prop — won't change, no admin field needed. Easy to swap to a `page_meta` column later if desired.
+- **FAQPage in head**: currently rendered in `<body>` via React. Google reads JSON-LD from anywhere in the document, so it IS being parsed (verifiable with Rich Results Test). No change required, but if you want it strictly in `<head>`, I can move all JSON-LD injection through `SEOHead`'s `useEffect` as a follow-up.
+- **BreadcrumbList**: pure route-derived, no admin coupling.
 
-No new dependencies needed — pure React state + existing brand styles.
+### Result matrix
+
+| Schema | Source | Admin-editable |
+|---|---|---|
+| Organization (sitewide) | `business_info` | ✅ |
+| LocalBusiness (home, existing) | `business_info` | ✅ |
+| FAQPage (FAQs, existing) | `faqs` | ✅ |
+| Person (team member) | `team_members` | ✅ |
+| Service (BrandOS, SiteOps) | `page_meta` + hardcoded `serviceType` | ✅ (name/desc) |
+| BreadcrumbList | route | n/a |
+
+No DB migrations, no new tables, no new admin editors.
 
