@@ -30,6 +30,35 @@ const MetaTagsEditor = () => {
   const [metas, setMetas] = useState<PageMeta[]>([]);
   const [loading, setLoading] = useState(true);
   const [savingSlug, setSavingSlug] = useState<string | null>(null);
+  const [uploadingSlug, setUploadingSlug] = useState<string | null>(null);
+  const fileInputs = useRef<Record<string, HTMLInputElement | null>>({});
+
+  const handleUpload = async (slug: string, file: File) => {
+    if (!file.type.startsWith("image/")) {
+      toast.error("Please upload an image file");
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      toast.error("Image must be under 5MB");
+      return;
+    }
+    setUploadingSlug(slug);
+    const ext = file.name.split(".").pop() || "png";
+    const path = `${slug}-${Date.now()}.${ext}`;
+    const { error: uploadError } = await supabase.storage
+      .from("og-images")
+      .upload(path, file, { cacheControl: "3600", upsert: true });
+
+    if (uploadError) {
+      toast.error("Upload failed: " + uploadError.message);
+      setUploadingSlug(null);
+      return;
+    }
+    const { data: { publicUrl } } = supabase.storage.from("og-images").getPublicUrl(path);
+    updateField(slug, "og_image", publicUrl);
+    toast.success("Image uploaded — click Save to apply");
+    setUploadingSlug(null);
+  };
 
   const fetchMetas = async () => {
     const { data } = await supabase.from("page_meta").select("*");
