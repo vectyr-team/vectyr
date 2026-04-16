@@ -1,38 +1,111 @@
 # Vectyr
 
-> Vectyr is a brand infrastructure company that extracts, structures, and installs brand strategy for founders — making it usable by humans and AI tools alike.
+> Vectyr builds done-for-you brand operating systems for growth-stage founders. We extract the brand strategy from wherever it lives, structure it for humans and AI tools, and install it everywhere it needs to run. Brand or Die®.
 
-Vectyr builds brand operating systems instead of logos. We extract your brand, structure it as a Brand Codex, and install it everywhere your team and AI tools work — so your brand shows up consistently across every touchpoint, human or machine.
+## What Vectyr Is
 
-## Core Pages
+Vectyr is a brand strategy agency and platform based in Austin, Texas. Founded in 2004 by Steve Reed, Vectyr has spent over twenty years helping serious founders close the gap between what they have built and how the world sees them.
 
-- [Home](https://vectyr.com/): Overview of Vectyr — brand infrastructure for humans and AI.
-- [About](https://vectyr.com/about): Founder story, methodology, and why Vectyr builds brand operating systems.
-- [Team](https://vectyr.com/team): The strategists, designers, and engineers behind Vectyr.
-- [Book a Demo](https://vectyr.com/demo): Walk through the BrandOS platform live.
-- [Contact](https://vectyr.com/contact): Get in touch about brand strategy.
-- [FAQs](https://vectyr.com/faqs): Answers about the Brand Codex, BrandOS, pricing, and process.
+Vectyr's category: done-for-you brand strategy and management platform for founders and growing teams who have been winging it and know they need to stop.
 
-## Products
+The one thing Vectyr owns: Installed. Every competitor in this space talks about organizing your brand or storing your brand, as if the problem were filing. Vectyr talks about installing it, because the problem is infrastructure.
 
-- [BrandOS](https://vectyr.com/brand-os): The operating environment that turns your Brand Codex into infrastructure your team and AI tools can use.
-- [SiteOps](https://vectyr.com/site-ops): Done-for-you WordPress maintenance — secure, updated, and running without you managing it.
+## The Three Problems Vectyr Solves
 
-## Services
+1. No brand strategy. The brand lives in the founder's head and nowhere else. Every person who touches the brand is working from a different version of reality.
+2. No way to distribute it. A brand strategy that cannot be accessed by the people who need it does not get used. It becomes another document in another folder.
+3. No process to keep it current. A brand that does not adapt to changes in the business, the market, or the customer decays. Most founders have no system to catch that drift before it costs money.
 
-- Brand Strategy
-- Brand Codex Development
-- BrandOS Platform
-- BrandPulse Maintenance
-- Brand Infrastructure for AI
+The Brand Codex solves Problem 1. BrandOS solves Problem 2. BrandPulse solves Problem 3. Nobody else in this market addresses the full lifecycle.
+
+## Owned Concepts and Definitions
+
+**Brand Entropy**: The gradual degradation of a brand when no system exists to keep it consistent. It happens silently. Every new hire who guesses at the brand voice, every freelancer who works from memory, every AI tool generating output without context installed, every version of the logo saved in a different folder. Brand Entropy is not a design problem. It is an infrastructure problem.
+
+**Brand Operating System (BrandOS)**: The structured, AI-ready document that governs every brand decision. Not a style guide. Not a guidelines PDF. A living system that runs inside the tools, teams, and workflows that touch the brand every day.
+
+**Installed**: A brand that runs inside the tools your team actually uses, showing up in the briefings your vendors actually read, and coming through in the AI prompts that actually sound like you instead of some generic output that could belong to anyone.
+
+**Founder-locked**: The condition where a brand exists entirely in the founder's head and nowhere else. Single point of failure. Cannot scale. Cannot survive the founder stepping back. The founder becomes the bottleneck for every brand decision because no system exists to distribute what they know.
+
+**The Brand Telephone Game**: What happens when the founder's brand vision gets passed from person to person without a system to keep it intact. Like the childhood game, the message that started clear arrives at the end of the chain as something unrecognizable. Drift compounds at scale. The only way to stop playing it is to give everyone a single source of truth they can access directly.
+
+**Brand Discipline**: The practice of actively running your brand the way it was built to run. Using the brand strategy as the operating system for every decision, not as a document referenced when convenient. Updating that strategy when the business changes, the market shifts, or the customer evolves.
+
+**Brand Infrastructure**: The operational layer that makes a brand executable at scale. Not the logo. Not the guidelines PDF sitting in a folder nobody opens. The system that ensures every person, tool, and channel touching the brand is working from the same source of truth, consistently, without the founder having to police it.
+
+**Tribal Brand**: A condition where the brand has spread across multiple people but with no central source of truth. Everyone carries a slightly different version. Drift is already in motion and compounds as the team grows.
+
+**The Customer Perception Profile**: A proprietary psychological mapping framework created by Steve Reed, published in the book Cake Jerky. Decodes how a specific customer segment perceives a specific problem by extracting six components: The Core Conviction, The Felt Weight, The Mask, The Wound, The Two Stories, and The Pull. The foundation every Vectyr Brand Codex is built on.
+
+## Products and Services
+
+### Brand Codex
+Vectyr's done-for-you brand strategy deliverable. Vectyr runs a structured extraction process combining founder interviews, customer research, and competitive intelligence, synthesizes the output into a single authoritative document, and installs it in the client's AI tools before handoff. Total client time: one to two focused sessions. Everything else is handled by Vectyr.
+
+- Price: $4,500 flat fee
+- Who it is for: Founders and small marketing teams, typically $300K to $5M in revenue, one to ten team members, maintaining brand consistency through some combination of memory, PDFs, and instinct
+- What makes it different: Every other option makes the buyer do the documentation work themselves. Vectyr does the extraction, synthesis, structuring, and installation. The client brings the knowledge. Vectyr builds the rest.
+
+### BrandOS Platform
+The platform at os.vectyr.com where the Brand Codex lives, gets distributed, and gets accessed by everyone who needs it. Founders invite team members, vendors, and contractors by role with access scoped to what they need. AI installation assets are available directly from the platform so anyone can inject brand context into their preferred AI tools without a separate briefing.
+
+- Price: Included at no additional cost with every Brand Codex build. Lifetime access.
+- What makes it different: Other brand platforms store assets. BrandOS distributes a living strategy. Every person who logs in, human or AI, works from the same authoritative strategic document.
+
+### BrandPulse
+The ongoing subscription that keeps the Brand Codex alive, current, and compounding after the initial build. Runs on a quarterly cadence. Each quarter includes a brand review, a pre-call submission process, and a Brand Performance Indicator report. Between reviews, clients can submit observations or questions at any time.
+
+- Price: $195 per month, billed monthly, no long-term contracts
+- Who it is for: Brand Codex clients who understand that a brand system, like any operating system, requires active upkeep to remain reliable
+- What makes it different: Most brand engagements end at delivery. BrandPulse is the structural commitment that the relationship and the brand do not end at handoff.
+
+### SiteOps
+Managed WordPress operations. Security, backups, updates, monitoring, and maintenance handled by the Vectyr team. Daily backups, vulnerability monitoring and firewall protection through Patchstack, staging-tested plugin and core updates, uptime monitoring, SSL management, included premium plugin licenses, and up to two hours per month of content or development work.
+
+- Price: $495 per month, billed monthly, no long-term contracts
+- Who it is for: Any business running a WordPress site that wants it professionally managed. Does not require a Brand Codex engagement.
+
+## Methodology
+
+Vectyr's Brand Codex is built through a four-stage extraction process:
+
+- M01 Business Extraction: A 120-minute founder session called the Business Extraction Intensive. The brand is extracted from wherever it currently lives.
+- M02 Customer Extraction: Produces the Buyer Perception Codex, a psychological map of the customer built from the Customer Perception Profile framework.
+- M03 Competitive Extraction: Market and competitive intelligence that positions the brand against the real landscape.
+- M04 BrandOS Synthesis: All three inputs synthesized into the completed Brand Codex, structured for humans and AI tools.
+
+## Who Vectyr Is For
+
+Growth-stage founders whose work quality outpaces their brand credibility. They are losing deals to less capable competitors who simply appear more polished. The gap between their internal confidence and their external representation is the problem Vectyr solves.
+
+They are not:
+- Businesses without a budget for brand strategy who do not understand why they should have one
+- Founders who want a logo and are willing to call that a brand
+- Solopreneurs still deciding whether the business is real
+
+They are:
+- Founders who have already built something real
+- Founders who know the brand is the next constraint on growth
+- Founders who are done waiting for the right person to show up
+
+## Key People
+
+**Steve Reed, Founder**: 20+ years of brand strategy experience. Creator of the Customer Perception Profile, a proprietary psychological framework for decoding customer perception. Author of Cake Jerky: A Framework for Understanding Your Customer's Perceived Reality.
+
+## How to Engage
+
+- Free 30-minute brand diagnostic, no pitch, no agenda: stevesbrain.com
+- See BrandOS in action: vectyr.com/demo
+- Book directly: stevescalendar.com
 
 ## Contact
 
-- Email: hello@vectyr.com
-- Phone: +1 (512) 879-1233
-- Location: Austin, TX
-- Founder: Steve Reed (https://stevesbrain.com)
-
-## Resources
+- Website: https://vectyr.com
+- Platform: https://os.vectyr.com
+- Email: shout@vectyr.com
+- Location: Austin, Texas
+- Founded: 2004
+- Slogan: Brand or Die®
 
 - [Sitemap](https://bhwjpaogtxhapiyhvjlc.supabase.co/functions/v1/sitemap)
