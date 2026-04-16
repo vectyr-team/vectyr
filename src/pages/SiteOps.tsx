@@ -59,9 +59,9 @@ const SiteOps = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 mt-8">
-              <Link to="/siteops">
+              <a href="https://buy.stripe.com/9B67sK81Kdc3fdv3bC0ZW0r" target="_blank" rel="noopener noreferrer">
                 <Button size="lg">Get SiteOps for Your Site</Button>
-              </Link>
+              </a>
             </div>
           </div>
         </section>
@@ -199,9 +199,9 @@ const SiteOps = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8">
-              <Link to="/siteops">
+              <a href="https://buy.stripe.com/9B67sK81Kdc3fdv3bC0ZW0r" target="_blank" rel="noopener noreferrer">
                 <Button size="lg">Get SiteOps for Your Site</Button>
-              </Link>
+              </a>
             </div>
           </div>
         </section>
