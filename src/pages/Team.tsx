@@ -157,7 +157,7 @@ const Team = () => {
         </div>
       </main>
 
-      <PageMetaInlineEditor pageSlug="team" pageLabel="Team" pagePath="/team" />
+      
       <Footer />
     </div>
   );

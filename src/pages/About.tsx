@@ -258,7 +258,7 @@ const About = () => {
         </div>
       </section>
       </main>
-      <PageMetaInlineEditor pageSlug="about" pageLabel="About" pagePath="/about" />
+      
       <Footer />
     </div>
   );

@@ -98,7 +98,7 @@ const FAQs = () => {
         </div>
       </section>
       </main>
-      <PageMetaInlineEditor pageSlug="faqs" pageLabel="FAQs" pagePath="/faqs" />
+      
       <Footer />
     </div>
   );
