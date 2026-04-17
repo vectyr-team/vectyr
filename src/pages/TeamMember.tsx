@@ -82,21 +82,23 @@ const TeamMember = () => {
           </Link>
 
           {/* Two-column layout */}
-          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+          <div className="grid md:grid-cols-[minmax(0,360px)_1fr] gap-10 md:gap-16 items-start">
             {/* Image */}
-            <AspectRatio ratio={2 / 3} className="overflow-hidden rounded bg-card">
-              {member.photo_url ? (
-                <img
-                  src={member.photo_url}
-                  alt={`${member.name}, ${member.title}`}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center text-muted-foreground font-mono text-sm">
-                  No Photo
-                </div>
-              )}
-            </AspectRatio>
+            <div className="w-full max-w-[280px] md:max-w-none">
+              <AspectRatio ratio={2 / 3} className="overflow-hidden rounded bg-card">
+                {member.photo_url ? (
+                  <img
+                    src={member.photo_url}
+                    alt={`${member.name}, ${member.title}`}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-muted-foreground font-mono text-sm">
+                    No Photo
+                  </div>
+                )}
+              </AspectRatio>
+            </div>
 
             {/* Info */}
             <div>
