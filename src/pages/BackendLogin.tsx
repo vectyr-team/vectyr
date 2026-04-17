@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import vectyrLogo from "@/assets/vectyr-logo.svg";
@@ -10,6 +10,12 @@ const BackendLogin = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  // Always clear any stale/corrupted token on mount so login starts clean.
+  useEffect(() => {
+    clearStoredAuthSession();
+    void supabase.auth.signOut({ scope: "local" }).catch(() => undefined);
+  }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
