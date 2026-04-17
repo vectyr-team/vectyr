@@ -149,6 +149,33 @@ export type Database = {
         }
         Relationships: []
       }
+      glossary_terms: {
+        Row: {
+          created_at: string
+          definition: string
+          id: string
+          sort_order: number
+          term: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          definition: string
+          id?: string
+          sort_order?: number
+          term: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          definition?: string
+          id?: string
+          sort_order?: number
+          term?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       page_meta: {
         Row: {
           created_at: string
