@@ -15,10 +15,10 @@ export default defineConfig(async ({ mode }) => {
   // the initial HTML response for crawlers that don't execute JS.
   if (mode === "production") {
     try {
-      const [{ default: prerender }, { default: PuppeteerRenderer }, { getTeamMemberRoutes }] =
+      const [{ default: prerender }, { default: JSDOMRenderer }, { getTeamMemberRoutes }] =
         await Promise.all([
           import("@prerenderer/rollup-plugin"),
-          import("@prerenderer/renderer-puppeteer"),
+          import("@prerenderer/renderer-jsdom"),
           import("./scripts/get-team-slugs"),
         ]);
 
