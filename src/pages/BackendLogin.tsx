@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import vectyrLogo from "@/assets/vectyr-logo.svg";
-import { clearStoredAuthSession, getErrorMessage, withTimeout } from "@/lib/supabase-guards";
+import { getErrorMessage } from "@/lib/supabase-guards";
 
 const BackendLogin = () => {
   const [email, setEmail] = useState("");
@@ -11,26 +11,13 @@ const BackendLogin = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  // Always clear any stale/corrupted token on mount so login starts clean.
-  useEffect(() => {
-    clearStoredAuthSession();
-    void supabase.auth.signOut({ scope: "local" }).catch(() => undefined);
-  }, []);
-
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
     try {
-      clearStoredAuthSession();
-      await supabase.auth.signOut({ scope: "local" }).catch(() => undefined);
-
-      const { error } = await withTimeout(
-        supabase.auth.signInWithPassword({ email, password }),
-        8000,
-        "Sign in timed out. Please try again."
-      );
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
 
       if (error) throw error;
       navigate("/backend");
