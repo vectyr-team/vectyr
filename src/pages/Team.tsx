@@ -14,7 +14,7 @@ const Team = () => {
   const deptData = departments.data ?? [];
   const memberData = members.data ?? [];
   const grid = gridSettings.data;
-  const loadError = departments.error || members.error || gridSettings.error;
+  const loadError = departments.error || members.error;
 
   const desktopCols = grid?.desktop_columns ?? 4;
   const tabletCols = grid?.tablet_columns ?? 3;

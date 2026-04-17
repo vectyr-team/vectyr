@@ -41,6 +41,57 @@ export function clearStoredAuthSession() {
   window.sessionStorage.removeItem(key);
 }
 
+const decodeBase64Url = (value: string) => {
+  const normalized = value.replace(/-/g, "+").replace(/_/g, "/");
+  const padded = normalized.padEnd(Math.ceil(normalized.length / 4) * 4, "=");
+  return atob(padded);
+};
+
+const extractStoredAccessToken = (raw: string) => {
+  const parsed = JSON.parse(raw);
+
+  if (typeof parsed?.access_token === "string") return parsed.access_token;
+  if (typeof parsed?.currentSession?.access_token === "string") return parsed.currentSession.access_token;
+
+  if (Array.isArray(parsed)) {
+    for (const item of parsed) {
+      if (typeof item?.access_token === "string") return item.access_token;
+      if (typeof item?.currentSession?.access_token === "string") return item.currentSession.access_token;
+    }
+  }
+
+  return null;
+};
+
+export function scrubInvalidStoredAuthSession() {
+  if (typeof window === "undefined") return;
+
+  const key = getSupabaseAuthStorageKey();
+  if (!key) return;
+
+  try {
+    const raw = window.localStorage.getItem(key) ?? window.sessionStorage.getItem(key);
+    if (!raw) return;
+
+    const token = extractStoredAccessToken(raw);
+    if (!token) {
+      clearStoredAuthSession();
+      return;
+    }
+
+    const parts = token.split(".");
+    if (parts.length !== 3) {
+      clearStoredAuthSession();
+      return;
+    }
+
+    const payload = JSON.parse(decodeBase64Url(parts[1]));
+    if (!payload?.sub) clearStoredAuthSession();
+  } catch {
+    clearStoredAuthSession();
+  }
+}
+
 export function getErrorMessage(error: unknown, fallback: string) {
   if (error instanceof Error && error.message) return error.message;
   return fallback;
