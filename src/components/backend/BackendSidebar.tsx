@@ -30,6 +30,7 @@ const pageIcons: Record<string, string> = {
   about: "lucide:info",
   demo: "lucide:play",
   faqs: "lucide:help-circle",
+  glossary: "lucide:book-open",
   contact: "lucide:mail",
   team: "lucide:users",
   "brand-os": "lucide:layers",

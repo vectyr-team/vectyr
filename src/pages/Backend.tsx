@@ -4,6 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import BackendSidebar from "@/components/backend/BackendSidebar";
 import PageSettingsEditor from "@/components/backend/PageSettingsEditor";
 import FAQsEditor from "@/components/backend/FAQsEditor";
+import GlossaryEditor from "@/components/backend/GlossaryEditor";
 import BusinessInfoEditor from "@/components/backend/BusinessInfoEditor";
 import PageMetaSection from "@/components/backend/PageMetaSection";
 
@@ -26,6 +27,7 @@ const ALL_PAGES: { slug: string; name: string; metaSlug: string; path: string }[
   { slug: "demo", name: "Demo", metaSlug: "demo", path: "/demo" },
   { slug: "contact", name: "Contact", metaSlug: "contact", path: "/contact" },
   { slug: "faqs", name: "FAQs", metaSlug: "faqs", path: "/faqs" },
+  { slug: "glossary", name: "Glossary", metaSlug: "glossary", path: "/glossary" },
   { slug: "brand-os", name: "BrandOS", metaSlug: "brand-os", path: "/brand-os" },
   { slug: "site-ops", name: "SiteOps", metaSlug: "site-ops", path: "/site-ops" },
 ];
@@ -179,6 +181,7 @@ const Backend = () => {
   const currentPage = ALL_PAGES.find((p) => p.slug === selectedPage);
   const hasFormSettings = selectedPage === "demo" || selectedPage === "contact";
   const isFaqsPage = selectedPage === "faqs";
+  const isGlossaryPage = selectedPage === "glossary";
 
   const renderContent = () => {
     if (isSeoSection) {
@@ -197,6 +200,8 @@ const Backend = () => {
     if (isTeamSection) return <TeamEditor />;
 
     if (isFaqsPage) return <FAQsEditor />;
+
+    if (isGlossaryPage) return <GlossaryEditor />;
 
     if (hasFormSettings) {
       return (

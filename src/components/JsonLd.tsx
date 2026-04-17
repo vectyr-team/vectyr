@@ -212,6 +212,35 @@ export const BreadcrumbListJsonLd = ({
   );
 };
 
+/** Renders DefinedTermSet JSON-LD from glossary terms. */
+export const DefinedTermSetJsonLd = ({
+  terms,
+}: {
+  terms: { term: string; definition: string }[];
+}) => {
+  if (!terms.length) return null;
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    name: "Vectyr Brand & BrandOS Glossary",
+    url: `${SITE_URL}/glossary`,
+    hasDefinedTerm: terms.map((t) => ({
+      "@type": "DefinedTerm",
+      name: t.term,
+      description: t.definition,
+      inDefinedTermSet: `${SITE_URL}/glossary`,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+};
+
 /** Renders FAQPage JSON-LD from an array of Q&A pairs. */
 export const FAQPageJsonLd = ({
   faqs,

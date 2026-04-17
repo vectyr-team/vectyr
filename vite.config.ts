@@ -31,6 +31,7 @@ export default defineConfig(async ({ mode }) => {
         "/brand-os",
         "/site-ops",
         "/faqs",
+        "/glossary",
         "/demo",
         "/contact",
         ...teamRoutes,
