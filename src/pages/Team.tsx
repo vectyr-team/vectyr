@@ -64,13 +64,14 @@ const Team = () => {
     @media (min-width: 1024px) { .team-grid { grid-template-columns: repeat(${desktopCols}, minmax(0, 1fr)); } }
   `;
 
-  const renderResponsiveGrid = (filteredMembers: typeof memberData) => (
+  const renderResponsiveGrid = (filteredMembers: typeof memberData, startIndex = 0) => (
     <div className="team-grid grid gap-6">
-      {filteredMembers.map((member) => (
+      {filteredMembers.map((member, i) => (
         <Link
           key={member.id}
           to={`/team/${member.slug}`}
-          className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded"
+          className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded opacity-0 animate-fade-in"
+          style={{ animationDelay: `${(startIndex + i) * 60}ms`, animationFillMode: "forwards" }}
         >
           <AspectRatio ratio={2 / 3} className="overflow-hidden rounded bg-card">
             {member.photo_url ? (
@@ -123,35 +124,43 @@ const Team = () => {
             <p className="text-muted-foreground font-mono text-sm">Loading...</p>
           ) : (
             <>
-              {deptData.length > 0 ? (
-                deptData.map((dept) => {
-                  const deptMembers = memberData
-                    .filter((m) => m.department_id === dept.id)
-                    .sort((a, b) => a.sort_order - b.sort_order);
-                  if (deptMembers.length === 0) return null;
-                  return (
-                    <section key={dept.id} className="mb-16">
-                      <h2 className="font-headline text-3xl text-foreground mb-6">{dept.name}</h2>
-                      {renderResponsiveGrid(deptMembers)}
-                    </section>
-                  );
-                })
-              ) : null}
-
-              {/* Unassigned members */}
               {(() => {
+                let runningIndex = 0;
+                const sections: JSX.Element[] = [];
+
+                if (deptData.length > 0) {
+                  deptData.forEach((dept) => {
+                    const deptMembers = memberData
+                      .filter((m) => m.department_id === dept.id)
+                      .sort((a, b) => a.sort_order - b.sort_order);
+                    if (deptMembers.length === 0) return;
+                    const startIndex = runningIndex;
+                    runningIndex += deptMembers.length;
+                    sections.push(
+                      <section key={dept.id} className="mb-16">
+                        <h2 className="font-headline text-3xl text-foreground mb-6">{dept.name}</h2>
+                        {renderResponsiveGrid(deptMembers, startIndex)}
+                      </section>
+                    );
+                  });
+                }
+
                 const unassigned = memberData
                   .filter((m) => !m.department_id)
                   .sort((a, b) => a.sort_order - b.sort_order);
-                if (unassigned.length === 0) return null;
-                return (
-                  <section className="mb-16">
-                    {deptData.length > 0 && (
-                      <h2 className="font-headline text-3xl text-foreground mb-6">Team</h2>
-                    )}
-                    {renderResponsiveGrid(unassigned)}
-                  </section>
-                );
+                if (unassigned.length > 0) {
+                  const startIndex = runningIndex;
+                  sections.push(
+                    <section key="unassigned" className="mb-16">
+                      {deptData.length > 0 && (
+                        <h2 className="font-headline text-3xl text-foreground mb-6">Team</h2>
+                      )}
+                      {renderResponsiveGrid(unassigned, startIndex)}
+                    </section>
+                  );
+                }
+
+                return sections;
               })()}
 
               {memberData.length === 0 && (
