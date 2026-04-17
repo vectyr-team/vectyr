@@ -15,10 +15,10 @@ export default defineConfig(async ({ mode }) => {
   // the initial HTML response for crawlers that don't execute JS.
   if (mode === "production") {
     try {
-      const [{ default: prerender }, { default: JSDOMRenderer }, { getTeamMemberRoutes }] =
+      const [{ default: prerender }, { default: PuppeteerRenderer }, { getTeamMemberRoutes }] =
         await Promise.all([
           import("@prerenderer/rollup-plugin"),
-          import("@prerenderer/renderer-jsdom"),
+          import("@prerenderer/renderer-puppeteer"),
           import("./scripts/get-team-slugs"),
         ]);
 
@@ -41,8 +41,10 @@ export default defineConfig(async ({ mode }) => {
       plugins.push(
         prerender({
           routes,
-          renderer: new JSDOMRenderer({
+          renderer: new PuppeteerRenderer({
             renderAfterTime: 3000,
+            headless: true,
+            args: ["--no-sandbox", "--disable-setuid-sandbox"],
           }),
         })
       );
