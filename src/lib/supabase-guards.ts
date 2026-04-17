@@ -37,8 +37,21 @@ export function clearStoredAuthSession() {
   const key = getSupabaseAuthStorageKey();
   if (!key) return;
 
-  window.localStorage.removeItem(key);
-  window.sessionStorage.removeItem(key);
+  const prefix = key.replace(/auth-token$/, "");
+
+  for (let index = window.localStorage.length - 1; index >= 0; index -= 1) {
+    const storageKey = window.localStorage.key(index);
+    if (storageKey?.startsWith(prefix)) {
+      window.localStorage.removeItem(storageKey);
+    }
+  }
+
+  for (let index = window.sessionStorage.length - 1; index >= 0; index -= 1) {
+    const storageKey = window.sessionStorage.key(index);
+    if (storageKey?.startsWith(prefix)) {
+      window.sessionStorage.removeItem(storageKey);
+    }
+  }
 }
 
 const decodeBase64Url = (value: string) => {
