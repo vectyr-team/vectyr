@@ -43,7 +43,7 @@ export default defineConfig(async ({ mode }) => {
           routes,
           renderer: new PuppeteerRenderer({
             renderAfterTime: 3000,
-            headless: "new",
+            headless: true,
             args: ["--no-sandbox", "--disable-setuid-sandbox"],
           }),
         })
