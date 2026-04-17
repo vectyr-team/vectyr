@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import SEOHead from "@/components/SEOHead";
 import { DefinedTermSetJsonLd } from "@/components/JsonLd";
 import { usePageMeta } from "@/hooks/use-seo-data";
+import { withTimeout } from "@/lib/supabase-guards";
 
 interface GlossaryTerm {
   id: string;
@@ -18,15 +19,37 @@ interface GlossaryTerm {
 const Glossary = () => {
   const [terms, setTerms] = useState<GlossaryTerm[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState(false);
   const pageMeta = usePageMeta("glossary");
 
   useEffect(() => {
+    let isActive = true;
+
     const fetchTerms = async () => {
-      const { data } = await supabase.from("glossary_terms").select("*").order("sort_order", { ascending: true });
-      if (data) setTerms(data);
-      setLoading(false);
+      try {
+        const { data, error } = await withTimeout(
+          supabase.from("glossary_terms").select("*").order("sort_order", { ascending: true }),
+          8000,
+          "Timed out loading glossary terms"
+        );
+
+        if (error) throw error;
+        if (isActive) setTerms(data ?? []);
+      } catch {
+        if (isActive) {
+          setTerms([]);
+          setLoadError(true);
+        }
+      } finally {
+        if (isActive) setLoading(false);
+      }
     };
-    fetchTerms();
+
+    void fetchTerms();
+
+    return () => {
+      isActive = false;
+    };
   }, []);
 
   return (
@@ -41,6 +64,8 @@ const Glossary = () => {
 
           {loading ? (
             <p className="text-muted-foreground font-body text-sm">Loading...</p>
+          ) : loadError ? (
+            <p className="text-muted-foreground font-body text-sm">Unable to load glossary terms right now.</p>
           ) : terms.length === 0 ? (
             <p className="text-muted-foreground font-body text-sm">No terms yet.</p>
           ) : (

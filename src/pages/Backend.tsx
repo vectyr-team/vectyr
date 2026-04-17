@@ -7,10 +7,10 @@ import FAQsEditor from "@/components/backend/FAQsEditor";
 import GlossaryEditor from "@/components/backend/GlossaryEditor";
 import BusinessInfoEditor from "@/components/backend/BusinessInfoEditor";
 import PageMetaSection from "@/components/backend/PageMetaSection";
-
 import SchemaPreview from "@/components/backend/SchemaPreview";
 import AdminManager from "@/components/backend/AdminManager";
 import TeamEditor from "@/components/backend/TeamEditor";
+import { clearStoredAuthSession, withTimeout } from "@/lib/supabase-guards";
 
 interface PageSetting {
   id: string;
@@ -19,6 +19,9 @@ interface PageSetting {
   form_embed_code: string | null;
   form_script_url: string | null;
 }
+
+const SESSION_TIMEOUT_MS = 5000;
+const REQUEST_TIMEOUT_MS = 8000;
 
 const ALL_PAGES: { slug: string; name: string; metaSlug: string; path: string }[] = [
   { slug: "index", name: "Home", metaSlug: "home", path: "/" },
@@ -47,55 +50,113 @@ const Backend = () => {
   const [schemaPreviewVersion, setSchemaPreviewVersion] = useState(0);
   const navigate = useNavigate();
 
+  const handleSessionFailure = () => {
+    clearStoredAuthSession();
+    setSession(null);
+    setIsAdmin(false);
+    navigate("/backend/login");
+  };
+
   const checkAdminRole = async (userId: string) => {
-    const { data } = await supabase.rpc("has_role", {
-      _user_id: userId,
-      _role: "admin",
-    });
-    if (!data) {
-      navigate("/backend/login");
+    try {
+      const { data, error } = await withTimeout(
+        supabase.rpc("has_role", {
+          _user_id: userId,
+          _role: "admin",
+        }),
+        REQUEST_TIMEOUT_MS,
+        "Admin check timed out"
+      );
+
+      if (error) throw error;
+
+      if (!data) {
+        setIsAdmin(false);
+        navigate("/backend/login");
+        return false;
+      }
+
+      setIsAdmin(true);
+      return true;
+    } catch {
+      handleSessionFailure();
       return false;
     }
-    setIsAdmin(true);
-    return true;
   };
 
   useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-      if (!session) {
-        navigate("/backend/login");
+    let isActive = true;
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, nextSession) => {
+      if (!isActive) return;
+
+      setSession(nextSession);
+
+      if (!nextSession) {
+        handleSessionFailure();
         setLoading(false);
         return;
       }
-      // Defer Supabase calls to avoid deadlock inside the auth callback
+
+      setLoading(true);
       setTimeout(() => {
-        checkAdminRole(session.user.id).finally(() => setLoading(false));
+        checkAdminRole(nextSession.user.id).finally(() => {
+          if (isActive) setLoading(false);
+        });
       }, 0);
     });
 
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      if (!session) {
-        navigate("/backend/login");
-        setLoading(false);
-        return;
-      }
-      checkAdminRole(session.user.id).finally(() => setLoading(false));
-    });
+    const syncSession = async () => {
+      try {
+        const { data: { session: nextSession } } = await withTimeout(
+          supabase.auth.getSession(),
+          SESSION_TIMEOUT_MS,
+          "Session check timed out"
+        );
 
-    return () => subscription.unsubscribe();
+        if (!isActive) return;
+
+        setSession(nextSession);
+
+        if (!nextSession) {
+          handleSessionFailure();
+          return;
+        }
+
+        await checkAdminRole(nextSession.user.id);
+      } catch {
+        if (isActive) handleSessionFailure();
+      } finally {
+        if (isActive) setLoading(false);
+      }
+    };
+
+    void syncSession();
+
+    return () => {
+      isActive = false;
+      subscription.unsubscribe();
+    };
   }, [navigate]);
 
   useEffect(() => {
     if (session) {
-      fetchPageSettings();
+      void fetchPageSettings();
     }
   }, [session]);
 
   const fetchPageSettings = async () => {
-    const { data } = await supabase.from("page_settings").select("*");
-    if (data) setPageSettings(data);
+    try {
+      const { data, error } = await withTimeout(
+        supabase.from("page_settings").select("*"),
+        REQUEST_TIMEOUT_MS,
+        "Timed out loading page settings"
+      );
+      if (error) throw error;
+      if (data) setPageSettings(data);
+    } catch {
+      setPageSettings([]);
+    }
   };
 
   const handleSchemaPreviewRefresh = () => {
@@ -103,7 +164,8 @@ const Backend = () => {
   };
 
   const handleLogout = async () => {
-    await supabase.auth.signOut();
+    clearStoredAuthSession();
+    await supabase.auth.signOut({ scope: "local" }).catch(() => undefined);
     navigate("/backend/login");
   };
 
@@ -118,7 +180,6 @@ const Backend = () => {
               </clipPath>
             </defs>
 
-            {/* Static hex outline */}
             <polygon
               points="50,5 91,27.5 91,72.5 50,95 9,72.5 9,27.5"
               fill="none"
@@ -126,7 +187,6 @@ const Backend = () => {
               strokeWidth="3"
             />
 
-            {/* Animated scan bar inside */}
             <g clipPath="url(#hex-clip)">
               <rect x="0" y="0" width="100" height="3" fill="hsl(var(--primary))">
                 <animate
@@ -147,7 +207,6 @@ const Backend = () => {
                 />
               </rect>
 
-              {/* Pulsing core dot */}
               <circle cx="50" cy="50" r="3" fill="hsl(var(--primary))">
                 <animate
                   attributeName="r"
@@ -198,9 +257,7 @@ const Backend = () => {
     }
 
     if (isTeamSection) return <TeamEditor />;
-
     if (isFaqsPage) return <FAQsEditor />;
-
     if (isGlossaryPage) return <GlossaryEditor />;
 
     if (hasFormSettings) {

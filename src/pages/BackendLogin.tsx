@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import vectyrLogo from "@/assets/vectyr-logo.svg";
+import { clearStoredAuthSession, getErrorMessage, withTimeout } from "@/lib/supabase-guards";
 
 const BackendLogin = () => {
   const [email, setEmail] = useState("");
@@ -15,13 +16,22 @@ const BackendLogin = () => {
     setLoading(true);
     setError("");
 
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    try {
+      clearStoredAuthSession();
+      await supabase.auth.signOut({ scope: "local" }).catch(() => undefined);
 
-    if (error) {
-      setError(error.message);
-      setLoading(false);
-    } else {
+      const { error } = await withTimeout(
+        supabase.auth.signInWithPassword({ email, password }),
+        8000,
+        "Sign in timed out. Please try again."
+      );
+
+      if (error) throw error;
       navigate("/backend");
+    } catch (err) {
+      setError(getErrorMessage(err, "Unable to sign in right now."));
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -58,7 +68,7 @@ const BackendLogin = () => {
           </div>
 
           {error && (
-            <p className="text-red-500 text-sm font-body">{error}</p>
+            <p className="text-destructive text-sm font-body">{error}</p>
           )}
 
           <button
