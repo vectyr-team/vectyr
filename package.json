@@ -18,6 +18,7 @@
     "@dnd-kit/utilities": "^3.2.2",
     "@hookform/resolvers": "^3.10.0",
     "@iconify/react": "^6.0.2",
+    "@prerenderer/renderer-jsdom": "^1.1.9",
     "@prerenderer/renderer-puppeteer": "^1.2.4",
     "@prerenderer/rollup-plugin": "^0.3.12",
     "@radix-ui/react-accordion": "^1.2.11",
