@@ -22,10 +22,7 @@ const Glossary = () => {
 
   useEffect(() => {
     const fetchTerms = async () => {
-      const { data } = await supabase
-        .from("glossary_terms")
-        .select("*")
-        .order("sort_order", { ascending: true });
+      const { data } = await supabase.from("glossary_terms").select("*").order("sort_order", { ascending: true });
       if (data) setTerms(data);
       setLoading(false);
     };
@@ -39,12 +36,8 @@ const Glossary = () => {
         <SEOHead {...pageMeta} />
         <DefinedTermSetJsonLd terms={terms} />
         <div className="max-w-3xl mx-auto px-6 pt-32 pb-24">
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-4 block">
-            Glossary
-          </span>
-          <h1 className="font-headline text-5xl md:text-7xl font-normal text-foreground mb-12">
-            Brand & BrandOS Terminology
-          </h1>
+          <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-4 block">Glossary</span>
+          <h1 className="font-headline text-5xl md:text-7xl font-normal text-foreground mb-12">Vectyr Terminology</h1>
 
           {loading ? (
             <p className="text-muted-foreground font-body text-sm">Loading...</p>
@@ -74,10 +67,11 @@ const Glossary = () => {
         <section className="px-6 py-16 md:py-[80px]" style={{ backgroundColor: "#F5F5F5" }}>
           <div className="mx-auto max-w-3xl flex flex-col items-center text-center">
             <h2 className="font-headline text-3xl md:text-5xl font-normal" style={{ color: "#090909" }}>
-              Want to See It in Action?
+              See a Demo of BrandOS
             </h2>
             <p className="mt-4 max-w-xl font-body text-base leading-relaxed" style={{ color: "#6B6B6B" }}>
-              Book a free demo of Vectyr BrandOS and see how these concepts come together in a real brand operating system.
+              Book a free demo of Vectyr BrandOS and see how these concepts come together in a real brand operating
+              system.
             </p>
             <a href="/demo" className="mt-8">
               <Button size="lg">Book a Demo</Button>
