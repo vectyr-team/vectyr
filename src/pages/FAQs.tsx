@@ -71,8 +71,13 @@ const FAQs = () => {
           <p className="text-muted-foreground font-body text-sm">Loading...</p>
         ) : (
           <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq) => (
-              <AccordionItem key={faq.id} value={faq.id} className="border-border">
+            {faqs.map((faq, i) => (
+              <AccordionItem
+                key={faq.id}
+                value={faq.id}
+                className="border-border opacity-0 animate-fade-in"
+                style={{ animationDelay: `${i * 60}ms` }}
+              >
                 <AccordionTrigger className="font-body text-left text-foreground hover:no-underline py-6 text-lg">
                   {faq.question}
                 </AccordionTrigger>
