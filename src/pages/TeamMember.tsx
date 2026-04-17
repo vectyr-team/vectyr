@@ -82,9 +82,9 @@ const TeamMember = () => {
           </Link>
 
           {/* Two-column layout */}
-          <div className="grid md:grid-cols-[minmax(0,360px)_1fr] gap-10 md:gap-16 items-start">
+          <div className="grid md:grid-cols-[minmax(0,300px)_1fr] lg:grid-cols-[minmax(0,360px)_1fr] gap-10 md:gap-12 lg:gap-16 items-start">
             {/* Image */}
-            <div className="w-full max-w-[280px] md:max-w-none">
+            <div className="w-full max-w-[200px] sm:max-w-[240px] md:max-w-none">
               <AspectRatio ratio={2 / 3} className="overflow-hidden rounded bg-card">
                 {member.photo_url ? (
                   <img
