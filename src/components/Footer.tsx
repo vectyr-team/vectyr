@@ -53,6 +53,7 @@ const Footer = () => {
               { label: "About", to: "/about" },
               { label: "Team", to: "/team" },
               { label: "FAQs", to: "/faqs" },
+              { label: "Glossary", to: "/glossary" },
             ].map((link) => (
               <Link
                 key={link.to}
