@@ -1,11 +1,10 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+import { supabase } from "@/integrations/supabase/client";
 import { clearStoredAuthSession, scrubInvalidStoredAuthSession, withTimeout } from "@/lib/supabase-guards";
 
 scrubInvalidStoredAuthSession();
-
-const { supabase } = await import("@/integrations/supabase/client");
 
 const rootElement = document.getElementById("root");
 
