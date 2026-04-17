@@ -64,13 +64,14 @@ const Team = () => {
     @media (min-width: 1024px) { .team-grid { grid-template-columns: repeat(${desktopCols}, minmax(0, 1fr)); } }
   `;
 
-  const renderResponsiveGrid = (filteredMembers: typeof memberData) => (
+  const renderResponsiveGrid = (filteredMembers: typeof memberData, startIndex = 0) => (
     <div className="team-grid grid gap-6">
-      {filteredMembers.map((member) => (
+      {filteredMembers.map((member, i) => (
         <Link
           key={member.id}
           to={`/team/${member.slug}`}
-          className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded"
+          className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded opacity-0 animate-fade-in"
+          style={{ animationDelay: `${(startIndex + i) * 60}ms`, animationFillMode: "forwards" }}
         >
           <AspectRatio ratio={2 / 3} className="overflow-hidden rounded bg-card">
             {member.photo_url ? (
