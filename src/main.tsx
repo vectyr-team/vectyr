@@ -1,10 +1,6 @@
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
 import "./index.css";
-import { supabase } from "@/integrations/supabase/client";
 import { clearStoredAuthSession, scrubInvalidStoredAuthSession, withTimeout } from "@/lib/supabase-guards";
-
-scrubInvalidStoredAuthSession();
 
 const rootElement = document.getElementById("root");
 
@@ -15,6 +11,13 @@ if (!rootElement) {
 const root = createRoot(rootElement);
 
 const startApp = async () => {
+  scrubInvalidStoredAuthSession();
+
+  const [{ default: App }, { supabase }] = await Promise.all([
+    import("./App.tsx"),
+    import("@/integrations/supabase/client"),
+  ]);
+
   try {
     await withTimeout(supabase.auth.getSession(), 5000, "Session restore timed out");
   } catch {
