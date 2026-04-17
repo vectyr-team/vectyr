@@ -4,19 +4,76 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  server: {
-    host: "::",
-    port: 8080,
-    hmr: {
-      overlay: false,
+export default defineConfig(async ({ mode }) => {
+  const plugins: any[] = [
+    react(),
+    mode === "development" && componentTagger(),
+  ];
+
+  // Prerender for production builds only — generates static HTML per route
+  // so JSON-LD (and other React-injected head/body content) is present in
+  // the initial HTML response for crawlers that don't execute JS.
+  if (mode === "production") {
+    try {
+      const [{ default: prerender }, { default: PuppeteerRenderer }, { getTeamMemberRoutes }] =
+        await Promise.all([
+          import("@prerenderer/rollup-plugin"),
+          import("@prerenderer/renderer-puppeteer"),
+          import("./scripts/get-team-slugs"),
+        ]);
+
+      const teamRoutes = await getTeamMemberRoutes();
+
+      const routes = [
+        "/",
+        "/about",
+        "/team",
+        "/brand-os",
+        "/site-ops",
+        "/faqs",
+        "/demo",
+        "/contact",
+        ...teamRoutes,
+        // NOTE: /backend and /backend/login intentionally excluded —
+        // admin-only, must remain client-rendered and unindexed.
+      ];
+
+      plugins.push(
+        prerender({
+          routes,
+          renderer: new PuppeteerRenderer({
+            renderAfterTime: 3000,
+            headless: "new",
+            args: ["--no-sandbox", "--disable-setuid-sandbox"],
+          }),
+        })
+      );
+    } catch (err) {
+      console.warn("[vite] Prerender plugin not loaded:", err);
+    }
+  }
+
+  return {
+    server: {
+      host: "::",
+      port: 8080,
+      hmr: {
+        overlay: false,
+      },
     },
-  },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+    plugins: plugins.filter(Boolean),
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
+      },
+      dedupe: [
+        "react",
+        "react-dom",
+        "react/jsx-runtime",
+        "react/jsx-dev-runtime",
+        "@tanstack/react-query",
+        "@tanstack/query-core",
+      ],
     },
-    dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime", "@tanstack/react-query", "@tanstack/query-core"],
-  },
-}));
+  };
+});
