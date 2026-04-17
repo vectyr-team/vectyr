@@ -198,7 +198,7 @@ const Header = () => {
       {/* Mobile fullscreen menu */}
       {isMobile && (
         <div
-          className={`fixed inset-0 z-40 bg-background flex flex-col items-center justify-center transition-all duration-500 ${
+          className={`fixed inset-0 z-40 bg-background flex flex-col items-center justify-start pt-32 transition-all duration-500 ${
             menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
         >
@@ -208,7 +208,7 @@ const Header = () => {
                 key={link.to}
                 to={link.to}
                 onClick={() => setMenuOpen(false)}
-                className={`font-headline text-5xl uppercase tracking-normal text-foreground hover:text-accent transition-all duration-500 py-4 ${
+                className={`font-headline text-4xl uppercase tracking-normal text-foreground hover:text-accent transition-all duration-500 py-3 ${
                   menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: menuOpen ? `${150 + i * 100}ms` : "0ms" }}
