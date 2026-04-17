@@ -41,10 +41,8 @@ export default defineConfig(async ({ mode }) => {
       plugins.push(
         prerender({
           routes,
-          renderer: new PuppeteerRenderer({
+          renderer: new JSDOMRenderer({
             renderAfterTime: 3000,
-            headless: true,
-            args: ["--no-sandbox", "--disable-setuid-sandbox"],
           }),
         })
       );
