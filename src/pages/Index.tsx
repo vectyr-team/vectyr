@@ -84,7 +84,7 @@ const Index = () => {
               output that sounds like everybody else.
             </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-4" style={heroStyle(3)}>
+            <div className="mt-10 flex flex-row gap-4" style={heroStyle(3)}>
               <a href="/demo">
                 <Button size="lg">Book a Demo</Button>
               </a>
