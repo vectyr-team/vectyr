@@ -153,7 +153,7 @@ const Team = () => {
                   sections.push(
                     <section key="unassigned" className="mb-16">
                       {deptData.length > 0 && (
-                        <h2 className="font-headline text-3xl text-foreground mb-6">Team</h2>
+                        <h2 className="font-headline text-2xl md:text-3xl text-foreground mb-6">Team</h2>
                       )}
                       {renderResponsiveGrid(unassigned, startIndex)}
                     </section>
