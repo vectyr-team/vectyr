@@ -62,12 +62,12 @@ export function useTeamData() {
     retry: false,
     queryFn: async () => {
       const { data, error } = await withTimeout(
-        supabase.from("team_grid_settings").select("*").limit(1).single(),
+        supabase.from("team_grid_settings").select("*").limit(1).maybeSingle(),
         QUERY_TIMEOUT_MS,
         "Timed out loading team grid settings"
       );
       if (error) throw error;
-      return data as GridSettings;
+      return (data ?? null) as GridSettings | null;
     },
   });
 
