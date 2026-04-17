@@ -74,6 +74,20 @@ export default defineConfig(async ({ mode }) => {
         overlay: false,
       },
     },
+    // 'esnext' is required because the Supabase JS client (and our startup
+    // bootstrap) rely on top-level await. The prerender plugin's default
+    // target ("chrome87" etc.) does not support TLA and breaks the build.
+    build: {
+      target: "esnext",
+    },
+    esbuild: {
+      target: "esnext",
+    },
+    optimizeDeps: {
+      esbuildOptions: {
+        target: "esnext",
+      },
+    },
     plugins: plugins.filter(Boolean),
     resolve: {
       alias: {
