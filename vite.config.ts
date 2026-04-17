@@ -38,14 +38,26 @@ export default defineConfig(async ({ mode }) => {
         // admin-only, must remain client-rendered and unindexed.
       ];
 
+      // Vercel build environments lack the system libs that bundled
+      // Chromium needs. Use @sparticuz/chromium when running on Vercel
+      // (detected via VERCEL env var), otherwise fall back to puppeteer's
+      // bundled Chromium for local builds.
+      const rendererOptions: any = {
+        renderAfterTime: 3000,
+        headless: true,
+        args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+      };
+
+      if (process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME) {
+        const chromium = (await import("@sparticuz/chromium")).default;
+        rendererOptions.executablePath = await chromium.executablePath();
+        rendererOptions.args = [...chromium.args, "--no-sandbox", "--disable-setuid-sandbox"];
+      }
+
       plugins.push(
         prerender({
           routes,
-          renderer: new PuppeteerRenderer({
-            renderAfterTime: 3000,
-            headless: true,
-            args: ["--no-sandbox", "--disable-setuid-sandbox"],
-          }),
+          renderer: new PuppeteerRenderer(rendererOptions),
         })
       );
     } catch (err) {
