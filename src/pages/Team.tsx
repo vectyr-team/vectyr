@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { usePageMeta } from "@/hooks/use-seo-data";
-import { useTeamData, getOrderedMembers } from "@/hooks/use-team-data";
+import { useTeamData } from "@/hooks/use-team-data";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { BreadcrumbListJsonLd } from "@/components/JsonLd";
 
@@ -14,50 +14,12 @@ const Team = () => {
   const deptData = departments.data ?? [];
   const memberData = members.data ?? [];
   const grid = gridSettings.data;
-
-  const gridColsStyle = (cols: number) => ({
-    gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
-  });
+  const loadError = departments.error || members.error || gridSettings.error;
 
   const desktopCols = grid?.desktop_columns ?? 4;
   const tabletCols = grid?.tablet_columns ?? 3;
   const mobileCols = grid?.mobile_columns ?? 2;
 
-  const renderGrid = (filteredMembers: typeof memberData) => (
-    <div
-      className="grid gap-6"
-      style={gridColsStyle(mobileCols)}
-    >
-      {filteredMembers.map((member) => (
-        <Link
-          key={member.id}
-          to={`/team/${member.slug}`}
-          className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded"
-        >
-          <AspectRatio ratio={2 / 3} className="overflow-hidden rounded bg-card">
-            {member.photo_url ? (
-              <img
-                src={member.photo_url}
-                alt={`${member.name}, ${member.title}`}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-500 ease-out will-change-transform group-hover:scale-105"
-              />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center text-muted-foreground font-mono text-xs">
-                No Photo
-              </div>
-            )}
-          </AspectRatio>
-          <div className="mt-3">
-            <p className="font-body font-semibold text-foreground text-sm md:text-base">{member.name}</p>
-            <p className="font-mono text-xs text-muted-foreground mt-0.5 uppercase tracking-[1px]">{member.title}</p>
-          </div>
-        </Link>
-      ))}
-    </div>
-  );
-
-  // CSS to handle responsive columns via media queries
   const responsiveGridCSS = `
     .team-grid { grid-template-columns: repeat(${mobileCols}, minmax(0, 1fr)); }
     @media (min-width: 768px) { .team-grid { grid-template-columns: repeat(${tabletCols}, minmax(0, 1fr)); } }
@@ -122,6 +84,8 @@ const Team = () => {
 
           {isLoading ? (
             <p className="text-muted-foreground font-mono text-sm">Loading...</p>
+          ) : loadError ? (
+            <p className="text-muted-foreground font-body text-base">Unable to load the team right now.</p>
           ) : (
             <>
               {(() => {
@@ -173,7 +137,6 @@ const Team = () => {
         </div>
       </main>
 
-      
       <Footer />
     </div>
   );

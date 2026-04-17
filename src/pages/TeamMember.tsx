@@ -10,8 +10,9 @@ import { Icon } from "@iconify/react";
 
 const TeamMember = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { data: member, isLoading: memberLoading } = useTeamMemberBySlug(slug || "");
+  const teamMemberQuery = useTeamMemberBySlug(slug || "");
   const { departments, members } = useTeamData();
+  const { data: member } = teamMemberQuery;
   const { data: business } = useBusinessInfo();
 
   const allOrdered = departments.data && members.data
@@ -26,7 +27,8 @@ const TeamMember = () => {
     ? allOrdered[currentIndex + 1]
     : allOrdered.length > 0 ? allOrdered[0] : null;
 
-  const isLoading = memberLoading || departments.isLoading || members.isLoading;
+  const isLoading = teamMemberQuery.isLoading || departments.isLoading || members.isLoading;
+  const loadError = teamMemberQuery.error || departments.error || members.error;
 
   if (isLoading) {
     return (
@@ -34,6 +36,23 @@ const TeamMember = () => {
         <Header />
         <main className="flex-1 flex items-center justify-center">
           <span className="text-muted-foreground font-mono text-sm">Loading...</span>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (loadError) {
+    return (
+      <div className="flex flex-col min-h-screen bg-background">
+        <Header />
+        <main className="flex-1 flex items-center justify-center px-6">
+          <div className="text-center">
+            <p className="text-foreground font-body text-lg mb-4">Unable to load this team member right now.</p>
+            <Link to="/team" className="text-primary font-mono text-sm hover:underline">
+              ← Back to Team
+            </Link>
+          </div>
         </main>
         <Footer />
       </div>
@@ -72,7 +91,6 @@ const TeamMember = () => {
 
       <main className="flex-1 px-6 pt-28 pb-16 md:pt-44 md:pb-24 bg-black02">
         <div className="mx-auto max-w-[1300px]">
-          {/* Back link */}
           <Link
             to="/team"
             className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors mb-10"
@@ -81,9 +99,7 @@ const TeamMember = () => {
             Back to Team
           </Link>
 
-          {/* Two-column layout */}
           <div className="grid md:grid-cols-[minmax(0,300px)_1fr] lg:grid-cols-[minmax(0,360px)_1fr] gap-10 md:gap-12 lg:gap-16 items-start">
-            {/* Image */}
             <div className="w-full max-w-[200px] sm:max-w-[240px] md:max-w-none">
               <AspectRatio ratio={2 / 3} className="overflow-hidden rounded bg-card">
                 {member.photo_url ? (
@@ -100,7 +116,6 @@ const TeamMember = () => {
               </AspectRatio>
             </div>
 
-            {/* Info */}
             <div>
               <h1 className="font-headline text-5xl md:text-6xl text-foreground leading-[0.95] mb-2">
                 {member.name.toUpperCase()}
@@ -116,7 +131,6 @@ const TeamMember = () => {
             </div>
           </div>
 
-          {/* Prev/Next navigation */}
           <div className="mt-16 pt-8 border-t border-border flex items-center justify-between">
             {prevMember ? (
               <Link

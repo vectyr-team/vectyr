@@ -1,5 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import { withTimeout } from "@/lib/supabase-guards";
+
+const QUERY_TIMEOUT_MS = 8000;
 
 export interface Department {
   id: string;
@@ -28,11 +31,13 @@ export interface GridSettings {
 export function useTeamData() {
   const departments = useQuery({
     queryKey: ["departments"],
+    retry: false,
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("departments")
-        .select("*")
-        .order("sort_order");
+      const { data, error } = await withTimeout(
+        supabase.from("departments").select("*").order("sort_order"),
+        QUERY_TIMEOUT_MS,
+        "Timed out loading departments"
+      );
       if (error) throw error;
       return data as Department[];
     },
@@ -40,11 +45,13 @@ export function useTeamData() {
 
   const members = useQuery({
     queryKey: ["team_members"],
+    retry: false,
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("team_members")
-        .select("*")
-        .order("sort_order");
+      const { data, error } = await withTimeout(
+        supabase.from("team_members").select("*").order("sort_order"),
+        QUERY_TIMEOUT_MS,
+        "Timed out loading team members"
+      );
       if (error) throw error;
       return data as TeamMember[];
     },
@@ -52,12 +59,13 @@ export function useTeamData() {
 
   const gridSettings = useQuery({
     queryKey: ["team_grid_settings"],
+    retry: false,
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("team_grid_settings")
-        .select("*")
-        .limit(1)
-        .single();
+      const { data, error } = await withTimeout(
+        supabase.from("team_grid_settings").select("*").limit(1).single(),
+        QUERY_TIMEOUT_MS,
+        "Timed out loading team grid settings"
+      );
       if (error) throw error;
       return data as GridSettings;
     },
@@ -69,33 +77,34 @@ export function useTeamData() {
 export function useTeamMemberBySlug(slug: string) {
   return useQuery({
     queryKey: ["team_member", slug],
+    enabled: !!slug,
+    retry: false,
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("team_members")
-        .select("*")
-        .eq("slug", slug)
-        .single();
+      const { data, error } = await withTimeout(
+        supabase.from("team_members").select("*").eq("slug", slug).single(),
+        QUERY_TIMEOUT_MS,
+        "Timed out loading team member"
+      );
       if (error) throw error;
       return data as TeamMember;
     },
-    enabled: !!slug,
   });
 }
 
 /** Returns a flat ordered list of all members across departments in display order */
 export function getOrderedMembers(departments: Department[], members: TeamMember[]): TeamMember[] {
   const result: TeamMember[] = [];
-  // Members with departments, in department order
   for (const dept of departments) {
     const deptMembers = members
       .filter((m) => m.department_id === dept.id)
       .sort((a, b) => a.sort_order - b.sort_order);
     result.push(...deptMembers);
   }
-  // Members without a department at the end
+
   const unassigned = members
     .filter((m) => !m.department_id)
     .sort((a, b) => a.sort_order - b.sort_order);
   result.push(...unassigned);
+
   return result;
 }
