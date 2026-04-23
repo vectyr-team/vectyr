@@ -1,5 +1,22 @@
 {
   "rewrites": [
-    { "source": "/((?!.*\\..*|api/.*).*)", "destination": "/index.html" }
+    { "source": "/(((?!.*\\..*)api/.*).*)", "destination": "/index.html" }
+  ],
+  "redirects": [
+    {
+      "source": "/os",
+      "destination": "https://buy.stripe.com/fZu3cudm42xp6GZaE40ZW0p",
+      "permanent": true
+    },
+    {
+      "source": "/siteops",
+      "destination": "https://buy.stripe.com/9B67sK81Kdc3fdv3bC0ZW0r",
+      "permanent": true
+    },
+    {
+      "source": "/pulse",
+      "destination": "https://buy.stripe.com/8x2fZgfucfkb2qJ7rS0ZW0q",
+      "permanent": true
+    }
   ]
 }
