@@ -59,8 +59,8 @@ const Index = () => {
         <div className="absolute inset-0 bg-background/70" />
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-[1300px] mx-auto flex items-center justify-between gap-12">
-          <div>
+        <div className="relative z-10 w-full max-w-[1300px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+          <div className="w-full">
             <span
               className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block"
               style={heroStyle(0)}
