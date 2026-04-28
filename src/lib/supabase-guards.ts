@@ -8,7 +8,7 @@ export class SupabaseRequestTimeoutError extends Error {
 }
 
 export async function withTimeout<T>(
-  promise: Promise<T>,
+  promise: PromiseLike<T>,
   timeoutMs = DEFAULT_TIMEOUT_MS,
   message = "Request timed out"
 ): Promise<T> {
@@ -16,7 +16,7 @@ export async function withTimeout<T>(
 
   try {
     return await Promise.race([
-      promise,
+      Promise.resolve(promise),
       new Promise<never>((_, reject) => {
         timer = setTimeout(() => reject(new SupabaseRequestTimeoutError(message)), timeoutMs);
       }),
