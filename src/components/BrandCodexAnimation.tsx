@@ -1,7 +1,7 @@
 const BrandCodexAnimation = ({ visible }: { visible: boolean }) => {
   return (
     <div
-      className="w-full max-w-[640px] mx-auto lg:mx-0 rounded-lg border border-border/40 bg-card/80 backdrop-blur-sm overflow-hidden"
+      className="w-full max-w-[640px] lg:max-w-[460px] mx-auto lg:mx-0 rounded-lg border border-border/40 bg-card/80 backdrop-blur-sm overflow-hidden"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(20px)",
