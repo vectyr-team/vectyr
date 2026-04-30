@@ -73,13 +73,13 @@ const Footer = () => {
               { label: "BrandPulse", to: "https://vectyr.com/pulse" },
               { label: "SiteOps", to: "https://vectyr.com/site-ops" },
             ].map((link) => (
-              <Link
+              <a
                 key={link.to}
-                to={link.to}
+                href={link.to}
                 className="font-body text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </nav>
 
