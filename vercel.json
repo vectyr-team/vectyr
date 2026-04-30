@@ -1,7 +1,4 @@
 {
-  "rewrites": [
-    { "source": "/((?!api).*)", "destination": "/index.html" }
-  ],
   "redirects": [
     {
       "source": "/os",
@@ -18,5 +15,8 @@
       "destination": "https://buy.stripe.com/8x2fZgfucfkb2qJ7rS0ZW0q",
       "permanent": true
     }
+  ],
+  "rewrites": [
+    { "source": "/((?!api).*)", "destination": "/index.html" }
   ]
 }
