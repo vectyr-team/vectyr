@@ -214,61 +214,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* The Position */}
-        <section className="bg-card px-6 py-12 md:py-32">
-          <div className="mx-auto max-w-[1300px] grid gap-8 md:gap-16 lg:grid-cols-[1fr_1.5fr]">
-            {/* Left – sticky heading */}
-            <ScrollSection className="lg:sticky lg:top-24 lg:self-start">
-              <div className="flex items-center gap-4 mb-4 md:mb-10">
-                <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">OUR RANT</span>
-                <div className="h-px w-16 bg-muted-foreground/40" />
-              </div>
-
-              <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-                "Design first, strategy never" <span className="text-primary">must die</span>
-              </h2>
-            </ScrollSection>
-
-            {/* Right – long-form copy */}
-            <ScrollSection className="font-body text-base leading-relaxed text-muted-foreground space-y-6 scroll-animate-delay-2">
-              <p className="text-lg text-foreground font-semibold leading-relaxed">
-                The branding industry has been selling you the wrong thing in the wrong order for decades, and it has
-                been doing so with a smile and a proposal.
-              </p>
-
-              <p>
-                Agencies lead with logos. Platforms lead with templates. AI tools lead with speed. Everyone is selling
-                the output before anyone has earned the right to produce it. What you end up with is an expensive visual
-                identity and no idea what you actually stand for.
-              </p>
-
-              <p>
-                You've been winging it. Honestly? Hell of a run.&nbsp;But winging it doesn't scale, and somewhere in the
-                back of your head you already know that.
-              </p>
-
-              <p>
-                The brand that lives in your head isn't making it to your team, your vendors, or your AI tools. Every
-                dollar you spend on marketing is like driving with the parking brake on.
-              </p>
-
-              <p>That's not a people problem, that's an infrastructure problem.</p>
-
-              <p>
-                The clients who stay with us for five, ten, twenty years don't come back because the logo was good. They
-                come back because decisions got easier, hiring got clearer, and they stopped losing deals to competitors
-                they knew they were better than.
-              </p>
-
-              <p className="text-foreground font-semibold">
-                Vectyr is not for everyone. It's not for founders who want a logo and are willing to call that a brand.
-                It's for the founder who has already built something real and is done making excuses for why the outside
-                doesn't match the inside.
-              </p>
-            </ScrollSection>
-          </div>
-        </section>
-
         {/* Results / Testimonials */}
         <section className="relative bg-[#000000] px-6 py-12 md:py-32 overflow-hidden">
           <img
