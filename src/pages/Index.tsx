@@ -131,64 +131,114 @@ const Index = () => {
             <ScrollSection>
               {/* Overline with line */}
               <div className="flex items-center gap-4 mb-4 md:mb-10">
-                <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
-                  The System
+                <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary">
+                  // The Fix
                 </span>
                 <div className="h-px w-16 bg-muted-foreground/40" />
               </div>
 
-              <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
-                Extracted. Built. Installed.
-              </h2>
-
-              <p className="mt-4 md:mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
-                We build your brand strategy, structure it so your team and your AI tools can both actually use it, and
-                install it everywhere it needs to run before we hand anything over. Get a brand system that runs whether
-                you're in the room or not.
-              </p>
+              <div className="grid gap-8 md:gap-16 md:grid-cols-2 items-start">
+                <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+                  Three Problems.<br />
+                  Three Products.<br />
+                  Full Lifecycle.
+                </h2>
+                <div className="md:pt-4">
+                  <p className="font-body text-lg font-light leading-relaxed text-muted-foreground">
+                    Every business with a brand problem has the same three problems in sequence. Most engagements solve one and leave two behind.
+                  </p>
+                  <p className="mt-6 font-body text-lg font-semibold leading-relaxed text-foreground">
+                    Vectyr solves all three.
+                  </p>
+                </div>
+              </div>
             </ScrollSection>
 
             {/* Product cards */}
             <div className="mt-16 grid gap-px md:grid-cols-3">
               {[
                 {
-                  badge: "One Time",
-                  badgeStyle: "border border-border text-muted-foreground",
+                  problem: "Problem 01",
+                  problemDesc:
+                    "No strategy. The brand never existed as a documented system, or it's scattered across too many heads with no alignment.",
                   title: "Brand Codex",
-                  pricing: "$4,500  /  lifetime BrandOS access",
-                  desc: "Done-for-you brand strategy. Vectyr runs the extraction, synthesis, and AI installation. You bring the knowledge, we build the rest. One to two sessions of your time. ",
+                  desc: "The done-for-you brand strategy deliverable. We extract, synthesize, and structure your brand to the v3.3 standard, then install it in your AI tools before handoff.",
+                  features: [
+                    "Founder + stakeholder interviews",
+                    "VOC + competitive intel",
+                    "Built for humans and AI",
+                    "AI installation included",
+                  ],
+                  price: "$4,500",
+                  priceNote: "One-Time · Flat Fee",
                 },
                 {
-                  badge: "Included",
-                  badgeStyle: "border border-border text-muted-foreground",
+                  problem: "Problem 02",
+                  problemDesc:
+                    "Even when a strategy exists, it doesn't get used. There's no practical way to distribute it to everyone who needs it.",
                   title: "BrandOS",
-                  pricing: "os.vectyr.com  /  lifetime access",
-                  desc: "The platform where the Brand Codex lives, gets distributed, and gets accessed by everyone who needs it. Your team, your vendors, your AI tools. No more briefing from memory.",
+                  desc: "The platform where the Codex lives, gets distributed, and gets accessed by everyone who needs it — founders, employees, vendors, and every AI tool in the workflow.",
+                  features: [
+                    "Role-scoped access",
+                    "Centralized brand assets",
+                    "AI install assets one click away",
+                    "Version control + check-in",
+                  ],
+                  price: "Included",
+                  priceNote: "Lifetime · With Codex",
                 },
                 {
-                  badge: "Monthly",
-                  badgeStyle: "border border-border text-muted-foreground",
+                  problem: "Problem 03",
+                  problemDesc:
+                    "Even when a strategy is built and distributed, it goes stale. There's no system to keep it current as the business evolves.",
                   title: "BrandPulse",
-                  pricing: "$195 per month / no contracts",
-                  desc: "90-day brand check-ins to examine the performance of the brand. You can submit new info at any time so we can update the Brand Codex and avoid brand entropy and drift.",
+                  desc: "The active management subscription that institutionalizes Brand Discipline. Quarterly reviews, BPI reports, and advisory access keep the Codex alive.",
+                  features: [
+                    "Quarterly brand review",
+                    "Brand Performance Indicator",
+                    "Open-submission between cycles",
+                    "One advisory credit / quarter",
+                  ],
+                  price: "$195",
+                  priceNote: "Per Month · Cancel Anytime",
                 },
               ].map((card, i) => (
                 <ScrollSection
                   key={i}
                   className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1} border-l border-border/40`}
                 >
-                  <div>
-                    <span
-                      className={`inline-block px-3 py-1 font-mono text-sm uppercase tracking-[0.15em] rounded-sm ${card.badgeStyle}`}
-                    >
-                      {card.badge}
+                  <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary">
+                    {card.problem}
+                  </p>
+                  <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">
+                    {card.problemDesc}
+                  </p>
+
+                  <div className="h-px w-full my-8" style={{ backgroundColor: "#252525" }} />
+
+                  <h3 className="font-headline font-light text-3xl md:text-4xl leading-tight text-foreground">
+                    {card.title}
+                  </h3>
+                  <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">
+                    {card.desc}
+                  </p>
+
+                  <ul className="mt-6 space-y-2 flex-1">
+                    {card.features.map((feat, fi) => (
+                      <li key={fi} className="flex items-start gap-3 font-body text-base text-muted-foreground">
+                        <Icon icon="lucide:check" className="text-primary text-lg mt-1 shrink-0" />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-8 flex items-end justify-between gap-4">
+                    <span className="font-headline font-light text-4xl md:text-5xl text-foreground leading-none">
+                      {card.price}
                     </span>
-                    <h3 className="font-body font-semibold text-2xl leading-tight text-foreground mt-6">
-                      {card.title}
-                    </h3>
-                    <p className="mt-4 font-mono text-sm text-muted-foreground tracking-wide">{card.pricing}</p>
-                    <div className="h-px w-full my-4" style={{ backgroundColor: "#252525" }} />
-                    <p className="font-body text-base leading-relaxed text-muted-foreground">{card.desc}</p>
+                    <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground/60 text-right pb-1">
+                      {card.priceNote}
+                    </span>
                   </div>
                 </ScrollSection>
               ))}
