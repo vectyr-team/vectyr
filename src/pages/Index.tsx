@@ -72,10 +72,8 @@ const Index = () => {
                 className="mt-4 md:mt-8 max-w-[37rem] font-body text-base md:text-lg font-light leading-relaxed text-[#adadad]"
                 style={heroStyle(2)}
               >
-                We pull it out through a structured extraction process, combine it with market intelligence, customer
-                research, and structure all of it so humans and AI can both actually use it, and put it on a platform
-                your whole team can access from day one. Your job is showing up and telling us what you know. We handle
-                the rest.
+                We turn the messy, implicit brand knowledge in a founder’s mind into a clean, accessible, AI-ready
+                system that the whole organization can use without constant founder input.
               </p>
 
               <div className="mt-10 flex flex-row gap-4" style={heroStyle(3)}>
