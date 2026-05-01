@@ -138,7 +138,7 @@ const Index = () => {
               <div className="grid gap-8 md:gap-16 md:grid-cols-2 items-start">
                 <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
                   Three Problems
-                  <br>
+                  <br />
                   <span className="text-primary">Solved For Good.</span>
                 </h2>
                 <div className="md:pt-4">
