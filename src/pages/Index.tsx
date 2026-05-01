@@ -127,72 +127,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* The Full Lifecycle */}
-        <section className="bg-background px-6 py-12 md:py-32">
-          <div className="mx-auto max-w-[1300px]">
-            <ScrollSection>
-              {/* Overline with line */}
-              <div className="flex items-center gap-4 mb-4 md:mb-10">
-                <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
-                  The Full Lifecycle
-                </span>
-                <div className="h-px w-16 bg-muted-foreground/40" />
-              </div>
-
-              <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
-                Most Agencies Solve One Problem and Leave <span className="text-primary">Two Behind</span>
-              </h2>
-
-              <p className="mt-4 md:mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
-                Having a strategy is step one. Getting your team to use it is step two. Keeping it current is step
-                three. Vectyr uniquely solves all three.
-              </p>
-            </ScrollSection>
-
-            {/* Problem cards */}
-            <div className="mt-16 grid gap-px md:grid-cols-3">
-              {[
-                {
-                  num: "01",
-                  title: "No Strategy Exists",
-                  desc: "The brand lives in the founder's head, or has already fragmented across a team with no alignment. Everyone is doing their best. Nobody is working from the same source of deliberately articulated brand truth.",
-                  solved: "Brand Codex",
-                },
-                {
-                  num: "02",
-                  title: "Strategy Never Used",
-                  desc: "Even when a strategy exists, it just sits on a drive as a PDF or a doc waiting for someone to open it, read it, interpret it, and somehow turn it into action. That's not infrastructure, that's homework, and needless friction.",
-                  solved: "BrandOS Platform",
-                },
-                {
-                  num: "03",
-                  title: "Strategy That Goes Stale",
-                  desc: "Most brand strategies were built for the moment they were created and never touched again. The business evolves, the market shifts, but the strategy doesn't. Without a system to keep it current, you're back to winging it again.",
-                  solved: "BrandPulse",
-                },
-              ].map((card, i) => (
-                <ScrollSection
-                  key={i}
-                  className={`relative bg-card p-8 flex flex-col justify-between min-h-[280px] border-b-2 border-b-primary border-l border-border/40 scroll-animate-delay-${i + 1}`}
-                >
-                  <div>
-                    <span className="font-mono text-sm uppercase tracking-[0.25em] text-[#424242]">
-                      {card.num} / Problem
-                    </span>
-                    <h3 className="font-body font-semibold text-2xl leading-tight text-foreground mt-4">
-                      {card.title}
-                    </h3>
-                    <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">{card.desc}</p>
-                  </div>
-                  <p className="mt-4 font-mono uppercase tracking-[0.25em] text-primary text-xs">
-                    Solved by: {card.solved}
-                  </p>
-                </ScrollSection>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* The System */}
         <section className="relative bg-[#000000] px-6 py-12 md:py-32 overflow-hidden">
           <img
@@ -225,7 +159,7 @@ const Index = () => {
             <div className="mt-16 grid gap-px md:grid-cols-3">
               {[
                 {
-                  badge: "Start Here",
+                  badge: "One Time",
                   badgeStyle: "border border-border text-muted-foreground",
                   title: "Brand Codex",
                   pricing: "$4,500  /  lifetime BrandOS access",
