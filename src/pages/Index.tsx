@@ -185,7 +185,7 @@ const Index = () => {
                     "Version control + check-in",
                   ],
                   price: "Included",
-                  priceNote: "Lifetime · With Codex",
+                  priceNote: "INCLUDED / LIFETIME ACCESS",
                 },
                 {
                   problem: "Problem 03",
