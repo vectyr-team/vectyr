@@ -162,12 +162,12 @@ const Index = () => {
                   problemDesc:
                     "No strategy. The brand never existed as a documented system, or it's scattered across too many heads with no alignment.",
                   title: "Brand Codex",
-                  desc: "The done-for-you brand strategy deliverable. We extract, synthesize, and structure your brand to the v3.3 standard, then install it in your AI tools before handoff.",
+                  desc: "90-day brand check-ins to examine the performance of the brand. You can submit new info at any time so we can update the Brand Codex and avoid brand entropy and drift.",
                   features: [
                     "Founder + stakeholder interviews",
                     "VOC + competitive intel",
                     "Built for humans and AI",
-                    "AI installation included",
+                    "Team-wide AI installation",
                   ],
                   price: "$4,500",
                   priceNote: "One-Time · Flat Fee",
