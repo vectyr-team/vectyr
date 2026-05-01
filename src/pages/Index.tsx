@@ -164,12 +164,6 @@ const Index = () => {
                     "No strategy. The brand never existed as a documented system, or it's scattered across too many heads with no alignment.",
                   title: "Brand Codex",
                   desc: "90-day brand check-ins to examine the performance of the brand. You can submit new info at any time so we can update the Brand Codex and avoid brand entropy and drift.",
-                  features: [
-                    "Founder + stakeholder interviews",
-                    "VOC + competitive intel",
-                    "Built for humans and AI",
-                    "Team-wide AI installation",
-                  ],
                   priceNote: "$4,500 / One Time Fee",
                 },
                 {
@@ -178,12 +172,6 @@ const Index = () => {
                     "Even when a strategy exists, it doesn't get used. There's no practical way to distribute it to everyone who needs it.",
                   title: "BrandOS",
                   desc: "90-day brand check-ins to examine the performance of the brand. You can submit new info at any time so we can update the Brand Codex and avoid brand entropy and drift.",
-                  features: [
-                    "Role-scoped access",
-                    "Centralized brand assets",
-                    "AI install assets one click away",
-                    "Version control + check-in",
-                  ],
                   priceNote: "INCLUDED / LIFETIME ACCESS",
                 },
                 {
@@ -192,12 +180,6 @@ const Index = () => {
                     "Every strategy goes stale when something changes. There's no system to keep it current as the business evolves.",
                   title: "BrandPulse",
                   desc: "The active management subscription that institutionalizes Brand Discipline. Quarterly reviews, BPI reports, and advisory access keep the Codex alive.",
-                  features: [
-                    "Quarterly brand review",
-                    "Brand Performance Indicator",
-                    "Open-submission between cycles",
-                    "One advisory credit / quarter",
-                  ],
                   priceNote: "$195 / PER MONTH",
                 },
               ].map((card, i) => (
@@ -214,15 +196,6 @@ const Index = () => {
                     {card.title}
                   </h3>
                   <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">{card.desc}</p>
-
-                  <ul className="mt-6 space-y-2 flex-1">
-                    {card.features.map((feat, fi) => (
-                      <li key={fi} className="flex items-start gap-3 font-body text-base text-muted-foreground">
-                        <Icon icon="lucide:check" className="text-primary text-lg mt-1 shrink-0" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
 
                   <div className="mt-8 w-full">
                     <span className="block font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground/60 text-left">
