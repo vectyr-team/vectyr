@@ -170,8 +170,7 @@ const Index = () => {
                     "Built for humans and AI",
                     "Team-wide AI installation",
                   ],
-                  price: "$4,500",
-                  priceNote: "One Time Fee",
+                  priceNote: "$4,500 / One Time Fee",
                 },
                 {
                   problem: "Problem 02",
@@ -185,7 +184,6 @@ const Index = () => {
                     "AI install assets one click away",
                     "Version control + check-in",
                   ],
-                  price: "Included",
                   priceNote: "INCLUDED / LIFETIME ACCESS",
                 },
                 {
@@ -200,7 +198,6 @@ const Index = () => {
                     "Open-submission between cycles",
                     "One advisory credit / quarter",
                   ],
-                  price: "$195",
                   priceNote: "$195 / PER MONTH",
                 },
               ].map((card, i) => (
