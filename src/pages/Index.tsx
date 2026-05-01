@@ -281,7 +281,11 @@ const Index = () => {
                 className="font-headline font-light leading-[0.95] tracking-normal text-5xl md:text-6xl lg:text-7xl max-w-[830px]"
                 style={{ color: "#090909" }}
               >
-                Stop being the <span className="text-primary">only person</span> who knows.
+                Stop being
+                <br />
+                <span className="text-primary">the only person</span>
+                <br />
+                who knows.
               </h2>
 
               <p className="mt-4 md:mt-6 max-w-xl font-body text-lg leading-relaxed" style={{ color: "#6B6B6B" }}>
