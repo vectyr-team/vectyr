@@ -5,6 +5,16 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Icon } from "@iconify/react";
 import { toast } from "sonner";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 interface FAQ {
   id: string;
@@ -22,6 +32,7 @@ const FAQsEditor = () => {
   const [newQuestion, setNewQuestion] = useState("");
   const [newAnswer, setNewAnswer] = useState("");
   const [showAdd, setShowAdd] = useState(false);
+  const [deleteTarget, setDeleteTarget] = useState<FAQ | null>(null);
 
   const fetchFaqs = async () => {
     const { data } = await supabase
@@ -80,8 +91,10 @@ const FAQsEditor = () => {
     fetchFaqs();
   };
 
-  const deleteFaq = async (id: string) => {
-    const { error } = await supabase.from("faqs").delete().eq("id", id);
+  const confirmDelete = async () => {
+    if (!deleteTarget) return;
+    const { error } = await supabase.from("faqs").delete().eq("id", deleteTarget.id);
+    setDeleteTarget(null);
     if (error) {
       toast.error("Failed to delete");
       return;
@@ -160,7 +173,7 @@ const FAQsEditor = () => {
                   <Icon icon="lucide:pencil" className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() => deleteFaq(faq.id)}
+                  onClick={() => setDeleteTarget(faq)}
                   className="text-muted-foreground hover:text-destructive transition-colors p-1"
                 >
                   <Icon icon="lucide:trash-2" className="w-4 h-4" />
@@ -197,6 +210,26 @@ const FAQsEditor = () => {
           Add FAQ
         </Button>
       )}
+
+      <AlertDialog open={!!deleteTarget} onOpenChange={(open) => !open && setDeleteTarget(null)}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Delete this FAQ?</AlertDialogTitle>
+            <AlertDialogDescription>
+              "{deleteTarget?.question}" — this action cannot be undone.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={confirmDelete}
+              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+            >
+              Delete
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 };
