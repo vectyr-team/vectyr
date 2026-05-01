@@ -131,21 +131,22 @@ const Index = () => {
             <ScrollSection>
               {/* Overline with line */}
               <div className="flex items-center gap-4 mb-4 md:mb-10">
-                <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary">
-                  // The Fix
-                </span>
+                <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary">// The Fix</span>
                 <div className="h-px w-16 bg-muted-foreground/40" />
               </div>
 
               <div className="grid gap-8 md:gap-16 md:grid-cols-2 items-start">
                 <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-                  Three Problems.<br />
-                  Three Products.<br />
+                  Three Problems.
+                  <br />
+                  Three Products.
+                  <br />
                   Full Lifecycle.
                 </h2>
                 <div className="md:pt-4">
                   <p className="font-body text-lg font-light leading-relaxed text-muted-foreground">
-                    Every business with a brand problem has the same three problems in sequence. Most engagements solve one and leave two behind.
+                    Every business with a brand problem has the same three problems in sequence. Most engagements solve
+                    one and leave two behind.
                   </p>
                   <p className="mt-6 font-body text-lg font-semibold leading-relaxed text-foreground">
                     Vectyr solves all three.
@@ -170,7 +171,7 @@ const Index = () => {
                     "Team-wide AI installation",
                   ],
                   price: "$4,500",
-                  priceNote: "$195 / PER MONTH",
+                  priceNote: "One Time Fee",
                 },
                 {
                   problem: "Problem 02",
@@ -200,28 +201,22 @@ const Index = () => {
                     "One advisory credit / quarter",
                   ],
                   price: "$195",
-                  priceNote: "Per Month · Cancel Anytime",
+                  priceNote: "$195 / PER MONTH",
                 },
               ].map((card, i) => (
                 <ScrollSection
                   key={i}
                   className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1} border-l border-border/40`}
                 >
-                  <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary">
-                    {card.problem}
-                  </p>
-                  <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">
-                    {card.problemDesc}
-                  </p>
+                  <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary">{card.problem}</p>
+                  <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">{card.problemDesc}</p>
 
                   <div className="h-px w-full my-8" style={{ backgroundColor: "#252525" }} />
 
                   <h3 className="font-body font-semibold text-2xl md:text-3xl leading-tight text-foreground normal-case tracking-normal">
                     {card.title}
                   </h3>
-                  <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">
-                    {card.desc}
-                  </p>
+                  <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">{card.desc}</p>
 
                   <ul className="mt-6 space-y-2 flex-1">
                     {card.features.map((feat, fi) => (
