@@ -80,9 +80,9 @@ const Index = () => {
                 style={heroStyle(2)}
               >
                 We pull it out through a structured extraction process, combine it with market intelligence, customer
-                research, and competitive analysis, structure all of it so humans and AI can both actually use it, and
-                put it on a platform your whole team can access from day one. Your job is showing up and telling us what
-                you know. We handle the rest.
+                research, and structure all of it so humans and AI can both actually use it, and put it on a platform
+                your whole team can access from day one. Your job is showing up and telling us what you know. We handle
+                the rest.
               </p>
 
               <div className="mt-10 flex flex-row gap-4" style={heroStyle(3)}>
