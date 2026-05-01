@@ -152,7 +152,7 @@ const Index = () => {
             </ScrollSection>
 
             {/* Product cards */}
-            <div className="mt-16 grid gap-px lg:grid-cols-3">
+            <div className="mt-16 grid gap-5 lg:grid-cols-3">
               {[
                 {
                   problem: "Problem 01",
