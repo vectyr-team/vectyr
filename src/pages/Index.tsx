@@ -163,7 +163,7 @@ const Index = () => {
                   problemDesc:
                     "No strategy. The brand never existed as a documented system, or it's scattered across too many heads with no alignment.",
                   title: "Brand Codex",
-                  desc: "90-day brand check-ins to examine the performance of the brand. You can submit new info at any time so we can update the Brand Codex and avoid brand entropy and drift.",
+                  desc: "Done-for-you brand strategy. Vectyr runs the extraction, synthesis, and AI installation. You bring the knowledge, we build the rest. One to two sessions of your time.",
                   priceNote: "$4,500 / One Time Fee",
                 },
                 {
