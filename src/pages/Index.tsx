@@ -156,7 +156,7 @@ const Index = () => {
           <div className="mt-16 grid gap-px md:grid-cols-3">
             {[
               {
-                badge: "Start Here",
+                badge: "One Time",
                 badgeStyle: "bg-primary text-primary-foreground",
                 title: "Brand Codex",
                 pricing: "$4,500  /  lifetime BrandOS access",
