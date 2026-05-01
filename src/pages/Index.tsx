@@ -51,7 +51,7 @@ const Index = () => {
             playsInline
             aria-hidden="true"
             src="/videos/vectyr-hero-bg.mp4"
-            className="absolute inset-0 w-full object-cover scale-105"
+            className="absolute inset-0 w-full object-cover scale-105 opacity-40 md:opacity-100"
             style={{ height: "110%", top: "-5%" }}
           />
 
