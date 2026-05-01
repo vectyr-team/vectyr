@@ -206,7 +206,7 @@ const Index = () => {
                   className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1} border-l border-border/40`}
                 >
                   <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary">{card.problem}</p>
-                  <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">{card.problemDesc}</p>
+                  <p className="mt-4 font-mono text-sm leading-relaxed text-muted-foreground">{card.problemDesc}</p>
 
                   <div className="h-px w-full my-8" style={{ backgroundColor: "#252525" }} />
 
