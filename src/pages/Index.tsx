@@ -91,7 +91,7 @@ const Index = () => {
                 </a>
                 <a href="/faqs">
                   <Button size="lg" variant="outline">
-                    Learn More
+                    FAQs
                   </Button>
                 </a>
               </div>
@@ -207,7 +207,7 @@ const Index = () => {
               </a>
               <a href="/faqs">
                 <Button size="lg" variant="outline">
-                  Learn More
+                  FAQs
                 </Button>
               </a>
             </div>
@@ -365,7 +365,7 @@ const Index = () => {
                 </a>
                 <a href="/faqs">
                   <Button size="lg" variant="outline">
-                    Learn More
+                    FAQs
                   </Button>
                 </a>
               </div>
