@@ -145,8 +145,8 @@ const Index = () => {
                 </h2>
                 <div className="md:pt-4">
                   <p className="font-body text-lg font-light leading-relaxed text-muted-foreground">
-                    Every business with a brand problem has the same three problems in sequence. Most engagements solve
-                    one and leave two behind.
+                    Every business with a brand problem has the same three problems in sequence. Most agencies out there
+                    are solving the first problem and leave two behind.
                   </p>
                   <p className="mt-6 font-body text-lg font-semibold leading-relaxed text-foreground">
                     Vectyr solves all three.
