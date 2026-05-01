@@ -98,7 +98,7 @@ const Index = () => {
             <ScrollSection className="grid grid-cols-3">
               {[
                 ["Finally", "Documented"],
-                ["Always", "Available"],
+                ["Team", "Accessible"],
                 ["Never", "Obsolete"],
               ].map((words, i) => (
                 <div key={i} className="p-8 px-0 py-0">
