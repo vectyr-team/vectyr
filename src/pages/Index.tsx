@@ -188,7 +188,8 @@ const Index = () => {
 
                   <div className="h-px w-full my-8" style={{ backgroundColor: "#252525" }} />
 
-                  <h3 className="font-body font-semibold text-2xl md:text-3xl leading-tight text-foreground normal-case tracking-normal">
+                  <h3 className="font-body font-semibold text-2xl md:text-3xl leading-tight text-foreground normal-case tracking-normal flex items-center gap-3">
+                    <Icon icon="lucide:check" className="text-primary shrink-0" />
                     {card.title}
                   </h3>
                   <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">{card.desc}</p>
