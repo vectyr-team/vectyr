@@ -281,12 +281,15 @@ const Index = () => {
                 className="font-headline font-light leading-[0.95] tracking-normal text-5xl md:text-6xl lg:text-7xl max-w-[830px]"
                 style={{ color: "#090909" }}
               >
-                Your Business Is Better Than What The Market <span className="text-primary">Currently Sees.</span>
+                The Brand Runs. <span className="text-primary">You Build.</span>
               </h2>
 
               <p className="mt-4 md:mt-8 max-w-xl font-body text-lg leading-relaxed" style={{ color: "#6B6B6B" }}>
-                The gap between what you've built and how the market perceives it is your brand infrastructure. We build
-                that infrastructure.
+                Every person on your team working from the same source. Every AI tool sounding like you. Every vendor
+                briefing themselves. No more being the only person keeping it together.
+              </p>
+              <p className="mt-4 md:mt-8 max-w-xl font-body text-lg leading-relaxed" style={{ color: "#6B6B6B" }}>
+                That's what installed looks like, and it's closer than you think.
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
