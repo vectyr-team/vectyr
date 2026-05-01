@@ -179,7 +179,7 @@ const Index = () => {
                   problemDesc:
                     "Every strategy goes stale when something changes. There's no system to keep it current as the business evolves.",
                   title: "BrandPulse",
-                  desc: "The active management subscription that institutionalizes Brand Discipline. Quarterly reviews, BPI reports, and advisory access keep the Codex alive.",
+                  desc: "90-day brand check-ins to examine the performance of the brand. You can submit new info at any time so we can update the Brand Codex and avoid brand entropy and drift.",
                   priceNote: "$195 / PER MONTH",
                 },
               ].map((card, i) => (
