@@ -170,7 +170,7 @@ const Index = () => {
                     "Team-wide AI installation",
                   ],
                   price: "$4,500",
-                  priceNote: "One-Time · Flat Fee",
+                  priceNote: "$195 / PER MONTH",
                 },
                 {
                   problem: "Problem 02",
