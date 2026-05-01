@@ -284,9 +284,9 @@ const Index = () => {
                 The Brand Runs. <span className="text-primary">You Build.</span>
               </h2>
 
-              <p className="mt-4 md:mt-8 max-w-xl font-body text-lg leading-relaxed" style={{ color: "#6B6B6B" }}>
-                Every person on your team working from the same source. Every AI tool sounding like you. Every vendor
-                briefing themselves. No more being the only person keeping it together.
+              <p className="mt-4 md:mt-6 max-w-xl font-body text-lg leading-relaxed" style={{ color: "#6B6B6B" }}>
+                Every person on your team working from the same knowledge base. Every AI tool sounding exactly like you.
+                Every vendor briefing themselves. No more being the informational bottleneck.
               </p>
               <p className="mt-4 md:mt-8 max-w-xl font-body text-lg leading-relaxed" style={{ color: "#6B6B6B" }}>
                 That's what installed looks like, and it's closer than you think.
