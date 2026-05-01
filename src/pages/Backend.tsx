@@ -86,18 +86,28 @@ const Backend = () => {
 
   useEffect(() => {
     let isActive = true;
+    let currentUserId: string | null = null;
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, nextSession) => {
       if (!isActive) return;
 
-      setSession(nextSession);
-
       if (!nextSession) {
+        currentUserId = null;
+        setSession(null);
         handleSessionFailure();
         setLoading(false);
         return;
       }
 
+      // Skip re-checks when the user hasn't actually changed
+      // (e.g. TOKEN_REFRESHED fires on tab focus and would cause a reload).
+      if (currentUserId === nextSession.user.id) {
+        setSession(nextSession);
+        return;
+      }
+
+      currentUserId = nextSession.user.id;
+      setSession(nextSession);
       setLoading(true);
       setTimeout(() => {
         checkAdminRole(nextSession.user.id).finally(() => {
@@ -123,6 +133,7 @@ const Backend = () => {
           return;
         }
 
+        currentUserId = nextSession.user.id;
         await checkAdminRole(nextSession.user.id);
       } catch {
         if (isActive) handleSessionFailure();
@@ -143,7 +154,7 @@ const Backend = () => {
     if (session) {
       void fetchPageSettings();
     }
-  }, [session]);
+  }, [session?.user?.id]);
 
   const fetchPageSettings = async () => {
     try {
