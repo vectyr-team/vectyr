@@ -216,7 +216,7 @@ const Index = () => {
 
                   <div className="h-px w-full my-8" style={{ backgroundColor: "#252525" }} />
 
-                  <h3 className="font-body font-semibold text-2xl md:text-3xl leading-tight text-foreground">
+                  <h3 className="font-body font-semibold text-2xl md:text-3xl leading-tight text-foreground normal-case tracking-normal">
                     {card.title}
                   </h3>
                   <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">
@@ -232,11 +232,8 @@ const Index = () => {
                     ))}
                   </ul>
 
-                  <div className="mt-8 flex items-end justify-between gap-4">
-                    <span className="font-headline font-light text-4xl md:text-5xl text-foreground leading-none">
-                      {card.price}
-                    </span>
-                    <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground/60 text-right pb-1">
+                  <div className="mt-8 w-full">
+                    <span className="block font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground/60 text-left">
                       {card.priceNote}
                     </span>
                   </div>
