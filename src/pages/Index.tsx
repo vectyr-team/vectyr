@@ -189,7 +189,7 @@ const Index = () => {
                 {
                   problem: "Problem 03",
                   problemDesc:
-                    "Even when a strategy is built and distributed, it goes stale. There's no system to keep it current as the business evolves.",
+                    "Every strategy goes stale when something changes. There's no system to keep it current as the business evolves.",
                   title: "BrandPulse",
                   desc: "The active management subscription that institutionalizes Brand Discipline. Quarterly reviews, BPI reports, and advisory access keep the Codex alive.",
                   features: [
