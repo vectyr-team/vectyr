@@ -73,8 +73,7 @@ const Index = () => {
                 style={heroStyle(2)}
               >
                 We turn the messy, implicit brand knowledge in a founder’s mind into a clean, accessible, AI-ready
-                system that the whole organization can use without constant founder input. Your job is showing up and
-                telling us what you know. We handle the rest.
+                system that the whole organization can use without constant founder input.
               </p>
 
               <div className="mt-10 flex flex-row gap-4" style={heroStyle(3)}>
