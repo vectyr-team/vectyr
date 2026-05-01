@@ -154,7 +154,7 @@ const Backend = () => {
     if (session) {
       void fetchPageSettings();
     }
-  }, [session]);
+  }, [session?.user?.id]);
 
   const fetchPageSettings = async () => {
     try {
