@@ -171,7 +171,7 @@ const Index = () => {
                   problemDesc:
                     "Even when a strategy exists, it doesn't get used. There's no practical way to distribute it to everyone who needs it.",
                   title: "BrandOS",
-                  desc: "90-day brand check-ins to examine the performance of the brand. You can submit new info at any time so we can update the Brand Codex and avoid brand entropy and drift.",
+                  desc: "The platform where the Brand Codex lives, gets distributed, and gets accessed by everyone who needs it. Your team, your vendors, your AI tools. No more briefing from memory.",
                   priceNote: "INCLUDED / LIFETIME ACCESS",
                 },
                 {
