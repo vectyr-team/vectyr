@@ -97,9 +97,9 @@ const Index = () => {
           <div className="mx-auto max-w-[1300px]">
             <ScrollSection className="grid grid-cols-3">
               {[
-                ["Your Brand", "Everywhere"],
-                ["Your Team", "Aligned"],
-                ["Your AI", "On Brand"],
+                ["Your Brand,", "Everywhere"],
+                ["Your Team,", "Aligned"],
+                ["Your AI,", "On Brand"],
               ].map((words, i) => (
                 <div key={i} className="p-8 px-0 py-0">
                   <p className="font-mono text-[10px] md:text-sm uppercase tracking-[0.2em] text-muted-foreground text-center">
