@@ -131,7 +131,7 @@ const Index = () => {
             <ScrollSection>
               {/* Overline with line */}
               <div className="flex items-center gap-4 mb-4 md:mb-10">
-                <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary">// The Fix</span>
+                <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">The Fix</span>
                 <div className="h-px w-16 bg-muted-foreground/40" />
               </div>
 
@@ -229,7 +229,7 @@ const Index = () => {
           <div className="relative z-10 mx-auto max-w-[1300px]">
             <ScrollSection>
               <div className="flex items-center gap-4 mb-4 md:mb-10">
-                <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary">// Results</span>
+                <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">Results</span>
                 <div className="h-px w-16 bg-muted-foreground/40" />
               </div>
 
@@ -282,7 +282,9 @@ const Index = () => {
           <div className="mx-auto max-w-[1300px]">
             <ScrollSection>
               <div className="flex items-center gap-4 mb-4 md:mb-10">
-                <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary">// Entry Points</span>
+                <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
+                  Entry Points
+                </span>
                 <div className="h-px w-16 bg-muted-foreground/40" />
               </div>
 
