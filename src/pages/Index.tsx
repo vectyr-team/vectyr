@@ -216,7 +216,7 @@ const Index = () => {
 
                   <div className="h-px w-full my-8" style={{ backgroundColor: "#252525" }} />
 
-                  <h3 className="font-headline font-light text-3xl md:text-4xl leading-tight text-foreground">
+                  <h3 className="font-body font-semibold text-2xl md:text-3xl leading-tight text-foreground">
                     {card.title}
                   </h3>
                   <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">
