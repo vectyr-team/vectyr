@@ -10,6 +10,7 @@ import PageMetaSection from "@/components/backend/PageMetaSection";
 import SchemaPreview from "@/components/backend/SchemaPreview";
 import AdminManager from "@/components/backend/AdminManager";
 import TeamEditor from "@/components/backend/TeamEditor";
+import HomeHeroEditor from "@/components/backend/HomeHeroEditor";
 import { clearStoredAuthSession, withTimeout } from "@/lib/supabase-guards";
 
 interface PageSetting {
@@ -252,6 +253,7 @@ const Backend = () => {
   const hasFormSettings = selectedPage === "demo" || selectedPage === "contact";
   const isFaqsPage = selectedPage === "faqs";
   const isGlossaryPage = selectedPage === "glossary";
+  const isHomePage = selectedPage === "index";
 
   const renderContent = () => {
     if (isSeoSection) {
@@ -270,6 +272,7 @@ const Backend = () => {
     if (isTeamSection) return <TeamEditor />;
     if (isFaqsPage) return <FAQsEditor />;
     if (isGlossaryPage) return <GlossaryEditor />;
+    if (isHomePage) return <HomeHeroEditor />;
 
     if (hasFormSettings) {
       return (

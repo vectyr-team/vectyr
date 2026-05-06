@@ -9,6 +9,8 @@ import SEOHead from "@/components/SEOHead";
 import { LocalBusinessJsonLd } from "@/components/JsonLd";
 import { PAGE_META } from "@/config/seo";
 import { useBusinessInfo, usePageMeta } from "@/hooks/use-seo-data";
+import { useHomeHero } from "@/hooks/use-home-hero";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const heroItems = [
   { delay: 0.6 }, // overline
@@ -21,6 +23,7 @@ const Index = () => {
   const [heroVisible, setHeroVisible] = useState(false);
   const { data: businessInfo } = useBusinessInfo();
   const pageMeta = usePageMeta("home");
+  const { data: hero, loading: heroLoading } = useHomeHero();
 
   useEffect(() => {
     const timer = setTimeout(() => setHeroVisible(true), 100);
@@ -61,31 +64,44 @@ const Index = () => {
           {/* Content */}
           <div className="relative z-10 w-full max-w-[1300px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="w-full">
-              <h1
-                className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-[625px]"
-                style={heroStyle(1)}
-              >
-                Your Brand is Living in Your Head. <span className="text-primary">Nowhere Else.</span>
-              </h1>
+              {heroLoading || !hero ? (
+                <>
+                  <Skeleton className="h-16 md:h-24 w-full max-w-[625px]" />
+                  <Skeleton className="mt-4 md:mt-8 h-20 w-full max-w-[37rem]" />
+                  <div className="mt-10 flex flex-row gap-4">
+                    <Skeleton className="h-12 w-32" />
+                    <Skeleton className="h-12 w-24" />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <h1
+                    className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-[625px]"
+                    style={heroStyle(1)}
+                  >
+                    {hero.headline_lead}{" "}
+                    <span className="text-primary">{hero.headline_accent}</span>
+                  </h1>
 
-              <p
-                className="mt-4 md:mt-8 max-w-[37rem] font-body text-base md:text-lg font-light leading-relaxed text-[#adadad]"
-                style={heroStyle(2)}
-              >
-                We turn the messy, implicit brand knowledge in a founder’s mind into a clean, accessible, AI-ready
-                system that the whole organization can use without constant founder input.
-              </p>
+                  <p
+                    className="mt-4 md:mt-8 max-w-[37rem] font-body text-base md:text-lg font-light leading-relaxed text-[#adadad]"
+                    style={heroStyle(2)}
+                  >
+                    {hero.subtitle}
+                  </p>
 
-              <div className="mt-10 flex flex-row gap-4" style={heroStyle(3)}>
-                <a href="/demo">
-                  <Button size="lg">Book a Demo</Button>
-                </a>
-                <a href="/faqs">
-                  <Button size="lg" variant="outline">
-                    FAQs
-                  </Button>
-                </a>
-              </div>
+                  <div className="mt-10 flex flex-row gap-4" style={heroStyle(3)}>
+                    <a href={hero.primary_button_link}>
+                      <Button size="lg">{hero.primary_button_label}</Button>
+                    </a>
+                    <a href={hero.secondary_button_link}>
+                      <Button size="lg" variant="outline">
+                        {hero.secondary_button_label}
+                      </Button>
+                    </a>
+                  </div>
+                </>
+              )}
             </div>
 
             <BrandCodexAnimation visible={heroVisible} />
