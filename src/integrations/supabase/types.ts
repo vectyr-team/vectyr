@@ -176,6 +176,45 @@ export type Database = {
         }
         Relationships: []
       }
+      home_hero: {
+        Row: {
+          created_at: string
+          headline_accent: string
+          headline_lead: string
+          id: string
+          primary_button_label: string
+          primary_button_link: string
+          secondary_button_label: string
+          secondary_button_link: string
+          subtitle: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          headline_accent?: string
+          headline_lead?: string
+          id?: string
+          primary_button_label?: string
+          primary_button_link?: string
+          secondary_button_label?: string
+          secondary_button_link?: string
+          subtitle?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          headline_accent?: string
+          headline_lead?: string
+          id?: string
+          primary_button_label?: string
+          primary_button_link?: string
+          secondary_button_label?: string
+          secondary_button_link?: string
+          subtitle?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       page_meta: {
         Row: {
           created_at: string
