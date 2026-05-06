@@ -17,6 +17,10 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/sitemap.xml",
+      "destination": "https://bhwjpaogtxhapiyhvjlc.supabase.co/functions/v1/sitemap"
+    },
     { "source": "/((?!api).*)", "destination": "/index.html" }
   ]
 }
