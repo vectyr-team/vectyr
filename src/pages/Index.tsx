@@ -10,7 +10,6 @@ import { LocalBusinessJsonLd } from "@/components/JsonLd";
 import { PAGE_META } from "@/config/seo";
 import { useBusinessInfo, usePageMeta } from "@/hooks/use-seo-data";
 import { useHomeHero } from "@/hooks/use-home-hero";
-import { Skeleton } from "@/components/ui/skeleton";
 
 const heroItems = [
   { delay: 0.6 }, // overline
@@ -23,7 +22,7 @@ const Index = () => {
   const [heroVisible, setHeroVisible] = useState(false);
   const { data: businessInfo } = useBusinessInfo();
   const pageMeta = usePageMeta("home");
-  const { data: hero, loading: heroLoading } = useHomeHero();
+  const { data: hero } = useHomeHero();
 
   useEffect(() => {
     const timer = setTimeout(() => setHeroVisible(true), 100);
@@ -64,18 +63,7 @@ const Index = () => {
           {/* Content */}
           <div className="relative z-10 w-full max-w-[1300px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="w-full">
-              {heroLoading || !hero ? (
-                <>
-                  <Skeleton className="h-16 md:h-24 w-full max-w-[625px]" />
-                  <Skeleton className="mt-4 md:mt-8 h-20 w-full max-w-[37rem]" />
-                  <div className="mt-10 flex flex-row gap-4">
-                    <Skeleton className="h-12 w-32" />
-                    <Skeleton className="h-12 w-24" />
-                  </div>
-                </>
-              ) : (
-                <>
-                  <h1
+              <h1
                     className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-[625px]"
                     style={heroStyle(1)}
                   >
@@ -100,8 +88,6 @@ const Index = () => {
                       </Button>
                     </a>
                   </div>
-                </>
-              )}
             </div>
 
             <BrandCodexAnimation visible={heroVisible} />

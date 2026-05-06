@@ -23,7 +23,7 @@ const FALLBACK: HomeHero = {
 };
 
 export const useHomeHero = () => {
-  const [data, setData] = useState<HomeHero | null>(null);
+  const [data, setData] = useState<HomeHero>(FALLBACK);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export const useHomeHero = () => {
         .limit(1)
         .maybeSingle();
       if (active) {
-        setData((row as HomeHero) || FALLBACK);
+        if (row) setData(row as HomeHero);
         setLoading(false);
       }
     })();
