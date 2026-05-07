@@ -72,6 +72,7 @@ const Footer = () => {
               { label: "Vectyr BrandOS", to: "https://vectyr.com/brand-os" },
               { label: "BrandPulse", to: "https://vectyr.com/pulse" },
               { label: "SiteOps", to: "https://vectyr.com/site-ops" },
+              { label: "Archetype Quiz", to: "https://quiz.vectyr.com" },
             ].map((link) => (
               <a
                 key={link.to}
