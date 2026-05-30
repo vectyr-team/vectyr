@@ -11,6 +11,7 @@ import SchemaPreview from "@/components/backend/SchemaPreview";
 import AdminManager from "@/components/backend/AdminManager";
 import TeamEditor from "@/components/backend/TeamEditor";
 import HomeHeroEditor from "@/components/backend/HomeHeroEditor";
+import ChatWidgetEditor from "@/components/backend/ChatWidgetEditor";
 import { clearStoredAuthSession, withTimeout } from "@/lib/supabase-guards";
 
 interface PageSetting {
@@ -40,6 +41,7 @@ const SEO_SECTIONS: Record<string, { title: string; subtitle: string }> = {
   "seo-business": { title: "Business Info", subtitle: "JSON-LD Schema Data" },
   "seo-schema": { title: "Schema Preview", subtitle: "JSON-LD Validation" },
   "admin-users": { title: "Admin Users", subtitle: "Manage Access" },
+  "settings-chat-widget": { title: "Chat Widget", subtitle: "Sitewide Embed Code" },
 };
 
 const Backend = () => {
@@ -245,7 +247,10 @@ const Backend = () => {
 
   if (!session || !isAdmin) return null;
 
-  const isSeoSection = selectedPage.startsWith("seo-") || selectedPage.startsWith("admin-");
+  const isSeoSection =
+    selectedPage.startsWith("seo-") ||
+    selectedPage.startsWith("admin-") ||
+    selectedPage.startsWith("settings-");
   const isTeamSection = selectedPage === "team";
   const seoSection = SEO_SECTIONS[selectedPage];
   const currentSettings = pageSettings.find((p) => p.page_slug === selectedPage);
@@ -264,6 +269,8 @@ const Backend = () => {
           return <SchemaPreview refreshToken={schemaPreviewVersion} />;
         case "admin-users":
           return <AdminManager />;
+        case "settings-chat-widget":
+          return <ChatWidgetEditor />;
         default:
           return null;
       }
