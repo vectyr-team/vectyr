@@ -275,6 +275,30 @@ export type Database = {
         }
         Relationships: []
       }
+      site_widgets: {
+        Row: {
+          chat_widget_code: string
+          created_at: string
+          enabled: boolean
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          chat_widget_code?: string
+          created_at?: string
+          enabled?: boolean
+          id?: string
+          updated_at?: string
+        }
+        Update: {
+          chat_widget_code?: string
+          created_at?: string
+          enabled?: boolean
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       team_grid_settings: {
         Row: {
           created_at: string

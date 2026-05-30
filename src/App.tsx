@@ -19,6 +19,7 @@ import Glossary from "./pages/Glossary.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import { OrganizationJsonLd } from "./components/JsonLd.tsx";
 import { useBusinessInfo } from "./hooks/use-seo-data.ts";
+import ChatWidget from "./components/ChatWidget.tsx";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
         <BrowserRouter>
         <ScrollToTop />
         <SitewideSchema />
+        <ChatWidget />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
