@@ -247,7 +247,10 @@ const Backend = () => {
 
   if (!session || !isAdmin) return null;
 
-  const isSeoSection = selectedPage.startsWith("seo-") || selectedPage.startsWith("admin-");
+  const isSeoSection =
+    selectedPage.startsWith("seo-") ||
+    selectedPage.startsWith("admin-") ||
+    selectedPage.startsWith("settings-");
   const isTeamSection = selectedPage === "team";
   const seoSection = SEO_SECTIONS[selectedPage];
   const currentSettings = pageSettings.find((p) => p.page_slug === selectedPage);
