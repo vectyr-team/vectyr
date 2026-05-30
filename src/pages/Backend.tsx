@@ -11,6 +11,7 @@ import SchemaPreview from "@/components/backend/SchemaPreview";
 import AdminManager from "@/components/backend/AdminManager";
 import TeamEditor from "@/components/backend/TeamEditor";
 import HomeHeroEditor from "@/components/backend/HomeHeroEditor";
+import ChatWidgetEditor from "@/components/backend/ChatWidgetEditor";
 import { clearStoredAuthSession, withTimeout } from "@/lib/supabase-guards";
 
 interface PageSetting {
@@ -40,6 +41,7 @@ const SEO_SECTIONS: Record<string, { title: string; subtitle: string }> = {
   "seo-business": { title: "Business Info", subtitle: "JSON-LD Schema Data" },
   "seo-schema": { title: "Schema Preview", subtitle: "JSON-LD Validation" },
   "admin-users": { title: "Admin Users", subtitle: "Manage Access" },
+  "settings-chat-widget": { title: "Chat Widget", subtitle: "Sitewide Embed Code" },
 };
 
 const Backend = () => {
@@ -264,6 +266,8 @@ const Backend = () => {
           return <SchemaPreview refreshToken={schemaPreviewVersion} />;
         case "admin-users":
           return <AdminManager />;
+        case "settings-chat-widget":
+          return <ChatWidgetEditor />;
         default:
           return null;
       }
