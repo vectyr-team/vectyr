@@ -64,30 +64,29 @@ const Index = () => {
           <div className="relative z-10 w-full max-w-[1300px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="w-full">
               <h1
-                    className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-[625px]"
-                    style={heroStyle(1)}
-                  >
-                    {hero.headline_lead}{" "}
-                    <span className="text-primary">{hero.headline_accent}</span>
-                  </h1>
+                className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-[625px]"
+                style={heroStyle(1)}
+              >
+                {hero.headline_lead} <span className="text-primary">{hero.headline_accent}</span>
+              </h1>
 
-                  <p
-                    className="mt-4 md:mt-8 max-w-[37rem] font-body text-base md:text-lg font-light leading-relaxed text-[#adadad]"
-                    style={heroStyle(2)}
-                  >
-                    {hero.subtitle}
-                  </p>
+              <p
+                className="mt-4 md:mt-8 max-w-[37rem] font-body text-base md:text-lg font-light leading-relaxed text-[#adadad]"
+                style={heroStyle(2)}
+              >
+                {hero.subtitle}
+              </p>
 
-                  <div className="mt-10 flex flex-row gap-4" style={heroStyle(3)}>
-                    <a href={hero.primary_button_link}>
-                      <Button size="lg">{hero.primary_button_label}</Button>
-                    </a>
-                    <a href={hero.secondary_button_link}>
-                      <Button size="lg" variant="outline">
-                        {hero.secondary_button_label}
-                      </Button>
-                    </a>
-                  </div>
+              <div className="mt-10 flex flex-row gap-4" style={heroStyle(3)}>
+                <a href={hero.primary_button_link}>
+                  <Button size="lg">{hero.primary_button_label}</Button>
+                </a>
+                <a href={hero.secondary_button_link}>
+                  <Button size="lg" variant="outline">
+                    {hero.secondary_button_label}
+                  </Button>
+                </a>
+              </div>
             </div>
 
             <BrandCodexAnimation visible={heroVisible} />
@@ -160,7 +159,6 @@ const Index = () => {
                     "No strategy. The brand never existed as a documented system, or it's scattered across too many heads with no alignment.",
                   title: "Brand Codex",
                   desc: "Done-for-you brand strategy. Vectyr runs the extraction, synthesis, and AI installation. You bring the knowledge, we build the rest. One to two sessions of your time.",
-                  priceNote: "$4,500 / One Time Fee",
                 },
                 {
                   problem: "Problem 02",
@@ -168,7 +166,6 @@ const Index = () => {
                     "Even when a strategy exists, it doesn't get used. There's no practical way to distribute it to everyone who needs it.",
                   title: "BrandOS",
                   desc: "The platform where the brand intelligence lives, gets distributed to everyone who needs it. Your team, your vendors, your AI tools. No more briefing from memory.",
-                  priceNote: "INCLUDED / LIFETIME ACCESS",
                 },
                 {
                   problem: "Problem 03",
@@ -176,7 +173,6 @@ const Index = () => {
                     "Every strategy goes stale when something changes. There's no system to keep it current as the business evolves.",
                   title: "BrandPulse",
                   desc: "90-day brand check-ins to examine the performance of the brand. You can submit new info at any time so we can update the Brand Codex and avoid brand entropy and drift.",
-                  priceNote: "$195 / PER MONTH",
                 },
               ].map((card, i) => (
                 <ScrollSection
@@ -193,12 +189,6 @@ const Index = () => {
                     {card.title}
                   </h3>
                   <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">{card.desc}</p>
-
-                  <div className="mt-8 w-full">
-                    <span className="block font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground/60 text-left">
-                      {card.priceNote}
-                    </span>
-                  </div>
                 </ScrollSection>
               ))}
             </div>
