@@ -61,35 +61,31 @@ const Index = () => {
           <div className="absolute inset-0 bg-background/70" />
 
           {/* Content */}
-          <div className="relative z-10 w-full max-w-[1300px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className="w-full">
-              <h1
-                className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-[625px]"
-                style={heroStyle(1)}
-              >
-                {hero.headline_lead} <span className="text-primary">{hero.headline_accent}</span>
-              </h1>
+          <div className="relative z-10 w-full max-w-[1300px] mx-auto flex flex-col items-center text-center">
+            <h1
+              className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl"
+              style={heroStyle(1)}
+            >
+              {hero.headline_lead} <span className="text-primary">{hero.headline_accent}</span>
+            </h1>
 
-              <p
-                className="mt-4 md:mt-8 max-w-[37rem] font-body text-base md:text-lg font-light leading-relaxed text-[#adadad]"
-                style={heroStyle(2)}
-              >
-                {hero.subtitle}
-              </p>
+            <p
+              className="mt-4 md:mt-8 max-w-[37rem] font-body text-base md:text-lg font-light leading-relaxed text-[#adadad]"
+              style={heroStyle(2)}
+            >
+              {hero.subtitle}
+            </p>
 
-              <div className="mt-10 flex flex-row gap-4" style={heroStyle(3)}>
-                <a href={hero.primary_button_link}>
-                  <Button size="lg">{hero.primary_button_label}</Button>
-                </a>
-                <a href={hero.secondary_button_link}>
-                  <Button size="lg" variant="outline">
-                    {hero.secondary_button_label}
-                  </Button>
-                </a>
-              </div>
+            <div className="mt-10 flex flex-row gap-4 justify-center" style={heroStyle(3)}>
+              <a href={hero.primary_button_link}>
+                <Button size="lg">{hero.primary_button_label}</Button>
+              </a>
+              <a href={hero.secondary_button_link}>
+                <Button size="lg" variant="outline">
+                  {hero.secondary_button_label}
+                </Button>
+              </a>
             </div>
-
-            <BrandCodexAnimation visible={heroVisible} />
           </div>
         </section>
 
