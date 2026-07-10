@@ -69,9 +69,7 @@ const Footer = () => {
           <nav className="flex flex-col gap-3 items-center md:items-start" aria-label="Services">
             <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">THE WORK</span>
             {[
-              { label: "Vectyr BrandOS", to: "https://vectyr.com/brand-os" },
-              { label: "BrandPulse", to: "https://vectyr.com/pulse" },
-              { label: "SiteOps", to: "https://vectyr.com/site-ops" },
+              { label: "BrandHelix.ai", to: "https://brandhelix.ai" },
               { label: "Archetype Quiz", to: "https://quiz.vectyr.com" },
             ].map((link) => (
               <a
