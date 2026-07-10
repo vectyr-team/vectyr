@@ -66,9 +66,25 @@ const Index = () => {
               className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl mx-auto"
               style={heroStyle(1)}
             >
-              <span className="lg:whitespace-nowrap">{hero.headline_lead}</span>{" "}
-              <br className="hidden lg:block" />
-              <span className="text-primary lg:whitespace-nowrap">{hero.headline_accent}</span>
+              {(() => {
+                const accent = hero.headline_accent;
+                const match = accent.match(/^(.*?\b\w+'s)\s+(.*)$/i);
+                if (!match) {
+                  return (
+                    <>
+                      {hero.headline_lead} <span className="text-primary">{accent}</span>
+                    </>
+                  );
+                }
+                const [, before, after] = match;
+                return (
+                  <>
+                    {hero.headline_lead} <span className="text-primary">{before}</span>
+                    <br className="hidden lg:block" />{" "}
+                    <span className="text-primary">{after}</span>
+                  </>
+                );
+              })()}
             </h1>
 
             <p
