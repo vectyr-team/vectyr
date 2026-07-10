@@ -66,7 +66,9 @@ const Index = () => {
               className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl lg:max-w-[16ch] mx-auto"
               style={heroStyle(1)}
             >
-              {hero.headline_lead} <span className="text-primary">{hero.headline_accent}</span>
+              {hero.headline_lead}{" "}
+              <br className="hidden lg:block" />
+              <span className="text-primary">{hero.headline_accent}</span>
             </h1>
 
             <p
