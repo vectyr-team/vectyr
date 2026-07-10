@@ -63,7 +63,7 @@ const Index = () => {
           {/* Content */}
           <div className="relative z-10 w-full max-w-[1300px] mx-auto flex flex-col items-center text-center">
             <h1
-              className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl lg:max-w-[16ch] mx-auto"
+              className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl lg:max-w-[22ch] mx-auto"
               style={heroStyle(1)}
             >
               {hero.headline_lead}{" "}
