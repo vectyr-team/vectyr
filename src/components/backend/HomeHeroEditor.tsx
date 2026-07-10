@@ -10,6 +10,8 @@ interface HomeHero {
   id: string;
   headline_lead: string;
   headline_accent: string;
+  headline_line1: string;
+  headline_line2: string;
   subtitle: string;
   primary_button_label: string;
   primary_button_link: string;
@@ -48,6 +50,8 @@ const HomeHeroEditor = () => {
       .update({
         headline_lead: hero.headline_lead,
         headline_accent: hero.headline_accent,
+        headline_line1: hero.headline_line1,
+        headline_line2: hero.headline_line2,
         subtitle: hero.subtitle,
         primary_button_label: hero.primary_button_label,
         primary_button_link: hero.primary_button_link,
@@ -81,22 +85,28 @@ const HomeHeroEditor = () => {
 
   return (
     <div className="space-y-5 border border-border rounded-lg p-5 bg-black02">
-      <div>
-        <Label>Headline (lead)</Label>
-        <Input
-          value={hero.headline_lead}
-          onChange={(e) => update("headline_lead", e.target.value)}
-          className="font-body text-sm"
-        />
-      </div>
-
-      <div>
-        <Label>Headline (accent / orange)</Label>
-        <Input
-          value={hero.headline_accent}
-          onChange={(e) => update("headline_accent", e.target.value)}
-          className="font-body text-sm"
-        />
+      <div className="space-y-3">
+        <div>
+          <Label>Headline (line 1)</Label>
+          <Input
+            value={hero.headline_line1 ?? ""}
+            onChange={(e) => update("headline_line1", e.target.value)}
+            className="font-body text-sm"
+          />
+        </div>
+        <div>
+          <Label>Headline (line 2)</Label>
+          <Input
+            value={hero.headline_line2 ?? ""}
+            onChange={(e) => update("headline_line2", e.target.value)}
+            className="font-body text-sm"
+          />
+        </div>
+        <p className="font-mono text-[10px] leading-relaxed text-muted-foreground/70">
+          Line 2 starts on a new line on desktop. On mobile both lines flow together.
+          Wrap any text in <code>&lt;span&gt;...&lt;/span&gt;</code> to make it orange.
+          Example: <code>Single Point of &lt;span&gt;Failure.&lt;/span&gt;</code>
+        </p>
       </div>
 
       <div>
