@@ -181,6 +181,8 @@ export type Database = {
           created_at: string
           headline_accent: string
           headline_lead: string
+          headline_line1: string | null
+          headline_line2: string | null
           id: string
           primary_button_label: string
           primary_button_link: string
@@ -193,6 +195,8 @@ export type Database = {
           created_at?: string
           headline_accent?: string
           headline_lead?: string
+          headline_line1?: string | null
+          headline_line2?: string | null
           id?: string
           primary_button_label?: string
           primary_button_link?: string
@@ -205,6 +209,8 @@ export type Database = {
           created_at?: string
           headline_accent?: string
           headline_lead?: string
+          headline_line1?: string | null
+          headline_line2?: string | null
           id?: string
           primary_button_label?: string
           primary_button_link?: string
