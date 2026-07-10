@@ -164,7 +164,7 @@ const Index = () => {
                   problem: "Problem 02",
                   problemDesc:
                     "Even when a strategy exists, it doesn't get used. There's no practical way to distribute it to everyone who needs it.",
-                  title: "BrandOS",
+                  title: "BrandHelix.ai",
                   desc: "The platform where the brand intelligence lives, gets distributed to everyone who needs it. Your team, your vendors, your AI tools. No more briefing from memory.",
                 },
                 {
