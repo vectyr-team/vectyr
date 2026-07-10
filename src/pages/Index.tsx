@@ -171,7 +171,7 @@ const Index = () => {
                   problem: "Problem 03",
                   problemDesc:
                     "Every strategy goes stale when something changes. There's no system to keep it current as the business evolves.",
-                  title: "BrandPulse",
+                  title: "Brand Management",
                   desc: "90-day brand check-ins to examine the performance of the brand. You can submit new info at any time so we can update the Brand Codex and avoid brand entropy and drift.",
                 },
               ].map((card, i) => (
