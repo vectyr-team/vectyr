@@ -67,33 +67,38 @@ const Index = () => {
               style={heroStyle(1)}
             >
               {(() => {
-                const lead = hero.headline_lead;
-                const accent = hero.headline_accent;
-                const leadMatch = lead.match(/^(.*?\b\w+['’]s)\s+(.*)$/i);
-                if (leadMatch) {
-                  const [, leadBefore, leadAfter] = leadMatch;
-                  return (
-                    <>
-                      {leadBefore}
-                      <br className="hidden lg:block" />{" "}
-                      {leadAfter} <span className="text-primary">{accent}</span>
-                    </>
-                  );
-                }
-                const accentMatch = accent.match(/^(.*?\b\w+['’]s)\s+(.*)$/i);
-                if (accentMatch) {
-                  const [, before, after] = accentMatch;
-                  return (
-                    <>
-                      {lead} <span className="text-primary">{before}</span>
-                      <br className="hidden lg:block" />{" "}
-                      <span className="text-primary">{after}</span>
-                    </>
-                  );
-                }
+                // Render a line supporting <span>...</span> = orange accent
+                const renderLine = (text: string, keyPrefix: string) => {
+                  if (!text) return null;
+                  const parts = text.split(/(<span>[\s\S]*?<\/span>)/gi);
+                  return parts.map((part, i) => {
+                    const m = part.match(/^<span>([\s\S]*?)<\/span>$/i);
+                    if (m) {
+                      return (
+                        <span key={`${keyPrefix}-${i}`} className="text-primary">
+                          {m[1]}
+                        </span>
+                      );
+                    }
+                    return <span key={`${keyPrefix}-${i}`}>{part}</span>;
+                  });
+                };
+                const line1 =
+                  hero.headline_line1 || hero.headline_lead || "";
+                const line2 =
+                  hero.headline_line2 ||
+                  (hero.headline_accent
+                    ? `<span>${hero.headline_accent}</span>`
+                    : "");
                 return (
                   <>
-                    {lead} <span className="text-primary">{accent}</span>
+                    {renderLine(line1, "l1")}
+                    {line2 && (
+                      <>
+                        <br className="hidden lg:block" />{" "}
+                        {renderLine(line2, "l2")}
+                      </>
+                    )}
                   </>
                 );
               })()}
