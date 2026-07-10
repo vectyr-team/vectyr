@@ -67,21 +67,33 @@ const Index = () => {
               style={heroStyle(1)}
             >
               {(() => {
+                const lead = hero.headline_lead;
                 const accent = hero.headline_accent;
-                const match = accent.match(/^(.*?\b\w+'s)\s+(.*)$/i);
-                if (!match) {
+                const leadMatch = lead.match(/^(.*?\b\w+['’]s)\s+(.*)$/i);
+                if (leadMatch) {
+                  const [, leadBefore, leadAfter] = leadMatch;
                   return (
                     <>
-                      {hero.headline_lead} <span className="text-primary">{accent}</span>
+                      {leadBefore}
+                      <br className="hidden lg:block" />{" "}
+                      {leadAfter} <span className="text-primary">{accent}</span>
                     </>
                   );
                 }
-                const [, before, after] = match;
+                const accentMatch = accent.match(/^(.*?\b\w+['’]s)\s+(.*)$/i);
+                if (accentMatch) {
+                  const [, before, after] = accentMatch;
+                  return (
+                    <>
+                      {lead} <span className="text-primary">{before}</span>
+                      <br className="hidden lg:block" />{" "}
+                      <span className="text-primary">{after}</span>
+                    </>
+                  );
+                }
                 return (
                   <>
-                    {hero.headline_lead} <span className="text-primary">{before}</span>
-                    <br className="hidden lg:block" />{" "}
-                    <span className="text-primary">{after}</span>
+                    {lead} <span className="text-primary">{accent}</span>
                   </>
                 );
               })()}
