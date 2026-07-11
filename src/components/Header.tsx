@@ -19,7 +19,7 @@ const companyLinks = [
 
 const navLinks = [
   { to: "/demo", label: "Demo" },
-  { to: "https://os.vectyr.com", label: "Login" },
+  { to: "https://brandhelix.ai", label: "Login" },
 ];
 
 // Delay order: innermost (closest to logo/center) animates first
@@ -31,7 +31,7 @@ const navDelayOrder = [0, 1, 2];
 const mobileLinks = [
   { to: "/demo", label: "Demo" },
   ...companyLinks,
-  { to: "https://os.vectyr.com", label: "Login" },
+  { to: "https://brandhelix.ai", label: "Login" },
 ];
 
 const Header = () => {
@@ -184,13 +184,15 @@ const Header = () => {
             </div>
 
             {/* Login */}
-            <Link
-              to="https://os.vectyr.com"
+            <a
+              href="https://brandhelix.ai"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors"
               style={getAnimStyle(navDelayOrder[2])}
             >
               Login
-            </Link>
+            </a>
           </nav>
         )}
       </header>
