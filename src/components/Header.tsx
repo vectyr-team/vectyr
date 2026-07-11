@@ -205,19 +205,36 @@ const Header = () => {
           }`}
         >
           <nav className="flex flex-col items-center gap-0">
-            {mobileLinks.map((link, i) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setMenuOpen(false)}
-                className={`font-headline text-4xl uppercase tracking-normal text-foreground hover:text-accent transition-all duration-500 py-3 ${
-                  menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-                style={{ transitionDelay: menuOpen ? `${150 + i * 100}ms` : "0ms" }}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {mobileLinks.map((link, i) => {
+              const isExternal = link.to.startsWith("http");
+              const className = `font-headline text-4xl uppercase tracking-normal text-foreground hover:text-accent transition-all duration-500 py-3 ${
+                menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`;
+              const style = { transitionDelay: menuOpen ? `${150 + i * 100}ms` : "0ms" };
+              return isExternal ? (
+                <a
+                  key={link.to}
+                  href={link.to}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                  className={className}
+                  style={style}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  onClick={() => setMenuOpen(false)}
+                  className={className}
+                  style={style}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <div
