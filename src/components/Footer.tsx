@@ -71,6 +71,7 @@ const Footer = () => {
             {[
               { label: "BrandHelix.ai", to: "https://brandhelix.ai" },
               { label: "Archetype Quiz", to: "https://quiz.vectyr.com" },
+              { label: "Brand Script", to: "https://story.vectyr.com" },
             ].map((link) => (
               <a
                 key={link.to}
