@@ -26,8 +26,20 @@ const FALLBACK: HomeHero = {
   secondary_button_link: "/faqs",
 };
 
+const CACHE_KEY = "home_hero_cache_v1";
+
+const readCache = (): HomeHero | null => {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.localStorage.getItem(CACHE_KEY);
+    return raw ? (JSON.parse(raw) as HomeHero) : null;
+  } catch {
+    return null;
+  }
+};
+
 export const useHomeHero = () => {
-  const [data, setData] = useState<HomeHero>(FALLBACK);
+  const [data, setData] = useState<HomeHero>(() => readCache() ?? FALLBACK);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -40,7 +52,14 @@ export const useHomeHero = () => {
         .limit(1)
         .maybeSingle();
       if (active) {
-        if (row) setData(row as HomeHero);
+        if (row) {
+          setData(row as HomeHero);
+          try {
+            window.localStorage.setItem(CACHE_KEY, JSON.stringify(row));
+          } catch {
+            /* ignore */
+          }
+        }
         setLoading(false);
       }
     })();
