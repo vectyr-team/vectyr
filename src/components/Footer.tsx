@@ -1,10 +1,38 @@
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
+import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import logoStacked from "@/assets/bodR-stacked-white.svg";
 import bodXIcon from "@/assets/bodX-white.svg";
 
+interface SocialLink {
+  id: string;
+  label: string;
+  icon: string;
+  href: string;
+}
+
 const Footer = () => {
   const year = new Date().getFullYear();
+  const [socials, setSocials] = useState<SocialLink[]>([
+    { id: "yt", icon: "mdi:youtube", href: "https://www.youtube.com/@vectyrbrands", label: "YouTube" },
+    { id: "be", icon: "mdi:behance", href: "https://www.behance.net/vectyr", label: "Behance" },
+    { id: "li", icon: "mdi:linkedin", href: "https://www.linkedin.com/in/stevereedbrands", label: "LinkedIn" },
+  ]);
+
+  useEffect(() => {
+    let active = true;
+    supabase
+      .from("social_links")
+      .select("id,label,icon,href")
+      .order("sort_order", { ascending: true })
+      .then(({ data }) => {
+        if (active && data && data.length) setSocials(data as SocialLink[]);
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
 
   return (
     <footer className="relative overflow-hidden bg-black01">
@@ -27,16 +55,13 @@ const Footer = () => {
             </p>
             {/* Social icons */}
             <div className="flex items-center justify-center md:justify-start gap-3 mt-1">
-              {[
-                { icon: "mdi:youtube", href: "https://www.youtube.com/@vectyrbrands" },
-                { icon: "mdi:behance", href: "https://www.behance.net/vectyr" },
-                { icon: "mdi:linkedin", href: "https://www.linkedin.com/in/stevereedbrands" },
-              ].map((s, i) => (
+              {socials.map((s) => (
                 <a
-                  key={i}
+                  key={s.id}
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={s.label}
                   className="flex items-center justify-center h-8 w-8 rounded-sm border border-border/40 text-muted-foreground/50 hover:text-primary hover:border-primary/50 transition-all duration-200"
                 >
                   <Icon icon={s.icon} className="text-base" />
