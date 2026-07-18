@@ -12,6 +12,7 @@ import AdminManager from "@/components/backend/AdminManager";
 import TeamEditor from "@/components/backend/TeamEditor";
 import HomeHeroEditor from "@/components/backend/HomeHeroEditor";
 import ChatWidgetEditor from "@/components/backend/ChatWidgetEditor";
+import SocialLinksEditor from "@/components/backend/SocialLinksEditor";
 import { clearStoredAuthSession, withTimeout } from "@/lib/supabase-guards";
 
 interface PageSetting {
@@ -42,6 +43,7 @@ const SEO_SECTIONS: Record<string, { title: string; subtitle: string }> = {
   "seo-schema": { title: "Schema Preview", subtitle: "JSON-LD Validation" },
   "admin-users": { title: "Admin Users", subtitle: "Manage Access" },
   "settings-chat-widget": { title: "Chat Widget", subtitle: "Sitewide Embed Code" },
+  "settings-social-links": { title: "Social Links", subtitle: "Footer Social Icons" },
 };
 
 const Backend = () => {
@@ -271,6 +273,8 @@ const Backend = () => {
           return <AdminManager />;
         case "settings-chat-widget":
           return <ChatWidgetEditor />;
+        case "settings-social-links":
+          return <SocialLinksEditor />;
         default:
           return null;
       }
