@@ -24,6 +24,7 @@ const seoSections = [
 const settingsSections = [
   { slug: "admin-users", name: "Admin Users", icon: "lucide:shield" },
   { slug: "settings-chat-widget", name: "Chat Widget", icon: "lucide:message-square" },
+  { slug: "settings-social-links", name: "Social Links", icon: "lucide:share-2" },
 ];
 
 const pageIcons: Record<string, string> = {
