@@ -176,15 +176,16 @@ const About = () => {
       {/* Cake Jerky / Customer Perception Profile */}
       <section className="px-6 py-16 md:py-32 bg-[#090909]">
         <div className="mx-auto max-w-[1300px]">
-          <div className="flex items-center gap-4 mb-8 md:mb-12">
+          <div className="flex items-center justify-center gap-4 mb-8 md:mb-12">
+            <span className="w-12 h-px bg-muted-foreground" />
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
               The Customer Perception Profile
             </span>
             <span className="w-12 h-px bg-muted-foreground" />
           </div>
 
-          <h2 className="font-headline font-light text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl max-w-[18ch] mb-12 md:mb-20">
-            THE FRAMEWORK DIDN'T COME FROM A BOOK.<br className="hidden sm:block" /> <span className="text-primary">IT BECAME ONE.</span>
+          <h2 className="font-headline font-light text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-6xl text-center text-balance mb-12 md:mb-20">
+            THE FRAMEWORK DIDN'T COME FROM A BOOK. <span className="text-primary">IT BECAME ONE.</span>
           </h2>
 
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
