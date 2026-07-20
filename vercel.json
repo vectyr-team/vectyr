@@ -21,6 +21,10 @@
       "source": "/sitemap.xml",
       "destination": "https://bhwjpaogtxhapiyhvjlc.supabase.co/functions/v1/sitemap"
     },
-    { "source": "/((?!api).*)", "destination": "/index.html" }
+    {
+      "source": "/__l5e/:path*",
+      "destination": "https://id-preview--b0392921-d3d2-4af5-8206-5089c1093a0f.lovable.app/__l5e/:path*"
+    },
+    { "source": "/((?!api|__l5e).*)", "destination": "/index.html" }
   ]
 }
