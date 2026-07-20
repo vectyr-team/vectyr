@@ -177,7 +177,7 @@ const About = () => {
       <section className="px-6 py-16 md:py-32 bg-[#090909]">
         <div className="mx-auto max-w-[1300px]">
           <div className="flex items-center justify-center gap-4 mb-8 md:mb-12">
-            <span className="w-12 h-px bg-muted-foreground" />
+            <span className="hidden md:block w-12 h-px bg-muted-foreground" />
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
               The Customer Perception Profile
             </span>
