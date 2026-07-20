@@ -119,19 +119,19 @@ const About = () => {
 
             <div className="space-y-6">
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                Steve Reed has spent over two decades working with growth-stage businesses, specialty trades, professional firms, product companies, and service businesses, watching the same problem repeat itself. Great companies losing to worse ones because their brand didn't reflect what they'd actually built.
+                Steve Reed has spent more than two decades inside growth-stage businesses, specialty trades, professional firms, product companies, and service businesses, watching the same problem repeat itself: great companies losing to worse ones because their brand never reflected what they had actually built.
               </p>
 
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                He started Vectyr to solve that problem at the root, not the surface. Not logos. Not campaigns. Not redesigns that produce prettier versions of the same misalignment. <span className="font-semibold text-foreground">Complete brand operating systems, built from the actual reality of the business, delivered as infrastructure, maintained so they don't drift.</span>
+                He started Vectyr to fix that at the root. Not another logo, campaign, or redesign that produces a prettier version of the same misalignment, but the real work of finding what makes a business different, rebuilding the brand to match the caliber of what it delivers, and sourcing the voice from the customer's own language.
               </p>
 
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                The BrandOS methodology is the result of twenty years of pattern recognition across hundreds of brands: what works, what doesn't, and what every business needs in place before anything else can perform. It is not a framework borrowed from a book. It is the thing Steve wished every client had before he started working with them.
+                That thinking became BrandHelix, Vectyr's main product and the result of twenty years of pattern recognition across hundreds of brands. BrandHelix is a Brand-Powered AI. It rebuilds a business's brand, then builds it into an AI chat the whole team can talk to, one that already holds the brand, the customer psychology, and the strategy before a word or an image goes out.
               </p>
 
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                Steve is also the creator of the Customer Perception Profile, the proprietary psychological framework at the core of the Brand Codex methodology, published in <em>Cake Jerky</em>. He is a named methodology author, not just a practitioner with an opinion. That distinction matters when you're trusting someone with the most important document your business will ever have.
+                Every other AI a team opens starts from nothing and hands back the same generic work. This one runs on the brand, so the business sounds like itself without the founder approving every draft.
               </p>
 
               <div className="flex flex-col gap-3 mt-4">
@@ -142,14 +142,6 @@ const About = () => {
                   className="border-l-4 border-primary pl-4 font-body text-base font-semibold text-foreground hover:text-primary transition-colors"
                 >
                   Thirty minutes with Steve, no pitch →
-                </a>
-                <a
-                  href="https://buy.cakejerky.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="border-l-4 border-primary pl-4 font-body text-base font-semibold text-foreground hover:text-primary transition-colors"
-                >
-                  Buy his book, Cake Jerky →
                 </a>
                 <a
                   href="https://www.linkedin.com/in/stevereedbrands/"
@@ -175,6 +167,36 @@ const About = () => {
               <p className="font-mono text-xs uppercase tracking-[0.25em] leading-relaxed text-muted-foreground mt-1">
                 FOUNDER, VECTYR<br />AUSTIN, TX
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cake Jerky / Customer Perception Profile */}
+      <section className="px-6 py-16 md:py-32 bg-[#121212]">
+        <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+          <div>
+            <div className="flex items-center gap-4 mb-6">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
+                The Customer Perception Profile
+              </span>
+              <span className="w-12 h-px bg-muted-foreground" />
+            </div>
+
+            <h2 className="font-headline font-light text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl">
+              THE FRAMEWORK DIDN'T COME FROM A BOOK. <span className="text-primary">IT BECAME ONE.</span>
+            </h2>
+          </div>
+
+          <div className="space-y-8 md:pt-4">
+            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+              The customer psychology that runs inside every BrandHelix brand has a name: the Customer Perception Profile. Steve built it for real brand work with real clients and real stakes, then published it in <em>Cake Jerky</em> because the results were too consistent to keep proprietary. Six psychological elements that map why a customer actually buys, not just who they are on paper. It is the reasoning layer BrandHelix runs on, and the reason a Vectyr brand sounds like it understands the customer better than the customer expected to be understood.
+            </p>
+
+            <div>
+              <a href="https://buy.cakejerky.com" target="_blank" rel="noopener noreferrer">
+                <Button size="lg">Buy Cake Jerky</Button>
+              </a>
             </div>
           </div>
         </div>
