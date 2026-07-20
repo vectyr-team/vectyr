@@ -186,13 +186,16 @@ const About = () => {
               </div>
 
               <h2 className="font-headline font-light text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl">
-                THE FRAMEWORK DIDN'T COME FROM A BOOK. <span className="text-primary">IT BECAME ONE.</span>
+                THE FRAMEWORK DIDN'T COME FROM A BOOK.<br className="hidden sm:block" /> <span className="text-primary">IT BECAME ONE.</span>
               </h2>
             </div>
 
             <div className="space-y-8 md:pt-4">
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                The customer psychology that runs inside every BrandHelix brand has a name: the Customer Perception Profile. Steve built it for real brand work with real clients and real stakes, then published it in <em>Cake Jerky</em> because the results were too consistent to keep proprietary. Six psychological elements that map why a customer actually buys, not just who they are on paper. It is the reasoning layer BrandHelix runs on, and the reason a Vectyr brand sounds like it understands the customer better than the customer expected to be understood.
+                The customer psychology that runs inside every BrandHelix brand has a name: the Customer Perception Profile. Steve built it for real brand work with real clients and real stakes, then published it in <em>Cake Jerky</em> because the results were too consistent to keep proprietary.
+              </p>
+              <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+                Six psychological elements that map why a customer actually buys, not just who they are on paper. It is the reasoning layer BrandHelix runs on, and the reason a Vectyr brand sounds like it understands the customer better than the customer expected to be understood.
               </p>
 
               <div>
@@ -206,7 +209,7 @@ const About = () => {
           <img
             src={cakeJerkyCpp.url}
             alt="Cake Jerky book alongside a laptop showing the BrandHelix Customer Perception Profile"
-            className="w-full rounded object-cover"
+            className="w-full md:w-1/2 rounded object-cover"
             loading="lazy"
           />
         </div>
