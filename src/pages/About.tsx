@@ -36,15 +36,15 @@ const About = () => {
           {/* Right column */}
           <div className="space-y-8 md:pt-8">
             <p className="font-body text-xl md:text-2xl font-semibold leading-snug text-foreground">
-              Most agencies start with the logo. We start with the operating system.
+              Most agencies start with the logo. We start with the data and the strategy.
             </p>
 
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-[#adadad]">
-              The strategy that tells your team, your vendors, and your AI tools exactly who you are, what you stand for, and how to communicate it without calling you first. We've watched good businesses lose to worse ones for two decades because the market rewards the brand that earns trust fastest, not the product that deserves it most.
+              The strategy that tells your team, your vendors, and your AI tools exactly who you are, what you stand for, and how to say it without routing every decision back through you. For two decades we've watched good businesses lose to worse ones, because the market rewards whoever earns trust fastest and the better product rarely gets there first.
             </p>
 
             <p className="font-body italic text-base md:text-lg font-light leading-relaxed text-[#adadad]">
-              Vectyr BrandOS exists because that is a solvable problem, and nobody else was solving it the right way.
+              BrandHelix exists because that is a solvable problem, and nobody else was solving it the right way.
             </p>
           </div>
         </div>
