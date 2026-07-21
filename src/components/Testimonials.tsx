@@ -13,7 +13,7 @@ interface Testimonial {
 }
 
 const Stars = ({ rating }: { rating: number }) => (
-  <div className="flex items-center gap-1 mb-4">
+  <div className="flex items-center gap-1">
     {Array.from({ length: 5 }).map((_, i) => (
       <Icon
         key={i}
@@ -115,24 +115,24 @@ const Testimonials = () => {
       {items.map((t) => (
         <figure
           key={t.id}
-          className="mb-5 break-inside-avoid bg-lightgray text-black01 p-6 md:p-7 shadow-sm"
+          className="mb-5 break-inside-avoid bg-white text-black01 p-6 md:p-7 shadow-sm"
         >
-          <Stars rating={t.rating} />
-          {t.video_url && <VideoEmbed url={t.video_url} />}
-          <blockquote className="font-body text-[15px] leading-relaxed text-black01/85">
-            {t.quote}
-          </blockquote>
-          <figcaption className="mt-6 pt-5 border-t border-black/10 flex items-center gap-3">
+          <div className="flex items-center gap-3 mb-5">
             <Avatar name={t.name} url={t.avatar_url} />
-            <div className="min-w-0">
-              <div className="font-body text-sm text-black01 truncate">{t.name}</div>
+            <div className="min-w-0 flex-1">
+              <Stars rating={t.rating} />
+              <div className="font-body text-sm text-black01 truncate mt-1">{t.name}</div>
               {t.title && (
                 <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-black01/60 mt-0.5 truncate">
                   {t.title}
                 </div>
               )}
             </div>
-          </figcaption>
+          </div>
+          {t.video_url && <VideoEmbed url={t.video_url} />}
+          <blockquote className="font-body text-[15px] leading-relaxed text-black01/85">
+            {t.quote}
+          </blockquote>
         </figure>
       ))}
     </div>
