@@ -52,14 +52,26 @@ const toEmbedUrl = (url: string): { kind: "iframe" | "video"; src: string } => {
 
 const VideoEmbed = ({ url }: { url: string }) => {
   const embed = useMemo(() => toEmbedUrl(url), [url]);
+  const [ratio, setRatio] = useState<number | null>(null);
+  const aspectStyle = ratio ? { aspectRatio: `${ratio}` } : undefined;
+  const aspectClass = ratio ? "" : "aspect-video";
   return (
-    <div className="relative w-full aspect-video mb-5 overflow-hidden rounded-sm bg-black">
+    <div
+      className={`relative w-full ${aspectClass} mb-5 overflow-hidden rounded-sm bg-black`}
+      style={aspectStyle}
+    >
       {embed.kind === "video" ? (
         <video
           src={embed.src}
           controls
           playsInline
-          className="absolute inset-0 h-full w-full object-cover"
+          onLoadedMetadata={(e) => {
+            const v = e.currentTarget;
+            if (v.videoWidth && v.videoHeight) {
+              setRatio(v.videoWidth / v.videoHeight);
+            }
+          }}
+          className="absolute inset-0 h-full w-full object-contain"
         />
       ) : (
         <iframe
