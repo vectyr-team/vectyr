@@ -25,6 +25,7 @@ const settingsSections = [
   { slug: "admin-users", name: "Admin Users", icon: "lucide:shield" },
   { slug: "settings-chat-widget", name: "Chat Widget", icon: "lucide:message-square" },
   { slug: "settings-social-links", name: "Social Links", icon: "lucide:share-2" },
+  { slug: "settings-testimonials", name: "Testimonials", icon: "lucide:quote" },
 ];
 
 const pageIcons: Record<string, string> = {
