@@ -10,7 +10,7 @@ import { LocalBusinessJsonLd } from "@/components/JsonLd";
 import { PAGE_META } from "@/config/seo";
 import { useBusinessInfo, usePageMeta } from "@/hooks/use-seo-data";
 import { useHomeHero } from "@/hooks/use-home-hero";
-import SaywallEmbed from "@/components/SaywallEmbed";
+import Testimonials from "@/components/Testimonials";
 
 const heroItems = [
   { delay: 0.6 }, // overline
@@ -258,7 +258,7 @@ const Index = () => {
             </ScrollSection>
 
             <div className="mt-16">
-              <SaywallEmbed />
+              <Testimonials />
             </div>
           </div>
         </section>
