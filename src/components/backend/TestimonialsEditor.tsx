@@ -260,6 +260,7 @@ const TestimonialsEditor = () => {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [deleteId, setDeleteId] = useState<string | null>(null);
+  const [videoUploadingId, setVideoUploadingId] = useState<string | null>(null);
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -298,6 +299,26 @@ const TestimonialsEditor = () => {
     const { data: urlData } = supabase.storage.from("team-photos").getPublicUrl(path);
     updateLocal(id, { avatar_url: urlData.publicUrl });
     toast.success("Avatar uploaded. Save to keep it.");
+  };
+
+  const uploadVideo = async (id: string, file: File) => {
+    setVideoUploadingId(id);
+    try {
+      const ext = file.name.split(".").pop() || "mp4";
+      const path = `videos/${id}-${Date.now()}.${ext}`;
+      const { error: upErr } = await supabase.storage
+        .from("team-photos")
+        .upload(path, file, { contentType: file.type || "video/mp4" });
+      if (upErr) {
+        toast.error(`Upload failed: ${upErr.message}`);
+        return;
+      }
+      const { data: urlData } = supabase.storage.from("team-photos").getPublicUrl(path);
+      updateLocal(id, { video_url: urlData.publicUrl });
+      toast.success("Video uploaded. Save to keep it.");
+    } finally {
+      setVideoUploadingId(null);
+    }
   };
 
   const addItem = async () => {
@@ -397,6 +418,8 @@ const TestimonialsEditor = () => {
                 onChange={(patch) => updateLocal(item.id, patch)}
                 onDelete={() => setDeleteId(item.id)}
                 onUploadAvatar={(file) => uploadAvatar(item.id, file)}
+                onUploadVideo={(file) => uploadVideo(item.id, file)}
+                videoUploading={videoUploadingId === item.id}
               />
             ))}
           </div>
