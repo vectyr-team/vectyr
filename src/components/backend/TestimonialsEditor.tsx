@@ -36,6 +36,7 @@ interface Testimonial {
   id: string;
   name: string;
   title: string | null;
+  headline: string | null;
   quote: string;
   rating: number;
   avatar_url: string | null;
@@ -162,6 +163,12 @@ function SortableRow({
             className="font-body text-sm"
           />
         </div>
+        <Input
+          value={item.headline ?? ""}
+          onChange={(e) => onChange({ headline: e.target.value })}
+          placeholder="Review headline (optional, e.g. Fantastic Collaboration)"
+          className="font-body text-sm"
+        />
         <Textarea
           value={item.quote}
           onChange={(e) => onChange({ quote: e.target.value })}
@@ -244,6 +251,7 @@ const TestimonialsEditor = () => {
       .insert({
         name: "New",
         title: null,
+        headline: null,
         quote: "",
         rating: 5,
         sort_order: nextOrder,
@@ -294,6 +302,7 @@ const TestimonialsEditor = () => {
             .update({
               name: l.name,
               title: l.title || null,
+              headline: l.headline || null,
               quote: l.quote,
               rating: l.rating,
               avatar_url: l.avatar_url,

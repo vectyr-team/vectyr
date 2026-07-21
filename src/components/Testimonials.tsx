@@ -6,6 +6,7 @@ interface Testimonial {
   id: string;
   name: string;
   title: string | null;
+  headline: string | null;
   quote: string;
   rating: number;
   avatar_url: string | null;
@@ -99,7 +100,7 @@ const Testimonials = () => {
     (async () => {
       const { data } = await supabase
         .from("testimonials")
-        .select("id, name, title, quote, rating, avatar_url, video_url")
+        .select("id, name, title, headline, quote, rating, avatar_url, video_url")
         .order("sort_order", { ascending: true });
       if (active && data) setItems(data as Testimonial[]);
     })();
@@ -115,24 +116,33 @@ const Testimonials = () => {
       {items.map((t) => (
         <figure
           key={t.id}
-          className="mb-5 break-inside-avoid bg-white text-black01 p-6 md:p-7 shadow-sm"
+          className="mb-5 break-inside-avoid bg-white text-black01 p-6 md:p-7 rounded-lg shadow-sm"
         >
-          <div className="flex items-center gap-3 mb-5">
+          <Stars rating={t.rating} />
+          {t.headline && (
+            <h3 className="font-body font-semibold text-lg text-black01 mt-4">
+              {t.headline}
+            </h3>
+          )}
+          {t.video_url && (
+            <div className="mt-4">
+              <VideoEmbed url={t.video_url} />
+            </div>
+          )}
+          <blockquote className="font-body text-[15px] leading-relaxed text-black01/80 mt-3">
+            {t.quote}
+          </blockquote>
+          <figcaption className="mt-5 flex items-center gap-3">
             <Avatar name={t.name} url={t.avatar_url} />
-            <div className="min-w-0 flex-1">
-              <Stars rating={t.rating} />
-              <div className="font-body text-sm text-black01 truncate mt-1">{t.name}</div>
+            <div className="min-w-0">
+              <div className="font-body text-sm font-medium text-black01 truncate">{t.name}</div>
               {t.title && (
                 <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-black01/60 mt-0.5 truncate">
                   {t.title}
                 </div>
               )}
             </div>
-          </div>
-          {t.video_url && <VideoEmbed url={t.video_url} />}
-          <blockquote className="font-body text-[15px] leading-relaxed text-black01/85">
-            {t.quote}
-          </blockquote>
+          </figcaption>
         </figure>
       ))}
     </div>
