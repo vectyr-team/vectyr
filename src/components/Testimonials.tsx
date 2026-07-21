@@ -92,13 +92,13 @@ const Avatar = ({ name, url }: { name: string; url: string | null }) => {
       <img
         src={url}
         alt={name}
-        className="h-12 w-12 rounded-full object-cover shrink-0"
+        className="h-14 w-14 rounded-full object-cover shrink-0"
         loading="lazy"
       />
     );
   }
   return (
-    <div className="h-12 w-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-mono text-sm shrink-0">
+    <div className="h-14 w-14 rounded-full bg-primary/10 text-primary flex items-center justify-center font-mono text-base shrink-0">
       {getInitials(name) || "•"}
     </div>
   );
