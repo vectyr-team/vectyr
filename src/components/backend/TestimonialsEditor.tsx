@@ -114,16 +114,72 @@ function AvatarPicker({
   );
 }
 
+function VideoPicker({
+  url,
+  onUpload,
+  onClear,
+  uploading,
+}: {
+  url: string | null;
+  onUpload: (file: File) => void;
+  onClear: () => void;
+  uploading: boolean;
+}) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center gap-2">
+        <input
+          ref={inputRef}
+          type="file"
+          accept="video/*"
+          className="hidden"
+          onChange={(e) => {
+            const f = e.target.files?.[0];
+            if (f) onUpload(f);
+            e.target.value = "";
+          }}
+        />
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          onClick={() => inputRef.current?.click()}
+          disabled={uploading}
+        >
+          {uploading ? "Uploading..." : url ? "Replace Video" : "Upload Video"}
+        </Button>
+        {url && (
+          <Button type="button" variant="ghost" size="sm" onClick={onClear} disabled={uploading}>
+            Remove
+          </Button>
+        )}
+      </div>
+      {url && (
+        <video
+          src={url}
+          controls
+          className="w-full max-w-xs rounded border border-border bg-black"
+        />
+      )}
+    </div>
+  );
+}
+
 function SortableRow({
   item,
   onChange,
   onDelete,
   onUploadAvatar,
+  onUploadVideo,
+  videoUploading,
 }: {
   item: Testimonial;
   onChange: (patch: Partial<Testimonial>) => void;
   onDelete: () => void;
   onUploadAvatar: (file: File) => void;
+  onUploadVideo: (file: File) => void;
+  videoUploading: boolean;
 }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
     useSortable({ id: item.id });
@@ -176,11 +232,11 @@ function SortableRow({
           rows={3}
           className="font-body text-sm"
         />
-        <Input
-          value={item.video_url ?? ""}
-          onChange={(e) => onChange({ video_url: e.target.value })}
-          placeholder="Video URL (optional, YouTube, Vimeo, Loom, Streamable, or .mp4)"
-          className="font-body text-sm"
+        <VideoPicker
+          url={item.video_url}
+          onUpload={onUploadVideo}
+          onClear={() => onChange({ video_url: null })}
+          uploading={videoUploading}
         />
         <div className="flex flex-wrap items-center gap-4">
           <StarInput value={item.rating} onChange={(n) => onChange({ rating: n })} />
@@ -204,6 +260,7 @@ const TestimonialsEditor = () => {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [deleteId, setDeleteId] = useState<string | null>(null);
+  const [videoUploadingId, setVideoUploadingId] = useState<string | null>(null);
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -242,6 +299,26 @@ const TestimonialsEditor = () => {
     const { data: urlData } = supabase.storage.from("team-photos").getPublicUrl(path);
     updateLocal(id, { avatar_url: urlData.publicUrl });
     toast.success("Avatar uploaded. Save to keep it.");
+  };
+
+  const uploadVideo = async (id: string, file: File) => {
+    setVideoUploadingId(id);
+    try {
+      const ext = file.name.split(".").pop() || "mp4";
+      const path = `videos/${id}-${Date.now()}.${ext}`;
+      const { error: upErr } = await supabase.storage
+        .from("team-photos")
+        .upload(path, file, { contentType: file.type || "video/mp4" });
+      if (upErr) {
+        toast.error(`Upload failed: ${upErr.message}`);
+        return;
+      }
+      const { data: urlData } = supabase.storage.from("team-photos").getPublicUrl(path);
+      updateLocal(id, { video_url: urlData.publicUrl });
+      toast.success("Video uploaded. Save to keep it.");
+    } finally {
+      setVideoUploadingId(null);
+    }
   };
 
   const addItem = async () => {
@@ -341,6 +418,8 @@ const TestimonialsEditor = () => {
                 onChange={(patch) => updateLocal(item.id, patch)}
                 onDelete={() => setDeleteId(item.id)}
                 onUploadAvatar={(file) => uploadAvatar(item.id, file)}
+                onUploadVideo={(file) => uploadVideo(item.id, file)}
+                videoUploading={videoUploadingId === item.id}
               />
             ))}
           </div>
