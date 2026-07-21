@@ -6,6 +6,22 @@ import { Textarea } from "@/components/ui/textarea";
 import { Icon } from "@iconify/react";
 import { toast } from "sonner";
 import {
+  DndContext,
+  closestCenter,
+  PointerSensor,
+  KeyboardSensor,
+  useSensor,
+  useSensors,
+  DragEndEvent,
+} from "@dnd-kit/core";
+import {
+  SortableContext,
+  sortableKeyboardCoordinates,
+  verticalListSortingStrategy,
+  useSortable,
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+import {
   AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
@@ -23,6 +39,94 @@ interface FAQ {
   sort_order: number;
 }
 
+function SortableFaqRow({
+  faq,
+  isEditing,
+  editQuestion,
+  editAnswer,
+  setEditQuestion,
+  setEditAnswer,
+  onStartEdit,
+  onCancelEdit,
+  onSaveEdit,
+  onDelete,
+}: {
+  faq: FAQ;
+  isEditing: boolean;
+  editQuestion: string;
+  editAnswer: string;
+  setEditQuestion: (v: string) => void;
+  setEditAnswer: (v: string) => void;
+  onStartEdit: () => void;
+  onCancelEdit: () => void;
+  onSaveEdit: () => void;
+  onDelete: () => void;
+}) {
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
+    useSortable({ id: faq.id });
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.6 : 1,
+  };
+
+  return (
+    <div ref={setNodeRef} style={style} className="border border-border rounded-lg p-4 bg-card">
+      {isEditing ? (
+        <div className="space-y-3">
+          <Input
+            value={editQuestion}
+            onChange={(e) => setEditQuestion(e.target.value)}
+            placeholder="Question"
+            className="font-body"
+          />
+          <Textarea
+            value={editAnswer}
+            onChange={(e) => setEditAnswer(e.target.value)}
+            placeholder="Answer"
+            rows={6}
+            className="font-body text-sm"
+          />
+          <div className="flex gap-2">
+            <Button size="sm" onClick={onSaveEdit}>Save</Button>
+            <Button size="sm" variant="ghost" onClick={onCancelEdit}>Cancel</Button>
+          </div>
+        </div>
+      ) : (
+        <div className="flex items-start gap-3">
+          <button
+            type="button"
+            {...attributes}
+            {...listeners}
+            className="cursor-grab active:cursor-grabbing text-muted-foreground hover:text-foreground touch-none pt-1"
+            aria-label="Drag to reorder"
+          >
+            <Icon icon="lucide:grip-vertical" className="w-4 h-4" />
+          </button>
+          <div className="flex-1 min-w-0">
+            <p className="font-body text-sm font-medium text-foreground">{faq.question}</p>
+            <p className="font-body text-xs text-muted-foreground mt-1 line-clamp-2">{faq.answer}</p>
+          </div>
+          <div className="flex gap-1">
+            <button
+              onClick={onStartEdit}
+              className="text-muted-foreground hover:text-foreground transition-colors p-1"
+            >
+              <Icon icon="lucide:pencil" className="w-4 h-4" />
+            </button>
+            <button
+              onClick={onDelete}
+              className="text-muted-foreground hover:text-destructive transition-colors p-1"
+            >
+              <Icon icon="lucide:trash-2" className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 const FAQsEditor = () => {
   const [faqs, setFaqs] = useState<FAQ[]>([]);
   const [loading, setLoading] = useState(true);
@@ -33,6 +137,11 @@ const FAQsEditor = () => {
   const [newAnswer, setNewAnswer] = useState("");
   const [showAdd, setShowAdd] = useState(false);
   const [deleteTarget, setDeleteTarget] = useState<FAQ | null>(null);
+
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
+    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
+  );
 
   const fetchFaqs = async () => {
     const { data } = await supabase
@@ -103,86 +212,53 @@ const FAQsEditor = () => {
     fetchFaqs();
   };
 
-  const moveFaq = async (index: number, direction: "up" | "down") => {
-    const swapIndex = direction === "up" ? index - 1 : index + 1;
-    if (swapIndex < 0 || swapIndex >= faqs.length) return;
-
-    const current = faqs[index];
-    const swap = faqs[swapIndex];
-
-    await Promise.all([
-      supabase.from("faqs").update({ sort_order: swap.sort_order }).eq("id", current.id),
-      supabase.from("faqs").update({ sort_order: current.sort_order }).eq("id", swap.id),
-    ]);
-    fetchFaqs();
+  const handleDragEnd = async (event: DragEndEvent) => {
+    const { active, over } = event;
+    if (!over || active.id === over.id) return;
+    const oldIndex = faqs.findIndex((f) => f.id === active.id);
+    const newIndex = faqs.findIndex((f) => f.id === over.id);
+    if (oldIndex < 0 || newIndex < 0) return;
+    const reordered = [...faqs];
+    const [moved] = reordered.splice(oldIndex, 1);
+    reordered.splice(newIndex, 0, moved);
+    const withOrder = reordered.map((f, i) => ({ ...f, sort_order: i }));
+    setFaqs(withOrder);
+    const results = await Promise.all(
+      withOrder.map((f) =>
+        supabase.from("faqs").update({ sort_order: f.sort_order }).eq("id", f.id)
+      )
+    );
+    if (results.some((r) => r.error)) {
+      toast.error("Failed to save order");
+      fetchFaqs();
+    }
   };
 
   if (loading) return <p className="text-muted-foreground text-sm">Loading...</p>;
 
   return (
     <div className="space-y-4">
-      {faqs.map((faq, index) => (
-        <div key={faq.id} className="border border-border rounded-lg p-4">
-          {editingId === faq.id ? (
-            <div className="space-y-3">
-              <Input
-                value={editQuestion}
-                onChange={(e) => setEditQuestion(e.target.value)}
-                placeholder="Question"
-                className="font-body"
+      <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+        <SortableContext items={faqs.map((f) => f.id)} strategy={verticalListSortingStrategy}>
+          <div className="space-y-2">
+            {faqs.map((faq) => (
+              <SortableFaqRow
+                key={faq.id}
+                faq={faq}
+                isEditing={editingId === faq.id}
+                editQuestion={editQuestion}
+                editAnswer={editAnswer}
+                setEditQuestion={setEditQuestion}
+                setEditAnswer={setEditAnswer}
+                onStartEdit={() => startEdit(faq)}
+                onCancelEdit={cancelEdit}
+                onSaveEdit={saveEdit}
+                onDelete={() => setDeleteTarget(faq)}
               />
-              <Textarea
-                value={editAnswer}
-                onChange={(e) => setEditAnswer(e.target.value)}
-                placeholder="Answer"
-                rows={6}
-                className="font-body text-sm"
-              />
-              <div className="flex gap-2">
-                <Button size="sm" onClick={saveEdit}>Save</Button>
-                <Button size="sm" variant="ghost" onClick={cancelEdit}>Cancel</Button>
-              </div>
-            </div>
-          ) : (
-            <div className="flex items-start gap-3">
-              <div className="flex flex-col gap-1 pt-1">
-                <button
-                  onClick={() => moveFaq(index, "up")}
-                  disabled={index === 0}
-                  className="text-muted-foreground hover:text-foreground disabled:opacity-20 transition-colors"
-                >
-                  <Icon icon="lucide:chevron-up" className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={() => moveFaq(index, "down")}
-                  disabled={index === faqs.length - 1}
-                  className="text-muted-foreground hover:text-foreground disabled:opacity-20 transition-colors"
-                >
-                  <Icon icon="lucide:chevron-down" className="w-4 h-4" />
-                </button>
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="font-body text-sm font-medium text-foreground">{faq.question}</p>
-                <p className="font-body text-xs text-muted-foreground mt-1 line-clamp-2">{faq.answer}</p>
-              </div>
-              <div className="flex gap-1">
-                <button
-                  onClick={() => startEdit(faq)}
-                  className="text-muted-foreground hover:text-foreground transition-colors p-1"
-                >
-                  <Icon icon="lucide:pencil" className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={() => setDeleteTarget(faq)}
-                  className="text-muted-foreground hover:text-destructive transition-colors p-1"
-                >
-                  <Icon icon="lucide:trash-2" className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-      ))}
+            ))}
+          </div>
+        </SortableContext>
+      </DndContext>
 
       {showAdd ? (
         <div className="border border-border rounded-lg p-4 space-y-3">
