@@ -114,16 +114,72 @@ function AvatarPicker({
   );
 }
 
+function VideoPicker({
+  url,
+  onUpload,
+  onClear,
+  uploading,
+}: {
+  url: string | null;
+  onUpload: (file: File) => void;
+  onClear: () => void;
+  uploading: boolean;
+}) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center gap-2">
+        <input
+          ref={inputRef}
+          type="file"
+          accept="video/*"
+          className="hidden"
+          onChange={(e) => {
+            const f = e.target.files?.[0];
+            if (f) onUpload(f);
+            e.target.value = "";
+          }}
+        />
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          onClick={() => inputRef.current?.click()}
+          disabled={uploading}
+        >
+          {uploading ? "Uploading..." : url ? "Replace Video" : "Upload Video"}
+        </Button>
+        {url && (
+          <Button type="button" variant="ghost" size="sm" onClick={onClear} disabled={uploading}>
+            Remove
+          </Button>
+        )}
+      </div>
+      {url && (
+        <video
+          src={url}
+          controls
+          className="w-full max-w-xs rounded border border-border bg-black"
+        />
+      )}
+    </div>
+  );
+}
+
 function SortableRow({
   item,
   onChange,
   onDelete,
   onUploadAvatar,
+  onUploadVideo,
+  videoUploading,
 }: {
   item: Testimonial;
   onChange: (patch: Partial<Testimonial>) => void;
   onDelete: () => void;
   onUploadAvatar: (file: File) => void;
+  onUploadVideo: (file: File) => void;
+  videoUploading: boolean;
 }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
     useSortable({ id: item.id });
@@ -176,11 +232,11 @@ function SortableRow({
           rows={3}
           className="font-body text-sm"
         />
-        <Input
-          value={item.video_url ?? ""}
-          onChange={(e) => onChange({ video_url: e.target.value })}
-          placeholder="Video URL (optional, YouTube, Vimeo, Loom, Streamable, or .mp4)"
-          className="font-body text-sm"
+        <VideoPicker
+          url={item.video_url}
+          onUpload={onUploadVideo}
+          onClear={() => onChange({ video_url: null })}
+          uploading={videoUploading}
         />
         <div className="flex flex-wrap items-center gap-4">
           <StarInput value={item.rating} onChange={(n) => onChange({ rating: n })} />
