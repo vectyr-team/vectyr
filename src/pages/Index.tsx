@@ -10,6 +10,7 @@ import { LocalBusinessJsonLd } from "@/components/JsonLd";
 import { PAGE_META } from "@/config/seo";
 import { useBusinessInfo, usePageMeta } from "@/hooks/use-seo-data";
 import { useHomeHero } from "@/hooks/use-home-hero";
+import SaywallEmbed from "@/components/SaywallEmbed";
 
 const heroItems = [
   { delay: 0.6 }, // overline
@@ -256,41 +257,8 @@ const Index = () => {
               </h2>
             </ScrollSection>
 
-            <div className="mt-16 grid gap-px md:grid-cols-3">
-              {[
-                {
-                  quote:
-                    "Vectyr questions, assesses and validates every assumption a company builder makes about their identity and value proposition. They build brand in the confirmed context of the market, customer needs, and the offering.",
-                  name: "David Clark",
-                  role: "Tech Startup Founder",
-                },
-                {
-                  quote:
-                    "We were struggling to define our ideal customer and create a cohesive brand identity. Vectyr's expertise was instrumental in transforming our business. We now have a clear brand identity that resonates with our ideal customer.",
-                  name: "Tina Hancock",
-                  role: "Fern Thatcher Co.",
-                },
-                {
-                  quote:
-                    "Monday I got to use this for the first time and ended up landing a high-paying client. We all wouldn't be surviving without you and your knowledge. You are an important piece of starting a successful business.",
-                  name: "Adam Layton",
-                  role: "Energy Home Improvements",
-                },
-              ].map((card, i) => (
-                <ScrollSection
-                  key={i}
-                  className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1} border-l border-border/40`}
-                >
-                  <Icon icon="tdesign:quote-filled" className="text-primary text-3xl mb-3" />
-                  <p className="font-body text-base leading-relaxed text-muted-foreground flex-1">{card.quote}</p>
-                  <div className="mt-6">
-                    <p className="font-mono text-sm uppercase tracking-[0.25em] text-primary">{card.name}</p>
-                    <p className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground opacity-50 mt-[9px]">
-                      {card.role}
-                    </p>
-                  </div>
-                </ScrollSection>
-              ))}
+            <div className="mt-16">
+              <SaywallEmbed />
             </div>
           </div>
         </section>
