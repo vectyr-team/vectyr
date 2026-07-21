@@ -6,6 +6,19 @@ const MARKER_ATTR = "data-vectyr-chat-widget";
 
 const removeInjected = () => {
   document.querySelectorAll(`[${MARKER_ATTR}]`).forEach((el) => el.remove());
+  // Also remove widget DOM that third-party loaders (e.g. LeadConnector) inject
+  // outside of our marked script tags. Without this, toggling off leaves the
+  // rendered chat bubble/iframe in place until a full page reload.
+  const externalSelectors = [
+    "lc-live-chat",
+    "[id^='lc_text']",
+    "[id^='lead-connector']",
+    "[class*='LeadConnector']",
+    "iframe[src*='leadconnectorhq']",
+    "iframe[src*='chat-widget']",
+    "div[id*='chat-widget']",
+  ];
+  document.querySelectorAll(externalSelectors.join(",")).forEach((el) => el.remove());
 };
 
 const injectFromHtml = (html: string) => {
