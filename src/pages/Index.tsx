@@ -10,6 +10,7 @@ import { LocalBusinessJsonLd } from "@/components/JsonLd";
 import { PAGE_META } from "@/config/seo";
 import { useBusinessInfo, usePageMeta } from "@/hooks/use-seo-data";
 import { useHomeHero } from "@/hooks/use-home-hero";
+import SaywallEmbed from "@/components/SaywallEmbed";
 
 const heroItems = [
   { delay: 0.6 }, // overline
