@@ -149,7 +149,7 @@ const Testimonials = () => {
             <div className="min-w-0">
               <div className="font-body text-sm font-medium text-black01 truncate">{t.name}</div>
               {t.title && (
-                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-black01/60 mt-0.5 truncate">
+                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-black01/60 mt-0.5 truncate">
                   {t.title}
                 </div>
               )}
