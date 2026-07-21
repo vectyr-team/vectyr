@@ -411,6 +411,7 @@ export type Database = {
       }
       testimonials: {
         Row: {
+          avatar_url: string | null
           created_at: string
           id: string
           name: string
@@ -419,8 +420,10 @@ export type Database = {
           sort_order: number
           title: string | null
           updated_at: string
+          video_url: string | null
         }
         Insert: {
+          avatar_url?: string | null
           created_at?: string
           id?: string
           name: string
@@ -429,8 +432,10 @@ export type Database = {
           sort_order?: number
           title?: string | null
           updated_at?: string
+          video_url?: string | null
         }
         Update: {
+          avatar_url?: string | null
           created_at?: string
           id?: string
           name?: string
@@ -439,6 +444,7 @@ export type Database = {
           sort_order?: number
           title?: string | null
           updated_at?: string
+          video_url?: string | null
         }
         Relationships: []
       }
