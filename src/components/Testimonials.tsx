@@ -14,12 +14,12 @@ interface Testimonial {
 }
 
 const Stars = ({ rating }: { rating: number }) => (
-  <div className="flex items-center gap-1">
+  <div className="flex items-center gap-0.5">
     {Array.from({ length: 5 }).map((_, i) => (
       <Icon
         key={i}
         icon="mdi:star"
-        className={`w-4 h-4 ${i < rating ? "text-primary" : "text-black/15"}`}
+        className={`w-5 h-5 ${i < rating ? "text-primary" : "text-black/15"}`}
       />
     ))}
   </div>
