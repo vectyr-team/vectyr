@@ -14,25 +14,31 @@ export interface HomeHero {
 }
 
 const FALLBACK: HomeHero = {
-  headline_lead: "Your Brand is Living in Your Head.",
-  headline_accent: "Nowhere Else.",
-  headline_line1: "Your Brand is Living in Your Head.",
-  headline_line2: "<span>Nowhere Else.</span>",
+  headline_lead: "You are Better Than Your",
+  headline_accent: "Brand Says You Are.",
+  headline_line1: "You are <span>Better</span> Than Your",
+  headline_line2: "Brand Says You Are.",
   subtitle:
-    "We turn the messy, implicit brand knowledge in a founder's mind into a clean, accessible, AI-ready system that the whole organization can use without constant founder input.",
+    "Your brand should be making you the obvious choice for your most ideal customers. If it isn't, then that is exactly what we fix.",
   primary_button_label: "Book a Demo",
   primary_button_link: "/demo",
   secondary_button_label: "FAQs",
   secondary_button_link: "/faqs",
 };
 
-const CACHE_KEY = "home_hero_cache_v1";
+const CACHE_KEY = "home_hero_cache_v2";
+// Cached copy is only trusted briefly, so a stale hero never sticks around
+// after content is edited in the backend.
+const CACHE_TTL_MS = 10 * 60 * 1000;
 
 const readCache = (): HomeHero | null => {
   if (typeof window === "undefined") return null;
   try {
     const raw = window.localStorage.getItem(CACHE_KEY);
-    return raw ? (JSON.parse(raw) as HomeHero) : null;
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as { at?: number; value?: HomeHero };
+    if (!parsed?.value || !parsed.at || Date.now() - parsed.at > CACHE_TTL_MS) return null;
+    return parsed.value;
   } catch {
     return null;
   }
@@ -55,7 +61,10 @@ export const useHomeHero = () => {
         if (row) {
           setData(row as HomeHero);
           try {
-            window.localStorage.setItem(CACHE_KEY, JSON.stringify(row));
+            window.localStorage.setItem(
+              CACHE_KEY,
+              JSON.stringify({ at: Date.now(), value: row })
+            );
           } catch {
             /* ignore */
           }
