@@ -279,7 +279,7 @@ const Index = () => {
               </h2>
 
               <p className="mt-4 md:mt-6 max-w-xl font-body text-lg leading-relaxed" style={{ color: "#6B6B6B" }}>
-                Get every person on your team working from the same single source of truth. This is the system that you're missing and it's costing you more than you think. Let's change that for good.
+                Get every person on your team working from the same single source of truth. This is the system that you're missing and it's costing you more than you think. Change it once and for all.
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
