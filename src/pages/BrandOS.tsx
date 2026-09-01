@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import bodXWatermark from "@/assets/bodX-watermark.svg";
 
 const features = [
-  "Lifetime access included with every Brand Codex build (no extra cost)",
+  "Lifetime access included with every Brand Genome build (no extra cost)",
   "Role-based access control so everyone sees only what they should",
   "Centralized brand assets and AI installation files everyone can use",
   "Version control and team notifications so everybody stays up to date",
@@ -24,7 +24,7 @@ const problems = [
 ];
 
 const howSteps = [
-  "Your completed Brand Codex is published as the single source of truth, a complete knowledgebase, inside BrandOS.",
+  "Your completed Brand Genome is published as the single source of truth, a complete knowledgebase, inside BrandOS.",
   "You invite team members, vendors, and contractors by role with access scoped to exactly what they need.",
   "Brand assets, guidelines, templates, and AI installation files are centralized and one click away for everybody on the team.",
   "Version control tracks every published update with labels and check-in status. Notifications keep the team aligned when things change.",
@@ -128,7 +128,7 @@ const BrandOS = () => {
               </div>
 
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                Vectyr BrandOS ends that. It is the operating environment built specifically around your Brand Codex. It
+                Vectyr BrandOS ends that. It is the operating environment built specifically around your Brand Genome. It
                 turns a single authoritative document into something every human and every AI tool can access and use
                 correctly without you having to explain it again.
               </p>
@@ -147,7 +147,7 @@ const BrandOS = () => {
             </div>
 
             <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-16">
-              From Codex To <span className="text-primary">Infrastructure.</span>
+              From Genome To <span className="text-primary">Infrastructure.</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
@@ -191,7 +191,7 @@ const BrandOS = () => {
               </p>
 
               <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-                It was built from the ground up around the Brand Codex structure. Other tools assume you already have a
+                It was built from the ground up around the Brand Genome structure. Other tools assume you already have a
                 documented brand and just need a nicer folder. BrandOS assumes the real work is making that strategy
                 accessible to the people and tools that actually produce your brand every day.
               </p>
