@@ -281,9 +281,6 @@ const Index = () => {
               <p className="mt-4 md:mt-6 max-w-xl font-body text-lg leading-relaxed" style={{ color: "#6B6B6B" }}>
                 Get every person on your team working from the same knowledge base. This is the system that you're missing and it's costing you more than you think. Let's change that for good.
               </p>
-              <p className="mt-4 md:mt-8 max-w-xl font-body text-lg leading-relaxed" style={{ color: "#6B6B6B" }}>
-                That's what installed looks like, and it's closer than you think.
-              </p>
 
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <a href="/demo">
