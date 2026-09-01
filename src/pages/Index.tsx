@@ -279,8 +279,7 @@ const Index = () => {
               </h2>
 
               <p className="mt-4 md:mt-6 max-w-xl font-body text-lg leading-relaxed" style={{ color: "#6B6B6B" }}>
-                Every person on your team working from the same knowledge base. An AI tool that sounds exactly like you.
-                Every vendor briefing themselves. No more being the informational bottleneck.
+                Get every person on your team working from the same knowledge base. This is the system that you're missing and it's costing you more than you think.
               </p>
               <p className="mt-4 md:mt-8 max-w-xl font-body text-lg leading-relaxed" style={{ color: "#6B6B6B" }}>
                 That's what installed looks like, and it's closer than you think.
