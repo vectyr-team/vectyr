@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkBreaks from "remark-breaks";
 import { supabase } from "@/integrations/supabase/client";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -102,7 +103,15 @@ const LegalPageEditor = ({ pageSlug, defaultTitle }: LegalPageEditorProps) => {
 
         {preview ? (
           <div className="min-h-[400px] bg-background border border-border rounded px-4 py-3 font-body text-sm text-muted-foreground leading-relaxed space-y-3 [&_h1]:text-foreground [&_h1]:text-xl [&_h2]:text-foreground [&_h2]:text-lg [&_h2]:mt-6 [&_h3]:text-foreground [&_a]:text-primary [&_a]:underline [&_strong]:text-foreground [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{content || "_Nothing to preview yet._"}</ReactMarkdown>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm, remarkBreaks]}
+              components={{
+                a: ({ href, children }) =>
+                  href?.startsWith("mailto:") ? <span>{children}</span> : <a href={href}>{children}</a>,
+              }}
+            >
+              {content || "_Nothing to preview yet._"}
+            </ReactMarkdown>
           </div>
         ) : (
           <textarea

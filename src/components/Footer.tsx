@@ -142,13 +142,13 @@ const Footer = () => {
               to="/privacy"
               className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/30 hover:text-foreground transition-colors duration-200"
             >
-              Privacy Policy
+              Privacy
             </Link>
             <Link
               to="/terms"
               className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/30 hover:text-foreground transition-colors duration-200"
             >
-              Terms of Service
+              Terms
             </Link>
             <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary/40">#BRANDORDIE</span>
           </div>
