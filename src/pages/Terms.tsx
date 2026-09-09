@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkBreaks from "remark-breaks";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -68,7 +69,15 @@ const Terms = () => {
                 [&_strong]:text-foreground
                 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:mb-1"
             >
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm, remarkBreaks]}
+                components={{
+                  a: ({ href, children }) =>
+                    href?.startsWith("mailto:") ? <span>{children}</span> : <a href={href}>{children}</a>,
+                }}
+              >
+                {content}
+              </ReactMarkdown>
             </div>
           ) : (
             <p className="text-muted-foreground font-body text-sm">These terms have not been published yet.</p>
