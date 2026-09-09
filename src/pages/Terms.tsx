@@ -51,7 +51,7 @@ const Terms = () => {
       <main className="flex-1">
         <SEOHead {...pageMeta} />
         <div className="max-w-3xl mx-auto px-6 pt-32 pb-24">
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-4 block">Legal</span>
+          
           <h1 className="font-headline text-5xl md:text-7xl font-normal text-foreground mb-12">{title}</h1>
 
           {loading ? (
