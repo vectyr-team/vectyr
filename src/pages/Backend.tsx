@@ -14,6 +14,7 @@ import HomeHeroEditor from "@/components/backend/HomeHeroEditor";
 import ChatWidgetEditor from "@/components/backend/ChatWidgetEditor";
 import SocialLinksEditor from "@/components/backend/SocialLinksEditor";
 import TestimonialsEditor from "@/components/backend/TestimonialsEditor";
+import LegalPageEditor from "@/components/backend/LegalPageEditor";
 import { clearStoredAuthSession, withTimeout } from "@/lib/supabase-guards";
 
 interface PageSetting {
@@ -37,6 +38,7 @@ const ALL_PAGES: { slug: string; name: string; metaSlug: string; path: string }[
   { slug: "glossary", name: "Glossary", metaSlug: "glossary", path: "/glossary" },
   { slug: "brand-os", name: "BrandOS", metaSlug: "brand-os", path: "/brand-os" },
   { slug: "site-ops", name: "SiteOps", metaSlug: "site-ops", path: "/site-ops" },
+  { slug: "privacy", name: "Privacy Policy", metaSlug: "privacy", path: "/privacy" },
 ];
 
 const SEO_SECTIONS: Record<string, { title: string; subtitle: string }> = {
@@ -288,6 +290,8 @@ const Backend = () => {
     if (isFaqsPage) return <FAQsEditor />;
     if (isGlossaryPage) return <GlossaryEditor />;
     if (isHomePage) return <HomeHeroEditor />;
+    if (selectedPage === "privacy")
+      return <LegalPageEditor pageSlug="privacy" defaultTitle="Privacy Policy" />;
 
     if (hasFormSettings) {
       return (
