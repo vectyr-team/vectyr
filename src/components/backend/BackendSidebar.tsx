@@ -38,6 +38,7 @@ const pageIcons: Record<string, string> = {
   team: "lucide:users",
   "brand-os": "lucide:layers",
   "site-ops": "lucide:settings",
+  privacy: "lucide:shield-check",
 };
 
 const SidebarContent = ({
