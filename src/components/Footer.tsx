@@ -138,6 +138,12 @@ const Footer = () => {
             &copy; {year} Vectyr, Ltd. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
+            <Link
+              to="/privacy"
+              className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/30 hover:text-foreground transition-colors duration-200"
+            >
+              Privacy Policy
+            </Link>
             <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary/40">#BRANDORDIE</span>
           </div>
         </div>
