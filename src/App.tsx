@@ -17,6 +17,7 @@ import BrandOS from "./pages/BrandOS.tsx";
 import SiteOps from "./pages/SiteOps.tsx";
 import Glossary from "./pages/Glossary.tsx";
 import Privacy from "./pages/Privacy.tsx";
+import Terms from "./pages/Terms.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import { OrganizationJsonLd } from "./components/JsonLd.tsx";
 import { useBusinessInfo } from "./hooks/use-seo-data.ts";
