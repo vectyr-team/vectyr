@@ -290,6 +290,8 @@ const Backend = () => {
     if (isFaqsPage) return <FAQsEditor />;
     if (isGlossaryPage) return <GlossaryEditor />;
     if (isHomePage) return <HomeHeroEditor />;
+    if (selectedPage === "privacy")
+      return <LegalPageEditor pageSlug="privacy" defaultTitle="Privacy Policy" />;
 
     if (hasFormSettings) {
       return (
