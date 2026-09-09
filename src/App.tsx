@@ -51,6 +51,7 @@ const App = () => (
           <Route path="/site-ops" element={<SiteOps />} />
           <Route path="/glossary" element={<Glossary />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="/backend" element={<Backend />} />
           <Route path="/backend/login" element={<BackendLogin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

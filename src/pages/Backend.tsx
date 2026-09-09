@@ -39,6 +39,7 @@ const ALL_PAGES: { slug: string; name: string; metaSlug: string; path: string }[
   { slug: "brand-os", name: "BrandOS", metaSlug: "brand-os", path: "/brand-os" },
   { slug: "site-ops", name: "SiteOps", metaSlug: "site-ops", path: "/site-ops" },
   { slug: "privacy", name: "Privacy Policy", metaSlug: "privacy", path: "/privacy" },
+  { slug: "terms", name: "Terms of Service", metaSlug: "terms", path: "/terms" },
 ];
 
 const SEO_SECTIONS: Record<string, { title: string; subtitle: string }> = {
@@ -292,6 +293,8 @@ const Backend = () => {
     if (isHomePage) return <HomeHeroEditor />;
     if (selectedPage === "privacy")
       return <LegalPageEditor pageSlug="privacy" defaultTitle="Privacy Policy" />;
+    if (selectedPage === "terms")
+      return <LegalPageEditor pageSlug="terms" defaultTitle="Terms of Service" />;
 
     if (hasFormSettings) {
       return (
