@@ -144,6 +144,12 @@ const Footer = () => {
             >
               Privacy Policy
             </Link>
+            <Link
+              to="/terms"
+              className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/30 hover:text-foreground transition-colors duration-200"
+            >
+              Terms of Service
+            </Link>
             <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary/40">#BRANDORDIE</span>
           </div>
         </div>
