@@ -16,6 +16,8 @@ import NotFound from "./pages/NotFound.tsx";
 import BrandOS from "./pages/BrandOS.tsx";
 import SiteOps from "./pages/SiteOps.tsx";
 import Glossary from "./pages/Glossary.tsx";
+import Privacy from "./pages/Privacy.tsx";
+import Terms from "./pages/Terms.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import { OrganizationJsonLd } from "./components/JsonLd.tsx";
 import { useBusinessInfo } from "./hooks/use-seo-data.ts";
@@ -48,6 +50,8 @@ const App = () => (
           <Route path="/brand-os" element={<BrandOS />} />
           <Route path="/site-ops" element={<SiteOps />} />
           <Route path="/glossary" element={<Glossary />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="/backend" element={<Backend />} />
           <Route path="/backend/login" element={<BackendLogin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

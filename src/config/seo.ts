@@ -28,7 +28,7 @@ export const BUSINESS = {
   serviceArea: ["Austin, TX", "United States"],
   servicesOffered: [
     "Brand Strategy",
-    "Brand Codex Development",
+    "Brand Genome Development",
     "BrandOS Platform",
     "BrandPulse Maintenance",
     "Brand Infrastructure for AI",
@@ -90,13 +90,13 @@ export const PAGE_META: Record<
   faqs: {
     title: "FAQs — Everything You Need to Know About Vectyr",
     description:
-      "Get answers to common questions about the Brand Codex, BrandOS platform, pricing, and how Vectyr works.",
+      "Get answers to common questions about the Brand Genome, BrandOS platform, pricing, and how Vectyr works.",
     path: "/faqs",
   },
   "brand-os": {
     title: "BrandOS — Your Brand, Installed | Vectyr",
     description:
-      "BrandOS is the operating environment that turns your Brand Codex into infrastructure your team and AI tools can actually use.",
+      "BrandOS is the operating environment that turns your Brand Genome into infrastructure your team and AI tools can actually use.",
     path: "/brand-os",
   },
   "site-ops": {

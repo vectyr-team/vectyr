@@ -188,23 +188,23 @@ const Index = () => {
                 {
                   problem: "Problem 01",
                   problemDesc:
-                    "No strategy. The brand never existed as a documented system, or it's scattered across too many heads with no alignment.",
-                  title: "Brand Codex",
-                  desc: "Done-for-you brand strategy. Vectyr runs the extraction, synthesis, and AI installation. You bring the knowledge, we build the rest. One to two sessions of your time.",
+                    "Nothing defined. The brand never existed as a defined system, or it's scattered across too many heads with no alignment.",
+                  title: "Brand Genome",
+                  desc: "Your brand's DNA. Vectyr runs the extraction, sequencing, and full team integration. You bring the knowledge, we add more, and build the rest. One to two sessions of your time.",
                 },
                 {
                   problem: "Problem 02",
                   problemDesc:
-                    "Even when a strategy exists, it doesn't get used. There's no practical way to distribute it to everyone who needs it.",
+                    "Information sitting in a document doesn't get read. In the age of AI, brand knowledge needs to be more accessible.",
                   title: "BrandHelix.ai",
-                  desc: "The platform where the brand intelligence lives, gets distributed to everyone who needs it. Your team, your vendors, your AI tools. No more briefing from memory.",
+                  desc: "The platform where the brand intelligence lives, gets distributed to everyone who needs it. Your team, your vendors, everyone. No more briefing from fuzzy memory.",
                 },
                 {
                   problem: "Problem 03",
                   problemDesc:
-                    "Every strategy goes stale when something changes. There's no system to keep it current as the business evolves.",
+                    "Every strategy can go stale when something changes. There's no system to keep it current as the business evolves.",
                   title: "Continuity",
-                  desc: "90-day brand check-ins to examine the performance of the brand. You can submit new info at any time so we can update the Brand Codex and avoid brand entropy and drift.",
+                  desc: "180-day brand check-ins to examine performance. You can submit new info at any time so we can update the Brand Genome and avoid any brand drift.",
                 },
               ].map((card, i) => (
                 <ScrollSection
@@ -279,11 +279,7 @@ const Index = () => {
               </h2>
 
               <p className="mt-4 md:mt-6 max-w-xl font-body text-lg leading-relaxed" style={{ color: "#6B6B6B" }}>
-                Every person on your team working from the same knowledge base. An AI tool that sounds exactly like you.
-                Every vendor briefing themselves. No more being the informational bottleneck.
-              </p>
-              <p className="mt-4 md:mt-8 max-w-xl font-body text-lg leading-relaxed" style={{ color: "#6B6B6B" }}>
-                That's what installed looks like, and it's closer than you think.
+                Get every person on your team working from the same single source of truth. This is the system that you're missing and it's costing you more than you think. Change it once and for all.
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
