@@ -44,6 +44,19 @@
     --sidebar-ring: 19 100% 50%;
   }
 
+  /* Light surfaces inside dark sections (e.g. testimonial cards) */
+  .theme-light {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.5%;
+    --card: 0 0% 96.1%;
+    --card-foreground: 0 0% 3.5%;
+    --muted: 0 0% 93%;
+    --muted-foreground: 0 0% 38%;
+    --border: 0 0% 87%;
+    --input: 0 0% 85%;
+    color: hsl(var(--foreground));
+  }
+
   /* Dark surfaces: header, footer, photo bands, admin sidebar */
   .theme-dark {
     --background: 0 0% 3.5%;
