@@ -89,7 +89,7 @@ const TeamMember = () => {
         ]}
       />
 
-      <main className="flex-1 px-6 pt-28 pb-16 md:pt-44 md:pb-24 bg-black02">
+      <main className="flex-1 px-6 pt-28 pb-16 md:pt-44 md:pb-24 bg-background">
         <div className="mx-auto max-w-[1300px]">
           <Link
             to="/team"

@@ -35,7 +35,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="relative overflow-hidden bg-black01">
+    <footer className="theme-dark relative overflow-hidden bg-background">
       {/* Accent line */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
 

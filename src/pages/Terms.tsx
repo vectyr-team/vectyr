@@ -46,7 +46,7 @@ const Terms = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-card text-foreground">
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
       <main className="flex-1">
         <SEOHead {...pageMeta} />

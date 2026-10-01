@@ -4,44 +4,68 @@
 
 @layer base {
   :root {
-    --background: 0 0% 3.5%;
-    --foreground: 0 0% 96.1%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.5%;
 
-    --card: 160 3.2% 8.4%;
-    --card-foreground: 0 0% 96.1%;
+    --card: 0 0% 96.1%;
+    --card-foreground: 0 0% 3.5%;
 
-    --popover: 160 3.2% 8.4%;
-    --popover-foreground: 0 0% 96.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.5%;
 
     --primary: 19 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 18%;
-    --secondary-foreground: 0 0% 96.1%;
+    --secondary: 0 0% 93%;
+    --secondary-foreground: 0 0% 3.5%;
 
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 62.4%;
+    --muted: 0 0% 93%;
+    --muted-foreground: 0 0% 38%;
 
     --accent: 19 100% 50%;
-    --accent-foreground: 0 0% 3.5%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 96.1%;
+    --destructive: 0 84.2% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
+    --border: 0 0% 87%;
+    --input: 0 0% 85%;
     --ring: 19 100% 50%;
 
     --radius: 0.5rem;
 
+    --sidebar-background: 0 0% 96.1%;
+    --sidebar-foreground: 0 0% 3.5%;
+    --sidebar-primary: 19 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 90%;
+    --sidebar-accent-foreground: 0 0% 3.5%;
+    --sidebar-border: 0 0% 87%;
+    --sidebar-ring: 19 100% 50%;
+  }
+
+  /* Dark surfaces: header, footer, photo bands, admin sidebar */
+  .theme-dark {
+    --background: 0 0% 3.5%;
+    --foreground: 0 0% 96.1%;
+    --card: 160 3.2% 8.4%;
+    --card-foreground: 0 0% 96.1%;
+    --popover: 160 3.2% 8.4%;
+    --popover-foreground: 0 0% 96.1%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 96.1%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 62.4%;
+    --accent-foreground: 0 0% 3.5%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
     --sidebar-background: 160 3.2% 8.4%;
     --sidebar-foreground: 0 0% 96.1%;
-    --sidebar-primary: 19 100% 50%;
-    --sidebar-primary-foreground: 0 0% 3.5%;
     --sidebar-accent: 0 0% 18%;
     --sidebar-accent-foreground: 0 0% 96.1%;
     --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 19 100% 50%;
+    color: hsl(var(--foreground));
   }
 }
 

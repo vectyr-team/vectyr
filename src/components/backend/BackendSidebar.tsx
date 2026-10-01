@@ -49,7 +49,7 @@ const SidebarContent = ({
 }: BackendSidebarProps) => (
   <div className="flex flex-col h-full">
     <div className="p-6">
-      <img src={vectyrLogo} alt="Vectyr" className="h-10" />
+      <img src={vectyrLogo} alt="Vectyr" className="h-10 invert hue-rotate-180" />
     </div>
 
     <nav className="flex-1 px-3 space-y-1">

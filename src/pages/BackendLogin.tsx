@@ -31,7 +31,7 @@ const BackendLogin = () => {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-6">
       <div className="w-full max-w-sm">
-        <img src={vectyrLogo} alt="Vectyr" className="h-12 mx-auto mb-8" />
+        <img src={vectyrLogo} alt="Vectyr" className="h-12 mx-auto mb-8 invert hue-rotate-180" />
 
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
