@@ -128,7 +128,7 @@ const Testimonials = () => {
       {items.map((t) => (
         <figure
           key={t.id}
-          className="theme-light mb-5 break-inside-avoid bg-background text-foreground border border-border p-6 md:p-7 rounded-lg shadow-sm"
+          className="theme-light mb-5 break-inside-avoid bg-background text-foreground p-6 md:p-7 rounded-lg shadow-sm"
         >
           <Stars rating={t.rating} />
           {t.headline && (
