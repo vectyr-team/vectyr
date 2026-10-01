@@ -46,7 +46,7 @@ const Index = () => {
         <LocalBusinessJsonLd business={businessInfo} />
 
         {/* Hero */}
-        <section className="relative flex md:min-h-[90dvh] flex-col items-center justify-center px-6 pt-36 pb-20 md:pt-20 md:py-0 overflow-hidden">
+        <section className="theme-dark relative flex md:min-h-[90dvh] flex-col items-center justify-center px-6 pt-36 pb-20 md:pt-20 md:py-0 overflow-hidden bg-background">
           {/* Background video */}
           <video
             autoPlay
@@ -107,7 +107,7 @@ const Index = () => {
             </h1>
 
             <p
-              className="mt-4 md:mt-8 max-w-[37rem] font-body text-base md:text-lg font-light leading-relaxed text-[#adadad]"
+              className="mt-4 md:mt-8 max-w-[37rem] font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground"
               style={heroStyle(2)}
             >
               {hero.subtitle}
@@ -127,7 +127,7 @@ const Index = () => {
         </section>
 
         {/* Benefits Strip */}
-        <section className="bg-card py-6 md:py-8 px-[20px]">
+        <section className="relative z-20 bg-card py-6 md:py-8 px-[20px] shadow-elevated">
           <div className="mx-auto max-w-[1300px]">
             <ScrollSection className="grid grid-cols-3">
               {[
@@ -153,11 +153,11 @@ const Index = () => {
         </section>
 
         {/* The System */}
-        <section className="relative bg-[#000000] px-6 py-12 md:py-32 overflow-hidden">
+        <section className="relative bg-background px-6 py-12 md:py-32 overflow-hidden">
           <img
             src="/images/system-bg.jpg"
             alt=""
-            className="absolute inset-0 h-full w-full object-cover opacity-[0.2] pointer-events-none"
+            className="absolute inset-0 h-full w-full object-cover opacity-[0.06] pointer-events-none"
           />
           <div className="relative z-10 mx-auto max-w-[1300px]">
             <ScrollSection>
@@ -215,7 +215,7 @@ const Index = () => {
                   <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary">{card.problem}</p>
                   <p className="mt-4 font-mono text-sm leading-relaxed text-muted-foreground">{card.problemDesc}</p>
 
-                  <div className="h-px w-full my-8" style={{ backgroundColor: "#252525" }} />
+                  <div className="h-px w-full my-8 bg-border" />
 
                   <h3 className="font-body font-semibold text-2xl md:text-3xl leading-tight text-foreground normal-case tracking-normal flex items-center gap-3">
                     <Icon icon="lucide:check" className="text-primary shrink-0" />
@@ -240,7 +240,7 @@ const Index = () => {
         </section>
 
         {/* Results / Testimonials */}
-        <section className="relative bg-[#000000] px-6 py-12 md:py-32 overflow-hidden">
+        <section className="theme-dark relative bg-[#000000] px-6 py-12 md:py-32 overflow-hidden">
           <img
             src="/images/founders.jpg"
             alt=""
@@ -265,12 +265,11 @@ const Index = () => {
         </section>
 
         {/* CTA */}
-        <section className="px-6 py-16 md:py-40" style={{ backgroundColor: "#F5F5F5" }}>
+        <section className="px-6 py-16 md:py-40 bg-card">
           <div className="mx-auto max-w-[1300px] flex flex-col items-center text-center">
             <ScrollSection className="flex flex-col items-center">
               <h2
-                className="font-headline font-light leading-[0.95] tracking-normal text-5xl md:text-6xl lg:text-7xl max-w-[830px]"
-                style={{ color: "#090909" }}
+                className="font-headline font-light leading-[0.95] tracking-normal text-5xl md:text-6xl lg:text-7xl max-w-[830px] text-foreground"
               >
                 Stop being
                 <br />
@@ -279,7 +278,7 @@ const Index = () => {
                 who knows.
               </h2>
 
-              <p className="mt-4 md:mt-6 max-w-xl font-body text-lg leading-relaxed" style={{ color: "#6B6B6B" }}>
+              <p className="mt-4 md:mt-6 max-w-xl font-body text-lg leading-relaxed text-muted-foreground">
                 Get every person on your team working from the same single source of truth. This is the system that you're missing and it's costing you more than you think. Change it once and for all.
               </p>
 

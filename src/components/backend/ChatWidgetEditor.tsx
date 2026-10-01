@@ -48,7 +48,7 @@ const ChatWidgetEditor = () => {
 
   if (loading) {
     return (
-      <div className="space-y-4 border border-border rounded-lg p-5 bg-black02">
+      <div className="space-y-4 border border-border rounded-lg p-5 bg-card">
         <Skeleton className="h-6 w-32" />
         <Skeleton className="h-40 w-full" />
         <Skeleton className="h-10 w-24" />
@@ -61,7 +61,7 @@ const ChatWidgetEditor = () => {
   }
 
   return (
-    <div className="space-y-5 border border-border rounded-lg p-5 bg-black02">
+    <div className="space-y-5 border border-border rounded-lg p-5 bg-card">
       <div className="flex items-center justify-between">
         <div>
           <label className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground block mb-1">

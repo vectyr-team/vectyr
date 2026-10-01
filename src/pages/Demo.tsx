@@ -21,7 +21,7 @@ const Demo = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-card">
+    <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-1">
         <SEOHead {...pageMeta} />
@@ -35,8 +35,7 @@ const Demo = () => {
             </h1>
 
             <p className="mt-4 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground mb-[20px]">
-              Walk through the platform, see how your brand gets built, how your whole team can access your
-              Brand-Powered AI, and see if it's a good fit.
+              We'll walk you through the platform, show you how your brand gets built from what's in your head and what your customers say, and show how your whole team can put it to work. Then we'll tell you straight whether it's a fit.
             </p>
 
             <div className="mt-6 md:mt-8">

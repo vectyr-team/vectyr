@@ -15,7 +15,7 @@ const NotFound = () => {
   return (
     <div className="flex flex-col min-h-screen bg-black01">
       <Header />
-      <div className="relative flex flex-1 items-center justify-center bg-black01 md:min-h-[90vh]">
+      <div className="theme-dark relative flex flex-1 items-center justify-center bg-black01 md:min-h-[90vh]">
         <div
           className="absolute inset-0 bg-no-repeat bg-cover bg-center opacity-80"
           style={{ backgroundImage: `url(${errorBg})` }}

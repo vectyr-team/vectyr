@@ -66,7 +66,7 @@ const HomeHeroEditor = () => {
 
   if (loading) {
     return (
-      <div className="space-y-4 border border-border rounded-lg p-5 bg-black02">
+      <div className="space-y-4 border border-border rounded-lg p-5 bg-card">
         <Skeleton className="h-10 w-full" />
         <Skeleton className="h-10 w-full" />
         <Skeleton className="h-24 w-full" />
@@ -84,7 +84,7 @@ const HomeHeroEditor = () => {
   );
 
   return (
-    <div className="space-y-5 border border-border rounded-lg p-5 bg-black02">
+    <div className="space-y-5 border border-border rounded-lg p-5 bg-card">
       <div className="space-y-3">
         <div>
           <Label>Headline (line 1)</Label>

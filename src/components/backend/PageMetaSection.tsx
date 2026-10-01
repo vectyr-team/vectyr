@@ -118,7 +118,7 @@ const PageMetaSection = ({ pageSlug, pageLabel, pagePath }: Props) => {
       {loading ? (
         <p className="text-muted-foreground text-sm font-body">Loading...</p>
       ) : (
-        <div className="space-y-4 border border-border rounded-lg p-5 bg-black02">
+        <div className="space-y-4 border border-border rounded-lg p-5 bg-card">
           <div>
             <label className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1 block">
               Page Title{" "}

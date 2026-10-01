@@ -91,7 +91,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-background/80 backdrop-blur-md px-4 md:px-8 py-4 md:py-6">
+      <header className="theme-dark fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-background/95 backdrop-blur-md px-4 md:px-8 py-4 md:py-6">
         {/* Left: social icons */}
         <div className="flex items-center gap-2 md:gap-4">
           {socialLinks.map((s, i) => {
@@ -200,7 +200,7 @@ const Header = () => {
       {/* Mobile fullscreen menu */}
       {isMobile && (
         <div
-          className={`fixed inset-0 z-40 bg-background flex flex-col items-center justify-start pt-32 transition-all duration-500 ${
+          className={`theme-dark fixed inset-0 z-40 bg-background flex flex-col items-center justify-start pt-32 transition-all duration-500 ${
             menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
         >
