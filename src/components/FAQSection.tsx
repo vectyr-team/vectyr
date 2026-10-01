@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { FAQPageJsonLd } from "@/components/JsonLd";
+import FAQMarkdown from "@/components/FAQMarkdown";
 
 interface FAQItem {
   question: string;
@@ -49,7 +50,7 @@ const FAQSection = ({
                 <h3 className="font-body text-lg font-normal">{faq.question}</h3>
               </AccordionTrigger>
               <AccordionContent className="font-body text-muted-foreground leading-relaxed text-base">
-                {faq.answer}
+                <FAQMarkdown content={faq.answer} />
               </AccordionContent>
             </AccordionItem>
           ))}

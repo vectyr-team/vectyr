@@ -1,4 +1,4 @@
-import { useEffect, useState, ReactNode } from "react";
+import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,7 @@ import SEOHead from "@/components/SEOHead";
 import { FAQPageJsonLd } from "@/components/JsonLd";
 import { usePageMeta } from "@/hooks/use-seo-data";
 import { withTimeout } from "@/lib/supabase-guards";
+import FAQMarkdown from "@/components/FAQMarkdown";
 
 interface FAQ {
   id: string;
@@ -15,29 +16,6 @@ interface FAQ {
   answer: string;
   sort_order: number;
 }
-
-const linkifyText = (text: string): ReactNode[] => {
-  const urlRegex = /(https?:\/\/[^\s,)]+|(?:os\.vectyr\.com))/g;
-  const parts = text.split(urlRegex);
-  return parts.map((part, i) => {
-    if (urlRegex.test(part)) {
-      const href = part.startsWith("http") ? part : `https://${part}`;
-      return (
-        <a
-          key={i}
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary underline hover:text-primary/80 transition-colors"
-        >
-          {part}
-        </a>
-      );
-    }
-    urlRegex.lastIndex = 0;
-    return part;
-  });
-};
 
 const FAQs = () => {
   const [faqs, setFaqs] = useState<FAQ[]>([]);
@@ -105,8 +83,8 @@ const FAQs = () => {
                   <AccordionTrigger className="font-body text-left text-foreground hover:no-underline py-6 text-lg">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="font-body text-muted-foreground leading-relaxed whitespace-pre-line text-base">
-                    {linkifyText(faq.answer)}
+                  <AccordionContent className="font-body text-muted-foreground leading-relaxed text-base">
+                    <FAQMarkdown content={faq.answer} />
                   </AccordionContent>
                 </AccordionItem>
               ))}
