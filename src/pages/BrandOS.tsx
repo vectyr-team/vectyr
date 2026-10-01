@@ -35,7 +35,7 @@ const BrandOS = () => {
   const pageMeta = usePageMeta("brand-os");
   const { data: business } = useBusinessInfo();
   return (
-    <div className="flex flex-col min-h-screen bg-card">
+    <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-1">
         <SEOHead {...pageMeta} />
