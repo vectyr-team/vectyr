@@ -101,7 +101,7 @@ const About = () => {
         </div>
       </section>
       {/* The Founder */}
-      <section className="px-6 py-16 md:py-32">
+      <section className="bg-surface-white px-6 py-16 md:py-32">
         <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Left column */}
           <div>

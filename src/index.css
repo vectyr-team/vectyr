@@ -146,3 +146,7 @@
     0 24px 48px -12px hsl(0 0% 0% / 0.08),
     0 8px 16px -8px hsl(0 0% 0% / 0.04);
 }
+
+@layer utilities {
+  .bg-surface-white { background-color: hsl(0 0% 100%); }
+}
