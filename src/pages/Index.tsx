@@ -127,7 +127,7 @@ const Index = () => {
         </section>
 
         {/* Benefits Strip */}
-        <section className="bg-card py-6 md:py-8 px-[20px]">
+        <section className="relative z-20 bg-card py-6 md:py-8 px-[20px] shadow-elevated">
           <div className="mx-auto max-w-[1300px]">
             <ScrollSection className="grid grid-cols-3">
               {[
