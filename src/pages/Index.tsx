@@ -240,11 +240,11 @@ const Index = () => {
         </section>
 
         {/* Results / Testimonials */}
-        <section className="theme-dark relative bg-[#000000] px-6 py-12 md:py-32 overflow-hidden">
+        <section className="relative bg-card px-6 py-12 md:py-32 overflow-hidden">
           <img
             src="/images/founders.jpg"
             alt=""
-            className="absolute inset-0 h-full w-full object-cover opacity-[0.7] pointer-events-none"
+            className="absolute inset-0 h-full w-full object-cover opacity-[0.06] pointer-events-none"
           />
           <div className="relative z-10 mx-auto max-w-[1300px]">
             <ScrollSection>
