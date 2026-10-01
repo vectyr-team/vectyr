@@ -273,8 +273,7 @@ const BrandOS = () => {
             </div>
 
             <h2
-              className="font-headline font-normal text-4xl leading-[0.95] tracking-normal sm:text-5xl md:text-7xl mb-4"
-              className="text-foreground"
+              className="font-headline font-normal text-4xl leading-[0.95] tracking-normal sm:text-5xl md:text-7xl mb-4 text-foreground"
             >
               Stop Being the Only Person Who Knows. <span className="text-primary">Install It.</span>
             </h2>

@@ -215,7 +215,7 @@ const Index = () => {
                   <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary">{card.problem}</p>
                   <p className="mt-4 font-mono text-sm leading-relaxed text-muted-foreground">{card.problemDesc}</p>
 
-                  <div className="h-px w-full my-8" className="bg-border" />
+                  <div className="h-px w-full my-8 bg-border" />
 
                   <h3 className="font-body font-semibold text-2xl md:text-3xl leading-tight text-foreground normal-case tracking-normal flex items-center gap-3">
                     <Icon icon="lucide:check" className="text-primary shrink-0" />
@@ -269,8 +269,7 @@ const Index = () => {
           <div className="mx-auto max-w-[1300px] flex flex-col items-center text-center">
             <ScrollSection className="flex flex-col items-center">
               <h2
-                className="font-headline font-light leading-[0.95] tracking-normal text-5xl md:text-6xl lg:text-7xl max-w-[830px]"
-                className="text-foreground"
+                className="font-headline font-light leading-[0.95] tracking-normal text-5xl md:text-6xl lg:text-7xl max-w-[830px] text-foreground"
               >
                 Stop being
                 <br />

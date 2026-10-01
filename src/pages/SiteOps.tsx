@@ -198,8 +198,7 @@ const SiteOps = () => {
             </div>
 
             <h2
-              className="font-headline font-normal text-4xl leading-[0.95] tracking-normal sm:text-5xl md:text-7xl mb-4"
-              className="text-foreground"
+              className="font-headline font-normal text-4xl leading-[0.95] tracking-normal sm:text-5xl md:text-7xl mb-4 text-foreground"
             >
               <span className="text-primary">$495</span> / MONTH
             </h2>
