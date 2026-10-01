@@ -83,7 +83,7 @@ export const useBusinessInfo = () => {
 
 /** Fetches page_meta for a specific page slug, falls back to config defaults. */
 export const usePageMeta = (pageKey: string) => {
-  const fallback = PAGE_META[pageKey] || { title: "Vectyr", description: "", path: "/" };
+  const fallback = PAGE_META[pageKey] || { title: "Vectyr", description: "", path: pageKey === "home" ? "/" : `/${pageKey}` };
   const [meta, setMeta] = useState<{
     title: string;
     description: string;
