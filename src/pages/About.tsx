@@ -233,7 +233,7 @@ const About = () => {
             Every agency has values. Most of them are decorative. These are the ones that have actually cost us money, and we'd do it the same way again.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-px bg-border/30">
+          <div className="grid md:grid-cols-2 gap-5">
             {[
               {
                 num: "01",
