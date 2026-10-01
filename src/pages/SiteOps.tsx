@@ -148,7 +148,7 @@ const SiteOps = () => {
         </section>
 
         {/* What Makes SiteOps Different */}
-        <section className="relative px-6 py-16 md:py-32 overflow-hidden bg-black01">
+        <section className="relative px-6 py-16 md:py-32 overflow-hidden bg-background">
           <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
             <div>
               <div className="flex items-center gap-4 mb-6">
@@ -188,24 +188,24 @@ const SiteOps = () => {
         </section>
 
         {/* Price */}
-        <section className="px-6 py-16 bg-white md:py-[100px]">
+        <section className="px-6 py-16 bg-card md:py-[100px]">
           <div className="mx-auto max-w-[1300px] flex flex-col items-center text-center">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: "#6B6B6B" }}>
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
                 Pricing
               </span>
-              <span className="w-12 h-px" style={{ backgroundColor: "#6B6B6B" }} />
+              <span className="w-12 h-px bg-muted-foreground" />
             </div>
 
             <h2
               className="font-headline font-normal text-4xl leading-[0.95] tracking-normal sm:text-5xl md:text-7xl mb-4"
-              style={{ color: "#090909" }}
+              className="text-foreground"
             >
               <span className="text-primary">$495</span> / MONTH
             </h2>
 
             <div className="space-y-2 max-w-lg mx-auto">
-              <p className="font-body text-base md:text-lg font-light" style={{ color: "#6B6B6B" }}>
+              <p className="font-body text-base md:text-lg font-light text-muted-foreground">
                 Your site should run without you having to watch it. Billed monthly. No long-term contracts. Cancel
                 anytime.
               </p>

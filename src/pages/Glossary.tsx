@@ -89,12 +89,12 @@ const Glossary = () => {
           )}
         </div>
 
-        <section className="px-6 py-16 md:py-[80px]" style={{ backgroundColor: "#F5F5F5" }}>
+        <section className="px-6 py-16 md:py-[80px] bg-card">
           <div className="mx-auto max-w-3xl flex flex-col items-center text-center">
-            <h2 className="font-headline text-3xl md:text-5xl font-normal" style={{ color: "#090909" }}>
+            <h2 className="font-headline text-3xl md:text-5xl font-normal text-foreground">
               See a Demo of BrandOS
             </h2>
-            <p className="mt-4 max-w-xl font-body text-base leading-relaxed" style={{ color: "#6B6B6B" }}>
+            <p className="mt-4 max-w-xl font-body text-base leading-relaxed text-muted-foreground">
               Book a free demo of Vectyr BrandOS and see how these concepts come together in a real brand operating
               system.
             </p>

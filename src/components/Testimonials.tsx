@@ -19,7 +19,7 @@ const Stars = ({ rating }: { rating: number }) => (
       <Icon
         key={i}
         icon="mdi:star"
-        className={`w-5 h-5 ${i < rating ? "text-primary" : "text-black/15"}`}
+        className={`w-5 h-5 ${i < rating ? "text-primary" : "text-foreground/15"}`}
       />
     ))}
   </div>
@@ -128,11 +128,11 @@ const Testimonials = () => {
       {items.map((t) => (
         <figure
           key={t.id}
-          className="mb-5 break-inside-avoid bg-white text-black01 p-6 md:p-7 rounded-lg shadow-sm"
+          className="mb-5 break-inside-avoid bg-background text-foreground border border-border p-6 md:p-7 rounded-lg shadow-sm"
         >
           <Stars rating={t.rating} />
           {t.headline && (
-            <h3 className="font-body font-semibold text-lg leading-tight text-black01 mt-4">
+            <h3 className="font-body font-semibold text-lg leading-tight text-foreground mt-4">
               {t.headline}
             </h3>
           )}
@@ -141,15 +141,15 @@ const Testimonials = () => {
               <VideoEmbed url={t.video_url} />
             </div>
           )}
-          <blockquote className="font-body text-[15px] leading-relaxed text-black01/80 mt-3">
+          <blockquote className="font-body text-[15px] leading-relaxed text-foreground/80 mt-3">
             {t.quote}
           </blockquote>
           <figcaption className="mt-5 flex items-center gap-3">
             <Avatar name={t.name} url={t.avatar_url} />
             <div className="min-w-0">
-              <div className="font-body text-sm font-medium text-black01 truncate">{t.name}</div>
+              <div className="font-body text-sm font-medium text-foreground truncate">{t.name}</div>
               {t.title && (
-                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-black01/60 mt-0.5 truncate">
+                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground mt-0.5 truncate">
                   {t.title}
                 </div>
               )}

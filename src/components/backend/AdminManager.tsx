@@ -256,7 +256,7 @@ const AdminManager = () => {
             return (
               <div
                 key={user.id}
-                className="border border-border rounded-lg p-4 space-y-3 bg-black02"
+                className="border border-border rounded-lg p-4 space-y-3 bg-card"
               >
                 {isEditing ? (
                   /* ── Edit Mode ── */

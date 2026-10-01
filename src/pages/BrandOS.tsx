@@ -263,24 +263,24 @@ const BrandOS = () => {
         </section>
 
         {/* CTA */}
-        <section className="px-6 py-16 bg-white md:py-[100px]">
+        <section className="px-6 py-16 bg-card md:py-[100px]">
           <div className="mx-auto flex flex-col items-center text-center" style={{ maxWidth: 710 }}>
             <div className="flex items-center justify-center gap-4 mb-6">
-              <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: "#6B6B6B" }}>
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
                 Get Started
               </span>
-              <span className="w-12 h-px" style={{ backgroundColor: "#6B6B6B" }} />
+              <span className="w-12 h-px bg-muted-foreground" />
             </div>
 
             <h2
               className="font-headline font-normal text-4xl leading-[0.95] tracking-normal sm:text-5xl md:text-7xl mb-4"
-              style={{ color: "#090909" }}
+              className="text-foreground"
             >
               Stop Being the Only Person Who Knows. <span className="text-primary">Install It.</span>
             </h2>
 
             <div className="space-y-2 max-w-lg mx-auto">
-              <p className="font-body text-base md:text-lg font-light" style={{ color: "#6B6B6B" }}>
+              <p className="font-body text-base md:text-lg font-light text-muted-foreground">
                 Your brand should run without you having to check it.
               </p>
             </div>
