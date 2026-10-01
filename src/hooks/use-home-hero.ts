@@ -26,30 +26,23 @@ const FALLBACK: HomeHero = {
   secondary_button_link: "/faqs",
 };
 
-const CACHE_KEY = "home_hero_cache_v2";
-// Cached copy is only trusted briefly, so a stale hero never sticks around
-// after content is edited in the backend.
-const CACHE_TTL_MS = 10 * 60 * 1000;
-
-const readCache = (): HomeHero | null => {
-  if (typeof window === "undefined") return null;
-  try {
-    const raw = window.localStorage.getItem(CACHE_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw) as { at?: number; value?: HomeHero };
-    if (!parsed?.value || !parsed.at || Date.now() - parsed.at > CACHE_TTL_MS) return null;
-    return parsed.value;
-  } catch {
-    return null;
-  }
-};
+// Always load live content. The hero stays hidden until it arrives, then animates in.
+// Fallback is only used if the request fails or takes longer than this.
+const FALLBACK_AFTER_MS = 4000;
 
 export const useHomeHero = () => {
-  const [data, setData] = useState<HomeHero>(() => readCache() ?? FALLBACK);
+  const [data, setData] = useState<HomeHero>(FALLBACK);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let active = true;
+    try {
+      window.localStorage.removeItem("home_hero_cache_v2");
+      window.localStorage.removeItem("home_hero_cache");
+    } catch {
+      /* ignore */
+    }
+    const timer = setTimeout(() => active && setLoading(false), FALLBACK_AFTER_MS);
     (async () => {
       const { data: row } = await supabase
         .from("home_hero")
@@ -57,23 +50,14 @@ export const useHomeHero = () => {
         .order("updated_at", { ascending: false })
         .limit(1)
         .maybeSingle();
-      if (active) {
-        if (row) {
-          setData(row as HomeHero);
-          try {
-            window.localStorage.setItem(
-              CACHE_KEY,
-              JSON.stringify({ at: Date.now(), value: row })
-            );
-          } catch {
-            /* ignore */
-          }
-        }
-        setLoading(false);
-      }
+      if (!active) return;
+      if (row) setData(row as HomeHero);
+      clearTimeout(timer);
+      setLoading(false);
     })();
     return () => {
       active = false;
+      clearTimeout(timer);
     };
   }, []);
 

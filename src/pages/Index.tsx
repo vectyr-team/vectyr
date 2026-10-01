@@ -23,12 +23,13 @@ const Index = () => {
   const [heroVisible, setHeroVisible] = useState(false);
   const { data: businessInfo } = useBusinessInfo();
   const pageMeta = usePageMeta("home");
-  const { data: hero } = useHomeHero();
+  const { data: hero, loading: heroLoading } = useHomeHero();
 
   useEffect(() => {
-    const timer = setTimeout(() => setHeroVisible(true), 100);
+    if (heroLoading) return;
+    const timer = setTimeout(() => setHeroVisible(true), 50);
     return () => clearTimeout(timer);
-  }, []);
+  }, [heroLoading]);
 
   const heroStyle = (index: number): React.CSSProperties => ({
     opacity: heroVisible ? 1 : 0,

@@ -105,4 +105,20 @@ export const PAGE_META: Record<
       "SiteOps is the done-for-you operational layer that keeps your WordPress site secure, updated, and running without you managing it.",
     path: "/site-ops",
   },
+  glossary: {
+    title: "Glossary | Brand Infrastructure Terms | Vectyr",
+    description:
+      "Definitions of the brand strategy and brand infrastructure terms Vectyr uses, from Brand Genome to 180-day check-ins.",
+    path: "/glossary",
+  },
+  privacy: {
+    title: "Privacy Policy | Vectyr",
+    description: "How Vectyr collects, uses, and protects your personal information.",
+    path: "/privacy",
+  },
+  terms: {
+    title: "Terms of Service | Vectyr",
+    description: "The terms and conditions that govern your use of Vectyr's website and services.",
+    path: "/terms",
+  },
 };

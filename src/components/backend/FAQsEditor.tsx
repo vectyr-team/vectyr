@@ -83,7 +83,7 @@ function SortableFaqRow({
           <Textarea
             value={editAnswer}
             onChange={(e) => setEditAnswer(e.target.value)}
-            placeholder="Answer"
+            placeholder="Answer (supports markdown: **bold**, *italic*, [link](https://...), - lists)"
             rows={6}
             className="font-body text-sm"
           />
@@ -271,7 +271,7 @@ const FAQsEditor = () => {
           <Textarea
             value={newAnswer}
             onChange={(e) => setNewAnswer(e.target.value)}
-            placeholder="Answer"
+            placeholder="Answer (supports markdown: **bold**, *italic*, [link](https://...), - lists)"
             rows={6}
             className="font-body text-sm"
           />
