@@ -52,7 +52,7 @@ const PageSettingsEditor = ({ pageSlug, settings, onSaved }: PageSettingsEditorP
 
   return (
     <div className="space-y-6">
-      <h2 className="font-body text-lg text-foreground font-medium">
+      <h2 className="font-body text-base text-foreground font-medium">
         Form Embed Code
       </h2>
 

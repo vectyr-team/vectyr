@@ -94,7 +94,7 @@ const FAQs = () => {
 
         <section className="px-6 py-16 md:py-[80px] bg-card">
           <div className="mx-auto max-w-3xl flex flex-col items-center text-center">
-            <h2 className="font-headline text-3xl md:text-5xl font-normal text-foreground">Still Have Questions?</h2>
+            <h2 className="font-headline text-2xl md:text-4xl font-normal text-foreground">Still Have Questions?</h2>
             <p className="mt-4 max-w-xl font-body text-base leading-relaxed text-muted-foreground">
               Book a free demo of Vectyr BrandOS and get an honest read on your brand situation to get total clarity on
               whether it's a fit or not.

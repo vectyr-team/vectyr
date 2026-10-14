@@ -63,7 +63,7 @@ const About = () => {
               <span className="w-12 h-px bg-muted-foreground" />
             </div>
 
-            <h2 className="font-headline font-light text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl">
+            <h2 className="font-headline font-light text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-6xl">
               THE INDUSTRY HAS BEEN SELLING YOU THE WRONG{" "}
               <span className="text-primary">THING.</span>
             </h2>
@@ -112,7 +112,7 @@ const About = () => {
               <span className="w-12 h-px bg-muted-foreground" />
             </div>
 
-            <h2 className="font-headline font-light text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-10">
+            <h2 className="font-headline font-light text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-6xl mb-10">
               TWENTY YEARS<br />
               BUILDING BRANDS.<br />
               <span className="text-primary">ONE CONVICTION.</span>
@@ -184,7 +184,7 @@ const About = () => {
             <span className="w-12 h-px bg-muted-foreground" />
           </div>
 
-          <h2 className="font-headline font-light text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-6xl text-center text-balance mb-12 md:mb-20">
+          <h2 className="font-headline font-light text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-5xl text-center text-balance mb-12 md:mb-20">
             THE FRAMEWORK DIDN'T COME FROM A BOOK. <span className="text-primary">IT BECAME ONE.</span>
           </h2>
 
@@ -224,7 +224,7 @@ const About = () => {
             <span className="w-12 h-px bg-muted-foreground" />
           </div>
 
-          <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-8">
+          <h2 className="font-headline font-normal text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-6xl mb-8">
             LINES WE DON'T CROSS<br />
             <span className="text-primary">FOR REVENUE.</span>
           </h2>
@@ -260,7 +260,7 @@ const About = () => {
                 <span className="font-mono text-3xl text-foreground/20 mb-4 block">
                   {card.num}
                 </span>
-                <h3 className="font-body font-semibold text-lg md:text-xl text-foreground mb-4">
+                <h3 className="font-body font-semibold text-base md:text-lg text-foreground mb-4">
                   {card.title}
                 </h3>
                 <p className="font-body text-sm md:text-base font-light leading-relaxed text-muted-foreground">
@@ -276,7 +276,7 @@ const About = () => {
       <section className="relative px-6 py-20 md:py-48 bg-black theme-dark overflow-hidden">
         <img src={ctaBg} alt="" className="absolute inset-0 z-0 w-full h-full object-cover opacity-20 pointer-events-none" />
         <div className="relative z-10 mx-auto max-w-[1600px] text-center">
-          <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-[5rem] max-w-none md:max-w-[770px] md:mx-auto mb-8">
+          <h2 className="font-headline font-normal text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-[5rem] max-w-none md:max-w-[770px] md:mx-auto mb-8">
             YOU'VE BUILT SOMETHING REAL. YOUR BRAND SHOULD <span className="text-primary">SAY SO.</span>
           </h2>
 

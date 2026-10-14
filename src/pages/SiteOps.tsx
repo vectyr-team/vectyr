@@ -90,7 +90,7 @@ const SiteOps = () => {
                 <span className="w-12 h-px bg-muted-foreground" />
               </div>
 
-              <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl">
+              <h2 className="font-headline font-normal text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-6xl">
                 Nobody Thinks of the Website <span className="text-primary">Until it's on fire.</span>
               </h2>
             </div>
@@ -123,7 +123,7 @@ const SiteOps = () => {
               <span className="w-12 h-px bg-muted-foreground" />
             </div>
 
-            <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-16">
+            <h2 className="font-headline font-normal text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-6xl mb-16">
               DONE FOR YOU. 
               <br />
               <span className="text-primary">DONE RIGHT.</span>
@@ -158,7 +158,7 @@ const SiteOps = () => {
                 <span className="w-12 h-px bg-muted-foreground" />
               </div>
 
-              <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl">
+              <h2 className="font-headline font-normal text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-6xl">
                 NOT A GENERIC
                 <br />
                 <span className="text-primary">HOSTING ADD-ON.</span>
@@ -198,7 +198,7 @@ const SiteOps = () => {
             </div>
 
             <h2
-              className="font-headline font-normal text-4xl leading-[0.95] tracking-normal sm:text-5xl md:text-7xl mb-4 text-foreground"
+              className="font-headline font-normal text-3xl leading-[0.95] tracking-normal sm:text-4xl md:text-6xl mb-4 text-foreground"
             >
               <span className="text-primary">$495</span> / MONTH
             </h2>

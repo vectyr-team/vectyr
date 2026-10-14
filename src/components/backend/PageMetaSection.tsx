@@ -110,7 +110,7 @@ const PageMetaSection = ({ pageSlug, pageLabel, pagePath }: Props) => {
 
   return (
     <div className="mt-12 pt-8 border-t border-border">
-      <h2 className="font-headline text-foreground text-3xl mb-1">Meta Tags</h2>
+      <h2 className="font-headline text-foreground text-2xl mb-1">Meta Tags</h2>
       <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-6">
         SEO for {pageLabel} · {pagePath}
       </p>

@@ -102,7 +102,7 @@ const Team = () => {
                     runningIndex += deptMembers.length;
                     sections.push(
                       <section key={dept.id} className="mb-16">
-                        <h2 className="font-headline text-2xl md:text-3xl text-foreground mb-6">{dept.name}</h2>
+                        <h2 className="font-headline text-xl md:text-2xl text-foreground mb-6">{dept.name}</h2>
                         {renderResponsiveGrid(deptMembers, startIndex)}
                       </section>
                     );
@@ -117,7 +117,7 @@ const Team = () => {
                   sections.push(
                     <section key="unassigned" className="mb-16">
                       {deptData.length > 0 && (
-                        <h2 className="font-headline text-2xl md:text-3xl text-foreground mb-6">Team</h2>
+                        <h2 className="font-headline text-xl md:text-2xl text-foreground mb-6">Team</h2>
                       )}
                       {renderResponsiveGrid(unassigned, startIndex)}
                     </section>
