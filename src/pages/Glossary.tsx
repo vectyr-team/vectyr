@@ -91,7 +91,7 @@ const Glossary = () => {
 
         <section className="px-6 py-16 md:py-[80px] bg-card">
           <div className="mx-auto max-w-3xl flex flex-col items-center text-center">
-            <h2 className="font-headline text-3xl md:text-5xl font-normal text-foreground">
+            <h2 className="font-headline text-2xl md:text-4xl font-normal text-foreground">
               See a Demo of BrandOS
             </h2>
             <p className="mt-4 max-w-xl font-body text-base leading-relaxed text-muted-foreground">

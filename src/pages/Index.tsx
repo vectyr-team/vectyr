@@ -168,7 +168,7 @@ const Index = () => {
               </div>
 
               <div className="grid gap-8 md:gap-16 md:grid-cols-2 items-start">
-                <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+                <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
                   Three Problems
                   <br />
                   <span className="text-primary">Solved For Good.</span>
@@ -217,7 +217,7 @@ const Index = () => {
 
                   <div className="h-px w-full my-8 bg-border" />
 
-                  <h3 className="font-body font-semibold text-2xl md:text-3xl leading-tight text-foreground normal-case tracking-normal flex items-center gap-3">
+                  <h3 className="font-body font-semibold text-xl md:text-2xl leading-tight text-foreground normal-case tracking-normal flex items-center gap-3">
                     <Icon icon="lucide:check" className="text-primary shrink-0" />
                     {card.title}
                   </h3>
@@ -253,7 +253,7 @@ const Index = () => {
                 <div className="h-px w-16 bg-muted-foreground/40" />
               </div>
 
-              <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl">
+              <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-4xl md:text-5xl lg:text-6xl max-w-3xl">
                 What Founders <span className="text-primary">Say.</span>
               </h2>
             </ScrollSection>
@@ -269,7 +269,7 @@ const Index = () => {
           <div className="mx-auto max-w-[1300px] flex flex-col items-center text-center">
             <ScrollSection className="flex flex-col items-center">
               <h2
-                className="font-headline font-light leading-[0.95] tracking-normal text-5xl md:text-6xl lg:text-7xl max-w-[830px] text-foreground"
+                className="font-headline font-light leading-[0.95] tracking-normal text-4xl md:text-5xl lg:text-6xl max-w-[830px] text-foreground"
               >
                 Stop being
                 <br />

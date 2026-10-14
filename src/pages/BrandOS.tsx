@@ -104,7 +104,7 @@ const BrandOS = () => {
                 <span className="w-12 h-px bg-muted-foreground" />
               </div>
 
-              <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl">
+              <h2 className="font-headline font-normal text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-6xl">
                 Your Brand Strategy Exists. <span className="text-primary">It Doesn't Get Used.</span>
               </h2>
             </div>
@@ -146,7 +146,7 @@ const BrandOS = () => {
               <span className="w-12 h-px bg-muted-foreground" />
             </div>
 
-            <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-16">
+            <h2 className="font-headline font-normal text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-6xl mb-16">
               From Genome To <span className="text-primary">Infrastructure.</span>
             </h2>
 
@@ -178,7 +178,7 @@ const BrandOS = () => {
                 <span className="w-12 h-px bg-muted-foreground" />
               </div>
 
-              <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl">
+              <h2 className="font-headline font-normal text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-6xl">
                 Not a Filing Cabinet.
                 <br />
                 <span className="text-primary">An Infrastructure Layer.</span>
@@ -215,7 +215,7 @@ const BrandOS = () => {
               <span className="w-12 h-px bg-muted-foreground" />
             </div>
 
-            <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-8">
+            <h2 className="font-headline font-normal text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-6xl mb-8">
               Built for Every <span className="text-primary">Brand.</span>
             </h2>
 
@@ -247,7 +247,7 @@ const BrandOS = () => {
               <span className="w-12 h-px bg-muted-foreground" />
             </div>
 
-            <h2 className="font-headline font-normal text-4xl leading-[0.95] tracking-normal text-foreground sm:text-5xl md:text-7xl mb-12">
+            <h2 className="font-headline font-normal text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-6xl mb-12">
               Everything <span className="text-primary">Included.</span>
             </h2>
 
@@ -273,7 +273,7 @@ const BrandOS = () => {
             </div>
 
             <h2
-              className="font-headline font-normal text-4xl leading-[0.95] tracking-normal sm:text-5xl md:text-7xl mb-4 text-foreground"
+              className="font-headline font-normal text-3xl leading-[0.95] tracking-normal sm:text-4xl md:text-6xl mb-4 text-foreground"
             >
               Stop Being the Only Person Who Knows. <span className="text-primary">Install It.</span>
             </h2>

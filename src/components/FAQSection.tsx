@@ -35,7 +35,7 @@ const FAQSection = ({
     <section className={`px-6 py-16 md:py-24 ${className}`} aria-label="Frequently Asked Questions">
       <FAQPageJsonLd faqs={faqs} />
       <div className="mx-auto max-w-3xl">
-        <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-4">
+        <h2 className="font-headline text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-4">
           {heading}
         </h2>
         {subheading && (
@@ -47,7 +47,7 @@ const FAQSection = ({
           {faqs.map((faq, i) => (
             <AccordionItem key={i} value={`faq-${i}`} className="border-border">
               <AccordionTrigger className="font-body text-left text-foreground hover:no-underline py-6 text-lg">
-                <h3 className="font-body text-lg font-normal">{faq.question}</h3>
+                <h3 className="font-body text-base font-normal">{faq.question}</h3>
               </AccordionTrigger>
               <AccordionContent className="font-body text-muted-foreground leading-relaxed text-base">
                 <FAQMarkdown content={faq.answer} />

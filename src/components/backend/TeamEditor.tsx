@@ -174,7 +174,7 @@ function SortableDeptHeader({
           </button>
         </div>
       )}
-      <h3 className="font-headline text-2xl text-foreground flex-1">{dept.name}</h3>
+      <h3 className="font-headline text-xl text-foreground flex-1">{dept.name}</h3>
       <button onClick={onRename} className="p-1 text-muted-foreground hover:text-foreground" aria-label="Rename department">
         <Icon icon="lucide:pencil" className="w-3.5 h-3.5" />
       </button>
@@ -234,7 +234,7 @@ function MemberForm({
 
   return (
     <div className="bg-card rounded-lg p-6 space-y-4">
-      <h3 className="font-headline text-xl text-foreground">{initial ? "Edit Member" : "Add Team Member"}</h3>
+      <h3 className="font-headline text-lg text-foreground">{initial ? "Edit Member" : "Add Team Member"}</h3>
 
       {/* Photo */}
       <div>
@@ -712,7 +712,7 @@ const TeamEditor = () => {
         if (unassigned.length === 0) return null;
         return (
           <div>
-            <h3 className="font-headline text-2xl text-foreground mt-8 mb-3">Unassigned</h3>
+            <h3 className="font-headline text-xl text-foreground mt-8 mb-3">Unassigned</h3>
             <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={(e) => handleMemberDragEnd(e, null)}>
               <SortableContext items={unassigned.map((m) => m.id)} strategy={verticalListSortingStrategy}>
                 {unassigned.map((member, mIdx) => (

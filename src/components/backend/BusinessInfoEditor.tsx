@@ -113,7 +113,7 @@ const BusinessInfoEditor = ({ onSaved }: BusinessInfoEditorProps) => {
   return (
     <div className="space-y-6">
       <div className="space-y-4">
-        <h2 className="font-body text-lg text-foreground font-medium">General</h2>
+        <h2 className="font-body text-base text-foreground font-medium">General</h2>
         <Field label="Business Name" field="name" />
         <Field label="Legal Name" field="legal_name" />
         <div>
@@ -127,7 +127,7 @@ const BusinessInfoEditor = ({ onSaved }: BusinessInfoEditorProps) => {
       </div>
 
       <div className="space-y-4">
-        <h2 className="font-body text-lg text-foreground font-medium">Address</h2>
+        <h2 className="font-body text-base text-foreground font-medium">Address</h2>
         <Field label="Street" field="street_address" />
         <div className="grid grid-cols-3 gap-4">
           <Field label="City" field="address_locality" />
@@ -142,14 +142,14 @@ const BusinessInfoEditor = ({ onSaved }: BusinessInfoEditorProps) => {
       </div>
 
       <div className="space-y-4">
-        <h2 className="font-body text-lg text-foreground font-medium">Services & Hours</h2>
+        <h2 className="font-body text-base text-foreground font-medium">Services & Hours</h2>
         <ArrayField label="Service Areas" field="service_areas" />
         <ArrayField label="Services Offered" field="services" />
         <Field label="Opening Hours (schema format)" field="opening_hours" />
       </div>
 
       <div className="space-y-4">
-        <h2 className="font-body text-lg text-foreground font-medium">Founder</h2>
+        <h2 className="font-body text-base text-foreground font-medium">Founder</h2>
         <div className="grid grid-cols-2 gap-4">
           <Field label="Name" field="founder_name" />
           <Field label="Website" field="founder_url" />
@@ -159,7 +159,7 @@ const BusinessInfoEditor = ({ onSaved }: BusinessInfoEditorProps) => {
       </div>
 
       <div className="space-y-4">
-        <h2 className="font-body text-lg text-foreground font-medium">Rating & Social</h2>
+        <h2 className="font-body text-base text-foreground font-medium">Rating & Social</h2>
         <div className="grid grid-cols-2 gap-4">
           <Field label="Rating Value" field="rating_value" type="number" />
           <Field label="Review Count" field="review_count" type="number" />

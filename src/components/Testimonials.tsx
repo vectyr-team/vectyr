@@ -132,7 +132,7 @@ const Testimonials = () => {
         >
           <Stars rating={t.rating} />
           {t.headline && (
-            <h3 className="font-body font-semibold text-lg leading-tight text-foreground mt-4">
+            <h3 className="font-body font-semibold text-base leading-tight text-foreground mt-4">
               {t.headline}
             </h3>
           )}
