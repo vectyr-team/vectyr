@@ -78,8 +78,8 @@ const Team = () => {
             Our Team
           </span>
           <h1 className="font-headline font-light text-5xl leading-[0.95] text-foreground sm:text-6xl md:text-7xl mb-12">
-            THE PEOPLE BEHIND<br />
-            <span className="text-primary">THE WORK.</span>
+            The People Behind<br />
+            <span className="text-primary">the Work.</span>
           </h1>
 
           {isLoading ? (

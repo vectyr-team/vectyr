@@ -62,7 +62,7 @@ const SiteOps = () => {
             </span>
 
             <h1 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-4xl mb-8">
-              SITE<span className="text-primary">OPS</span>
+              Site<span className="text-primary">Ops</span>
             </h1>
 
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl">
@@ -124,9 +124,9 @@ const SiteOps = () => {
             </div>
 
             <h2 className="font-headline font-normal text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-6xl mb-16">
-              DONE FOR YOU. 
+              Done for You. 
               <br />
-              <span className="text-primary">DONE RIGHT.</span>
+              <span className="text-primary">Done Right.</span>
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -159,9 +159,9 @@ const SiteOps = () => {
               </div>
 
               <h2 className="font-headline font-normal text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-6xl">
-                NOT A GENERIC
+                Not a Generic
                 <br />
-                <span className="text-primary">HOSTING ADD-ON.</span>
+                <span className="text-primary">Hosting Add-on.</span>
               </h2>
             </div>
 
@@ -200,7 +200,7 @@ const SiteOps = () => {
             <h2
               className="font-headline font-normal text-3xl leading-[0.95] tracking-normal sm:text-4xl md:text-6xl mb-4 text-foreground"
             >
-              <span className="text-primary">$495</span> / MONTH
+              <span className="text-primary">$495</span> / Month
             </h2>
 
             <div className="space-y-2 max-w-lg mx-auto">
