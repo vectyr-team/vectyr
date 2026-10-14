@@ -28,8 +28,8 @@ const About = () => {
             </span>
 
             <h1 className="font-headline font-light text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
-              TWENTY YEARS.<br />
-              <span className="text-primary">ONE ANSWER.</span>
+              Twenty Years.<br />
+              <span className="text-primary">One Answer.</span>
             </h1>
           </div>
 
@@ -64,8 +64,8 @@ const About = () => {
             </div>
 
             <h2 className="font-headline font-light text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-6xl">
-              THE INDUSTRY HAS BEEN SELLING YOU THE WRONG{" "}
-              <span className="text-primary">THING.</span>
+              The Industry Has Been Selling You the Wrong{" "}
+              <span className="text-primary">Thing.</span>
             </h2>
           </div>
 
@@ -113,9 +113,9 @@ const About = () => {
             </div>
 
             <h2 className="font-headline font-light text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-6xl mb-10">
-              TWENTY YEARS<br />
-              BUILDING BRANDS.<br />
-              <span className="text-primary">ONE CONVICTION.</span>
+              Twenty Years<br />
+              Building Brands.<br />
+              <span className="text-primary">One Conviction.</span>
             </h2>
 
             <div className="space-y-6">
@@ -185,7 +185,7 @@ const About = () => {
           </div>
 
           <h2 className="font-headline font-light text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-5xl text-center text-balance mb-12 md:mb-20">
-            THE FRAMEWORK DIDN'T COME FROM A BOOK. <span className="text-primary">IT BECAME ONE.</span>
+            The Framework Didn't Come from a Book. <span className="text-primary">It Became One.</span>
           </h2>
 
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
@@ -225,8 +225,8 @@ const About = () => {
           </div>
 
           <h2 className="font-headline font-normal text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-6xl mb-8">
-            LINES WE DON'T CROSS<br />
-            <span className="text-primary">FOR REVENUE.</span>
+            Lines We Don't Cross<br />
+            <span className="text-primary">for Revenue.</span>
           </h2>
 
           <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl mb-16">
@@ -277,7 +277,7 @@ const About = () => {
         <img src={ctaBg} alt="" className="absolute inset-0 z-0 w-full h-full object-cover opacity-20 pointer-events-none" />
         <div className="relative z-10 mx-auto max-w-[1600px] text-center">
           <h2 className="font-headline font-normal text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-[5rem] max-w-none md:max-w-[770px] md:mx-auto mb-8">
-            YOU'VE BUILT SOMETHING REAL. YOUR BRAND SHOULD <span className="text-primary">SAY SO.</span>
+            You've Built Something Real. Your Brand Should <span className="text-primary">Say So.</span>
           </h2>
 
           <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl mx-auto mb-12">

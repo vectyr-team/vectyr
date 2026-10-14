@@ -33,7 +33,7 @@ const Contact = () => {
           </span>
 
           <h1 className="font-headline font-light text-5xl leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
-            LET'S <span className="text-primary">TALK.</span>
+            Let's <span className="text-primary">Talk.</span>
           </h1>
 
           <p className="mt-4 max-w-2xl mx-auto font-body text-lg font-light leading-relaxed text-muted-foreground">

@@ -73,7 +73,7 @@ const BrandOS = () => {
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">The Platform</span>
 
             <h1 className="font-headline font-normal text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-4xl mb-8">
-              Vectyr Brand<span className="text-primary">OS</span>
+              Vectyr Brand<span className="text-primary">Os</span>
             </h1>
 
             <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-2xl">
