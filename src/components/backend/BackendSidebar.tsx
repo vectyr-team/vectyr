@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
-import vectyrLogo from "@/assets/vectyr-logo.svg";
+import vectyrLogo from "@/assets/vectyr-logo-light.svg";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
 
@@ -49,7 +49,7 @@ const SidebarContent = ({
 }: BackendSidebarProps) => (
   <div className="flex flex-col h-full">
     <div className="p-6">
-      <img src={vectyrLogo} alt="Vectyr" className="h-10 invert hue-rotate-180" />
+      <img src={vectyrLogo} alt="Vectyr" className="h-10" />
     </div>
 
     <nav className="flex-1 px-3 space-y-1">
