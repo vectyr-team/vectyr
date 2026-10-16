@@ -18,6 +18,7 @@
 
 # Chat Instructions
 
-- [ ] Add admin-only general instructions editor and saved settings.
-- [ ] Apply saved instructions on each chat request without weakening knowledge restrictions.
-- [ ] Verify save, reload, and chat behavior.
+- [x] Add admin-only general instructions editor and saved settings.
+- [x] Apply saved instructions on each chat request without weakening knowledge restrictions.
+- [x] Verify chat replies and instruction safeguards with tests.
+- [ ] Verify admin save/reload and changed reply behavior. Blocked until the user signs into the preview, no matching managed test session is available.
