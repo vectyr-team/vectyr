@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
-import { ArrowUp, Square, Trash2 } from "lucide-react";
+import { ArrowUp, Square } from "lucide-react";
 import { Conversation, ConversationContent } from "@/components/ai-elements/conversation";
 import { Message, MessageContent, MessageResponse } from "@/components/ai-elements/message";
 import { PromptInput, PromptInputTextarea, PromptInputFooter, PromptInputSubmit } from "@/components/ai-elements/prompt-input";
@@ -57,22 +57,6 @@ const HeroChat = () => {
     <div ref={root} className="flex min-h-[calc(100dvh-7rem)] w-full max-w-[720px] flex-col justify-end pb-56 text-left" aria-label="Vectyr AI chat">
       {messages.length > 0 && (
         <>
-          <div className="flex justify-end mb-1">
-            <AlertDialog>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <AlertDialogTrigger asChild>
-                    <Button variant="ghost" size="icon-sm" disabled={busy} aria-label="Clear conversation"><Trash2 className="h-4 w-4" /></Button>
-                  </AlertDialogTrigger>
-                </TooltipTrigger>
-                <TooltipContent>Clear conversation</TooltipContent>
-              </Tooltip>
-              <AlertDialogContent className="theme-dark">
-                <AlertDialogHeader><AlertDialogTitle>Clear This Conversation?</AlertDialogTitle><AlertDialogDescription>This removes the saved messages from this browser.</AlertDialogDescription></AlertDialogHeader>
-                <AlertDialogFooter><AlertDialogCancel>Cancel</AlertDialogCancel><AlertDialogAction onClick={() => { setMessages([]); clearError(); focusComposer(); }}>Clear Conversation</AlertDialogAction></AlertDialogFooter>
-              </AlertDialogContent>
-            </AlertDialog>
-          </div>
           <Conversation className="mb-5 flex-none overflow-visible [&>div]:!overflow-visible">
             <ConversationContent className="gap-6 px-1 py-3">
               {messages.map((message) => (
@@ -105,7 +89,15 @@ const HeroChat = () => {
       }}>
         <PromptInputTextarea aria-label="Message Vectyr AI" placeholder="What's on your mind about your brand?" value={text} onChange={(event) => setText(event.target.value)} className="min-h-[84px] text-base px-5 pt-5" />
         <PromptInputFooter className="justify-between px-4 pb-3">
-          <span className="font-mono text-[10px] uppercase text-muted-foreground">Vectyr AI</span>
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button type="button" variant="ghost" size="sm" disabled={busy || messages.length === 0} className="h-9 px-2 font-mono text-[10px] text-muted-foreground">Clear Chat</Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent className="theme-dark">
+              <AlertDialogHeader><AlertDialogTitle>Clear This Conversation?</AlertDialogTitle><AlertDialogDescription>This removes the saved messages from this browser.</AlertDialogDescription></AlertDialogHeader>
+              <AlertDialogFooter><AlertDialogCancel>Cancel</AlertDialogCancel><AlertDialogAction onClick={() => { setMessages([]); clearError(); focusComposer(); }}>Clear Conversation</AlertDialogAction></AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
           <Tooltip>
             <TooltipTrigger asChild>
               <PromptInputSubmit status={status} onStop={() => { stop(); focusComposer(); }} disabled={!busy && !text.trim()} className="h-9 w-9 p-0 shrink-0" aria-label={busy ? "Stop reply" : "Send message"}>
