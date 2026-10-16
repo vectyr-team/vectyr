@@ -91,7 +91,7 @@ const HeroChat = () => {
         <PromptInputFooter className="justify-between px-4 pb-3">
           <AlertDialog>
             <AlertDialogTrigger asChild>
-              <Button type="button" variant="ghost" size="sm" disabled={busy || messages.length === 0} className="h-9 px-2 font-mono text-[10px] text-muted-foreground">Clear Chat</Button>
+              <Button type="button" variant="ghost" size="sm" disabled={busy || messages.length === 0} className="h-9 px-2 font-mono text-[10px] text-muted-foreground">CLEAR CHAT</Button>
             </AlertDialogTrigger>
             <AlertDialogContent className="theme-dark">
               <AlertDialogHeader><AlertDialogTitle>Clear This Conversation?</AlertDialogTitle><AlertDialogDescription>This removes the saved messages from this browser.</AlertDialogDescription></AlertDialogHeader>
