@@ -48,7 +48,7 @@ const HeroChat = () => {
   useEffect(() => {
     try { saveHeroChatHistory(window.localStorage, messages); } catch { setStorageError(true); }
     if (followLatest.current) {
-      const frame = requestAnimationFrame(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "instant" }));
+      const frame = requestAnimationFrame(() => window.scrollTo({ top: messages.length > 0 ? document.documentElement.scrollHeight : 0, behavior: "instant" }));
       return () => cancelAnimationFrame(frame);
     }
   }, [messages]);
@@ -75,11 +75,11 @@ const HeroChat = () => {
           </Conversation>
         </>
       )}
-      <div className="theme-dark fixed inset-x-0 bottom-0 z-20 px-6 pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
+      <div className={`theme-light fixed inset-x-0 z-20 px-6 ${messages.length === 0 ? "top-1/2 -translate-y-1/2" : "bottom-0 pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))]"}`}>
       <div className="mx-auto w-full max-w-[720px]">
       {error && <p role="alert" className="mb-3 text-sm text-foreground">{error.message}</p>}
       {storageError && <p role="alert" className="mb-3 text-sm text-muted-foreground">This browser could not save your conversation.</p>}
-      <PromptInput className="[&_[data-slot=input-group]]:bg-card/95" onSubmit={({ text: input }) => {
+      <PromptInput className="[&_[data-slot=input-group]]:bg-background" onSubmit={({ text: input }) => {
         if (!input.trim() || busy) return;
         clearError();
         followLatest.current = true;
