@@ -22,3 +22,7 @@
 - [x] Apply saved instructions on each chat request without weakening knowledge restrictions.
 - [x] Verify chat replies and instruction safeguards with tests.
 - [ ] Verify admin save/reload and changed reply behavior. Blocked until the user signs into the preview, no matching managed test session is available.
+
+# Claude Website Chat
+
+- [ ] Switch website replies to Claude while preserving instructions, knowledge restrictions, streaming and browser history. Blocked: Claude is in the authenticated model catalog, but this project's supplied integration contract supports only OpenAI/Google chat and no native Claude Messages guide is available.
