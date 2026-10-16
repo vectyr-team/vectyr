@@ -16,7 +16,7 @@ const Index = () => {
         <LocalBusinessJsonLd business={businessInfo} />
 
         {/* Hero */}
-        <section className="theme-dark relative flex min-h-dvh flex-col items-center justify-center px-6 pt-28 pb-12 md:pt-28 md:pb-12 overflow-hidden bg-background">
+        <section className="theme-dark relative flex min-h-dvh flex-col items-center px-6 pt-28 bg-background">
           {/* Background video */}
           <video
             autoPlay
@@ -25,12 +25,12 @@ const Index = () => {
             playsInline
             aria-hidden="true"
             src="/videos/vectyr-hero-bg.mp4"
-            className="absolute inset-0 w-full object-cover scale-105 opacity-40 md:opacity-100"
+            className="fixed inset-0 w-full object-cover scale-105 opacity-40 md:opacity-100"
             style={{ height: "110%", top: "-5%" }}
           />
 
           {/* Overlay for text readability */}
-          <div className="absolute inset-0 bg-background/70" />
+          <div className="fixed inset-0 bg-background/70" />
 
           {/* Content */}
           <div className="relative z-10 w-full max-w-[1300px] mx-auto flex flex-col items-center text-center">
