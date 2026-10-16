@@ -3,6 +3,7 @@ import SEOHead from "@/components/SEOHead";
 import { LocalBusinessJsonLd } from "@/components/JsonLd";
 import { useBusinessInfo, usePageMeta } from "@/hooks/use-seo-data";
 import HeroChat from "@/components/HeroChat";
+import heroBackground from "@/assets/creative-background-2.jpg.asset.json";
 
 const Index = () => {
   const { data: businessInfo } = useBusinessInfo();
@@ -17,20 +18,17 @@ const Index = () => {
 
         {/* Hero */}
         <section className="theme-dark relative flex min-h-dvh flex-col items-center px-6 pt-28 bg-background">
-          {/* Background video */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
+          {/* Background image */}
+          <img
+            alt=""
             aria-hidden="true"
-            src="/videos/vectyr-hero-bg.mp4"
-            className="fixed inset-0 w-full object-cover scale-105 opacity-40 md:opacity-100"
-            style={{ height: "110%", top: "-5%" }}
+            src={heroBackground.url}
+            fetchPriority="high"
+            className="fixed inset-0 h-dvh w-full object-cover"
           />
 
           {/* Overlay for text readability */}
-          <div className="fixed inset-0 bg-background/70" />
+          <div className="fixed inset-0 bg-background/20" />
 
           {/* Content */}
           <div className="relative z-10 w-full max-w-[1300px] mx-auto flex flex-col items-center text-center">
