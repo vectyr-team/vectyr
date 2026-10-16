@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { ArrowUp, Square, Trash2 } from "lucide-react";
-import { Conversation, ConversationContent, ConversationScrollButton } from "@/components/ai-elements/conversation";
+import { Conversation, ConversationContent } from "@/components/ai-elements/conversation";
 import { Message, MessageContent, MessageResponse } from "@/components/ai-elements/message";
 import { PromptInput, PromptInputTextarea, PromptInputFooter, PromptInputSubmit } from "@/components/ai-elements/prompt-input";
 import { Reasoning, ReasoningTrigger, ReasoningContent } from "@/components/ai-elements/reasoning";
@@ -25,7 +25,8 @@ const HeroChat = () => {
   const [text, setText] = useState("");
   const [storageError, setStorageError] = useState(false);
   const root = useRef<HTMLDivElement>(null);
-  const focusComposer = () => root.current?.querySelector("textarea")?.focus();
+  const followLatest = useRef(true);
+  const focusComposer = () => root.current?.querySelector("textarea")?.focus({ preventScroll: true });
   const { messages, sendMessage, status, stop, error, setMessages, clearError } = useChat({
     id: "vectyr-hero", messages: initialMessages, transport,
     onFinish: ({ messages: completed }) => {
@@ -38,11 +39,22 @@ const HeroChat = () => {
 
   useEffect(() => { focusComposer(); }, []);
   useEffect(() => {
+    const trackScroll = () => {
+      followLatest.current = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 100;
+    };
+    window.addEventListener("scroll", trackScroll, { passive: true });
+    return () => window.removeEventListener("scroll", trackScroll);
+  }, []);
+  useEffect(() => {
     try { saveHeroChatHistory(window.localStorage, messages); } catch { setStorageError(true); }
+    if (followLatest.current) {
+      const frame = requestAnimationFrame(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "instant" }));
+      return () => cancelAnimationFrame(frame);
+    }
   }, [messages]);
 
   return (
-    <div ref={root} className="w-full max-w-[720px] text-left" aria-label="Vectyr AI chat">
+    <div ref={root} className="flex min-h-[calc(100dvh-7rem)] w-full max-w-[720px] flex-col justify-end pb-56 text-left" aria-label="Vectyr AI chat">
       {messages.length > 0 && (
         <>
           <div className="flex justify-end mb-1">
@@ -61,11 +73,11 @@ const HeroChat = () => {
               </AlertDialogContent>
             </AlertDialog>
           </div>
-          <Conversation className="h-[300px] sm:h-[360px] mb-5">
+          <Conversation className="mb-5 flex-none overflow-visible [&>div]:!overflow-visible">
             <ConversationContent className="gap-6 px-1 py-3">
               {messages.map((message) => (
                 <Message key={message.id} from={message.role}>
-                  <MessageContent className="font-body leading-relaxed break-words">
+                  <MessageContent className={`font-body leading-relaxed break-words ${message.role === "assistant" ? "text-lg" : "text-base"}`}>
                     {message.parts.map((part, index) => {
                       if (part.type === "text") return <MessageResponse key={index} isAnimating={busy && message.role === "assistant"}>{part.text}</MessageResponse>;
                       if (part.type === "reasoning") return <Reasoning key={index} defaultOpen={false}><ReasoningTrigger /><ReasoningContent>{part.text}</ReasoningContent></Reasoning>;
@@ -76,15 +88,17 @@ const HeroChat = () => {
               ))}
               {status === "submitted" && <div role="status" aria-label="Waiting for AI reply" className="space-y-2"><Skeleton className="h-3 w-40" /><Skeleton className="h-3 w-24" /></div>}
             </ConversationContent>
-            <ConversationScrollButton />
           </Conversation>
         </>
       )}
+      <div className="theme-dark fixed inset-x-0 bottom-0 z-20 bg-background/95 px-6 pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
+      <div className="mx-auto w-full max-w-[720px]">
       {error && <p role="alert" className="mb-3 text-sm text-foreground">{error.message}</p>}
       {storageError && <p role="alert" className="mb-3 text-sm text-muted-foreground">This browser could not save your conversation.</p>}
       <PromptInput className="[&_[data-slot=input-group]]:bg-card/95" onSubmit={({ text: input }) => {
         if (!input.trim() || busy) return;
         clearError();
+        followLatest.current = true;
         void sendMessage({ text: input.trim() });
         setText("");
         focusComposer();
@@ -102,6 +116,8 @@ const HeroChat = () => {
           </Tooltip>
         </PromptInputFooter>
       </PromptInput>
+      </div>
+      </div>
     </div>
   );
 };
