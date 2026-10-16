@@ -46,7 +46,7 @@ const Footer = () => {
           <div className="flex flex-col gap-6 items-center md:items-start">
             <img
               src={logoStacked}
-              alt="Brand Orchestra — a Vectyr company"
+              alt="Brand or Die"
               className="h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
             />
             <p className="font-body text-sm leading-relaxed text-muted-foreground/60 max-w-[260px]">
