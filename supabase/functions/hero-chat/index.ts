@@ -1,13 +1,13 @@
 import { convertToModelMessages, validateUIMessages } from "npm:ai@6";
 import { createResponsesCall } from "../_shared/responses.ts";
 import { withLovableAiGatewayRunIdHeader } from "../_shared/run-id.ts";
+import { createClient } from "npm:@supabase/supabase-js@2";
+import { buildKnowledgeInstructions } from "./knowledge.ts";
 
 const cors = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
-
-const instructions = `You are Vectyr's brand assistant, speaking with visitors on the Brand or Die website. Be direct, helpful, concise and conversational. Help founders articulate their brand problems and explain Vectyr only using these verified facts: Brand Genome is the brand's DNA, extracted, sequenced and integrated across the team. Vectyr combines founder knowledge with customer perceptions. BrandHelix.ai distributes brand intelligence to teams and vendors. Continuity includes 180-day check-ins and updates when new information is submitted. Steve Reed is associated with Vectyr and BrandHelix. Visitors can book a demo at /demo, read FAQs at /faqs or contact Vectyr at /contact. Do not invent prices, guarantees, clients, contact details, policies or capabilities. If something is not in these facts, say you do not have that information and suggest contacting the team. Never claim to have performed actions or accessed private data. Do not use em dashes. Clearly identify yourself as an AI assistant if asked.`;
 
 Deno.serve(async (request) => {
   if (request.method === "OPTIONS") return new Response(null, { headers: cors });
@@ -24,6 +24,14 @@ Deno.serve(async (request) => {
     if (messages.some((message) => message.role !== "user" && message.role !== "assistant")) {
       return jsonError("Unsupported message role.", 400);
     }
+    const databaseUrl = Deno.env.get("SUPABASE_URL");
+    const databaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+    if (!databaseUrl || !databaseKey) return jsonError("The chat knowledgebase is not configured.", 503);
+    const database = createClient(databaseUrl, databaseKey, { auth: { persistSession: false } });
+    const { data: knowledge, error: knowledgeError } = await database.from("chat_knowledge").select("content").eq("id", "hero").maybeSingle();
+    if (knowledgeError) return jsonError("The chat knowledgebase could not be loaded. Please try again later.", 503);
+    if (!knowledge?.content?.trim()) return jsonError("The chat knowledgebase has not been added yet.", 503);
+    const instructions = buildKnowledgeInstructions(knowledge.content);
     const { result, initialResponse, runIdFetch } = createResponsesCall(request, {
       baseURL: "https://ai.gateway.lovable.dev/v1", apiKey, model: "openai/gpt-6-astra",
     }, await convertToModelMessages(messages), instructions);
