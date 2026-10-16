@@ -26,3 +26,8 @@
 # Claude Website Chat
 
 - [ ] Switch website replies to Claude while preserving instructions, knowledge restrictions, streaming and browser history. Blocked: Claude is in the authenticated model catalog, but this project's supplied integration contract supports only OpenAI/Google chat and no native Claude Messages guide is available.
+
+# Chat Calendar Repair
+
+- [x] Safely display calendar embeds in assistant replies, including saved conversations.
+- [ ] Verify a real calendar reply, calendar loading, and mobile layout.
