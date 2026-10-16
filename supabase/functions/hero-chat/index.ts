@@ -5,7 +5,7 @@ import { buildKnowledgeInstructions } from "./knowledge.ts";
 import { corsHeaders } from "npm:@supabase/supabase-js@2/cors";
 
 const cors = corsHeaders;
-const CLAUDE_MODEL = "claude-sonnet-4-5";
+const CLAUDE_MODEL = "claude-haiku-4-5";
 
 Deno.serve(async (request) => {
   if (request.method === "OPTIONS") return new Response(null, { headers: cors });
