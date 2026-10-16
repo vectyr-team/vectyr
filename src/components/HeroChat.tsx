@@ -87,7 +87,7 @@ const HeroChat = () => {
         setText("");
         focusComposer();
       }}>
-        <PromptInputTextarea aria-label="Message Vectyr AI" placeholder="What's on your mind about your brand?" value={text} onChange={(event) => setText(event.target.value)} className="min-h-[84px] text-base px-5 pt-5" />
+        <PromptInputTextarea aria-label="Message Vectyr AI" placeholder="What's on your mind about your brand?" value={text} onChange={(event) => setText(event.target.value)} className="min-h-[84px] text-base px-5 pt-5 focus-visible:ring-offset-0 focus-visible:shadow-none" />
         <PromptInputFooter className="justify-between px-4 pb-3">
           <AlertDialog>
             <AlertDialogTrigger asChild>
