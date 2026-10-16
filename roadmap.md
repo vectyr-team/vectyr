@@ -6,6 +6,6 @@
 
 # Chat Knowledgebase
 
-- [ ] Add admin-only Markdown/XML knowledge textarea.
-- [ ] Restrict replies to current saved knowledge and fail closed when unavailable.
-- [ ] Verify admin save/reload and grounded chat replies.
+- [x] Add admin-only Markdown/XML knowledge textarea.
+- [x] Restrict replies to current saved knowledge and fail closed when unavailable.
+- [x] Verify admin save/reload and grounded chat replies.
