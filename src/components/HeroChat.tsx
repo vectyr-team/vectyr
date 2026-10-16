@@ -27,6 +27,9 @@ const HeroChat = () => {
   const [text, setText] = useState("");
   const [storageError, setStorageError] = useState(false);
   const root = useRef<HTMLDivElement>(null);
+  const conversation = useRef<HTMLDivElement>(null);
+  const composer = useRef<HTMLDivElement>(null);
+  const [conversationClip, setConversationClip] = useState(0);
   const followLatest = useRef(true);
   const focusComposer = () => root.current?.querySelector("textarea")?.focus({ preventScroll: true });
   const { messages, sendMessage, status, stop, error, setMessages, clearError } = useChat({
@@ -38,6 +41,27 @@ const HeroChat = () => {
     onError: () => focusComposer(),
   });
   const busy = status === "submitted" || status === "streaming";
+
+  useEffect(() => {
+    const content = conversation.current;
+    const input = composer.current;
+    if (!content || !input) return;
+
+    const updateClip = () => {
+      setConversationClip(Math.max(0, content.getBoundingClientRect().bottom - input.getBoundingClientRect().top));
+    };
+    const observer = new ResizeObserver(updateClip);
+    observer.observe(content);
+    observer.observe(input);
+    window.addEventListener("scroll", updateClip, { passive: true });
+    window.addEventListener("resize", updateClip);
+    updateClip();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", updateClip);
+      window.removeEventListener("resize", updateClip);
+    };
+  }, [messages.length]);
 
   useEffect(() => { focusComposer(); }, []);
   useEffect(() => {
@@ -58,7 +82,7 @@ const HeroChat = () => {
   return (
     <div ref={root} className="flex min-h-[calc(100dvh-7rem)] w-full max-w-[720px] flex-col justify-end pb-56 text-left" aria-label="Vectyr AI chat">
       {messages.length > 0 && (
-        <>
+        <div ref={conversation} style={{ clipPath: `inset(0 0 ${conversationClip}px 0)` }}>
           <Conversation className="mb-5 flex-none overflow-visible [&>div]:!overflow-visible">
             <ConversationContent className="gap-6 px-1 py-3">
               {messages.map((message) => (
@@ -80,9 +104,9 @@ const HeroChat = () => {
               {status === "submitted" && <div role="status" aria-label="Waiting for AI reply" className="space-y-2"><Skeleton className="h-3 w-40" /><Skeleton className="h-3 w-24" /></div>}
             </ConversationContent>
           </Conversation>
-        </>
+        </div>
       )}
-      <div className={`theme-light fixed inset-x-0 z-20 px-6 ${messages.length === 0 ? "top-1/2 -translate-y-1/2" : "bottom-0 pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))]"}`}>
+      <div ref={composer} className={`theme-light fixed inset-x-0 z-20 px-6 ${messages.length === 0 ? "top-1/2 -translate-y-1/2" : "bottom-0 pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))]"}`}>
       <div className="mx-auto w-full max-w-[720px]">
       {error && <p role="alert" className="mb-3 text-sm text-foreground">{error.message}</p>}
       {storageError && <p role="alert" className="mb-3 text-sm text-muted-foreground">This browser could not save your conversation.</p>}
