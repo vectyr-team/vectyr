@@ -11,6 +11,8 @@ import { Button } from "@/components/ui/button";
 import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogCancel, AlertDialogAction } from "@/components/ui/alert-dialog";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { readHeroChatHistory, saveHeroChatHistory } from "@/lib/hero-chat-history";
+import { parseChatCalendars } from "@/lib/chat-calendar";
+import { ChatCalendar } from "@/components/ChatCalendar";
 
 const transport = new DefaultChatTransport({
   api: `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/hero-chat`,
@@ -61,9 +63,14 @@ const HeroChat = () => {
             <ConversationContent className="gap-6 px-1 py-3">
               {messages.map((message) => (
                 <Message key={message.id} from={message.role}>
-                  <MessageContent className="font-body leading-relaxed break-words text-lg">
+                  <MessageContent className="font-body leading-relaxed break-words text-lg group-[.is-assistant]:w-full">
                     {message.parts.map((part, index) => {
-                      if (part.type === "text") return <MessageResponse key={index} isAnimating={busy && message.role === "assistant"}>{part.text}</MessageResponse>;
+                      if (part.type === "text") {
+                        if (message.role !== "assistant") return <MessageResponse key={index}>{part.text}</MessageResponse>;
+                        return parseChatCalendars(part.text).map((segment, segmentIndex) => segment.type === "calendar"
+                          ? <ChatCalendar key={`${index}-${segmentIndex}-${segment.src}`} src={segment.src} />
+                          : <MessageResponse key={`${index}-${segmentIndex}`} isAnimating={busy}>{segment.text}</MessageResponse>);
+                      }
                       if (part.type === "reasoning") return <Reasoning key={index} defaultOpen={false}><ReasoningTrigger /><ReasoningContent>{part.text}</ReasoningContent></Reasoning>;
                       return null;
                     })}
