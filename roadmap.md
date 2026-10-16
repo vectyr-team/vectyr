@@ -30,4 +30,4 @@
 # Chat Calendar Repair
 
 - [x] Safely display calendar embeds in assistant replies, including saved conversations.
-- [ ] Verify a real calendar reply, calendar loading, and mobile layout.
+- [x] Verify a real calendar reply, selectable dates and time slots, reload persistence, and mobile layout.
