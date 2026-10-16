@@ -52,6 +52,10 @@
     --sidebar-ring: 19 100% 50%;
   }
 
+  .theme-hero {
+    --background: 210 10% 92.1568627451%;
+  }
+
   /* Light surfaces inside dark sections (e.g. testimonial cards) */
   .theme-light {
     --background: 0 0% 100%;
