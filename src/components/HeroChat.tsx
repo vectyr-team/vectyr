@@ -61,7 +61,7 @@ const HeroChat = () => {
             <ConversationContent className="gap-6 px-1 py-3">
               {messages.map((message) => (
                 <Message key={message.id} from={message.role}>
-                  <MessageContent className={`font-body leading-relaxed break-words ${message.role === "assistant" ? "text-lg" : "text-base"}`}>
+                  <MessageContent className="font-body leading-relaxed break-words text-lg">
                     {message.parts.map((part, index) => {
                       if (part.type === "text") return <MessageResponse key={index} isAnimating={busy && message.role === "assistant"}>{part.text}</MessageResponse>;
                       if (part.type === "reasoning") return <Reasoning key={index} defaultOpen={false}><ReasoningTrigger /><ReasoningContent>{part.text}</ReasoningContent></Reasoning>;
