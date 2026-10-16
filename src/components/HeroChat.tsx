@@ -107,7 +107,12 @@ const HeroChat = () => {
         </div>
       )}
       <div ref={composer} className={`theme-light fixed inset-x-0 z-20 px-6 ${messages.length === 0 ? "top-1/2 -translate-y-1/2" : "bottom-0 pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))]"}`}>
-      <div className="mx-auto w-full max-w-[720px]">
+      <div className="relative mx-auto w-full max-w-[720px]">
+      {messages.length === 0 && (
+        <h1 className="absolute bottom-full mb-8 w-full text-center text-4xl font-bold text-foreground text-balance">
+          We Build New Brands and Fix Broken Ones
+        </h1>
+      )}
       {error && <p role="alert" className="mb-3 text-sm text-foreground">{error.message}</p>}
       {storageError && <p role="alert" className="mb-3 text-sm text-muted-foreground">This browser could not save your conversation.</p>}
       <PromptInput className="[&_[data-slot=input-group]]:bg-background" onSubmit={({ text: input }) => {
