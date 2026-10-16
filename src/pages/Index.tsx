@@ -24,7 +24,7 @@ const Index = () => {
   const [heroVisible, setHeroVisible] = useState(false);
   const { data: businessInfo } = useBusinessInfo();
   const pageMeta = usePageMeta("home");
-  const { data: hero, loading: heroLoading } = useHomeHero();
+  const { loading: heroLoading } = useHomeHero();
 
   useEffect(() => {
     if (heroLoading) return;
@@ -76,23 +76,6 @@ const Index = () => {
               />
             </h1>
 
-            <p
-              className="mt-4 md:mt-8 max-w-[37rem] font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground"
-              style={heroStyle(2)}
-            >
-              {hero.subtitle}
-            </p>
-
-            <div className="mt-10 flex flex-row gap-4 justify-center" style={heroStyle(3)}>
-              <a href={hero.primary_button_link}>
-                <Button size="lg">{hero.primary_button_label}</Button>
-              </a>
-              <a href={hero.secondary_button_link}>
-                <Button size="lg" variant="outline">
-                  {hero.secondary_button_label}
-                </Button>
-              </a>
-            </div>
           </div>
         </section>
 
