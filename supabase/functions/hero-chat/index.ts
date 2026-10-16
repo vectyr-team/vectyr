@@ -24,16 +24,24 @@ Deno.serve(async (request) => {
     if (messages.some((message) => message.role !== "user" && message.role !== "assistant")) {
       return jsonError("Unsupported message role.", 400);
     }
-    const { result } = createResponsesCall(request, {
+    const { result, initialResponse, runIdFetch } = createResponsesCall(request, {
       baseURL: "https://ai.gateway.lovable.dev/v1", apiKey, model: "openai/gpt-6-astra",
     }, await convertToModelMessages(messages), instructions);
-    return result.toUIMessageStreamResponse({
+    const stream = result.toUIMessageStreamResponse({
       originalMessages: messages,
       sendReasoning: true,
       onFinish: () => { /* The browser saves completed UIMessage history. */ },
       onError: (error) => error instanceof Error ? error.message : "The AI reply could not be completed.",
       headers: cors,
     });
+    const upstream = await initialResponse;
+    if (upstream && !upstream.ok) {
+      const payload = await upstream.clone().json().catch(() => null);
+      const message = payload?.message || payload?.error?.message || "The AI service could not complete this request.";
+      await stream.body?.cancel();
+      return jsonError(message, upstream.status);
+    }
+    return withLovableAiGatewayRunIdHeader(stream, runIdFetch, cors);
   } catch (error) {
     if (request.signal.aborted) return new Response(null, { status: 499, headers: cors });
     return jsonError(error instanceof Error ? error.message : "The AI reply could not be completed.", 400);
