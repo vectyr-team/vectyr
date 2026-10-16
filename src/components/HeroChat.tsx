@@ -91,7 +91,7 @@ const HeroChat = () => {
           </Conversation>
         </>
       )}
-      <div className="theme-dark fixed inset-x-0 bottom-0 z-20 bg-background/95 px-6 pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
+      <div className="theme-dark fixed inset-x-0 bottom-0 z-20 px-6 pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
       <div className="mx-auto w-full max-w-[720px]">
       {error && <p role="alert" className="mb-3 text-sm text-foreground">{error.message}</p>}
       {storageError && <p role="alert" className="mb-3 text-sm text-muted-foreground">This browser could not save your conversation.</p>}
