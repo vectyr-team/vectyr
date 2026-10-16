@@ -56,6 +56,10 @@
     --background: 210 10% 92.1568627451%;
   }
 
+  .theme-hero .is-user {
+    --secondary: 210 9.6774193548% 87.8431372549%;
+  }
+
   /* Light surfaces inside dark sections (e.g. testimonial cards) */
   .theme-light {
     --background: 0 0% 100%;
