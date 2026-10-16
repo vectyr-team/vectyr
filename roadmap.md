@@ -13,5 +13,5 @@
 # Categorized Chat Knowledge
 
 - [x] Preserve existing knowledge in categorized storage with admin-only access.
-- [ ] Add category table with add, edit, save and confirmed deletion.
-- [ ] Use current categorized details for chat replies and verify the flow.
+- [x] Add category table with add, edit, save and confirmed deletion.
+- [x] Use current categorized details for chat replies and verify the flow.
