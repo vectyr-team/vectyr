@@ -5,6 +5,7 @@ import { LocalBusinessJsonLd } from "@/components/JsonLd";
 import { useBusinessInfo, usePageMeta } from "@/hooks/use-seo-data";
 import { useHomeHero } from "@/hooks/use-home-hero";
 import brandOrDieLogo from "@/assets/bodR-stacked-centered-white.svg";
+import HeroChat from "@/components/HeroChat";
 
 const heroItems = [
   { delay: 0.6 }, // overline
@@ -40,7 +41,7 @@ const Index = () => {
         <LocalBusinessJsonLd business={businessInfo} />
 
         {/* Hero */}
-        <section className="theme-dark relative flex min-h-dvh flex-col items-center justify-center px-6 pt-36 pb-20 md:pt-20 md:py-0 overflow-hidden bg-background">
+        <section className="theme-dark relative flex min-h-dvh flex-col items-center justify-center px-6 pt-28 pb-12 md:pt-28 md:pb-12 overflow-hidden bg-background">
           {/* Background video */}
           <video
             autoPlay
@@ -58,7 +59,7 @@ const Index = () => {
 
           {/* Content */}
           <div className="relative z-10 w-full max-w-[1300px] mx-auto flex flex-col items-center text-center">
-            <h1 className="w-full max-w-[580px] mx-auto" style={heroStyle(1)}>
+            <h1 className="w-full max-w-[280px] sm:max-w-[340px] mx-auto mb-10" style={heroStyle(1)}>
               <img
                 src={brandOrDieLogo}
                 alt="Brand or Die"
@@ -68,7 +69,7 @@ const Index = () => {
                 fetchPriority="high"
               />
             </h1>
-
+            <HeroChat />
           </div>
         </section>
 
