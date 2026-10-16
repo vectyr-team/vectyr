@@ -3,11 +3,9 @@ import { createResponsesCall } from "../_shared/responses.ts";
 import { withLovableAiGatewayRunIdHeader } from "../_shared/run-id.ts";
 import { createClient } from "npm:@supabase/supabase-js@2";
 import { buildKnowledgeInstructions } from "./knowledge.ts";
+import { corsHeaders } from "npm:@supabase/supabase-js@2/cors";
 
-const cors = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
-};
+const cors = corsHeaders;
 
 Deno.serve(async (request) => {
   if (request.method === "OPTIONS") return new Response(null, { headers: cors });
@@ -31,7 +29,9 @@ Deno.serve(async (request) => {
     const { data: knowledge, error: knowledgeError } = await database.from("chat_knowledge_items").select("category, content").order("created_at");
     if (knowledgeError) return jsonError("The chat knowledgebase could not be loaded. Please try again later.", 503);
     if (!knowledge?.some((item) => item.category.trim() && item.content.trim())) return jsonError("The chat knowledgebase has not been added yet.", 503);
-    const instructions = buildKnowledgeInstructions(knowledge);
+    const { data: settings, error: settingsError } = await database.from("chat_settings").select("instructions").eq("id", "general").maybeSingle();
+    if (settingsError) return jsonError("The chat instructions could not be loaded. Please try again later.", 503);
+    const instructions = buildKnowledgeInstructions(knowledge, settings?.instructions);
     const { result, initialResponse, runIdFetch } = createResponsesCall(request, {
       baseURL: "https://ai.gateway.lovable.dev/v1", apiKey, model: "openai/gpt-6-astra",
     }, await convertToModelMessages(messages), instructions);

@@ -16,6 +16,7 @@ import SocialLinksEditor from "@/components/backend/SocialLinksEditor";
 import TestimonialsEditor from "@/components/backend/TestimonialsEditor";
 import LegalPageEditor from "@/components/backend/LegalPageEditor";
 import ChatKnowledgeEditor from "@/components/backend/ChatKnowledgeEditor";
+import ChatInstructionsEditor from "@/components/backend/ChatInstructionsEditor";
 import { clearStoredAuthSession, withTimeout } from "@/lib/supabase-guards";
 
 interface PageSetting {
@@ -49,6 +50,7 @@ const SEO_SECTIONS: Record<string, { title: string; subtitle: string }> = {
   "admin-users": { title: "Admin Users", subtitle: "Manage Access" },
   "settings-chat-widget": { title: "Chat Widget", subtitle: "Sitewide Embed Code" },
   "settings-chat-knowledge": { title: "Chat Knowledgebase", subtitle: "Markdown / XML" },
+  "settings-chat-instructions": { title: "Chat Instructions", subtitle: "General Instructions" },
   "settings-social-links": { title: "Social Links", subtitle: "Footer Social Icons" },
   "settings-testimonials": { title: "Testimonials", subtitle: "Home Page Reviews" },
 };
@@ -282,6 +284,8 @@ const Backend = () => {
           return <ChatWidgetEditor />;
         case "settings-chat-knowledge":
           return <ChatKnowledgeEditor />;
+        case "settings-chat-instructions":
+          return <ChatInstructionsEditor />;
         case "settings-social-links":
           return <SocialLinksEditor />;
         case "settings-testimonials":

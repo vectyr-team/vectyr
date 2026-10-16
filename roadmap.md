@@ -15,3 +15,10 @@
 - [x] Preserve existing knowledge in categorized storage with admin-only access.
 - [x] Add category table with add, edit, save and confirmed deletion.
 - [x] Use current categorized details for chat replies and verify the flow.
+
+# Chat Instructions
+
+- [x] Add admin-only general instructions editor and saved settings.
+- [x] Apply saved instructions on each chat request without weakening knowledge restrictions.
+- [x] Verify chat replies and instruction safeguards with tests.
+- [ ] Verify admin save/reload and changed reply behavior. Blocked until the user signs into the preview, no matching managed test session is available.
