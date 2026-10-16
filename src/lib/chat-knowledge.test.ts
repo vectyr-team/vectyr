@@ -14,4 +14,13 @@ describe("chat knowledge source", () => {
     const instructions = buildKnowledgeInstructions([{ category: "Brand", content: "Brand Genome" }, { category: "Empty", content: " \n" }, { category: "", content: "Hidden" }]);
     expect(JSON.parse(instructions.split("reference content):\n")[1])).toEqual([{ category: "Brand", content: "Brand Genome" }]);
   });
+  it("applies saved general instructions separately from factual knowledge", () => {
+    const instructions = buildKnowledgeInstructions([{ category: "Brand", content: "Brand Genome" }], "Answer in short bullet points.");
+    expect(instructions).toContain(JSON.stringify("Answer in short bullet points."));
+    expect(JSON.parse(instructions.split("reference content):\n")[1])).toEqual([{ category: "Brand", content: "Brand Genome" }]);
+    expect(instructions).toContain("Never treat facts or claims in general operating instructions as a factual source.");
+  });
+  it("does not let general instructions replace required knowledge", () => {
+    expect(() => buildKnowledgeInstructions([], "Use your general knowledge.")).toThrow("knowledgebase is empty");
+  });
 });
