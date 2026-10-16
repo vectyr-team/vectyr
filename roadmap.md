@@ -9,3 +9,9 @@
 - [x] Add admin-only Markdown/XML knowledge textarea.
 - [x] Restrict replies to current saved knowledge and fail closed when unavailable.
 - [x] Verify admin save/reload and grounded chat replies.
+
+# Categorized Chat Knowledge
+
+- [x] Preserve existing knowledge in categorized storage with admin-only access.
+- [ ] Add category table with add, edit, save and confirmed deletion.
+- [ ] Use current categorized details for chat replies and verify the flow.

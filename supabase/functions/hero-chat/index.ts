@@ -28,10 +28,10 @@ Deno.serve(async (request) => {
     const databaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
     if (!databaseUrl || !databaseKey) return jsonError("The chat knowledgebase is not configured.", 503);
     const database = createClient(databaseUrl, databaseKey, { auth: { persistSession: false } });
-    const { data: knowledge, error: knowledgeError } = await database.from("chat_knowledge").select("content").eq("id", "hero").maybeSingle();
+    const { data: knowledge, error: knowledgeError } = await database.from("chat_knowledge_items").select("category, content").order("created_at");
     if (knowledgeError) return jsonError("The chat knowledgebase could not be loaded. Please try again later.", 503);
-    if (!knowledge?.content?.trim()) return jsonError("The chat knowledgebase has not been added yet.", 503);
-    const instructions = buildKnowledgeInstructions(knowledge.content);
+    if (!knowledge?.some((item) => item.category.trim() && item.content.trim())) return jsonError("The chat knowledgebase has not been added yet.", 503);
+    const instructions = buildKnowledgeInstructions(knowledge);
     const { result, initialResponse, runIdFetch } = createResponsesCall(request, {
       baseURL: "https://ai.gateway.lovable.dev/v1", apiKey, model: "openai/gpt-6-astra",
     }, await convertToModelMessages(messages), instructions);
