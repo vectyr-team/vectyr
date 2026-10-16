@@ -15,3 +15,9 @@
 - [x] Preserve existing knowledge in categorized storage with admin-only access.
 - [x] Add category table with add, edit, save and confirmed deletion.
 - [x] Use current categorized details for chat replies and verify the flow.
+
+# Chat Instructions
+
+- [ ] Add admin-only general instructions editor and saved settings.
+- [ ] Apply saved instructions on each chat request without weakening knowledge restrictions.
+- [ ] Verify save, reload, and chat behavior.
