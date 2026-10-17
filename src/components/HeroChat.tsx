@@ -107,7 +107,7 @@ const HeroChat = () => {
                             : <div key={`${index}-${segmentIndex}-${followUpIndex}`} className="flex flex-col items-start gap-2 py-2">
                                 {followUp.questions.map((question, questionIndex) => (
                                   <Button key={`${questionIndex}-${question}`} type="button" variant="outline" disabled={busy} onClick={() => askQuestion(question)} className="h-auto max-w-full justify-start whitespace-normal text-left text-base leading-relaxed px-4 py-3">
-                                    {question}
+                                    <MessageResponse mode="static" className="space-y-0 text-inherit" components={{ p: ({ children }) => <span>{children}</span>, a: ({ children }) => <span>{children}</span> }}>{question}</MessageResponse>
                                   </Button>
                                 ))}
                               </div>));
