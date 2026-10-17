@@ -189,12 +189,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-chat,
-.hero-chat *:not(strong):not(b):not(strong *):not(b *) {
+.hero-chat *:not(strong):not(b):not([data-streamdown="strong"]):not(strong *):not(b *):not([data-streamdown="strong"] *) {
   font-weight: 400 !important;
 }
 
 .hero-chat strong,
-.hero-chat b {
+.hero-chat b,
+.hero-chat [data-streamdown="strong"] {
   font-weight: 700 !important;
 }
 
