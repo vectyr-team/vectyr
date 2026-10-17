@@ -91,7 +91,7 @@ const HeroChat = () => {
   return (
     <div ref={root} className="hero-chat flex min-h-[calc(100dvh-7rem)] w-full max-w-[720px] flex-col justify-end pb-56 text-left" aria-label="Vectyr AI chat">
       {messages.length > 0 && (
-        <div ref={conversation} style={{ clipPath: `inset(0 0 ${conversationClip}px 0)` }}>
+        <div ref={conversation} className="mx-[6px]" style={{ clipPath: `inset(0 0 ${conversationClip}px 0)` }}>
           <Conversation className="mb-5 flex-none overflow-visible [&>div]:!overflow-visible">
             <ConversationContent className="gap-6 px-0 py-3">
               {messages.map((message) => (
