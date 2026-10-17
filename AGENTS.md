@@ -5,3 +5,4 @@
 - Fetch all admin-managed categorized chat knowledge items server-side for every request, with admin-only table access and no fallback facts, so edits become the chat's sole factual reference immediately.
 - Store general chat instructions in an admin-only singleton settings row and load them server-side for every request, beneath mandatory factual-source restrictions; share defaults through a pure module so the editor and function agree.
 - Extract supported booking iframes from assistant text with the chat-calendar parser and render them through ChatCalendar, never execute model-generated HTML or scripts, so calendars work without opening arbitrary embed execution.
+- Extract short Markdown follow-up choice lists in a pure client parser and send selected choices through the existing chat transport, preserving factual lists and server-side knowledge restrictions.

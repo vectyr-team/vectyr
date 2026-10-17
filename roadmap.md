@@ -31,3 +31,9 @@
 
 - [x] Safely display calendar embeds in assistant replies, including saved conversations.
 - [x] Verify a real calendar reply, selectable dates and time slots, reload persistence, and mobile layout.
+
+# Chat Lists And Follow-Ups
+
+- [x] Restore list markers and indentation.
+- [x] Turn follow-up choices into buttons using the existing question action.
+- [x] Verify parsing and clicking a follow-up through the chat.

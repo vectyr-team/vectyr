@@ -13,6 +13,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 import { readHeroChatHistory, saveHeroChatHistory } from "@/lib/hero-chat-history";
 import { parseChatCalendars } from "@/lib/chat-calendar";
 import { ChatCalendar } from "@/components/ChatCalendar";
+import { parseChatFollowUps } from "@/lib/chat-follow-ups";
 
 const transport = new DefaultChatTransport({
   api: `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/hero-chat`,
@@ -41,6 +42,14 @@ const HeroChat = () => {
     onError: () => focusComposer(),
   });
   const busy = status === "submitted" || status === "streaming";
+  const askQuestion = (question: string) => {
+    if (busy || !question.trim()) return;
+    clearError();
+    followLatest.current = true;
+    void sendMessage({ text: question.trim() });
+    setText("");
+    focusComposer();
+  };
 
   useEffect(() => {
     const content = conversation.current;
@@ -93,7 +102,15 @@ const HeroChat = () => {
                         if (message.role !== "assistant") return <MessageResponse key={index}>{part.text}</MessageResponse>;
                         return parseChatCalendars(part.text).map((segment, segmentIndex) => segment.type === "calendar"
                           ? <ChatCalendar key={`${index}-${segmentIndex}-${segment.src}`} src={segment.src} />
-                          : <MessageResponse key={`${index}-${segmentIndex}`} isAnimating={busy}>{segment.text}</MessageResponse>);
+                          : parseChatFollowUps(segment.text).map((followUp, followUpIndex) => followUp.type === "text"
+                            ? <MessageResponse key={`${index}-${segmentIndex}-${followUpIndex}`} isAnimating={busy}>{followUp.text}</MessageResponse>
+                            : <div key={`${index}-${segmentIndex}-${followUpIndex}`} className="flex flex-col items-start gap-2 py-2">
+                                {followUp.questions.map((question, questionIndex) => (
+                                  <Button key={`${questionIndex}-${question}`} type="button" variant="outline" disabled={busy} onClick={() => askQuestion(question)} className="h-auto max-w-full justify-start whitespace-normal text-left text-base leading-relaxed px-4 py-3">
+                                    {question}
+                                  </Button>
+                                ))}
+                              </div>));
                       }
                       if (part.type === "reasoning") return <Reasoning key={index} defaultOpen={false}><ReasoningTrigger /><ReasoningContent>{part.text}</ReasoningContent></Reasoning>;
                       return null;
@@ -116,12 +133,7 @@ const HeroChat = () => {
       {error && <p role="alert" className="mb-3 text-sm text-foreground">{error.message}</p>}
       {storageError && <p role="alert" className="mb-3 text-sm text-muted-foreground">This browser could not save your conversation.</p>}
       <PromptInput className="[&_[data-slot=input-group]]:bg-background" onSubmit={({ text: input }) => {
-        if (!input.trim() || busy) return;
-        clearError();
-        followLatest.current = true;
-        void sendMessage({ text: input.trim() });
-        setText("");
-        focusComposer();
+        askQuestion(input);
       }}>
         <PromptInputTextarea aria-label="Message Vectyr AI" placeholder="What's on your mind about your brand?" value={text} onChange={(event) => setText(event.target.value)} className="min-h-[84px] text-base px-5 pt-5 focus-visible:ring-offset-0 focus-visible:shadow-none" />
         <PromptInputFooter className="justify-between px-4 pb-3">
