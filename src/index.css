@@ -189,7 +189,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-chat,
-.hero-chat *:not(strong):not(b):not([data-streamdown="strong"]):not(strong *):not(b *):not([data-streamdown="strong"] *) {
+.hero-chat *:not(strong):not(b):not([data-streamdown="strong"]):not(strong *):not(b *):not([data-streamdown="strong"] *):not(h1, h2, h3, h4, h5, h6):not(:is(h1, h2, h3, h4, h5, h6) *) {
   font-weight: 400 !important;
 }
 
