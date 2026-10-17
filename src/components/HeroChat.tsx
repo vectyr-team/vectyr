@@ -135,7 +135,7 @@ const HeroChat = () => {
       <PromptInput className="[&_[data-slot=input-group]]:bg-background" onSubmit={({ text: input }) => {
         askQuestion(input);
       }}>
-        <PromptInputTextarea aria-label="Message Vectyr AI" placeholder="What's on your mind about your brand?" value={text} onChange={(event) => setText(event.target.value)} className="min-h-[84px] text-lg md:text-lg placeholder:text-lg placeholder:text-muted-foreground/60 px-5 pt-5 focus-visible:ring-offset-0 focus-visible:shadow-none" />
+        <PromptInputTextarea aria-label="Message Vectyr AI" placeholder="What kind of help do you need with your brand?" value={text} onChange={(event) => setText(event.target.value)} className="min-h-[84px] text-lg md:text-lg placeholder:text-lg placeholder:text-muted-foreground/60 px-5 pt-5 focus-visible:ring-offset-0 focus-visible:shadow-none" />
         <PromptInputFooter className="justify-between px-4 pb-3">
           <AlertDialog>
             <AlertDialogTrigger asChild>
