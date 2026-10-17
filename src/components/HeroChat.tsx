@@ -123,10 +123,10 @@ const HeroChat = () => {
           </Conversation>
         </div>
       )}
-      <div ref={composer} className={`theme-light fixed inset-x-0 z-20 px-6 ${messages.length === 0 ? "top-1/2 -translate-y-1/2" : "bottom-0 pb-[max(1.5rem,env(safe-area-inset-bottom))]"}`}>
-      <div className="relative mx-auto w-full max-w-[720px]">
+      <div ref={composer} className={`theme-light fixed inset-x-0 z-20 px-6 ${messages.length === 0 ? "inset-y-0 flex flex-col justify-center overflow-y-auto pt-28 pb-12" : "bottom-0 pb-[max(1.5rem,env(safe-area-inset-bottom))]"}`}>
+      <div className={`relative mx-auto w-full max-w-[720px] ${messages.length === 0 ? "my-auto" : ""}`}>
       {messages.length === 0 && (
-        <h1 className="absolute bottom-full mb-8 w-full text-center text-[3.5em] font-bold text-foreground text-balance">
+        <h1 className="mb-8 w-full text-center text-[3.5em] font-bold text-foreground text-balance">
           We Build New Brands and Fix Broken Ones
         </h1>
       )}
