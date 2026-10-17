@@ -127,7 +127,7 @@ const HeroChat = () => {
       <div className={`relative mx-auto w-full max-w-[720px] ${messages.length === 0 ? "my-auto" : ""}`}>
       {messages.length === 0 && (
         <h1 className="mb-8 w-full text-center text-[3.5em] font-bold text-foreground text-balance">
-          We Build New Brands and Fix Broken Ones
+          We turn your vision into a brand people remember
         </h1>
       )}
       {error && <p role="alert" className="mb-3 text-sm text-foreground">{error.message}</p>}
