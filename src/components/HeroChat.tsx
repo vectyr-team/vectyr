@@ -89,7 +89,7 @@ const HeroChat = () => {
   }, [messages]);
 
   return (
-    <div ref={root} className="flex min-h-[calc(100dvh-7rem)] w-full max-w-[720px] flex-col justify-end pb-56 text-left" aria-label="Vectyr AI chat">
+    <div ref={root} className="hero-chat flex min-h-[calc(100dvh-7rem)] w-full max-w-[720px] flex-col justify-end pb-56 text-left" aria-label="Vectyr AI chat">
       {messages.length > 0 && (
         <div ref={conversation} style={{ clipPath: `inset(0 0 ${conversationClip}px 0)` }}>
           <Conversation className="mb-5 flex-none overflow-visible [&>div]:!overflow-visible">
@@ -141,7 +141,7 @@ const HeroChat = () => {
             <AlertDialogTrigger asChild>
               <Button type="button" variant="ghost" size="sm" disabled={busy || messages.length === 0} className="h-9 px-2 font-mono text-[10px] text-muted-foreground">CLEAR CHAT</Button>
             </AlertDialogTrigger>
-            <AlertDialogContent className="theme-dark">
+            <AlertDialogContent className="hero-chat theme-dark">
               <AlertDialogHeader><AlertDialogTitle>Clear This Conversation?</AlertDialogTitle><AlertDialogDescription>This removes the saved messages from this browser.</AlertDialogDescription></AlertDialogHeader>
               <AlertDialogFooter><AlertDialogCancel>Cancel</AlertDialogCancel><AlertDialogAction onClick={() => { setMessages([]); clearError(); focusComposer(); }}>Clear Conversation</AlertDialogAction></AlertDialogFooter>
             </AlertDialogContent>
@@ -152,7 +152,7 @@ const HeroChat = () => {
                 {busy ? <Square className="h-4 w-4" /> : <ArrowUp className="h-4 w-4" />}
               </PromptInputSubmit>
             </TooltipTrigger>
-            <TooltipContent>{busy ? "Stop reply" : "Send message"}</TooltipContent>
+            <TooltipContent className="hero-chat">{busy ? "Stop reply" : "Send message"}</TooltipContent>
           </Tooltip>
         </PromptInputFooter>
       </PromptInput>
