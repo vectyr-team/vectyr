@@ -185,8 +185,23 @@ h1, h2, h3, h4, h5, h6 {
 /* Chat typography and controls stay regular and stable in every state. */
 .hero-chat,
 .hero-chat * {
-  font-weight: 400 !important;
   letter-spacing: 0 !important;
+}
+
+.hero-chat,
+.hero-chat *:not(strong):not(b):not([data-streamdown="strong"]):not(strong *):not(b *):not([data-streamdown="strong"] *) {
+  font-weight: 400 !important;
+}
+
+.hero-chat strong,
+.hero-chat b,
+.hero-chat [data-streamdown="strong"] {
+  font-weight: 700 !important;
+}
+
+.hero-chat em,
+.hero-chat i {
+  font-style: italic;
 }
 
 .hero-chat button,
