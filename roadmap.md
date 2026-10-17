@@ -36,4 +36,4 @@
 
 - [x] Restore list markers and indentation.
 - [x] Turn follow-up choices into buttons using the existing question action.
-- [ ] Verify parsing and clicking a follow-up through the chat.
+- [x] Verify parsing and clicking a follow-up through the chat.
