@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
 
 export function ChatCalendar({ src }: { src: string }) {
   const [loaded, setLoaded] = useState(false);
@@ -19,9 +17,6 @@ export function ChatCalendar({ src }: { src: string }) {
           onLoad={() => setLoaded(true)}
         />
       </div>
-      <Button asChild variant="link" className="mt-2 h-auto px-0 text-sm">
-        <a href={src} target="_blank" rel="noopener noreferrer">Open calendar<ExternalLink className="ml-2 h-3.5 w-3.5" /></a>
-      </Button>
     </div>
   );
 }
