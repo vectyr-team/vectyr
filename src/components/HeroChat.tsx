@@ -93,9 +93,9 @@ const HeroChat = () => {
       {messages.length > 0 && (
         <div ref={conversation} style={{ clipPath: `inset(0 0 ${conversationClip}px 0)` }}>
           <Conversation className="mb-5 flex-none overflow-visible [&>div]:!overflow-visible">
-            <ConversationContent className="gap-6 px-1 py-3">
+            <ConversationContent className="gap-6 px-0 py-3">
               {messages.map((message) => (
-                <Message key={message.id} from={message.role}>
+                <Message key={message.id} from={message.role} className={message.role === "assistant" ? "max-w-full" : undefined}>
                   <MessageContent className="font-body leading-relaxed break-words text-lg group-[.is-assistant]:w-full">
                     {message.parts.map((part, index) => {
                       if (part.type === "text") {
@@ -123,7 +123,7 @@ const HeroChat = () => {
           </Conversation>
         </div>
       )}
-      <div ref={composer} className={`theme-light fixed inset-x-0 z-20 px-6 ${messages.length === 0 ? "top-1/2 -translate-y-1/2" : "bottom-0 pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))]"}`}>
+      <div ref={composer} className={`theme-light fixed inset-x-0 z-20 px-6 ${messages.length === 0 ? "top-1/2 -translate-y-1/2" : "bottom-0 pb-[max(1.5rem,env(safe-area-inset-bottom))]"}`}>
       <div className="relative mx-auto w-full max-w-[720px]">
       {messages.length === 0 && (
         <h1 className="absolute bottom-full mb-8 w-full text-center text-4xl font-bold text-foreground text-balance">
