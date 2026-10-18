@@ -28,6 +28,7 @@ const HeroChat = () => {
   const [text, setText] = useState("");
   const [storageError, setStorageError] = useState(false);
   const root = useRef<HTMLDivElement>(null);
+  const restoredIds = useRef(new Set(initialMessages.map((message) => message.id)));
   const conversation = useRef<HTMLDivElement>(null);
   const composer = useRef<HTMLDivElement>(null);
   const [conversationClip, setConversationClip] = useState(0);
@@ -101,7 +102,7 @@ const HeroChat = () => {
                       if (part.type === "text") {
                         if (message.role !== "assistant") return <MessageResponse key={index}>{part.text}</MessageResponse>;
                         return parseChatCalendars(part.text).map((segment, segmentIndex) => segment.type === "calendar"
-                          ? <ChatCalendar key={`${index}-${segmentIndex}-${segment.src}`} src={segment.src} />
+                          ? <ChatCalendar key={`${index}-${segmentIndex}-${segment.src}`} src={segment.src} autoOpen={!restoredIds.current.has(message.id)} />
                           : parseChatFollowUps(segment.text).map((followUp, followUpIndex) => followUp.type === "text"
                             ? <MessageResponse key={`${index}-${segmentIndex}-${followUpIndex}`} isAnimating={busy}>{followUp.text}</MessageResponse>
                             : <div key={`${index}-${segmentIndex}-${followUpIndex}`} className="flex flex-col items-start gap-2 py-2">
