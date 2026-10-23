@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        headline: ['"Bebas Neue"', "sans-serif"],
+        headline: ['"TASA Orbiter"', "sans-serif"],
         body: ['"Inter"', "sans-serif"],
         mono: ['"JetBrains Mono"', "monospace"],
       },
