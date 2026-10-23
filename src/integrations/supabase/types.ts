@@ -98,66 +98,6 @@ export type Database = {
         }
         Relationships: []
       }
-      chat_knowledge: {
-        Row: {
-          content: string
-          id: string
-          updated_at: string
-        }
-        Insert: {
-          content?: string
-          id?: string
-          updated_at?: string
-        }
-        Update: {
-          content?: string
-          id?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      chat_knowledge_items: {
-        Row: {
-          category: string
-          content: string
-          created_at: string
-          id: string
-          updated_at: string
-        }
-        Insert: {
-          category: string
-          content?: string
-          created_at?: string
-          id?: string
-          updated_at?: string
-        }
-        Update: {
-          category?: string
-          content?: string
-          created_at?: string
-          id?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      chat_settings: {
-        Row: {
-          id: string
-          instructions: string
-          updated_at: string
-        }
-        Insert: {
-          id: string
-          instructions?: string
-          updated_at?: string
-        }
-        Update: {
-          id?: string
-          instructions?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
       departments: {
         Row: {
           created_at: string
