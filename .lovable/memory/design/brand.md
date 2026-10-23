@@ -27,10 +27,10 @@ Usage: `bg-orange`, `text-lightgray`, `border-black03`, etc.
 
 ## Fonts
 
-- All h1-h6 headings: TASA Orbiter, weight 700.
+- Headlines: Bebas Neue (`font-headline`)
 - Body: Inter (`font-body`)
 - Overlines/Accent: JetBrains Mono (`font-mono`)
 
 ## Typography Rules
 
-- **Headings must always use weight 700 and Title Case without frontend text transforms.** This overrides the former regular-weight heading rule.
+- **Headings must always use `font-normal` weight.** Never apply bold, semibold, or any other weight to headings.
