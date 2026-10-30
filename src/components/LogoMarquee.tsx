@@ -16,8 +16,7 @@ const LogoMarquee = () => (
         <div
           className="flex shrink-0 items-center gap-24 md:gap-36 pr-24 md:pr-36"
           style={{
-            animation: `logo-marquee ${180 + r * 30}s linear infinite`,
-            animationDirection: r % 2 ? "reverse" : "normal",
+            animation: `logo-marquee ${180 + r * 30}s linear infinite ${r % 2 ? "reverse" : "normal"}`,
           }}
         >
           {[...row, ...row].map((src, i) => (
