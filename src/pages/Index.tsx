@@ -1,6 +1,6 @@
 import LogoMarquee from "@/components/LogoMarquee";
 import brandOrDieLogo from "@/assets/bodR-stacked-centered-white.svg";
-import heroBackground from "@/assets/hero-background.jpg.asset.json";
+import heroBackground from "@/assets/hero-background-2.jpg.asset.json";
 import orangeStripes from "@/assets/orange-cropped.png.asset.json";
 import Header from "@/components/Header";
 import ScrollSection from "@/components/ScrollSection";
@@ -34,7 +34,7 @@ const Index = () => {
             src={heroBackground.url}
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-20"
           />
           {/* Background logos */}
           <LogoMarquee />
