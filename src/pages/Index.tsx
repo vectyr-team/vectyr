@@ -97,62 +97,54 @@ const Index = () => {
             <ScrollSection>
               {/* Overline with line */}
               <div className="flex items-center gap-4 mb-4 md:mb-10">
-                <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">The Fix</span>
+                <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">Services</span>
                 <div className="h-px w-16 bg-muted-foreground/40" />
               </div>
 
-              <div className="grid gap-8 md:gap-16 md:grid-cols-2 items-start">
-                <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
-                  Three Problems
-                  <br />
-                  <span className="text-primary">Solved For Good.</span>
-                </h2>
-                <div className="md:pt-4">
-                  <p className="font-body text-lg font-light leading-relaxed text-muted-foreground">
-                    Every business with a brand problem has the same three problems in sequence. Most agencies out there
-                    attempt to solve the first problem while leaving two more behind.{" "}
-                    <span className="font-semibold text-foreground">At Vectyr, we solve all three.</span>
-                  </p>
-                </div>
-              </div>
+              <h2 className="font-headline font-light text-[2.8rem] leading-[1.05] tracking-normal text-foreground sm:text-4xl md:text-5xl lg:text-6xl max-w-3xl">
+                What Problem Do You
+                <br />
+                <span className="text-primary">Need Solved?</span>
+              </h2>
             </ScrollSection>
 
-            {/* Product cards */}
-            <div className="mt-16 grid gap-5 lg:grid-cols-3">
+            {/* Service cards */}
+            <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {[
                 {
-                  problem: "Problem 01",
-                  problemDesc:
-                    "Nothing defined. The brand never existed as a defined system, or it's scattered across too many heads with no alignment.",
-                  title: "Brand Genome",
-                  desc: "Your brand's DNA. Vectyr runs the extraction, sequencing, and full team integration. You bring the knowledge, we add more, and build the rest. One to two sessions of your time.",
+                  icon: "lucide:repeat",
+                  title: "Ongoing Creative Help",
+                  desc: "A fractional creative department that handles your design, campaigns, and ad management month to month, with no long-term contract.",
                 },
                 {
-                  problem: "Problem 02",
-                  problemDesc:
-                    "Information sitting in a document doesn't get read. In the age of AI, brand knowledge needs to be more accessible.",
-                  title: "BrandHelix.ai",
-                  desc: "The platform where the brand intelligence lives, gets distributed to everyone who needs it. Your team, your vendors, everyone. No more briefing from fuzzy memory.",
+                  icon: "lucide:compass",
+                  title: "Brand Strategy",
+                  desc: "We pull what you know out of your head and into a Brand Intelligence System your whole team, your vendors, and your freelancers can run on.",
                 },
                 {
-                  problem: "Problem 03",
-                  problemDesc:
-                    "Every strategy can go stale when something changes. There's no system to keep it current as the business evolves.",
-                  title: "Continuity",
-                  desc: "180-day brand check-ins to examine performance. You can submit new info at any time so we can update the Brand Genome and avoid any brand drift.",
+                  icon: "lucide:users",
+                  title: "Understand Customers",
+                  desc: "Interviews with your customers become a detailed profile of how they experience the problem you solve, in their own words.",
+                },
+                {
+                  icon: "lucide:pen-tool",
+                  title: "Logo & Visual Identity",
+                  desc: "A responsive logo and a complete identity system with clear rules, so your brand looks right everywhere it shows up.",
+                },
+                {
+                  icon: "lucide:monitor",
+                  title: "Website Design",
+                  desc: "Custom sites built around what your business needs, dialed into your audience with SEO and AEO basics included from day one.",
+                },
+                {
+                  icon: "lucide:message-circle",
+                  title: "Brand Consulting",
+                  desc: "Hourly sessions for branding questions, problem-solving, or a stubborn design issue, in blocks of one hour or several.",
                 },
               ].map((card, i) => (
-                <ScrollSection
-                  key={i}
-                  className={`bg-card p-8 flex flex-col border-l border-border/40`}
-                >
-                  <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary">{card.problem}</p>
-                  <p className="mt-4 font-mono text-sm leading-relaxed text-muted-foreground">{card.problemDesc}</p>
-
-                  <div className="h-px w-full my-8 bg-border" />
-
-                  <h3 className="font-body font-semibold text-xl md:text-2xl leading-tight text-foreground normal-case tracking-normal flex items-center gap-3">
-                    <Icon icon="lucide:check" className="text-primary shrink-0" />
+                <ScrollSection key={i} className="bg-card p-8 flex flex-col border-l border-border/40">
+                  <Icon icon={card.icon} className="text-primary text-3xl" aria-hidden="true" />
+                  <h3 className="mt-6 font-body font-semibold text-xl md:text-2xl leading-tight text-foreground normal-case tracking-normal">
                     {card.title}
                   </h3>
                   <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">{card.desc}</p>
