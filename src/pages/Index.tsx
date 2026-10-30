@@ -90,21 +90,10 @@ const Index = () => {
         <section className="relative z-20 bg-card py-6 md:py-8 px-[20px] shadow-elevated">
           <div className="mx-auto max-w-[1300px]">
             <ScrollSection className="grid grid-cols-3">
-              {[
-                ["Finally", "Documented"],
-                ["Team", "Accessible"],
-                ["Never", "Obsolete"],
-              ].map((words, i) => (
+              {["CONSULTING", "STRATEGY", "EXECUTION"].map((label, i) => (
                 <div key={i} className="p-8 px-0 py-0">
                   <p className="font-mono text-[10px] md:text-sm uppercase tracking-[0.2em] text-muted-foreground text-center">
-                    <span className="md:hidden">
-                      {words[0]}
-                      <br />
-                      {words[1]}
-                    </span>
-                    <span className="hidden md:inline">
-                      {words[0]} {words[1]}
-                    </span>
+                    <span>{label}</span>
                   </p>
                 </div>
               ))}
