@@ -1,6 +1,9 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+import { installDomGuard } from "./lib/dom-guard";
+
+installDomGuard();
 
 const rootElement = document.getElementById("root");
 

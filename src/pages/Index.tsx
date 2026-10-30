@@ -152,14 +152,9 @@ const Index = () => {
                 If you would rather simple get some clarity by talking to a human being to figure out exactly what you're going to need, what it will cost, and the difference it will make, get on Steve's Calendar.
               </p>
 
-              <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <a href="/demo">
-                  <Button size="lg">Experience the Demo</Button>
-                </a>
-                <a href="/faqs">
-                  <Button size="lg" variant="outline">
-                    FAQs
-                  </Button>
+              <div className="mt-10 flex justify-center">
+                <a href="https://StevesCalendar.com" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg">Book Now</Button>
                 </a>
               </div>
             </ScrollSection>
