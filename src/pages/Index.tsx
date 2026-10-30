@@ -1,4 +1,5 @@
 import LogoMarquee from "@/components/LogoMarquee";
+import brandOrDieLogo from "@/assets/bodR-stacked-centered-white.svg";
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import ScrollSection from "@/components/ScrollSection";
@@ -53,46 +54,19 @@ const Index = () => {
 
           {/* Content */}
           <div className="relative z-10 w-full max-w-[1300px] mx-auto flex flex-col items-center text-center">
-            <h1
-              className="font-headline font-light text-[3.3rem] leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-[4.5em] mx-auto"
-              style={heroStyle(1)}
-            >
-              {(() => {
-                // Render a line supporting <span>...</span> = orange accent
-                const renderLine = (text: string, keyPrefix: string) => {
-                  if (!text) return null;
-                  const parts = text.split(/(<span>[\s\S]*?<\/span>)/gi);
-                  return parts.map((part, i) => {
-                    const m = part.match(/^<span>([\s\S]*?)<\/span>$/i);
-                    if (m) {
-                      return (
-                        <span key={`${keyPrefix}-${i}`} className="text-primary">
-                          {m[1]}
-                        </span>
-                      );
-                    }
-                    return <span key={`${keyPrefix}-${i}`}>{part}</span>;
-                  });
-                };
-                const line1 =
-                  hero.headline_line1 || hero.headline_lead || "";
-                const line2 =
-                  hero.headline_line2 ||
-                  (hero.headline_accent
-                    ? `<span>${hero.headline_accent}</span>`
-                    : "");
-                return (
-                  <>
-                    {renderLine(line1, "l1")}
-                    {line2 && (
-                      <>
-                        <br className="hidden lg:block" />{" "}
-                        {renderLine(line2, "l2")}
-                      </>
-                    )}
-                  </>
-                );
-              })()}
+            <h1 className="mx-auto" style={heroStyle(1)}>
+              <img
+                src={brandOrDieLogo}
+                alt="Brand or Die"
+                className="mx-auto h-auto w-[260px] sm:w-[340px] md:w-[420px] lg:w-[500px]"
+              />
+              <span className="sr-only">
+                {" "}
+                {[hero.headline_line1 || hero.headline_lead, hero.headline_line2 || hero.headline_accent]
+                  .filter(Boolean)
+                  .join(" ")
+                  .replace(/<\/?span>/gi, "")}
+              </span>
             </h1>
 
             <p
