@@ -1,4 +1,3 @@
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { cn } from "@/lib/utils";
 
 interface ScrollSectionProps extends React.HTMLAttributes<HTMLElement> {
@@ -6,11 +5,10 @@ interface ScrollSectionProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
 }
 
+// Plain wrapper: text sections render immediately, no fade-in on scroll.
 const ScrollSection = ({ as: Tag = "div", className, children, ...props }: ScrollSectionProps) => {
-  const ref = useScrollAnimation<HTMLElement>();
-
   return (
-    <Tag ref={ref as any} className={cn("scroll-animate", className)} {...props}>
+    <Tag className={cn(className)} {...props}>
       {children}
     </Tag>
   );

@@ -74,8 +74,7 @@ const Glossary = () => {
                 <AccordionItem
                   key={t.id}
                   value={t.id}
-                  className="border-border opacity-0 animate-fade-in"
-                  style={{ animationDelay: `${i * 60}ms` }}
+                  className="border-border"
                 >
                   <AccordionTrigger className="font-body text-left text-foreground hover:no-underline py-6 text-lg">
                     {t.term}

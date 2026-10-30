@@ -166,7 +166,7 @@ const Index = () => {
               ].map((card, i) => (
                 <ScrollSection
                   key={i}
-                  className={`bg-card p-8 flex flex-col scroll-animate-delay-${i + 1} border-l border-border/40`}
+                  className={`bg-card p-8 flex flex-col border-l border-border/40`}
                 >
                   <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary">{card.problem}</p>
                   <p className="mt-4 font-mono text-sm leading-relaxed text-muted-foreground">{card.problemDesc}</p>
