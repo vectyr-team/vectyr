@@ -4,7 +4,7 @@ const modules = import.meta.glob<{ url: string }>("@/assets/logos/*.asset.json",
 });
 const logos = Object.values(modules).map((m) => m.url);
 
-const rows = [0, 1, 2].map((r) => logos.filter((_, i) => i % 3 === r));
+const rows = [0, 1, 2, 3].map((r) => logos.filter((_, i) => i % 4 === r));
 
 const LogoMarquee = () => (
   <div
