@@ -1,6 +1,7 @@
 import LogoMarquee from "@/components/LogoMarquee";
 import brandOrDieLogo from "@/assets/bodR-stacked-centered-white.svg";
 import heroBackground from "@/assets/hero-background.jpg.asset.json";
+import orangeStripes from "@/assets/orange-cropped.png.asset.json";
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import ScrollSection from "@/components/ScrollSection";
@@ -84,6 +85,12 @@ const Index = () => {
               {hero.subtitle}
             </p>
           </div>
+          <img
+            src={orangeStripes.url}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-0 right-0 z-50 w-[60vw] md:w-[40vw] max-w-[640px] h-auto"
+          />
         </section>
 
         {/* Benefits Strip */}
