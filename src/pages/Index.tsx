@@ -6,7 +6,6 @@ import Header from "@/components/Header";
 import ScrollSection from "@/components/ScrollSection";
 import BrandCodexAnimation from "@/components/BrandCodexAnimation";
 import { Button } from "@/components/ui/button";
-import { Icon } from "@iconify/react";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { LocalBusinessJsonLd } from "@/components/JsonLd";
