@@ -29,7 +29,7 @@ const NY = Math.cos(RAD);
 type Settings = { logoH: number; gapX: number; gapY: number; opacity: number; speed: number };
 
 const settingsFor = (width: number): Settings => {
-  if (width < 768) return { logoH: 40, gapX: 44, gapY: 44, opacity: 0.09, speed: 14 };
+  if (width < 768) return { logoH: 40, gapX: 44, gapY: 44, opacity: 0.12, speed: 14 };
   if (width < 1024) return { logoH: 48, gapX: 101, gapY: 48, opacity: 0.07, speed: 20 };
   return { logoH: 80, gapX: 101, gapY: 56, opacity: 0.07, speed: 26 };
 };
