@@ -78,7 +78,6 @@ const FAQs = () => {
                   key={faq.id}
                   value={faq.id}
                   className="border-border"
-                  style={{ animationDelay: `${i * 60}ms` }}
                 >
                   <AccordionTrigger className="font-body text-left text-foreground hover:no-underline py-6 text-lg">
                     {faq.question}
