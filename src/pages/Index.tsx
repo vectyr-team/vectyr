@@ -151,17 +151,6 @@ const Index = () => {
                 </ScrollSection>
               ))}
             </div>
-
-            <div className="mt-12 flex justify-center gap-4">
-              <a href="/demo">
-                <Button size="lg">Book a Demo</Button>
-              </a>
-              <a href="/faqs">
-                <Button size="lg" variant="outline">
-                  FAQs
-                </Button>
-              </a>
-            </div>
           </div>
         </section>
 
