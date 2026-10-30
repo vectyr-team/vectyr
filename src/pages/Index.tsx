@@ -148,6 +148,11 @@ const Index = () => {
                     {card.title}
                   </h3>
                   <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">{card.desc}</p>
+                  <div className="mt-auto pt-8">
+                    <Button asChild variant="outline">
+                      <a href="/contact" aria-label={`How it works: ${card.title}`}>How it Works</a>
+                    </Button>
+                  </div>
                 </ScrollSection>
               ))}
             </div>
