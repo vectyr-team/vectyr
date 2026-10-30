@@ -1,5 +1,6 @@
 import LogoMarquee from "@/components/LogoMarquee";
 import brandOrDieLogo from "@/assets/bodR-stacked-centered-white.svg";
+import heroBackground from "@/assets/hero-background.jpg.asset.json";
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import ScrollSection from "@/components/ScrollSection";
@@ -49,6 +50,13 @@ const Index = () => {
 
         {/* Hero */}
         <section className="theme-dark relative flex md:min-h-[90dvh] flex-col items-center justify-center px-6 pt-36 pb-20 md:pt-20 md:py-0 overflow-hidden bg-background" style={{ backgroundColor: "hsl(0 0% 0%)" }}>
+          {/* Background image */}
+          <img
+            src={heroBackground.url}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+          />
           {/* Background logos */}
           <LogoMarquee />
 
