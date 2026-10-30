@@ -2,7 +2,6 @@ import LogoMarquee from "@/components/LogoMarquee";
 import brandOrDieLogo from "@/assets/bodR-stacked-centered-white.svg";
 import heroBackground from "@/assets/hero-background.jpg.asset.json";
 import orangeStripes from "@/assets/orange-cropped.png.asset.json";
-import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import ScrollSection from "@/components/ScrollSection";
 import BrandCodexAnimation from "@/components/BrandCodexAnimation";
