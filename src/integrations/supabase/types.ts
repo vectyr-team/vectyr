@@ -281,6 +281,45 @@ export type Database = {
         }
         Relationships: []
       }
+      home_services: {
+        Row: {
+          created_at: string
+          cta_link: string
+          icon: string
+          id: string
+          modal_description: string
+          modal_title: string
+          sort_order: number
+          summary: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          cta_link?: string
+          icon?: string
+          id?: string
+          modal_description?: string
+          modal_title?: string
+          sort_order?: number
+          summary?: string
+          title?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          cta_link?: string
+          icon?: string
+          id?: string
+          modal_description?: string
+          modal_title?: string
+          sort_order?: number
+          summary?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       legal_pages: {
         Row: {
           content: string
