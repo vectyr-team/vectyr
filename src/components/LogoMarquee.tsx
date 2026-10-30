@@ -9,14 +9,14 @@ const rows = [0, 1, 2].map((r) => logos.filter((_, i) => i % 3 === r));
 const LogoMarquee = () => (
   <div
     aria-hidden="true"
-    className="pointer-events-none absolute inset-0 flex flex-col justify-center gap-12 md:gap-20 opacity-10"
+    className="pointer-events-none absolute inset-0 flex flex-col justify-evenly py-8 opacity-10"
   >
     {rows.map((row, r) => (
       <div key={r} className="flex w-max overflow-visible">
         <div
-          className="flex shrink-0 items-center gap-16 pr-16"
+          className="flex shrink-0 items-center gap-20 md:gap-28 pr-20 md:pr-28"
           style={{
-            animation: `logo-marquee ${60 + r * 10}s linear infinite`,
+            animation: `logo-marquee ${180 + r * 30}s linear infinite`,
             animationDirection: r % 2 ? "reverse" : "normal",
           }}
         >
@@ -26,7 +26,7 @@ const LogoMarquee = () => (
               src={src}
               alt=""
               loading="eager"
-              className="h-10 md:h-14 w-auto max-w-none brightness-0 invert"
+              className="h-14 md:h-24 w-auto max-w-none brightness-0 invert"
             />
           ))}
         </div>
