@@ -6,7 +6,6 @@ import Header from "@/components/Header";
 import ScrollSection from "@/components/ScrollSection";
 import BrandCodexAnimation from "@/components/BrandCodexAnimation";
 import { Button } from "@/components/ui/button";
-import { Icon } from "@iconify/react";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { LocalBusinessJsonLd } from "@/components/JsonLd";
@@ -14,6 +13,7 @@ import { PAGE_META } from "@/config/seo";
 import { useBusinessInfo, usePageMeta } from "@/hooks/use-seo-data";
 import { useHomeHero } from "@/hooks/use-home-hero";
 import Testimonials from "@/components/Testimonials";
+import ServiceCards from "@/components/ServiceCards";
 
 const Index = () => {
   const { data: businessInfo } = useBusinessInfo();
@@ -108,63 +108,8 @@ const Index = () => {
               </h2>
             </ScrollSection>
 
-            {/* Service cards */}
-            <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {[
-                {
-                  icon: "lucide:repeat",
-                  title: "Ongoing Creative Help",
-                  desc: "A fractional creative department that handles your design, campaigns, and ad management month to month, with no long-term contract.",
-                },
-                {
-                  icon: "lucide:compass",
-                  title: "Brand Strategy",
-                  desc: "We pull what you know out of your head and into a Brand Intelligence System your whole team, your vendors, and your freelancers can run on.",
-                },
-                {
-                  icon: "lucide:users",
-                  title: "Understand Customers",
-                  desc: "Interviews with your customers become a detailed profile of how they experience the problem you solve, in their own words.",
-                },
-                {
-                  icon: "lucide:pen-tool",
-                  title: "Logo & Visual Identity",
-                  desc: "A responsive logo and a complete identity system with clear rules, so your brand looks right everywhere it shows up.",
-                },
-                {
-                  icon: "lucide:monitor",
-                  title: "Website Design",
-                  desc: "Custom sites built around what your business needs, dialed into your audience with SEO and AEO basics included from day one.",
-                },
-                {
-                  icon: "lucide:message-circle",
-                  title: "Brand Consulting",
-                  desc: "Hourly sessions for branding questions, problem-solving, or a stubborn design issue, in blocks of one hour or several.",
-                },
-              ].map((card, i) => (
-                <ScrollSection key={i} className="bg-card flex flex-col border-l border-border/40">
-                  <div className="p-8 pb-6">
-                    <Icon icon={card.icon} className="text-primary text-3xl" aria-hidden="true" />
-                    <h3 className="mt-6 font-body font-semibold text-xl md:text-2xl leading-tight text-foreground normal-case tracking-normal">
-                      {card.title}
-                    </h3>
-                    <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">{card.desc}</p>
-                  </div>
-                  <a
-                    href="/contact"
-                    aria-label={`How it works: ${card.title}`}
-                    className="group mt-auto flex w-full items-center justify-between border-t border-border px-8 py-4 font-mono text-xs uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  >
-                    <span>How it Works</span>
-                    <Icon
-                      icon="lucide:arrow-up-right"
-                      className="text-lg text-primary transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary-foreground"
-                      aria-hidden="true"
-                    />
-                  </a>
-                </ScrollSection>
-              ))}
-            </div>
+            {/* Service cards (managed in admin > Home) */}
+            <ServiceCards />
           </div>
         </section>
 
