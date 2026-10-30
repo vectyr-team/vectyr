@@ -78,7 +78,7 @@ const Index = () => {
             </h1>
 
             <p
-              className="mt-4 md:mt-8 max-w-[37rem] font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground"
+              className="mt-4 md:mt-8 max-w-[492px] font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground"
               style={heroStyle(2)}
             >
               {hero.subtitle}
