@@ -7,7 +7,7 @@ const logos = Object.values(modules).map((m) => m.url);
 const splitRows = (count: number) =>
   Array.from({ length: count }, (_, r) => logos.filter((_, i) => i % count === r));
 
-const desktopRows = splitRows(5);
+const desktopRows = splitRows(6);
 const mobileRows = splitRows(7);
 
 const Rows = ({ rows, className, logoClass }: { rows: string[][]; className: string; logoClass: string }) => (
