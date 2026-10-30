@@ -1,76 +1,188 @@
+import { useLayoutEffect, useMemo, useRef, useState } from "react";
+import { LOGO_RATIOS } from "./logo-ratios";
+
 const modules = import.meta.glob<{ url: string }>("@/assets/logos/*.asset.json", {
   eager: true,
   import: "default",
 });
-const logos = Object.values(modules).map((m) => m.url);
 
-// Each row takes a different slice of the logo list so neighbouring rows don't repeat.
-const buildRows = (count: number, perRow: number, step: number) =>
-  Array.from({ length: count }, (_, r) =>
-    Array.from({ length: perRow }, (_, i) => logos[(r * step + i) % logos.length])
+type Logo = { src: string; ratio: number };
+
+const allLogos: Logo[] = Object.entries(modules).map(([path, m]) => {
+  const file = path.split("/").pop()!.replace(".asset.json", "");
+  return { src: m.url, ratio: LOGO_RATIOS[file] ?? 3.6 };
+});
+
+// Fixed shuffle so neighbouring logos in a row differ from the file order.
+const pool: Logo[] = allLogos
+  .map((l, i) => ({ l, k: (i * 37) % allLogos.length }))
+  .sort((a, b) => a.k - b.k)
+  .map((x) => x.l);
+
+const ANGLE = -30;
+const RAD = (ANGLE * Math.PI) / 180;
+const UX = Math.cos(RAD);
+const UY = Math.sin(RAD);
+const NX = -Math.sin(RAD);
+const NY = Math.cos(RAD);
+
+type Settings = { logoH: number; gapX: number; gapY: number; opacity: number; speed: number };
+
+const settingsFor = (width: number): Settings => {
+  if (width < 768) return { logoH: 40, gapX: 44, gapY: 44, opacity: 0.09, speed: 14 };
+  if (width < 1024) return { logoH: 48, gapX: 101, gapY: 48, opacity: 0.07, speed: 20 };
+  return { logoH: 80, gapX: 101, gapY: 56, opacity: 0.07, speed: 26 };
+};
+
+/** Range of a tilted line (offset y from centre) that falls inside a W x H box. */
+const chordAt = (y: number, W: number, H: number): [number, number] | null => {
+  const ox = y * NX;
+  const oy = y * NY;
+  let lo = (-W / 2 - ox) / UX;
+  let hi = (W / 2 - ox) / UX;
+  const a = (H / 2 - oy) / UY;
+  const b = (-H / 2 - oy) / UY;
+  lo = Math.max(lo, Math.min(a, b));
+  hi = Math.min(hi, Math.max(a, b));
+  return hi > lo ? [lo, hi] : null;
+};
+
+type Row = { y: number; x0: number; logos: Logo[]; loop: number };
+
+/**
+ * Lays out the rows so every logo is on screen at most once at any moment:
+ * rows never share logos, and each row's loop is longer than its visible stretch.
+ */
+const layout = (W: number, H: number, s: Settings): Row[] => {
+  const widthOf = (l: Logo) => l.ratio * s.logoH + s.gapX;
+  const maxW = Math.max(...pool.map(widthOf));
+  let pitch = s.logoH + s.gapY;
+  const reach = Math.hypot(W, H) / 2 + s.logoH;
+
+  for (let attempt = 0; attempt < 40; attempt++, pitch *= 1.05) {
+    const lines: { y: number; lo: number; hi: number }[] = [];
+    const n = Math.ceil(reach / pitch);
+    for (let k = -n; k <= n; k++) {
+      const y = k * pitch;
+      const parts = [chordAt(y - s.logoH / 2, W, H), chordAt(y + s.logoH / 2, W, H)].filter(Boolean) as [
+        number,
+        number,
+      ][];
+      if (!parts.length) continue;
+      lines.push({ y, lo: Math.min(...parts.map((p) => p[0])), hi: Math.max(...parts.map((p) => p[1])) });
+    }
+
+    const order = [...lines].sort((a, b) => b.hi - b.lo - (a.hi - a.lo));
+    const rows = new Map<number, Logo[]>();
+    let next = 0;
+    let ok = true;
+    for (const line of order) {
+      const need = line.hi - line.lo + maxW;
+      const picked: Logo[] = [];
+      let len = 0;
+      while (len < need && next < pool.length) {
+        picked.push(pool[next]);
+        len += widthOf(pool[next]);
+        next++;
+      }
+      if (len < need) {
+        ok = false;
+        break;
+      }
+      rows.set(line.y, picked);
+    }
+    if (!ok) continue;
+
+    // Spread any spare logos across the rows for extra variety.
+    let i = 0;
+    while (next < pool.length) {
+      rows.get(order[i % order.length].y)!.push(pool[next++]);
+      i++;
+    }
+
+    return lines.map((line) => {
+      const logos = rows.get(line.y)!;
+      const loop = logos.reduce((sum, l) => sum + widthOf(l), 0);
+      const slack = loop - (line.hi - line.lo);
+      return { y: line.y, x0: line.lo - slack / 2, logos, loop };
+    });
+  }
+  return [];
+};
+
+const LogoMarquee = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [size, setSize] = useState<{ w: number; h: number } | null>(null);
+
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const update = () => {
+      const r = el.getBoundingClientRect();
+      setSize((prev) =>
+        prev && Math.abs(prev.w - r.width) < 1 && Math.abs(prev.h - r.height) < 1 ? prev : { w: r.width, h: r.height }
+      );
+    };
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  const settings = size ? settingsFor(size.w) : null;
+  const rows = useMemo(
+    () => (size && settings ? layout(size.w, size.h, settings) : []),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [size?.w, size?.h]
   );
 
-// The field is rotated, so it needs more rows than before to cover the corners.
-const desktopRows = buildRows(14, 14, 7);
-const mobileRows = buildRows(12, 9, 4);
-
-const ROTATION = -30;
-
-const Rows = ({
-  rows,
-  className,
-  fieldClass,
-  logoClass,
-}: {
-  rows: string[][];
-  className: string;
-  fieldClass: string;
-  logoClass: string;
-}) => (
-  <div aria-hidden="true" className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}>
+  return (
     <div
-      className={`absolute left-1/2 h-[250%] w-[250%] flex flex-col justify-center ${fieldClass}`}
-      style={{ transform: `translate(-50%, -50%) rotate(${ROTATION}deg)` }}
+      ref={ref}
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-x-0 bottom-0 top-16 overflow-hidden"
+      style={{ opacity: settings?.opacity ?? 0 }}
     >
-      {rows.map((row, r) => (
-        <div key={r} className="flex w-max overflow-visible">
-          <div
-            className="flex shrink-0 items-center gap-11 md:gap-[101px] pr-11 md:pr-[101px]"
-            style={{
-              animation: `logo-marquee ${180 + r * 30}s linear infinite ${r % 2 ? "reverse" : "normal"}`,
-            }}
-          >
-            {[...row, ...row].map((src, i) => (
-              <img
-                key={i}
-                src={src}
-                alt=""
-                loading="eager"
-                className={`${logoClass} w-auto max-w-none brightness-0 invert`}
-              />
-            ))}
-          </div>
+      {settings && (
+        <div
+          className="absolute left-1/2 top-1/2 h-0 w-0"
+          style={{ transform: `rotate(${ANGLE}deg)` }}
+        >
+          {rows.map((row, r) => (
+            <div
+              key={`${row.y}-${r}`}
+              className="absolute flex w-max"
+              style={{ left: row.x0, top: row.y - settings.logoH / 2, height: settings.logoH }}
+            >
+              <div
+                className="flex shrink-0 items-center"
+                style={{
+                  animation: `logo-marquee ${row.loop / (settings.speed - (r % 3) * 3)}s linear infinite ${
+                    r % 2 ? "reverse" : "normal"
+                  }`,
+                }}
+              >
+                {[...row.logos, ...row.logos].map((logo, i) => (
+                  <img
+                    key={i}
+                    src={logo.src}
+                    alt=""
+                    loading="eager"
+                    className="max-w-none shrink-0 brightness-0 invert"
+                    style={{
+                      height: settings.logoH,
+                      width: logo.ratio * settings.logoH,
+                      marginRight: settings.gapX,
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      )}
     </div>
-  </div>
-);
-
-const LogoMarquee = () => (
-  <>
-    <Rows
-      rows={mobileRows}
-      className="block md:hidden opacity-[0.09]"
-      fieldClass="top-[calc(50%+48px)] gap-11"
-      logoClass="h-10"
-    />
-    <Rows
-      rows={desktopRows}
-      className="hidden md:block opacity-[0.07]"
-      fieldClass="top-1/2 gap-12 lg:gap-14"
-      logoClass="h-12 lg:h-20"
-    />
-  </>
-);
+  );
+};
 
 export default LogoMarquee;
