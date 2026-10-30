@@ -62,7 +62,7 @@ const layout = (W: number, H: number, s: Settings): Row[] => {
   // Keep the last row just above it instead of behind it.
   const stripeW = Math.min(W * (W < 768 ? 0.42 : 0.2), 320);
   const cornerY = (W / 2) * NX + (H / 2) * NY;
-  const lastY = cornerY - stripeW * 0.46 - s.logoH / 2;
+  const lastY = cornerY - stripeW * 0.55 - s.logoH / 2;
 
   for (let attempt = 0; attempt < 40; attempt++, pitch *= 1.05) {
     const lines: { y: number; lo: number; hi: number }[] = [];
