@@ -78,7 +78,7 @@ const ServiceCards = () => {
                   {open.modal_title || open.title}
                 </DialogTitle>
                 <DialogDescription asChild className="font-body text-base md:text-lg leading-relaxed text-muted-foreground">
-                  <div className="[&_h3]:!text-[1.2em]">
+                  <div className="[&_h3]:!text-[1.2em] [&_h3]:!mt-8 [&_h3:first-child]:!mt-0">
                     <FAQMarkdown content={open.modal_description || open.summary} />
                   </div>
                 </DialogDescription>
