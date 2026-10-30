@@ -11,6 +11,7 @@ import SchemaPreview from "@/components/backend/SchemaPreview";
 import AdminManager from "@/components/backend/AdminManager";
 import TeamEditor from "@/components/backend/TeamEditor";
 import HomeHeroEditor from "@/components/backend/HomeHeroEditor";
+import HomeServicesEditor from "@/components/backend/HomeServicesEditor";
 import ChatWidgetEditor from "@/components/backend/ChatWidgetEditor";
 import SocialLinksEditor from "@/components/backend/SocialLinksEditor";
 import TestimonialsEditor from "@/components/backend/TestimonialsEditor";
@@ -290,7 +291,13 @@ const Backend = () => {
     if (isTeamSection) return <TeamEditor />;
     if (isFaqsPage) return <FAQsEditor />;
     if (isGlossaryPage) return <GlossaryEditor />;
-    if (isHomePage) return <HomeHeroEditor />;
+    if (isHomePage)
+      return (
+        <>
+          <HomeHeroEditor />
+          <HomeServicesEditor />
+        </>
+      );
     if (selectedPage === "privacy")
       return <LegalPageEditor pageSlug="privacy" defaultTitle="Privacy Policy" />;
     if (selectedPage === "terms")
