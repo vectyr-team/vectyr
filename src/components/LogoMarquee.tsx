@@ -13,7 +13,7 @@ const mobileRows = splitRows(6);
 const Rows = ({ rows, className, logoClass }: { rows: string[][]; className: string; logoClass: string }) => (
   <div
     aria-hidden="true"
-    className={`pointer-events-none absolute inset-0 flex-col justify-evenly py-8 opacity-[0.07] ${className}`}
+    className={`pointer-events-none absolute inset-0 flex-col justify-evenly opacity-[0.07] ${className}`}
   >
     {rows.map((row, r) => (
       <div key={r} className="flex w-max overflow-visible">
@@ -40,8 +40,8 @@ const Rows = ({ rows, className, logoClass }: { rows: string[][]; className: str
 
 const LogoMarquee = () => (
   <>
-    <Rows rows={mobileRows} className="flex md:hidden" logoClass="h-12" />
-    <Rows rows={desktopRows} className="hidden md:flex" logoClass="h-32" />
+    <Rows rows={mobileRows} className="flex md:hidden pt-24 pb-8" logoClass="h-12" />
+    <Rows rows={desktopRows} className="hidden md:flex py-8" logoClass="h-32" />
   </>
 );
 
