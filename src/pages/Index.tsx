@@ -49,7 +49,7 @@ const Index = () => {
         <LocalBusinessJsonLd business={businessInfo} />
 
         {/* Hero */}
-        <section className="theme-dark relative flex md:min-h-[90dvh] flex-col items-center justify-center px-6 pt-36 pb-20 md:pt-20 md:py-0 overflow-hidden bg-background" style={{ backgroundColor: "hsl(0 0% 0%)" }}>
+        <section className="theme-dark relative flex md:min-h-[90dvh] flex-col items-center justify-center px-6 pt-[194px] pb-[130px] md:pt-20 md:py-0 overflow-hidden bg-background" style={{ backgroundColor: "hsl(0 0% 0%)" }}>
           {/* Background image */}
           <img
             src={heroBackground.url}
