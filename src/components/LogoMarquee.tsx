@@ -7,7 +7,7 @@ const logos = Object.values(modules).map((m) => m.url);
 const splitRows = (count: number) =>
   Array.from({ length: count }, (_, r) => logos.filter((_, i) => i % count === r));
 
-const desktopRows = splitRows(4);
+const desktopRows = splitRows(5);
 const mobileRows = splitRows(7);
 
 const Rows = ({ rows, className, logoClass }: { rows: string[][]; className: string; logoClass: string }) => (
@@ -41,7 +41,7 @@ const Rows = ({ rows, className, logoClass }: { rows: string[][]; className: str
 const LogoMarquee = () => (
   <>
     <Rows rows={mobileRows} className="flex md:hidden justify-between pt-[96px] pb-6 opacity-[0.09]" logoClass="h-10" />
-    <Rows rows={desktopRows} className="hidden md:flex justify-evenly py-8 opacity-[0.07]" logoClass="h-32" />
+    <Rows rows={desktopRows} className="hidden md:flex justify-evenly py-8 opacity-[0.07]" logoClass="h-24 lg:h-32" />
   </>
 );
 
