@@ -69,7 +69,7 @@ const ServiceCards = () => {
       </div>
 
       <Dialog open={!!open} onOpenChange={(o) => !o && setOpen(null)}>
-        <DialogContent className="max-w-[760px] w-[calc(100vw-2rem)] max-h-[90dvh] overflow-y-auto rounded-none sm:rounded-none border-border p-8 md:p-10">
+        <DialogContent className="max-w-[760px] w-[calc(100vw-2rem)] max-h-[90dvh] overflow-y-auto rounded-[5px] sm:rounded-[5px] border-border p-8 md:p-10">
           {open && (
             <>
               <DialogHeader className="text-left sm:text-left space-y-4">
