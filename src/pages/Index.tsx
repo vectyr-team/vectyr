@@ -145,15 +145,11 @@ const Index = () => {
               <h2
                 className="font-headline font-light leading-[0.95] tracking-normal text-4xl md:text-5xl lg:text-6xl max-w-[830px] text-foreground"
               >
-                Stop being
-                <br />
-                <span className="text-primary">the only person</span>
-                <br />
-                who knows.
+                Let's Do This
               </h2>
 
               <p className="mt-4 md:mt-6 max-w-xl font-body text-lg leading-relaxed text-muted-foreground">
-                Get every person on your team working from the same single source of truth. This is the system that you're missing and it's costing you more than you think. Change it once and for all.
+                If you would rather simple get some clarity by talking to a human being to figure out exactly what you're going to need, what it will cost, and the difference it will make, get on Steve's Calendar.
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
