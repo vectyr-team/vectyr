@@ -1,3 +1,4 @@
+import LogoMarquee from "@/components/LogoMarquee";
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import ScrollSection from "@/components/ScrollSection";
