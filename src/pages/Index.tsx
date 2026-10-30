@@ -142,17 +142,26 @@ const Index = () => {
                   desc: "Hourly sessions for branding questions, problem-solving, or a stubborn design issue, in blocks of one hour or several.",
                 },
               ].map((card, i) => (
-                <ScrollSection key={i} className="bg-card p-8 flex flex-col border-l border-border/40">
-                  <Icon icon={card.icon} className="text-primary text-3xl" aria-hidden="true" />
-                  <h3 className="mt-6 font-body font-semibold text-xl md:text-2xl leading-tight text-foreground normal-case tracking-normal">
-                    {card.title}
-                  </h3>
-                  <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">{card.desc}</p>
-                  <div className="mt-auto pt-5">
-                    <Button asChild variant="outline" size="sm">
-                      <a href="/contact" aria-label={`How it works: ${card.title}`}>How it Works</a>
-                    </Button>
+                <ScrollSection key={i} className="bg-card flex flex-col border-l border-border/40">
+                  <div className="p-8 pb-6">
+                    <Icon icon={card.icon} className="text-primary text-3xl" aria-hidden="true" />
+                    <h3 className="mt-6 font-body font-semibold text-xl md:text-2xl leading-tight text-foreground normal-case tracking-normal">
+                      {card.title}
+                    </h3>
+                    <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">{card.desc}</p>
                   </div>
+                  <a
+                    href="/contact"
+                    aria-label={`How it works: ${card.title}`}
+                    className="group mt-auto flex w-full items-center justify-between border-t border-border px-8 py-4 font-mono text-xs uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  >
+                    <span>How it Works</span>
+                    <Icon
+                      icon="lucide:arrow-up-right"
+                      className="text-lg text-primary transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary-foreground"
+                      aria-hidden="true"
+                    />
+                  </a>
                 </ScrollSection>
               ))}
             </div>
