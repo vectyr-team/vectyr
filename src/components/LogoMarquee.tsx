@@ -4,17 +4,21 @@ const modules = import.meta.glob<{ url: string }>("@/assets/logos/*.asset.json",
 });
 const logos = Object.values(modules).map((m) => m.url);
 
-const rows = [0, 1, 2, 3].map((r) => logos.filter((_, i) => i % 4 === r));
+const splitRows = (count: number) =>
+  Array.from({ length: count }, (_, r) => logos.filter((_, i) => i % count === r));
 
-const LogoMarquee = () => (
+const desktopRows = splitRows(4);
+const mobileRows = splitRows(6);
+
+const Rows = ({ rows, className, logoClass }: { rows: string[][]; className: string; logoClass: string }) => (
   <div
     aria-hidden="true"
-    className="pointer-events-none absolute inset-0 flex flex-col justify-evenly py-8 opacity-[0.07]"
+    className={`pointer-events-none absolute inset-0 flex-col justify-evenly py-8 opacity-[0.07] ${className}`}
   >
     {rows.map((row, r) => (
       <div key={r} className="flex w-max overflow-visible">
         <div
-          className="flex shrink-0 items-center gap-24 md:gap-36 pr-24 md:pr-36"
+          className="flex shrink-0 items-center gap-16 md:gap-36 pr-16 md:pr-36"
           style={{
             animation: `logo-marquee ${180 + r * 30}s linear infinite ${r % 2 ? "reverse" : "normal"}`,
           }}
@@ -25,13 +29,20 @@ const LogoMarquee = () => (
               src={src}
               alt=""
               loading="eager"
-              className="h-20 md:h-32 w-auto max-w-none brightness-0 invert"
+              className={`${logoClass} w-auto max-w-none brightness-0 invert`}
             />
           ))}
         </div>
       </div>
     ))}
   </div>
+);
+
+const LogoMarquee = () => (
+  <>
+    <Rows rows={mobileRows} className="flex md:hidden" logoClass="h-12" />
+    <Rows rows={desktopRows} className="hidden md:flex" logoClass="h-32" />
+  </>
 );
 
 export default LogoMarquee;
