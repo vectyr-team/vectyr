@@ -57,13 +57,18 @@ const layout = (W: number, H: number, s: Settings): Row[] => {
   const widthOf = (l: Logo) => l.ratio * s.logoH + s.gapX;
   const maxW = Math.max(...pool.map(widthOf));
   let pitch = s.logoH + s.gapY;
-  const reach = Math.hypot(W, H) / 2 + s.logoH;
+  const reach = Math.hypot(W, H) + s.logoH;
+  // The orange stripe graphic sits in the bottom-right corner at the same angle.
+  // Keep the last row just above it instead of behind it.
+  const stripeW = Math.min(W * (W < 768 ? 0.42 : 0.2), 320);
+  const cornerY = (W / 2) * NX + (H / 2) * NY;
+  const lastY = cornerY - stripeW * 0.46 - s.logoH / 2;
 
   for (let attempt = 0; attempt < 40; attempt++, pitch *= 1.05) {
     const lines: { y: number; lo: number; hi: number }[] = [];
     const n = Math.ceil(reach / pitch);
-    for (let k = -n; k <= n; k++) {
-      const y = k * pitch;
+    for (let k = 0; k <= n; k++) {
+      const y = lastY - k * pitch;
       const parts = [chordAt(y - s.logoH / 2, W, H), chordAt(y + s.logoH / 2, W, H)].filter(Boolean) as [
         number,
         number,
