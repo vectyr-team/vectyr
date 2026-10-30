@@ -41,7 +41,7 @@ const Rows = ({ rows, className, logoClass }: { rows: string[][]; className: str
 const LogoMarquee = () => (
   <>
     <Rows rows={mobileRows} className="flex md:hidden justify-between pt-[96px] pb-6 opacity-[0.09]" logoClass="h-10" />
-    <Rows rows={desktopRows} className="hidden md:flex justify-evenly py-8 opacity-[0.07]" logoClass="h-24 lg:h-32" />
+    <Rows rows={desktopRows} className="hidden md:flex justify-evenly py-8 opacity-[0.07]" logoClass="h-20 lg:h-28" />
   </>
 );
 
