@@ -57,7 +57,7 @@ const Index = () => {
             </h1>
 
             <p
-              className="mt-4 md:mt-8 max-w-[492px] font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground"
+              className="mt-4 md:mt-8 max-w-[540px] font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground"
               style={{ visibility: heroLoading ? "hidden" : "visible" }}
             >
               {hero.subtitle}
