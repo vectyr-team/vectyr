@@ -20,7 +20,7 @@
     --secondary-foreground: 0 0% 3.5%;
 
     --muted: 0 0% 93%;
-    --muted-foreground: 0 0% 38%;
+    --muted-foreground: 0 0% 30%;
 
     --accent: 19 100% 50%;
     --accent-foreground: 0 0% 100%;
@@ -51,7 +51,7 @@
     --card: 0 0% 96.1%;
     --card-foreground: 0 0% 3.5%;
     --muted: 0 0% 93%;
-    --muted-foreground: 0 0% 38%;
+    --muted-foreground: 0 0% 30%;
     --border: 0 0% 87%;
     --input: 0 0% 85%;
     color: hsl(var(--foreground));
