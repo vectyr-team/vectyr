@@ -47,20 +47,8 @@ const Index = () => {
 
         {/* Hero */}
         <section className="theme-dark relative flex md:min-h-[90dvh] flex-col items-center justify-center px-6 pt-36 pb-20 md:pt-20 md:py-0 overflow-hidden bg-background">
-          {/* Background video */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            aria-hidden="true"
-            src="/videos/vectyr-hero-bg.mp4"
-            className="absolute inset-0 w-full object-cover scale-105 opacity-40 md:opacity-100"
-            style={{ height: "110%", top: "-5%" }}
-          />
-
-          {/* Overlay for text readability */}
-          <div className="absolute inset-0 bg-background/70" />
+          {/* Background logos */}
+          <LogoMarquee />
 
           {/* Content */}
           <div className="relative z-10 w-full max-w-[1300px] mx-auto flex flex-col items-center text-center">
