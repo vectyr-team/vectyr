@@ -16,31 +16,10 @@ import { useBusinessInfo, usePageMeta } from "@/hooks/use-seo-data";
 import { useHomeHero } from "@/hooks/use-home-hero";
 import Testimonials from "@/components/Testimonials";
 
-const heroItems = [
-  { delay: 0.6 }, // overline
-  { delay: 0.8 }, // headline
-  { delay: 1.1 }, // paragraph
-  { delay: 1.4 }, // button
-];
-
 const Index = () => {
-  const [heroVisible, setHeroVisible] = useState(false);
   const { data: businessInfo } = useBusinessInfo();
   const pageMeta = usePageMeta("home");
   const { data: hero, loading: heroLoading } = useHomeHero();
-
-  useEffect(() => {
-    if (heroLoading) return;
-    const timer = setTimeout(() => setHeroVisible(true), 50);
-    return () => clearTimeout(timer);
-  }, [heroLoading]);
-
-  const heroStyle = (index: number): React.CSSProperties => ({
-    opacity: heroVisible ? 1 : 0,
-    transform: heroVisible ? "translateY(0)" : "translateY(20px)",
-    transition: "opacity 0.7s ease-out, transform 0.7s ease-out",
-    transitionDelay: `${heroItems[index].delay}s`,
-  });
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
@@ -63,10 +42,10 @@ const Index = () => {
 
           {/* Content */}
           <div className="relative z-10 w-full max-w-[1300px] mx-auto flex flex-col items-center text-center">
-            <h1 className="mx-auto" style={heroStyle(1)}>
+            <h1 className="mx-auto">
               <img
                 src={brandOrDieLogo}
-                alt="Brand or Die"
+                alt="Brand or Die®"
                 className="mx-auto h-auto w-[260px] sm:w-[340px] md:w-[420px] lg:w-[500px]"
               />
               <span className="sr-only">
@@ -80,7 +59,7 @@ const Index = () => {
 
             <p
               className="mt-4 md:mt-8 max-w-[492px] font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground"
-              style={heroStyle(2)}
+              style={{ visibility: heroLoading ? "hidden" : "visible" }}
             >
               {hero.subtitle}
             </p>
