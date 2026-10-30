@@ -89,7 +89,7 @@ const Index = () => {
             src={orangeStripes.url}
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute bottom-0 right-0 z-50 w-[30vw] md:w-[20vw] max-w-[320px] h-auto"
+            className="pointer-events-none absolute bottom-0 right-0 z-50 w-[42vw] md:w-[20vw] max-w-[320px] h-auto"
           />
         </section>
 
