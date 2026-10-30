@@ -75,17 +75,6 @@ const Index = () => {
             >
               {hero.subtitle}
             </p>
-
-            <div className="mt-10 flex flex-row gap-4 justify-center" style={heroStyle(3)}>
-              <a href={hero.primary_button_link}>
-                <Button size="lg">{hero.primary_button_label}</Button>
-              </a>
-              <a href={hero.secondary_button_link}>
-                <Button size="lg" variant="outline">
-                  {hero.secondary_button_label}
-                </Button>
-              </a>
-            </div>
           </div>
         </section>
 
