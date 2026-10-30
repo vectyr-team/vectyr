@@ -35,7 +35,7 @@ const Rows = ({
       {rows.map((row, r) => (
         <div key={r} className="flex w-max overflow-visible">
           <div
-            className="flex shrink-0 items-center gap-16 md:gap-36 pr-16 md:pr-36"
+            className="flex shrink-0 items-center gap-11 md:gap-[101px] pr-11 md:pr-[101px]"
             style={{
               animation: `logo-marquee ${180 + r * 30}s linear infinite ${r % 2 ? "reverse" : "normal"}`,
             }}
