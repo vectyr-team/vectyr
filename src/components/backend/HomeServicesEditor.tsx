@@ -147,14 +147,25 @@ function ServiceForm({
             className="font-body text-sm"
           />
         </div>
-        <div>
-          <FieldLabel>"I want this" button link</FieldLabel>
-          <Input
-            value={draft.cta_link}
-            onChange={(e) => set("cta_link", e.target.value)}
-            placeholder="/contact or https://..."
-            className="font-body text-sm"
-          />
+        <div className="grid sm:grid-cols-2 gap-3">
+          <div>
+            <FieldLabel>Button text</FieldLabel>
+            <Input
+              value={draft.cta_label}
+              onChange={(e) => set("cta_label", e.target.value)}
+              placeholder="I want this"
+              className="font-body text-sm"
+            />
+          </div>
+          <div>
+            <FieldLabel>Button link</FieldLabel>
+            <Input
+              value={draft.cta_link}
+              onChange={(e) => set("cta_link", e.target.value)}
+              placeholder="/contact or https://..."
+              className="font-body text-sm"
+            />
+          </div>
         </div>
       </div>
       <div className="flex gap-2">

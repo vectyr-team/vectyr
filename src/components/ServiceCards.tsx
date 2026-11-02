@@ -98,7 +98,7 @@ const ServiceCards = () => {
                     href={open.cta_link || "/contact"}
                     {...(isExternal(open.cta_link) ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   >
-                    I want this
+                    {open.cta_label?.trim() || "I want this"}
                   </a>
                 </Button>
               </div>

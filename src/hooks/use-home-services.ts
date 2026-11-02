@@ -10,6 +10,7 @@ export interface HomeService {
   modal_title: string;
   modal_description: string;
   cta_link: string;
+  cta_label: string;
   sort_order: number;
 }
 
