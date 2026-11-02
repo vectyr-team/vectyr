@@ -44,6 +44,7 @@ const EMPTY: Draft = {
   modal_title: "",
   modal_description: "",
   cta_link: "/contact",
+  cta_label: "I want this",
 };
 
 const FieldLabel = ({ children }: { children: React.ReactNode }) => (
@@ -219,7 +220,7 @@ function SortableServiceRow({
           <div className="flex-1 min-w-0">
             <p className="font-body text-sm font-medium text-foreground">{service.title}</p>
             <p className="font-body text-xs text-muted-foreground mt-1 line-clamp-2">{service.summary}</p>
-            <p className="font-mono text-[10px] text-muted-foreground/70 mt-1 truncate">Button: {service.cta_link}</p>
+            <p className="font-mono text-[10px] text-muted-foreground/70 mt-1 truncate">Button: {service.cta_label || "I want this"} → {service.cta_link}</p>
           </div>
           <div className="flex gap-1">
             <button onClick={onStartEdit} className="text-muted-foreground hover:text-foreground transition-colors p-1" aria-label="Edit">
@@ -269,6 +270,7 @@ const HomeServicesEditor = () => {
       modal_title: s.modal_title,
       modal_description: s.modal_description,
       cta_link: s.cta_link,
+      cta_label: s.cta_label ?? "I want this",
     });
   };
 
