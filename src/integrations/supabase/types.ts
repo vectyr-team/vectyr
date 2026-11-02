@@ -284,6 +284,7 @@ export type Database = {
       home_services: {
         Row: {
           created_at: string
+          cta_label: string
           cta_link: string
           icon: string
           id: string
@@ -297,6 +298,7 @@ export type Database = {
         }
         Insert: {
           created_at?: string
+          cta_label?: string
           cta_link?: string
           icon?: string
           id?: string
@@ -310,6 +312,7 @@ export type Database = {
         }
         Update: {
           created_at?: string
+          cta_label?: string
           cta_link?: string
           icon?: string
           id?: string

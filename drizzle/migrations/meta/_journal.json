@@ -15,6 +15,13 @@
       "when": 1793630941894,
       "tag": "0001_home_services_image",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793631116834,
+      "tag": "0002_home_services_cta_label",
+      "breakpoints": true
     }
   ]
 }
