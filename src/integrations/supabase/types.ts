@@ -287,6 +287,7 @@ export type Database = {
           cta_link: string
           icon: string
           id: string
+          image_url: string
           modal_description: string
           modal_title: string
           sort_order: number
@@ -299,6 +300,7 @@ export type Database = {
           cta_link?: string
           icon?: string
           id?: string
+          image_url?: string
           modal_description?: string
           modal_title?: string
           sort_order?: number
@@ -311,6 +313,7 @@ export type Database = {
           cta_link?: string
           icon?: string
           id?: string
+          image_url?: string
           modal_description?: string
           modal_title?: string
           sort_order?: number
