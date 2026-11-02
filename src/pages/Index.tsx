@@ -118,7 +118,7 @@ const Index = () => {
           <img
             src="/images/founders.jpg"
             alt=""
-            className="absolute inset-0 h-full w-full object-cover opacity-[0.7] pointer-events-none"
+            className="absolute inset-0 h-full w-full object-cover opacity-[0.9] pointer-events-none"
           />
           <div className="relative z-10 mx-auto max-w-[1300px]">
             <ScrollSection>
