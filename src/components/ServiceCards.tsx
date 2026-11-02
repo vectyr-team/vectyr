@@ -23,8 +23,8 @@ const ServiceCards = () => {
       <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {Array.from({ length: 6 }).map((_, i) => (
           <div key={i} className="bg-card border-l border-border/40 flex flex-col">
+            <Skeleton className="aspect-[16/10] w-full rounded-none" />
             <div className="p-8 pb-6 space-y-4">
-              <Skeleton className="h-8 w-8" />
               <Skeleton className="h-7 w-2/3" />
               <Skeleton className="h-4 w-full" />
               <Skeleton className="h-4 w-5/6" />
@@ -44,9 +44,19 @@ const ServiceCards = () => {
       <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {services.map((card) => (
           <div key={card.id} className="bg-card flex flex-col border-l border-border/40">
+            <div className="aspect-[16/10] w-full overflow-hidden bg-muted">
+              {card.image_url && (
+                <img
+                  src={card.image_url}
+                  alt={card.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
+              )}
+            </div>
             <div className="p-8 pb-6">
-              <Icon icon={card.icon} className="text-primary text-3xl" aria-hidden="true" />
-              <h3 className="mt-6 font-body font-semibold text-xl md:text-2xl leading-tight text-foreground normal-case tracking-normal">
+              <h3 className="font-body font-semibold text-xl md:text-2xl leading-tight text-foreground normal-case tracking-normal">
                 {card.title}
               </h3>
               <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">{card.summary}</p>
@@ -73,7 +83,6 @@ const ServiceCards = () => {
           {open && (
             <>
               <DialogHeader className="text-left sm:text-left space-y-4">
-                <Icon icon={open.icon} className="text-primary text-3xl" aria-hidden="true" />
                 <DialogTitle className="font-body font-semibold text-2xl md:text-3xl leading-tight text-foreground tracking-normal">
                   {open.modal_title || open.title}
                 </DialogTitle>

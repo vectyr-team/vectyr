@@ -4,6 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 export interface HomeService {
   id: string;
   icon: string;
+  image_url: string;
   title: string;
   summary: string;
   modal_title: string;

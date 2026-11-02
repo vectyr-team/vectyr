@@ -8,6 +8,13 @@
       "when": 1793384774907,
       "tag": "0000_create_home_services",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793630941894,
+      "tag": "0001_home_services_image",
+      "breakpoints": true
     }
   ]
 }
