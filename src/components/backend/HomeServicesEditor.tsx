@@ -44,6 +44,7 @@ const EMPTY: Draft = {
   modal_title: "",
   modal_description: "",
   cta_link: "/contact",
+  cta_label: "I want this",
 };
 
 const FieldLabel = ({ children }: { children: React.ReactNode }) => (
@@ -147,14 +148,25 @@ function ServiceForm({
             className="font-body text-sm"
           />
         </div>
-        <div>
-          <FieldLabel>"I want this" button link</FieldLabel>
-          <Input
-            value={draft.cta_link}
-            onChange={(e) => set("cta_link", e.target.value)}
-            placeholder="/contact or https://..."
-            className="font-body text-sm"
-          />
+        <div className="grid sm:grid-cols-2 gap-3">
+          <div>
+            <FieldLabel>Button text</FieldLabel>
+            <Input
+              value={draft.cta_label}
+              onChange={(e) => set("cta_label", e.target.value)}
+              placeholder="I want this"
+              className="font-body text-sm"
+            />
+          </div>
+          <div>
+            <FieldLabel>Button link</FieldLabel>
+            <Input
+              value={draft.cta_link}
+              onChange={(e) => set("cta_link", e.target.value)}
+              placeholder="/contact or https://..."
+              className="font-body text-sm"
+            />
+          </div>
         </div>
       </div>
       <div className="flex gap-2">
@@ -208,7 +220,7 @@ function SortableServiceRow({
           <div className="flex-1 min-w-0">
             <p className="font-body text-sm font-medium text-foreground">{service.title}</p>
             <p className="font-body text-xs text-muted-foreground mt-1 line-clamp-2">{service.summary}</p>
-            <p className="font-mono text-[10px] text-muted-foreground/70 mt-1 truncate">Button: {service.cta_link}</p>
+            <p className="font-mono text-[10px] text-muted-foreground/70 mt-1 truncate">Button: {service.cta_label || "I want this"} → {service.cta_link}</p>
           </div>
           <div className="flex gap-1">
             <button onClick={onStartEdit} className="text-muted-foreground hover:text-foreground transition-colors p-1" aria-label="Edit">
@@ -258,6 +270,7 @@ const HomeServicesEditor = () => {
       modal_title: s.modal_title,
       modal_description: s.modal_description,
       cta_link: s.cta_link,
+      cta_label: s.cta_label ?? "I want this",
     });
   };
 

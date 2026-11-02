@@ -1,0 +1,1 @@
+ALTER TABLE public.home_services ADD COLUMN IF NOT EXISTS cta_label text NOT NULL DEFAULT 'I want this';
