@@ -38,6 +38,7 @@ type Draft = Omit<HomeService, "id" | "sort_order">;
 
 const EMPTY: Draft = {
   icon: "lucide:sparkles",
+  image_url: "",
   title: "",
   summary: "",
   modal_title: "",
@@ -65,25 +66,61 @@ function ServiceForm({
   saveLabel: string;
 }) {
   const set = (k: keyof Draft, v: string) => setDraft({ ...draft, [k]: v });
+  const [uploading, setUploading] = useState(false);
+  const uploadImage = async (file: File) => {
+    setUploading(true);
+    try {
+      const ext = file.name.split(".").pop() || "jpg";
+      const path = `services/${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
+      const { error } = await supabase.storage.from("team-photos").upload(path, file, { contentType: file.type || "image/jpeg" });
+      if (error) {
+        toast.error(`Upload failed: ${error.message}`);
+        return;
+      }
+      const { data } = supabase.storage.from("team-photos").getPublicUrl(path);
+      setDraft({ ...draft, image_url: data.publicUrl });
+      toast.success("Picture uploaded. Save to keep it.");
+    } finally {
+      setUploading(false);
+    }
+  };
   return (
     <div className="space-y-3">
-      <div className="grid sm:grid-cols-[1fr_auto] gap-3 items-end">
-        <div>
-          <FieldLabel>Card title</FieldLabel>
-          <Input value={draft.title} onChange={(e) => set("title", e.target.value)} className="font-body text-sm" />
-        </div>
-        <div>
-          <FieldLabel>Icon</FieldLabel>
-          <div className="flex items-center gap-2">
-            <Icon icon={draft.icon || "lucide:sparkles"} className="w-5 h-5 text-primary shrink-0" />
-            <Input
-              value={draft.icon}
-              onChange={(e) => set("icon", e.target.value)}
-              placeholder="lucide:compass"
-              className="font-mono text-xs w-44"
-            />
+      <div>
+        <FieldLabel>Card picture</FieldLabel>
+        <div className="flex items-center gap-3">
+          <div className="aspect-[16/10] w-40 shrink-0 overflow-hidden rounded bg-muted">
+            {draft.image_url && <img src={draft.image_url} alt="" className="h-full w-full object-cover" />}
+          </div>
+          <div className="flex flex-col gap-2">
+            <label className="inline-flex">
+              <input
+                type="file"
+                accept="image/*"
+                className="hidden"
+                disabled={uploading}
+                onChange={(e) => {
+                  const f = e.target.files?.[0];
+                  if (f) void uploadImage(f);
+                  e.target.value = "";
+                }}
+              />
+              <span className="inline-flex cursor-pointer items-center rounded-md border border-input px-3 py-1.5 font-body text-xs hover:bg-muted">
+                <Icon icon={uploading ? "lucide:loader-2" : "lucide:upload"} className={`w-3.5 h-3.5 mr-2 ${uploading ? "animate-spin" : ""}`} />
+                {uploading ? "Uploading..." : draft.image_url ? "Replace picture" : "Upload picture"}
+              </span>
+            </label>
+            {draft.image_url && (
+              <button type="button" onClick={() => set("image_url", "")} className="text-left font-body text-xs text-muted-foreground hover:text-destructive">
+                Remove picture
+              </button>
+            )}
           </div>
         </div>
+      </div>
+      <div>
+        <FieldLabel>Card title</FieldLabel>
+        <Input value={draft.title} onChange={(e) => set("title", e.target.value)} className="font-body text-sm" />
       </div>
       <div>
         <FieldLabel>Card text</FieldLabel>
@@ -165,7 +202,9 @@ function SortableServiceRow({
           >
             <Icon icon="lucide:grip-vertical" className="w-4 h-4" />
           </button>
-          <Icon icon={service.icon} className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+          <div className="aspect-[16/10] w-16 shrink-0 overflow-hidden rounded bg-muted">
+            {service.image_url && <img src={service.image_url} alt="" className="h-full w-full object-cover" />}
+          </div>
           <div className="flex-1 min-w-0">
             <p className="font-body text-sm font-medium text-foreground">{service.title}</p>
             <p className="font-body text-xs text-muted-foreground mt-1 line-clamp-2">{service.summary}</p>
@@ -213,6 +252,7 @@ const HomeServicesEditor = () => {
     setEditingId(s.id);
     setDraft({
       icon: s.icon,
+      image_url: s.image_url ?? "",
       title: s.title,
       summary: s.summary,
       modal_title: s.modal_title,
