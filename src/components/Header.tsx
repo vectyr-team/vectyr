@@ -157,7 +157,7 @@ const Header = () => {
               className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors"
               style={getAnimStyle(navDelayOrder[0])}
             >
-              Discovery Call
+              Discovery
             </Link>
 
             {/* Company dropdown */}
