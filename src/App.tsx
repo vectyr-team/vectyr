@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import type { CSSProperties, ReactNode } from "react";
-import subpageBackground from "@/assets/subpage-bg.jpg.asset.json";
+import subpageBackground from "@/assets/subpage-bg-2.jpg.asset.json";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";

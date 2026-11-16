@@ -93,8 +93,12 @@
   }
 }
 
-/* Scroll-triggered animations */
+.subpage-background {
+  --background: 0 0% 100%;
+}
+
 .subpage-background main {
+  background-color: hsl(var(--background));
   background-image: var(--subpage-background-image);
   background-position: center top;
   background-repeat: no-repeat;
@@ -107,6 +111,7 @@
   }
 }
 
+/* Scroll-triggered animations */
 .scroll-animate {
   opacity: 0;
   transform: translateY(24px);
