@@ -18,7 +18,7 @@ const companyLinks = [
 ];
 
 const navLinks = [
-  { to: "/call", label: "Discovery Call" },
+  { to: "/call", label: "Discovery" },
   { to: "https://brandhelix.ai", label: "Login" },
 ];
 
@@ -29,7 +29,7 @@ const navDelayOrder = [0, 1, 2];
 
 // All mobile links flattened
 const mobileLinks = [
-  { to: "/call", label: "Discovery Call" },
+  { to: "/call", label: "Discovery" },
   ...companyLinks,
   { to: "https://brandhelix.ai", label: "Login" },
 ];
@@ -62,7 +62,9 @@ const Header = () => {
   // Prevent body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [menuOpen]);
 
   // Click outside to close company dropdown
@@ -137,9 +139,15 @@ const Header = () => {
             className="relative z-[60] w-8 h-8 flex flex-col items-center justify-center gap-[5px] focus:outline-none"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
-            <span className={`block h-[2px] w-6 bg-foreground rounded transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
-            <span className={`block h-[2px] w-6 bg-foreground rounded transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : "opacity-100"}`} />
-            <span className={`block h-[2px] w-6 bg-foreground rounded transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
+            <span
+              className={`block h-[2px] w-6 bg-foreground rounded transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}`}
+            />
+            <span
+              className={`block h-[2px] w-6 bg-foreground rounded transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : "opacity-100"}`}
+            />
+            <span
+              className={`block h-[2px] w-6 bg-foreground rounded transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`}
+            />
           </button>
         ) : (
           <nav className="flex items-center gap-5 md:gap-6">
@@ -224,13 +232,7 @@ const Header = () => {
                   {link.label}
                 </a>
               ) : (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  onClick={() => setMenuOpen(false)}
-                  className={className}
-                  style={style}
-                >
+                <Link key={link.to} to={link.to} onClick={() => setMenuOpen(false)} className={className} style={style}>
                   {link.label}
                 </Link>
               );
