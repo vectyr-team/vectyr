@@ -28,7 +28,7 @@ const Demo = () => {
 
         <section className="px-6 pt-32 pb-12 md:pt-44 md:pb-24">
           <div className="mx-auto max-w-[1300px]">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">BrandHelix.ai Demo</span>
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">LET'S TALK</span>
 
             <h1 className="font-headline font-light text-5xl leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-4xl">
               Experience <span className="text-primary">BrandHelix.ai</span>
