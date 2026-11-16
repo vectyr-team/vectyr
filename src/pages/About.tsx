@@ -285,8 +285,8 @@ const About = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link to="/demo">
-              <Button size="lg">Book Demo</Button>
+            <Link to="/call">
+              <Button size="lg">Discovery Call</Button>
             </Link>
           </div>
         </div>

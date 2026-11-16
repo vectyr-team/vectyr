@@ -75,11 +75,11 @@ export const PAGE_META: Record<
       "Meet the team building brand infrastructure for founders — strategists, designers, and engineers behind Vectyr.",
     path: "/team",
   },
-  demo: {
-    title: "Book a Demo — Experience BrandOS Live",
+  call: {
+    title: "Discovery Call",
     description:
-      "Walk through the BrandOS platform, see how your brand gets built and integrated with AI tools, and decide if it's a fit.",
-    path: "/demo",
+      "Book a discovery call with Steve Reed at Vectyr to discuss your brand, website, or marketing problem and figure out the fix together.",
+    path: "/call",
   },
   contact: {
     title: "Contact Vectyr — Let's Talk Brand Strategy",

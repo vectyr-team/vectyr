@@ -5,7 +5,7 @@ import SEOHead from "@/components/SEOHead";
 import { usePageMeta } from "@/hooks/use-seo-data";
 
 const Demo = () => {
-  const pageMeta = usePageMeta("demo");
+  const pageMeta = usePageMeta("call");
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://links.vectyr.com/js/form_embed.js";
@@ -31,7 +31,7 @@ const Demo = () => {
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">LET'S TALK</span>
 
             <h1 className="font-headline font-light text-5xl leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-4xl">
-              Experience <span className="text-primary">BrandHelix.ai</span>
+              Discovery <span className="text-primary">Call</span>
             </h1>
 
             <p className="mt-4 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground mb-[20px]">
@@ -44,7 +44,7 @@ const Demo = () => {
                 style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "700px" }}
                 scrolling="no"
                 id="LNPnkvxkpEcnG3noYld1_1775760467597"
-                title="Book a BrandHelix.ai Demo"
+                title="Discovery Call"
               />
             </div>
           </div>

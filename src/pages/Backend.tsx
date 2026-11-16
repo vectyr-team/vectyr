@@ -33,7 +33,7 @@ const ALL_PAGES: { slug: string; name: string; metaSlug: string; path: string }[
   { slug: "index", name: "Home", metaSlug: "home", path: "/" },
   { slug: "about", name: "About", metaSlug: "about", path: "/about" },
   { slug: "team", name: "Team", metaSlug: "team", path: "/team" },
-  { slug: "demo", name: "Demo", metaSlug: "demo", path: "/demo" },
+  { slug: "call", name: "Discovery Call", metaSlug: "call", path: "/call" },
   { slug: "contact", name: "Contact", metaSlug: "contact", path: "/contact" },
   { slug: "faqs", name: "FAQs", metaSlug: "faqs", path: "/faqs" },
   { slug: "glossary", name: "Glossary", metaSlug: "glossary", path: "/glossary" },
@@ -56,7 +56,7 @@ const Backend = () => {
   const [session, setSession] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [selectedPage, setSelectedPage] = useState<string>("demo");
+  const [selectedPage, setSelectedPage] = useState<string>("call");
   const [pageSettings, setPageSettings] = useState<PageSetting[]>([]);
   const [schemaPreviewVersion, setSchemaPreviewVersion] = useState(0);
   const navigate = useNavigate();

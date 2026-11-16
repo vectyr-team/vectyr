@@ -18,7 +18,7 @@ const companyLinks = [
 ];
 
 const navLinks = [
-  { to: "/demo", label: "Demo" },
+  { to: "/call", label: "Discovery Call" },
   { to: "https://brandhelix.ai", label: "Login" },
 ];
 
@@ -29,7 +29,7 @@ const navDelayOrder = [0, 1, 2];
 
 // All mobile links flattened
 const mobileLinks = [
-  { to: "/demo", label: "Demo" },
+  { to: "/call", label: "Discovery Call" },
   ...companyLinks,
   { to: "https://brandhelix.ai", label: "Login" },
 ];
@@ -145,11 +145,11 @@ const Header = () => {
           <nav className="flex items-center gap-5 md:gap-6">
             {/* Demo */}
             <Link
-              to="/demo"
+              to="/call"
               className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors"
               style={getAnimStyle(navDelayOrder[0])}
             >
-              Demo
+              Discovery Call
             </Link>
 
             {/* Company dropdown */}

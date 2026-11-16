@@ -20,8 +20,8 @@ const FALLBACK: HomeHero = {
   headline_line2: "Brand Says You Are.",
   subtitle:
     "Your brand should be making you the obvious choice for your most ideal customers. If it isn't, then that is exactly what we fix.",
-  primary_button_label: "Book a Demo",
-  primary_button_link: "/demo",
+  primary_button_label: "Discovery Call",
+  primary_button_link: "/call",
   secondary_button_label: "FAQs",
   secondary_button_link: "/faqs",
 };

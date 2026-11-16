@@ -112,10 +112,10 @@ const Footer = () => {
           <div className="flex flex-col gap-3 items-center md:items-start">
             <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">Connect</span>
             <Link
-              to="/demo"
+              to="/call"
               className="font-body text-sm text-muted-foreground/70 hover:text-foreground transition-colors duration-200 w-fit"
             >
-              See the Demo
+              Discovery Call
             </Link>
             <Link
               to="/contact"

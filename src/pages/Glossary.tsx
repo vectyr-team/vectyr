@@ -97,8 +97,8 @@ const Glossary = () => {
               Book a free demo of Vectyr BrandOS and see how these concepts come together in a real brand operating
               system.
             </p>
-            <a href="/demo" className="mt-8">
-              <Button size="lg">Book a Demo</Button>
+            <a href="/call" className="mt-8">
+              <Button size="lg">Discovery Call</Button>
             </a>
           </div>
         </section>

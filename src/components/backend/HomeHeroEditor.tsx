@@ -133,7 +133,7 @@ const HomeHeroEditor = () => {
           <Input
             value={hero.primary_button_link}
             onChange={(e) => update("primary_button_link", e.target.value)}
-            placeholder="/demo or https://..."
+            placeholder="/call or https://..."
             className="font-body text-sm"
           />
         </div>

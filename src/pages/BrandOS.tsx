@@ -86,7 +86,7 @@ const BrandOS = () => {
               That is what installed looks like.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 mt-8">
-              <Link to="/demo">
+              <Link to="/call">
                 <Button size="lg">See BrandOS in Action</Button>
               </Link>
             </div>
@@ -285,7 +285,7 @@ const BrandOS = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8">
-              <Link to="/demo">
+              <Link to="/call">
                 <Button size="lg">See BrandOS in Action</Button>
               </Link>
             </div>
