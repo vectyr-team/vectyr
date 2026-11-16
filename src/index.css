@@ -94,6 +94,19 @@
 }
 
 /* Scroll-triggered animations */
+.subpage-background main {
+  background-image: var(--subpage-background-image);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+@media (max-width: 767px) {
+  .subpage-background main {
+    background-size: auto 600px;
+  }
+}
+
 .scroll-animate {
   opacity: 0;
   transform: translateY(24px);

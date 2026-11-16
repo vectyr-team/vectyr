@@ -1,5 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
+import type { CSSProperties, ReactNode } from "react";
+import subpageBackground from "@/assets/subpage-bg.jpg.asset.json";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -25,6 +27,20 @@ import ChatWidget from "./components/ChatWidget.tsx";
 
 const queryClient = new QueryClient();
 
+const PageBackground = ({ children }: { children: ReactNode }) => {
+  const { pathname } = useLocation();
+  const isSubpage = pathname !== "/" && !pathname.startsWith("/backend");
+
+  return (
+    <div
+      className={isSubpage ? "subpage-background contents" : "contents"}
+      style={{ "--subpage-background-image": `url(${subpageBackground.url})` } as CSSProperties}
+    >
+      {children}
+    </div>
+  );
+};
+
 const SitewideSchema = () => {
   const { data } = useBusinessInfo();
   return <OrganizationJsonLd business={data} />;
@@ -39,6 +55,7 @@ const App = () => (
         <ScrollToTop />
         <SitewideSchema />
         <ChatWidget />
+        <PageBackground>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
@@ -58,6 +75,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </PageBackground>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -1,5 +1,7 @@
 # Project rules
 
+- Public subpages share a top-aligned, non-repeating background through the route-aware wrapper in App and the main selector in global CSS; homepage, admin, and existing photo bands retain their own backgrounds.
+
 - The discovery booking page uses `/call`; keep `/demo` as a redirect so existing links continue to work.
 - Discovery Call renders its admin-managed calendar through the fixed-page `get_discovery_call_embed` RPC, keeping general page settings private.
 
