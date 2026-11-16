@@ -1,22 +1,61 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { usePageMeta } from "@/hooks/use-seo-data";
+import { supabase } from "@/integrations/supabase/client";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const Demo = () => {
   const pageMeta = usePageMeta("call");
+  const embedRef = useRef<HTMLDivElement>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://links.vectyr.com/js/form_embed.js";
-    script.type = "text/javascript";
-    script.async = true;
-    document.body.appendChild(script);
+    let active = true;
+    const scripts: HTMLScriptElement[] = [];
+    const load = async () => {
+      try {
+        const { data, error: loadError } = await supabase.rpc("get_discovery_call_embed");
+        if (!active) return;
+        if (loadError) throw loadError;
+        const container = embedRef.current;
+        if (!container) return;
+        const settings = data?.[0];
+        const template = document.createElement("template");
+        template.innerHTML = settings?.form_embed_code || "";
+        const embeddedScripts = Array.from(template.content.querySelectorAll("script"));
+        embeddedScripts.forEach((script) => script.remove());
+        template.content.querySelectorAll("iframe").forEach((frame) => {
+          frame.style.width = "100%";
+          frame.style.maxWidth = "100%";
+          if (!frame.title) frame.title = "Discovery Call";
+        });
+        container.replaceChildren(template.content.cloneNode(true));
+        const appendScript = (source: HTMLScriptElement) => {
+          const script = document.createElement("script");
+          Array.from(source.attributes).forEach((attr) => script.setAttribute(attr.name, attr.value));
+          script.textContent = source.textContent;
+          scripts.push(script);
+          container.appendChild(script);
+        };
+        embeddedScripts.forEach(appendScript);
+        if (settings?.form_script_url && !embeddedScripts.some((script) => script.src === settings.form_script_url)) {
+          const script = document.createElement("script");
+          script.src = settings.form_script_url;
+          appendScript(script);
+        }
+      } catch {
+        if (active) setError(true);
+      } finally {
+        if (active) setLoading(false);
+      }
+    };
+    void load();
 
     return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
+      active = false;
+      scripts.forEach((script) => script.remove());
     };
   }, []);
 
@@ -39,13 +78,9 @@ const Demo = () => {
             </p>
 
             <div className="mt-6 md:mt-8">
-              <iframe
-                src="https://links.vectyr.com/widget/booking/LNPnkvxkpEcnG3noYld1"
-                style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "700px" }}
-                scrolling="no"
-                id="LNPnkvxkpEcnG3noYld1_1775760467597"
-                title="Discovery Call"
-              />
+              {loading && <Skeleton className="h-[700px] w-full" />}
+              {error && <p role="alert" className="text-muted-foreground">The calendar couldn’t load. Please refresh and try again.</p>}
+              <div ref={embedRef} className={loading ? "hidden" : "w-full"} />
             </div>
           </div>
         </section>

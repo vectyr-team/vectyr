@@ -263,7 +263,7 @@ const Backend = () => {
   const seoSection = SEO_SECTIONS[selectedPage];
   const currentSettings = pageSettings.find((p) => p.page_slug === selectedPage);
   const currentPage = ALL_PAGES.find((p) => p.slug === selectedPage);
-  const hasFormSettings = selectedPage === "demo" || selectedPage === "contact";
+  const hasFormSettings = selectedPage === "call" || selectedPage === "contact";
   const isFaqsPage = selectedPage === "faqs";
   const isGlossaryPage = selectedPage === "glossary";
   const isHomePage = selectedPage === "index";

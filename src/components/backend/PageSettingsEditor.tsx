@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { Button } from "@/components/ui/button";
 
 interface PageSettings {
   id: string;
@@ -19,32 +20,36 @@ const PageSettingsEditor = ({ pageSlug, settings, onSaved }: PageSettingsEditorP
   const [embedCode, setEmbedCode] = useState(settings?.form_embed_code || "");
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     setEmbedCode(settings?.form_embed_code || "");
     setSaved(false);
+    setError("");
   }, [settings, pageSlug]);
 
   const handleSave = async () => {
     setSaving(true);
     setSaved(false);
 
-    if (settings) {
-      await supabase
+    const result = settings
+      ? await supabase
         .from("page_settings")
         .update({ form_embed_code: embedCode })
-        .eq("id", settings.id);
-    } else {
-      await supabase
+        .eq("id", settings.id)
+      : await supabase
         .from("page_settings")
         .insert({
           page_slug: pageSlug,
-          page_name: pageSlug.charAt(0).toUpperCase() + pageSlug.slice(1),
+          page_name: pageSlug === "call" ? "Discovery Call" : pageSlug.charAt(0).toUpperCase() + pageSlug.slice(1),
           form_embed_code: embedCode,
         });
-    }
 
     setSaving(false);
+    if (result.error) {
+      setError("Couldn’t save the embed. Please try again.");
+      return;
+    }
     setSaved(true);
     onSaved();
     setTimeout(() => setSaved(false), 2000);
@@ -53,7 +58,7 @@ const PageSettingsEditor = ({ pageSlug, settings, onSaved }: PageSettingsEditorP
   return (
     <div className="space-y-6">
       <h2 className="font-body text-base text-foreground font-medium">
-        Form Embed Code
+        {pageSlug === "call" ? "Calendar Embed Code" : "Form Embed Code"}
       </h2>
 
       <div>
@@ -61,6 +66,7 @@ const PageSettingsEditor = ({ pageSlug, settings, onSaved }: PageSettingsEditorP
           Embed Code
         </label>
         <textarea
+          aria-label={pageSlug === "call" ? "Calendar Embed Code" : "Form Embed Code"}
           value={embedCode}
           onChange={(e) => setEmbedCode(e.target.value)}
           rows={6}
@@ -70,18 +76,18 @@ const PageSettingsEditor = ({ pageSlug, settings, onSaved }: PageSettingsEditorP
       </div>
 
       <div className="flex items-center gap-3">
-        <button
+        <Button
           onClick={handleSave}
           disabled={saving}
-          className="bg-primary text-primary-foreground font-mono text-xs uppercase tracking-[0.2em] px-6 py-2.5 rounded hover:bg-primary/90 transition-colors disabled:opacity-50"
         >
           {saving ? "Saving..." : "Save"}
-        </button>
+        </Button>
 
         {saved && (
           <span className="font-mono text-xs text-green-500">Saved!</span>
         )}
       </div>
+      {error && <p role="alert" className="text-destructive text-sm">{error}</p>}
     </div>
   );
 };

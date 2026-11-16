@@ -609,6 +609,13 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_discovery_call_embed: {
+        Args: never
+        Returns: {
+          form_embed_code: string
+          form_script_url: string
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
