@@ -55,20 +55,6 @@ const BrandOS = () => {
 
         {/* Hero */}
         <section className="relative px-6 pt-32 pb-16 md:pt-52 md:pb-28 overflow-hidden">
-          {/* Background video */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            aria-hidden="true"
-            src="/videos/vectyr-hero-bg.mp4"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-
-          {/* Overlay for text readability */}
-          <div className="absolute inset-0 bg-background/70" />
-
           <div className="relative z-10 mx-auto max-w-[1300px]">
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">The Platform</span>
 

@@ -6,7 +6,6 @@ import { usePageMeta, useBusinessInfo } from "@/hooks/use-seo-data";
 import { ServiceJsonLd, BreadcrumbListJsonLd } from "@/components/JsonLd";
 import { Button } from "@/components/ui/button";
 import bodXWatermark from "@/assets/bodX-watermark.svg";
-import wpAdminBg from "@/assets/wordpress-admin.jpg";
 
 const problems = [
   "Plugins go unpatched.",
@@ -50,12 +49,6 @@ const SiteOps = () => {
 
         {/* Hero */}
         <section className="relative px-6 pt-32 pb-16 md:pt-52 md:pb-28 overflow-hidden">
-          <img
-            src={wpAdminBg}
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
-            style={{ opacity: 0.05 }}
-          />
           <div className="relative z-10 mx-auto max-w-[1300px]">
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">
               Website Management

@@ -5,7 +5,6 @@ import ctaBg from "@/assets/cta-bg.jpg";
 import bodXWatermark from "@/assets/bodX-watermark.svg";
 import Header from "@/components/Header";
 import steveTall from "@/assets/steve-tall.jpg";
-import aboutHeroBg from "@/assets/about-hero-bg.jpg";
 import cakeJerkyCpp from "@/assets/cake-jerky-cpp.jpg.asset.json";
 import SEOHead from "@/components/SEOHead";
 import { usePageMeta } from "@/hooks/use-seo-data";
@@ -18,8 +17,7 @@ const About = () => {
       <main className="flex-1">
       <SEOHead {...pageMeta} />
 
-      <section className="theme-dark relative px-6 pt-28 pb-8 md:pt-52 md:pb-24 min-h-[80vh] flex items-center overflow-hidden">
-        <img src={aboutHeroBg} alt="" className="absolute inset-0 z-0 w-full h-full object-cover pointer-events-none" />
+      <section className="relative px-6 pt-28 pb-8 md:pt-52 md:pb-24 min-h-[80vh] flex items-center overflow-hidden">
         <div className="relative z-10 mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Left column */}
           <div>
