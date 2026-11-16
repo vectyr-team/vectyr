@@ -35,7 +35,7 @@ const Demo = () => {
             </h1>
 
             <p className="mt-4 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground mb-[20px]">
-              We'll walk you through the platform, show you how your brand gets built from what's in your head and what your customers say, and show how your whole team can put it to work. Then we'll tell you straight whether it's a fit.
+              Got a brand, website, or marketing problem that won’t go away? Book a discovery call with Steve Reed at Vectyr and let’s figure out the fix together.
             </p>
 
             <div className="mt-6 md:mt-8">
