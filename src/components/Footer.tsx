@@ -94,6 +94,7 @@ const Footer = () => {
           <nav className="flex flex-col gap-3 items-center md:items-start" aria-label="Services">
             <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary mb-3">THE WORK</span>
             {[
+              { label: "View Portfolio", to: "https://behance.net/vectyr" },
               { label: "BrandHelix.ai", to: "https://brandhelix.ai" },
               { label: "Archetype Quiz", to: "https://quiz.vectyr.com" },
               { label: "Brand Script", to: "https://story.vectyr.com" },
