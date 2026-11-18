@@ -25,24 +25,16 @@ const About = () => {
               About Vectyr
             </span>
 
-            <h1 className="font-headline font-light text-5xl !leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
-              Twenty Years.<br />
-              <span className="text-primary">One Answer.</span>
+            <h1 className="font-headline font-light text-4xl !leading-[1.05] tracking-normal text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+              The Creative Team Your Business<br />
+              <span className="text-primary">Has Been Waiting For.</span>
             </h1>
           </div>
 
           {/* Right column */}
           <div className="space-y-8 md:pt-8">
             <p className="font-body text-xl md:text-2xl font-semibold leading-snug text-foreground">
-              Most agencies start with the logo. We start with the data and the strategy.
-            </p>
-
-            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-              The strategy that tells your team, your vendors, and your AI tools exactly who you are, what you stand for, and how to say it without routing every decision back through you. For two decades we've watched good businesses lose to worse ones, because the market rewards whoever earns trust fastest and the better product rarely gets there first.
-            </p>
-
-            <p className="font-body italic text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-              BrandHelix exists because that is a solvable problem, and nobody else was solving it the right way.
+              Whether you need a brand built, a brand fixed, or someone to keep it all sharp month after month, Vectyr has you covered.
             </p>
           </div>
         </div>
