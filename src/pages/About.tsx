@@ -25,7 +25,7 @@ const About = () => {
               About Vectyr
             </span>
 
-            <h1 className="font-headline font-light text-5xl leading-[0.95] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
+            <h1 className="font-headline font-light text-5xl !leading-[1.05] tracking-normal text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
               Twenty Years.<br />
               <span className="text-primary">One Answer.</span>
             </h1>
