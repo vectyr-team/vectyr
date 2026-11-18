@@ -28,7 +28,7 @@ const About = () => {
             <span className="text-primary">Has Been Waiting For.</span>
           </h1>
 
-          <p className="font-body text-xl md:text-2xl font-semibold leading-snug text-foreground max-w-[720px] mx-auto mt-8 md:mt-10 text-balance">
+          <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-[720px] mx-auto mt-8 md:mt-10 text-balance">
             Whether you need a brand built, a brand fixed, or someone to keep it all sharp month after month, Vectyr has you covered.
           </p>
         </div>
