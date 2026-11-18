@@ -17,26 +17,20 @@ const About = () => {
       <main className="flex-1">
       <SEOHead {...pageMeta} />
 
-      <section className="relative px-6 pt-28 pb-8 md:pt-52 md:pb-24 min-h-[80vh] flex items-center overflow-hidden">
-        <div className="relative z-10 mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
-          {/* Left column */}
-          <div>
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-6 block">
-              About Vectyr
-            </span>
+      <section className="relative px-6 pt-32 pb-20 sm:pt-40 sm:pb-24 md:pt-44 md:pb-28 overflow-hidden">
+        <div className="relative z-10 mx-auto max-w-[1280px] text-center">
+          <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-8 md:mb-10 block">
+            About Vectyr
+          </span>
 
-            <h1 className="font-headline font-light text-4xl !leading-[1.05] tracking-normal text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-              The Creative Team Your Business<br />
-              <span className="text-primary">Has Been Waiting For.</span>
-            </h1>
-          </div>
+          <h1 className="font-headline font-light text-4xl !leading-[1.05] tracking-normal text-foreground sm:text-5xl lg:text-6xl xl:text-7xl text-balance">
+            The Creative Team Your Business<br />
+            <span className="text-primary">Has Been Waiting For.</span>
+          </h1>
 
-          {/* Right column */}
-          <div className="space-y-8 md:pt-8">
-            <p className="font-body text-xl md:text-2xl font-semibold leading-snug text-foreground">
-              Whether you need a brand built, a brand fixed, or someone to keep it all sharp month after month, Vectyr has you covered.
-            </p>
-          </div>
+          <p className="font-body text-xl md:text-2xl font-semibold leading-snug text-foreground max-w-[720px] mx-auto mt-8 md:mt-10 text-balance">
+            Whether you need a brand built, a brand fixed, or someone to keep it all sharp month after month, Vectyr has you covered.
+          </p>
         </div>
       </section>
 
