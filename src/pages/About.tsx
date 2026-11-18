@@ -24,7 +24,7 @@ const About = () => {
 
           <h1 className="font-headline font-light text-4xl !leading-[1.05] tracking-normal text-foreground sm:text-5xl lg:text-6xl xl:text-7xl text-balance">
             Design Is the Output.<br />
-            <span className="text-primary">Strategy Is the Engine.</span>
+            <span className="text-foreground">Strategy Is the Engine.</span>
           </h1>
 
           <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-[720px] mx-auto mt-8 md:mt-10 text-balance">
