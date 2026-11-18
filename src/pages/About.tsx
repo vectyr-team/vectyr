@@ -5,6 +5,7 @@ import ctaBg from "@/assets/cta-bg.jpg";
 import Header from "@/components/Header";
 import steveTall from "@/assets/steve-tall.jpg";
 import cakeJerkyCpp from "@/assets/cake-jerky-cpp.jpg.asset.json";
+import aboutHeroBg from "@/assets/about-creative-background.jpg.asset.json";
 import SEOHead from "@/components/SEOHead";
 import { usePageMeta } from "@/hooks/use-seo-data";
 
@@ -16,7 +17,8 @@ const About = () => {
       <main className="flex-1">
       <SEOHead {...pageMeta} />
 
-      <section className="relative px-6 pt-32 pb-20 sm:pt-40 sm:pb-24 md:pt-44 md:pb-28 overflow-hidden">
+      <section className="theme-dark bg-background relative px-6 pt-32 pb-20 sm:pt-40 sm:pb-24 md:pt-44 md:pb-28 overflow-hidden">
+        <img src={aboutHeroBg.url} alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none" fetchPriority="high" />
         <div className="relative z-10 mx-auto max-w-[1280px] text-center">
           <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary mb-8 md:mb-10 block">
             About Vectyr
@@ -27,7 +29,7 @@ const About = () => {
             <span className="text-foreground">Strategy Is the Engine.</span>
           </h1>
 
-          <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-[720px] mx-auto mt-8 md:mt-10 text-balance">
+          <p className="font-body text-base md:text-lg font-light leading-relaxed text-foreground/80 max-w-[720px] mx-auto mt-8 md:mt-10 text-balance">
             Whether you need a brand built, a brand fixed, or someone to keep it all sharp month after month, Vectyr has you covered.
           </p>
         </div>
