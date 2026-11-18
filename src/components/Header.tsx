@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import vectyrLogo from "@/assets/vectyr-logo.svg";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -10,43 +10,26 @@ const socialLinks = [
   { href: "https://www.linkedin.com/in/stevereedbrands", icon: "mdi:linkedin", label: "LinkedIn" },
 ];
 
-const companyLinks = [
-  { to: "/about", label: "About" },
-  { to: "/team", label: "Team" },
-  { to: "/faqs", label: "FAQs" },
-  { to: "/contact", label: "Contact" },
-];
-
 const navLinks = [
   { to: "/call", label: "Discovery" },
-  { to: "https://brandhelix.ai", label: "Login" },
+  { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
 ];
 
 // Delay order: innermost (closest to logo/center) animates first
 const socialDelayOrder = [2, 1, 0];
-// Company (0) first, then Demo (1), then Login (2)
 const navDelayOrder = [0, 1, 2];
-
-// All mobile links flattened
-const mobileLinks = [
-  { to: "/call", label: "Discovery" },
-  ...companyLinks,
-  { to: "https://brandhelix.ai", label: "Login" },
-];
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [companyOpen, setCompanyOpen] = useState(false);
   const [animateIn, setAnimateIn] = useState(false);
   const isMobile = useIsMobile();
   const location = useLocation();
   const isHome = location.pathname === "/";
-  const companyRef = useRef<HTMLDivElement>(null);
 
   // Close menus on route change
   useEffect(() => {
     setMenuOpen(false);
-    setCompanyOpen(false);
   }, [location.pathname]);
 
   // Trigger entrance animation on home page (md+ only)
@@ -66,18 +49,6 @@ const Header = () => {
       document.body.style.overflow = "";
     };
   }, [menuOpen]);
-
-  // Click outside to close company dropdown
-  useEffect(() => {
-    if (!companyOpen) return;
-    const handler = (e: MouseEvent) => {
-      if (companyRef.current && !companyRef.current.contains(e.target as Node)) {
-        setCompanyOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, [companyOpen]);
 
   const shouldAnimate = isHome && !isMobile;
 
@@ -151,56 +122,16 @@ const Header = () => {
           </button>
         ) : (
           <nav className="flex items-center gap-5 md:gap-6">
-            {/* Demo */}
-            <Link
-              to="/call"
-              className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors"
-              style={getAnimStyle(navDelayOrder[0])}
-            >
-              Discovery
-            </Link>
-
-            {/* Company dropdown */}
-            <div ref={companyRef} className="relative" style={getAnimStyle(navDelayOrder[1])}>
-              <button
-                onClick={() => setCompanyOpen((v) => !v)}
-                className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+            {navLinks.map((link, i) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors"
+                style={getAnimStyle(navDelayOrder[i])}
               >
-                Company
-                <Icon
-                  icon="mdi:chevron-down"
-                  width={14}
-                  height={14}
-                  className={`transition-transform duration-200 ${companyOpen ? "rotate-180" : ""}`}
-                />
-              </button>
-
-              {companyOpen && (
-                <div className="absolute top-full right-0 mt-3 min-w-[160px] rounded-md border border-border bg-background/95 backdrop-blur-md py-2 shadow-lg">
-                  {companyLinks.map((link) => (
-                    <Link
-                      key={link.to}
-                      to={link.to}
-                      onClick={() => setCompanyOpen(false)}
-                      className="block px-4 py-2 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground hover:bg-card transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Login */}
-            <a
-              href="https://brandhelix.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors"
-              style={getAnimStyle(navDelayOrder[2])}
-            >
-              Login
-            </a>
+                {link.label}
+              </Link>
+            ))}
           </nav>
         )}
       </header>
@@ -213,7 +144,7 @@ const Header = () => {
           }`}
         >
           <nav className="flex flex-col items-center gap-0">
-            {mobileLinks.map((link, i) => {
+            {navLinks.map((link, i) => {
               const isExternal = link.to.startsWith("http");
               const className = `font-headline text-4xl uppercase tracking-normal text-foreground hover:text-accent transition-all duration-500 py-3 ${
                 menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
