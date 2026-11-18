@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ctaBg from "@/assets/cta-bg.jpg";
-import bodXWatermark from "@/assets/bodX-watermark.svg";
 import Header from "@/components/Header";
 import steveTall from "@/assets/steve-tall.jpg";
 import cakeJerkyCpp from "@/assets/cake-jerky-cpp.jpg.asset.json";
@@ -24,8 +23,8 @@ const About = () => {
           </span>
 
           <h1 className="font-headline font-light text-4xl !leading-[1.05] tracking-normal text-foreground sm:text-5xl lg:text-6xl xl:text-7xl text-balance">
-            The Creative Team Your Business<br />
-            <span className="text-primary">Has Been Waiting For.</span>
+            Design Is the Output.<br />
+            <span className="text-primary">Strategy Is the Engine.</span>
           </h1>
 
           <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground max-w-[720px] mx-auto mt-8 md:mt-10 text-balance">
@@ -34,56 +33,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* The Indictment */}
-      <section className="relative px-6 py-16 md:py-32 bg-card overflow-hidden">
-        <img src={bodXWatermark} alt="" className="absolute z-0 pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[300vw] min-h-[300vh] md:min-w-0 md:min-h-0 md:w-full md:h-full md:top-0 md:left-0 md:translate-x-0 md:translate-y-0 md:inset-0 object-contain" style={{ opacity: 0.03 }} />
-        <div className="relative z-10 mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
-          {/* Left column */}
-          <div>
-            <div className="flex items-center gap-4 mb-6">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50">
-                The Indictment
-              </span>
-              <span className="w-12 h-px bg-muted-foreground" />
-            </div>
-
-            <h2 className="font-headline font-light text-3xl leading-[0.95] tracking-normal text-foreground sm:text-4xl md:text-6xl">
-              The Industry Has Been Selling You the Wrong{" "}
-              <span className="text-primary">Thing.</span>
-            </h2>
-          </div>
-
-          {/* Right column */}
-          <div className="space-y-8">
-            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-              Most branding agencies will show you a beautiful portfolio, talk about storytelling and brand essence, take your money, and hand you a logo and a style guide. Three months later you'll have a prettier version of the same problem, because the thing that was broken wasn't your logo.
-            </p>
-
-            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-              It was the absence of a strategic foundation underneath everything. Nobody diagnosed it. Nobody fixed it. They just made it look better, sent the invoice, and moved on to the next client.
-            </p>
-
-            {/* Pull quote */}
-            <div className="border-l-4 border-primary bg-foreground/5 p-6 md:p-8">
-              <p className="font-mono text-base md:text-lg leading-snug text-foreground">
-                Design is the output. Strategy is the engine. Every agency that skips the engine is setting their clients up to fail slower.
-              </p>
-            </div>
-
-            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-              The businesses that win aren't the ones with the best logos. They're the ones with the clearest positioning, the deepest understanding of their customer, and the most consistent expression of that understanding across every touchpoint.
-            </p>
-
-            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-              <span className="font-semibold text-foreground">That's what Vectyr delivers.</span> Not a prettier version of what you have. A complete brand operating system, built from the actual reality of your business, distributed to your team, your vendors, and your AI tools, and maintained so it doesn't drift the moment you stop watching it.
-            </p>
-
-            <p className="font-body text-base md:text-lg font-light leading-relaxed text-muted-foreground">
-              Built through extraction, not assumption. Delivered as infrastructure, not a document. Maintained so it doesn't decay. That is the standard we built this around, and it is the thing this industry has been unwilling to provide because the old model is more profitable.
-            </p>
-          </div>
-        </div>
-      </section>
       {/* The Founder */}
       <section className="bg-surface-white px-6 py-16 md:py-32">
         <div className="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-12 md:gap-20 items-start">
